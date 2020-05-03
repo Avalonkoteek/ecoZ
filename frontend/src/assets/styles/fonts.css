@@ -1,0 +1,19 @@
+/* Шрифты */
+
+@font-face {
+    font-family: 'Open Sans Light';
+    font-weight: 500;
+    font-display: swap;
+    src: url('../fonts/OpenSansLight/OpenSansLight.woff2') format('woff2'),
+        url('../fonts/OpenSansLight/OpenSansLight.woff') format('woff'),
+        url('../fonts/OpenSansLight/OpenSansLight.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Gost Type A';
+    font-weight: 500;
+    font-display: swap;
+    src: url('../fonts/GostTypeA/GostTypeA.woff2') format('woff2'),
+        url('../fonts/GostTypeA/GostTypeA.woff') format('woff'),
+        url('../fonts/GostTypeA/GostTypeA.ttf') format('ttf');
+}
