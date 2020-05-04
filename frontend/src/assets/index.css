@@ -3,3 +3,7 @@
 @import url('../../node_modules/normalize.css/normalize.css');
 
 /* BASE CSS */
+
+li{
+   list-style: none;
+}

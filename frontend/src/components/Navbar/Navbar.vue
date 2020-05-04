@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div class="logo"></div>
+    <img class="logo" alt="Логотип ecoZ" src="/public/logo/Logo_ECO-Z.svg"/>
     <ul class='links'>
       <router-link
         v-for="link in links"
@@ -30,3 +30,25 @@ export default {
   })
 }
 </script>
+
+<style scoped>
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    min-height: 80px;
+    background-color: #FFFAEB;
+}
+.logo{
+    width: 270px;
+    height: auto;
+}
+.links{
+    display: flex;
+}
+.links>li{
+    margin-right: 20px;
+}
+
+</style>
