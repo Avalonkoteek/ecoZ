@@ -1,4 +1,4 @@
-@import './assets/styles/fonts.css';
-@import './assets/styles/base.css';
 @import './assets/styles/normalize.css';
+@import './assets/styles/fonts.css';
 @import './assets/styles/costomProperties.css';
+@import './assets/styles/base.css';

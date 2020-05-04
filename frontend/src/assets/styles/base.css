@@ -96,13 +96,13 @@ h1 {
 }
 
 h2 {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 48px;
+    line-height: 1.1;
     font-weight: bold;
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 40px;
     line-height: 28px;
     font-weight: bold;
 }
@@ -135,117 +135,13 @@ ol {
     }
 }
 
-q,
-blockquote {
-    margin-bottom: calc(var(--g) / 2);
-    font-weight: bold;
-}
 
-fieldset {
-    border: 1px solid var(--cl-divider-grey);
-    border-radius: 4px;
-    padding: calc(var(--gs) * 2) calc(var(--gs) * 2) calc(var(--gs) * 1.5);
-
-    @media (--tablet-lg) {
-        padding: var(--gs) 0 calc(var(--gs) * 1.5);
-    }
-
-    @media (--tablet-lg) {
-        padding: var(--gs) 0;
-    }
-
-    legend {
-        position: relative;
-        padding: 0 calc(var(--gs) * 2.5);
-        font-size: 14px;
-        line-height: 20px;
-        color: var(--cl-grey);
-
-        @media (--tablet-lg) {
-            padding: 0 calc(var(--gs) * 1.5);
-        }
-
-        @media (--tablet) {
-            padding: 0 calc(var(--gs) * 4.5);
-            font-size: 11px;
-            line-height: 15px;
-        }
-    }
-}
-
-:--btn {
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 24px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: inherit;
-    fill: inherit;
-    border-radius: 1px;
-
-    &:hover {
-        color: inherit;
-        fill: inherit;
-    }
-
-    &:disabled {
-        color: var(--cl-grey);
-        fill: var(--cl-grey);
-    }
-}
-
-:--input {
-    font-family: var(--base-font);
-    font-size: 16px;
-    line-height: 24px;
-    border-radius: 1px;
-
-    /* Прячет крестик очистки поля в IE */
-
-    &::-ms-clear {
-        display: none;
-    }
-}
-
-input[type='number'] {
-    padding: 0 calc(var(--gs) * 2);
-    border: 1px solid var(--cl-global);
-    line-height: calc(var(--gs) * 4);
-    text-align: center;
-
-    /* Прячет стрелки управления поля number в Firefox */
-    appearance: textfield;
-
-    /* Прячет стрелки управления поля number в Chrome, Safari и Opera */
-
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-        margin: 0;
-        appearance: none;
-    }
-}
-
-textarea {
-    resize: none;
-}
-
-a,
-:--btn,
-:--input {
+a {
     font-family: var(--base-font);
 
     &:disabled,
     &.is-disabled {
         cursor: default;
         pointer-events: none;
-    }
-}
-
-.html-modal-open {
-    @media (--desktop-min) {
-        padding-right: 17px;
     }
 }

@@ -1,0 +1,36 @@
+.app {
+    --gs: 8px;
+
+    --cl-white: #ffffff;
+    --cl-black: #000000;
+    --cl-brown: #c99072;
+    --cl-grey: #AFB0BC;
+    --cl-lg-grey: #DADADA;
+    --cl-lg-orange: #D6AF9A;
+    --cl-beige:#FFFAEB;
+
+    --time: 200ms;
+
+    --title-font: 'Gost Type A', arial, sans-serif;
+    --base-font: 'Open Sans Light', arial, sans-serif;
+
+    /* Максимальная длина контейнера */
+    --container-max-width: 1440px;
+
+    /* Точки адаптива */
+    --mobile-sm-size-min: 320px;
+    --mobile-size: 479px;
+    --mobile-size-min: 480px;
+    --mobile-lg-size: 639px;
+    --mobile-lg-size-min: 640px;
+    --tablet-size: 767px;
+    --tablet-size-min: 768px;
+    --tablet-lg-size: 1023px;
+    --tablet-lg-size-min: 1024px;
+    --desktop-size: 1279px;
+    --desktop-size-min: 1280px;
+    --desktop-lg-size: 1599px;
+    --desktop-lg-size-min: 1600px;
+    --desktop-xl-size: 1909px;
+    --desktop-xl-size-min: 1910px;
+}
