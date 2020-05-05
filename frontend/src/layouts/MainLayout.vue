@@ -1,16 +1,19 @@
 <template>
-     <Navbar />
+  <NavbarMobile />
 </template>
 <script>
-import Navbar from "../components/Navbar/Navbar";
+// import Navbar from "../components/Navbar/Navbar";
+import NavbarMobile from "../components/Navbar/NavbarMobile";
 
 export default {
-  data: () => ({
-    isOpen: true
+    data: () => ({
+    isMobile: true,
+  
   }),
   name: "main-layout",
   components: {
-    Navbar,
+    // Navbar,
+    NavbarMobile
   }
 };
 </script>

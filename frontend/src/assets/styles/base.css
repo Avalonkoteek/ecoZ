@@ -48,12 +48,13 @@ a {
     text-decoration: none;
     transition: 200ms;
 
-    &:hover {
-        text-decoration: none;
-    }
+ 
+}
+a:hover{
+    text-decoration: none;
 }
 
-strong,
+/* strong,
 b {
     font-weight: bold;
     line-height: 20px;
@@ -74,7 +75,7 @@ i {
         font-weight: bold;
         font-style: italic;
     }
-}
+} */
 
 p {
     line-height: 24px;
@@ -84,9 +85,10 @@ p {
 :--heading {
     margin: calc(var(--g) / 2) 0;
 
-    &:first-child {
-        margin-top: 0;
-    }
+  
+}
+:--heading:first-child{
+    margin-top: 0;
 }
 
 h1 {
@@ -128,20 +130,19 @@ hr {
 }
 
 ul,
-ol {
-    li {
-        position: relative;
-        list-style: none outside;
-    }
+ol li {
+    position: relative;
+    list-style: none outside;
 }
 
 
-a {
-    font-family: var(--base-font);
 
-    &:disabled,
-    &.is-disabled {
-        cursor: default;
-        pointer-events: none;
-    }
+a {
+    font-family:  'Gost Type A', arial, sans-serif;
+}
+
+a.disabled,
+a.is-disabled {
+    cursor: default;
+    pointer-events: none;
 }

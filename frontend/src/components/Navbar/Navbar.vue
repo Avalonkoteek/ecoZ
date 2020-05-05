@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <img class="logo" alt="Логотип ecoZ" src="/public/logo/Logo_ECO-Z.svg"/>
+    <img class="logo" alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z.svg"/>
     <ul class='links'>
       <router-link
         v-for="link in links"
@@ -10,7 +10,7 @@
         :to="link.url"
         :exact="link.exact"
       >
-        <a href="#" class="">{{link.title}}</a>
+        <a href="#" class="link">{{link.title}}</a>
       </router-link>
     </ul>
   </nav>
@@ -39,16 +39,33 @@ nav{
     height: 10vh;
     min-height: 80px;
     background-color: #FFFAEB;
+    padding:15px 65px 0;
+    
 }
 .logo{
-    width: 270px;
+    max-width: 270px;
     height: auto;
+    border:1px solid black;
 }
 .links{
     display: flex;
+    align-items: flex-end;
+    padding-bottom:20px;
+    
 }
 .links>li{
-    margin-right: 20px;
+    margin-right: 30px;
+}
+
+.link{
+color: #AFB0BC;
+transition: color 0.4s ease;
+}
+.link:hover{
+    color:#C99072;
+}
+.links>li:last-of-type{
+     margin-right: 0px;
 }
 
 </style>
