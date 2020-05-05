@@ -1,8 +1,8 @@
 <template>
-     <Navbar />
+     <Header />
 </template>
 <script>
-import Navbar from "../components/Navbar/Navbar";
+import Header from "../components/Header/Header";
 
 export default {
   data: () => ({
@@ -10,7 +10,7 @@ export default {
   }),
   name: "main-layout",
   components: {
-    Navbar,
+    Header,
   }
 };
 </script>

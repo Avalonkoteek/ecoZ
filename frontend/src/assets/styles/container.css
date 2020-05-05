@@ -1,0 +1,20 @@
+.container {
+    position: relative;
+    width: 100%;
+    min-width: var(--mobile-sm-size-min);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 calc(var(--gs) * 8);
+
+    @media (--desktop) {
+        padding: 0 calc(var(--gs) * 5);
+    }
+
+    @media (--tablet-lg) {
+        padding: 0 calc(var(--gs) * 3);
+    }
+
+    @media (--tablet) {
+        padding: 0 calc(var(--gs) * 2);
+    }
+}

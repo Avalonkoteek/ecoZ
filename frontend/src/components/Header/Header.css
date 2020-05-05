@@ -1,0 +1,22 @@
+.header {
+    background-color: var(--cl-beige);
+    /* height: calc(var(--gs) * 13.75); */
+    &__section {
+        display: flex;
+        justify-content: space-between;
+        padding-top: calc(var(--gs) * 2);
+    }
+
+    &__logo{
+        width: 270px;
+        height: 95px;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        margin-right: calc(var(--gs) * 2.5);
+    }
+}
