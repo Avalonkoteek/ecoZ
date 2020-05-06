@@ -1,19 +1,23 @@
 <template>
-  <NavbarMobile />
+  <Navbar v-if="isMobile" />
+  <NavbarMobile v-else />
 </template>
 <script>
-// import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import NavbarMobile from "../components/Navbar/NavbarMobile";
+     
+
 
 export default {
     data: () => ({
-    isMobile: true,
+    isMobile: false,
   
   }),
   name: "main-layout",
   components: {
-    // Navbar,
+    Navbar,
     NavbarMobile
+  
   }
 };
 </script>

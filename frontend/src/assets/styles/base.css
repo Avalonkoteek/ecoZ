@@ -24,7 +24,7 @@ body {
     position: relative;
     vertical-align: top;
     backface-visibility: hidden;
-    /* font-family: */
+    font-family: var(--base-font);
 }
 
 main {
@@ -36,17 +36,13 @@ main {
 img {
     max-width: 100%;
     height: auto;
-
-    /* При использовании LQIP изображениям добавляется blur через фильтры.
-    Это правило добавляет им плавное исчезновение при окончании подгрузки изображения. */
-    transition: filter 1000ms;
 }
 
 a {
     color: inherit;
     fill: inherit;
     text-decoration: none;
-    transition: 200ms;
+    transition: var(--time);
 
  
 }
@@ -54,41 +50,8 @@ a:hover{
     text-decoration: none;
 }
 
-/* strong,
-b {
-    font-weight: bold;
-    line-height: 20px;
-
-    i,
-    em {
-        font-weight: bold;
-        font-style: italic;
-    }
-}
-
-em,
-i {
-    font-style: italic;
-
-    strong,
-    b {
-        font-weight: bold;
-        font-style: italic;
-    }
-} */
-
 p {
     line-height: 24px;
-    margin: 0 0 calc(var(--g) / 4);
-}
-
-:--heading {
-    margin: calc(var(--g) / 2) 0;
-
-  
-}
-:--heading:first-child{
-    margin-top: 0;
 }
 
 h1 {
@@ -115,18 +78,6 @@ h6 {
     font-size: 18px;
     line-height: 24px;
     font-weight: 500;
-}
-
-hr {
-    background: none;
-    border: none;
-    border-bottom: 1px solid var(--cl-grey);
-    display: block;
-    position: relative;
-    height: 1px;
-    margin: calc(var(--gs) * 3) 0;
-    line-height: 0;
-    font-size: 0;
 }
 
 ul,
