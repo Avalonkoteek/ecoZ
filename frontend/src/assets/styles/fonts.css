@@ -17,3 +17,16 @@
         url('../fonts/GostTypeA/GostTypeA.woff') format('woff'),
         url('../fonts/GostTypeA/GostTypeA.ttf') format('ttf');
 }
+
+@font-face {
+    font-family: 'GOST2_304typeA';
+    font-display: swap;
+    font-weight: 400;
+
+    src: url('../fonts/GostTypeA2.304/GOST2_304typeA.eot');
+    src: url('../fonts/GostTypeA2.304/GOST2_304typeA.eot') format('embedded-opentype'),
+         url('../fonts/GostTypeA2.304/GOST2_304typeA.woff2') format('woff2'),
+         url('../fonts/GostTypeA2.304/GOST2_304typeA.woff') format('woff'),
+         url('../fonts/GostTypeA2.304/GOST2_304typeA.ttf') format('truetype'),
+         url('../fonts/GostTypeA2.304/GOST2_304typeA.svg#GOST2_304typeA') format('svg');
+}

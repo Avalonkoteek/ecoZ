@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="93.887" viewBox="0 0 1440 93.887">
+  <g id="footer-bg" transform="translate(0 -941.234)">
+    <g id="Footer_Decoration" transform="translate(383.166 903.086) rotate(9)">
+      <ellipse id="Ellipse_158" data-name="Ellipse 158" cx="12.51" cy="31.077" rx="12.51" ry="31.077" transform="translate(273.041 13.137) rotate(-13)" fill="#2d356b"/>
+      <path id="Path_836" data-name="Path 836" d="M32.181.1c18.076.832,32.976,6.836,33.281,13.41s-14.1,11.23-32.176,10.4S.31,17.069,0,10.494,14.105-.736,32.181.1Z" transform="translate(272.602 73.179) rotate(-55.358)" fill="#2d356b"/>
+      <g id="_2_Leaves" data-name="2_Leaves" transform="translate(0 29.169)">
+        <path id="Path_838" data-name="Path 838" d="M17.519,37.079C15.972,29.4.167-4.086,0,0" transform="translate(24.394 26.789)" fill="#2d356b" stroke="#090f3a" stroke-miterlimit="10" stroke-width="0.5"/>
+        <path id="Path_839" data-name="Path 839" d="M0,32.114C-3.948,36.074,7.546,9.781,14.043,0" transform="translate(37.098 21.656)" fill="#2d356b" stroke="#090f3a" stroke-miterlimit="10" stroke-width="0.5"/>
+        <ellipse id="Ellipse_159" data-name="Ellipse 159" cx="19.022" cy="5.558" rx="19.022" ry="5.558" transform="translate(40.64 26.901) rotate(-45)" fill="#2d356b"/>
+        <ellipse id="Ellipse_160" data-name="Ellipse 160" cx="6.244" cy="14.596" rx="6.244" ry="14.596" transform="translate(2.13 16.902) rotate(-47)" fill="#2d356b"/>
+      </g>
+    </g>
+    <path id="Footer_BG" d="M0-24s137.475-11.223,256.425,0S334,12.513,475.8,20.893,623.512,12.363,823.618,9.52s298.509,3.72,452.6,0S1440-5.359,1440-5.359V56H0Z" transform="translate(0 979.121)" fill="#2d356b"/>
+  </g>
+</svg>

@@ -11,6 +11,9 @@
 
     --time: 200ms;
 
+    /* menu */
+    --menu-height:10vh;
+
     --title-font: 'Gost Type A', arial, sans-serif;
     --base-font: 'Open Sans Light', arial, sans-serif;
 

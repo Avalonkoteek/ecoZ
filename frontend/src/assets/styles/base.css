@@ -56,8 +56,10 @@ p {
 
 h1 {
     font-size: 24px;
-    line-height: 32px;
-    font-weight: bold;
+    line-height: 1;
+    font-family: 'GOST2_304typeA',arial, sans-serif;
+    color: var(--cl-brown);
+    font-size: 48px;
 }
 
 h2 {
@@ -89,7 +91,11 @@ ol li {
 
 
 a {
-    font-family:  'Gost Type A', arial, sans-serif;
+    font-family: 'GOST2_304typeA',arial, sans-serif;
+    
+}
+p{
+    font-family: 'Open Sans Light';
 }
 
 a.disabled,

@@ -1,23 +1,40 @@
 <template>
-  <Navbar v-if="isMobile" />
-  <NavbarMobile v-else />
+  <div class="mainLayout">
+    <Navbar />
+<Background />
+    <Footer />
+  </div>
 </template>
+<style scoped>
+
+</style>
 <script>
 import Navbar from "../components/Navbar/Navbar";
-import NavbarMobile from "../components/Navbar/NavbarMobile";
-     
-
+import Background from "../components/Background/Background";
+import Footer from "../components/Footer/Footer";
 
 export default {
-    data: () => ({
-    isMobile: false,
-  
+  data: () => ({
+    isMobile: true
   }),
+
+  methods: {
+    updateWidth() {
+      this.isMobile = window.innerWidth > 786;
+      console.log(this.$route)
+    }
+  },
+  created() {
+    window.addEventListener("resize", this.updateWidth);
+    this.updateWidth();
+  },
+
   name: "main-layout",
   components: {
     Navbar,
-    NavbarMobile
-  
+    Footer,
+    Background
+   
   }
 };
 </script>
