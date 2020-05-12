@@ -14,6 +14,14 @@
     --title-font: 'Gost Type A', arial, sans-serif;
     --base-font: 'Open Sans Light', arial, sans-serif;
 
+      /* Кегель для шрифтов font-size(fs)*/
+      --fs-h1:48px;
+      --fs-h2:48px;
+      --fs-h3:24px;
+      --fs-p:20px;
+      --fs-a:23px;
+      --fs-a-nav:30px;
+
     /* Максимальная длина контейнера */
     --container-max-width: 1440px;
 
@@ -33,4 +41,48 @@
     --desktop-lg-size-min: 1600px;
     --desktop-xl-size: 1909px;
     --desktop-xl-size-min: 1910px;
+}
+
+
+/* наверное это не самое лучшее место для медиазапросов, но пока пока они побудут туть */
+@media(max-width:var(--desktop-size-min)){
+    .app{
+        --fs-h1:40px;
+        --fs-h2:40px;
+        --fs-h3:25px;
+        --fs-p:18px;
+        --fs-a:20px;
+        --fs-a-nav:25px;
+    }
+
+}
+@media(max-width:var(--tablet-lg-size-min)){
+    .app{
+        --fs-h1:35px;
+        --fs-h2:35px;
+        --fs-h3:22px;
+        --fs-p:18px;
+        --fs-a:20px;
+        --fs-a-nav:20px;
+    }
+}
+@media(max-width:var(--mobile-lg-size-min)){
+    .app{
+        --fs-h1:30px;
+        --fs-h2:30px;
+        --fs-h3:20px;
+        --fs-p:16px;
+        --fs-a:20px;
+        --fs-a-nav:16px;
+    }
+}
+@media(max-width:var(--mobile-size-min)){
+    .app{
+        --fs-h1:25px;
+        --fs-h2:25px;
+        --fs-h3:16px;
+        --fs-p:14px;
+        --fs-a:17px;
+        --fs-a-nav:14px;
+    }
 }

@@ -53,3 +53,22 @@
     color: var(--cl-grey);
     border-bottom: 1px solid var(--cl-grey);
 }
+@media(max-width:1024px){
+    .header {
+        margin-top:50%;
+        width: 100%;
+        background-color: var(--cl-beige);
+        
+        background-color: burlywood;
+      
+        position: relative;
+    }
+
+    .header__section{
+        padding: 35px 0px;
+        width: 100%;
+    }
+    .header__links{
+        order: 1;
+    }
+}

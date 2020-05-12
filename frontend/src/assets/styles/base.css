@@ -55,21 +55,21 @@ p {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: var(--fs-h1);
     line-height: 1;
     font-family: 'GOST2_304typeA',arial, sans-serif;
     color: var(--cl-brown);
-    font-size: 48px;
+    
 }
 
 h2 {
-    font-size: 48px;
+    font-size: var(--fs-h2);
     line-height: 1.1;
     font-weight: bold;
 }
 
 h3 {
-    font-size: 40px;
+    font-size: var(--fs-h3);
     line-height: 28px;
     font-weight: bold;
 }
@@ -92,14 +92,33 @@ ol li {
 
 a {
     font-family: 'GOST2_304typeA',arial, sans-serif;
+    font-size: var(--fs-a);
     
 }
 p{
     font-family: 'Open Sans Light';
+    font-size: var(--fs-p);
 }
 
 a.disabled,
 a.is-disabled {
     cursor: default;
     pointer-events: none;
+}
+
+/* Тестовый кегель для шрифтов */
+
+@media (max-width:var(--desktop-size)){
+    h1{
+
+    }
+
+}
+@media (max-width:var(--tablet-lg-size)){
+    h1{
+
+    }
+    p{
+
+    }
 }
