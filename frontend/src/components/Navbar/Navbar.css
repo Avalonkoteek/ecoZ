@@ -3,7 +3,7 @@
     height: 110px;
     background-color: #fffaeb;
     position: fixed;
-    z-index: 100;
+    z-index: 110;
     top: 0;
     padding: 15px 0;
     font-size: var(--fs-a-nav);

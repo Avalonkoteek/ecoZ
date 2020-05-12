@@ -27,6 +27,11 @@
   width: 243px;
   height: auto;
 }
+@media(max-width:1024px) {
+  .footer__logo {
+    display: none;
+  }
+}
 @media (max-width: 680px) {
   .footer {
     height: 50px;

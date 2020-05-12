@@ -1,7 +1,7 @@
 <template>
   <div class="mainLayout">
    
-<!-- <Background /> -->
+<Background />
     
   </div>
 </template>
@@ -10,15 +10,19 @@
 </style>
 <script>
 
-// import Background from "../components/Background/Background";
+import Background from "../components/Background/Background";
 
 export default {
 
   name: "main-layout",
   components: {
  
-    // Background
+    Background
    
-  }
+  },
+  created() {
+     console.log($router)
+   }
+
 };
 </script>

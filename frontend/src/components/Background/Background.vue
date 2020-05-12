@@ -61,6 +61,9 @@ export default {
       this.isMobile = window.innerWidth > 786;
       console.log(this.$route);
     }
-  }
+  },
+   created() {
+     console.log($router)
+   }
 };
 </script>
