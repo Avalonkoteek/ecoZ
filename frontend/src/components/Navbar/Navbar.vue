@@ -2,9 +2,22 @@
   <nav class="navbar" display="none">
     <div class="container">
       <Burger @click="isOpen = !isOpen" v-model="isOpen" v-if="!isMobile"></Burger>
-      <img v-if="isMobile" class="navbar__logo" alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z.svg" />
-      <img v-else class="navbar__logo" alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z__mobile.svg"/>
-      <ul class="navbar__links" :class="{open:isOpen}">
+      <div class="navbar__logo">
+        <img
+          v-if="isMobile"
+       
+          alt="Логотип ecoZ"
+          src="../../assets/img/logo/Logo_ECO-Z.svg"
+        />
+        <img
+          v-else
+        
+          alt="Логотип ecoZ"
+          src="../../assets/img/logo/Logo_ECO-Z__mobile.svg"
+        />
+      </div>
+      <div class="navbar__links" :class="{open:isOpen}">
+      <ul >
         <router-link
           v-for="link in links"
           :key="link.url"
@@ -16,18 +29,22 @@
           <a href="#" class="navbar__link">{{link.title}}</a>
         </router-link>
       </ul>
+      <div class="navbar__fond-img">
+        <img src='../../assets/img/navbar/president_logo.svg'>
+      </div>
+      </div>
     </div>
   </nav>
 </template>
 <script>
 import Burger from "./Burger";
-import './Navbar.css'
+import "./Navbar.css";
 export default {
   name: "navbar",
   data: () => ({
     isOpen: false,
     isMobile: false,
-  
+
     links: [
       { title: "Главная", url: "/", exact: true },
       { title: "О Проекте", url: "/about" },
@@ -41,7 +58,6 @@ export default {
   methods: {
     updateWidth() {
       this.isMobile = window.innerWidth > 1024;
-    
     }
   },
   created() {
