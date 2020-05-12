@@ -1,11 +1,11 @@
 <template>
   <div class="about">
-    <Header v-bind:content="content"/>
+    <Main v-bind:content="content"/>
   </div>
 </template>
 
 <script>
-import Header from "../components/Header/Header";
+import Main from "../components/Main/Main";
 
 export default {
   data: () => ({
@@ -16,13 +16,13 @@ export default {
       { title: "Цели", url: "#"},
       { title: "Деятельность", url: "#" },
       { title: "Партнеры", url: "#" },
-      
+
     ]
     }
   }),
   name: "about",
   components: {
-    Header
+    Main
   }
 };
 </script>

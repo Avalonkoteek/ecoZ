@@ -8,15 +8,15 @@
 <style scoped>
 .footer {
   width: 100%;
-  height: 85px;
+  z-index: 1000;
   background: url("../../assets/img/Footer/footer-bg.svg") no-repeat;
   background-size: cover;
   background-position: bottom center;
   position: absolute;
   bottom: 0;
   left: 0;
+  padding-top: 65px;
   padding-bottom: 25px;
-  z-index: 100;
 }
 .footer > .container {
   display: flex;
@@ -27,7 +27,7 @@
   width: 243px;
   height: auto;
 }
-@media(max-width:1024px) {
+@media( max-width: 1023px) {
   .footer__logo {
     display: none;
   }

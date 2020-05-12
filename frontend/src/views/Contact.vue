@@ -1,11 +1,11 @@
 <template>
   <div class="contact">
-    <Header v-bind:content="content"/>
+    <Main v-bind:content="content"/>
   </div>
 </template>
 
 <script>
-import Header from "../components/Header/Header";
+import Main from "../components/Main/Main";
 
 export default {
   data: () => ({
@@ -13,14 +13,14 @@ export default {
     title: "Свяжитесь с нами удобным для вас способом",
     description: "",
     links: [
-     
-      
+
+
     ]
     }
   }),
   name: "contact",
   components: {
-    Header
+    Main
   }
 };
 </script>

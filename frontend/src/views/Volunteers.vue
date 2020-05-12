@@ -1,11 +1,11 @@
 <template>
   <div class="volunteers">
-    <Header v-bind:content="content"/>
+    <Main v-bind:content="content"/>
   </div>
 </template>
 
 <script>
-import Header from "../components/Header/Header";
+import Main from "../components/Main/Main";
 
 export default {
   data: () => ({
@@ -14,18 +14,14 @@ export default {
     description: "Проект Эко-Z — это сообщество экологически активных людей. Присоединяйся к нашей команде и ты найдешь единомышленников, готовых менять наш Зеленоградский округ к лучшему конкретными шагами! ",
     links: [
       { title: "Дополнительная информация", url: "#"},
-     
-      
+
+
     ]
     }
   }),
   name: "volunteers",
   components: {
-    Header
+    Main
   }
 };
 </script>
-
-
-
-

@@ -1,8 +1,8 @@
 <template>
   <div class="mainLayout">
-   
+
 <Background />
-    
+
   </div>
 </template>
 <style scoped>
@@ -16,13 +16,10 @@ export default {
 
   name: "main-layout",
   components: {
- 
+
     Background
-   
+
   },
-  created() {
-     console.log($router)
-   }
 
 };
 </script>
