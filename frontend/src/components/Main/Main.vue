@@ -1,10 +1,10 @@
 <template>
-  <header class="header">
+  <section class="main">
     <div class="container">
-      <div class="header__section">
-       <h1 class="header__title">{{content.title}}</h1>
-       <p class="header__description">{{content.description}}</p>
-       <ul class="header__links">
+      <div class="main__section">
+       <h2 class="main__title">{{content.title}}</h2>
+       <p class="main__description">{{content.description}}</p>
+       <ul class="main__links">
           <li
           v-for="link in content.links"
           :key="link.url"
@@ -14,11 +14,11 @@
        </ul>
       </div>
     </div>
-  </header>
+  </section>
 </template>
 <script>
 
-import './Header.css';
+import './Main.css';
 
 export default {
   props:['content'],
