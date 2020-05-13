@@ -44,7 +44,7 @@ a {
     text-decoration: none;
     transition: var(--time);
 
- 
+
 }
 a:hover{
     text-decoration: none;
@@ -59,7 +59,7 @@ h1 {
     line-height: 1;
     font-family: 'GOST2_304typeA',arial, sans-serif;
     color: var(--cl-brown);
-    
+
 }
 
 h2 {
@@ -91,11 +91,11 @@ ol li {
 
 
 a {
-    font-family: 'GOST2_304typeA',arial, sans-serif;
+    font-family: 'Gost Type A',arial, sans-serif;
     font-size: var(--fs-a);
-    
+
 }
-p{
+p {
     font-family: 'Open Sans Light';
     font-size: var(--fs-p);
 }
