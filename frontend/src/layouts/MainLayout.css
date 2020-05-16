@@ -1,0 +1,19 @@
+.mainLayout{
+    position: absolute;
+    top:0;
+    left: 0;
+    height:100%;
+    width: 100%;
+     background: url('../assets/img/Header/BG.svg') no-repeat;
+      background-position: top left;
+      background-size: cover;
+    
+  }
+  @media(max-width:1023px){
+.mainLayout{
+    background: none;
+    position: relative;
+    height: 50%;
+    min-height: 400px;
+}
+  }

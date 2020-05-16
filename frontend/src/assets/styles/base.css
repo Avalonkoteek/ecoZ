@@ -1,5 +1,4 @@
 /* Базовые стили */
-
 *,
 ::before,
 ::after {
@@ -38,38 +37,28 @@ img {
     height: auto;
 }
 
-a {
-    color: inherit;
-    fill: inherit;
-    text-decoration: none;
-    transition: var(--time);
-
-
-}
-a:hover{
-    text-decoration: none;
-}
-
 p {
     line-height: 24px;
+    font-family: 'Open Sans Light';
+    font-size: 20px;
 }
 
 h1 {
     font-size: var(--fs-h1);
     line-height: 1;
-    font-family: 'GOST2_304typeA',arial, sans-serif;
+    font-family: 'GOST2_304typeA', arial, sans-serif;
     color: var(--cl-brown);
 
 }
 
 h2 {
-    font-size: var(--fs-h2);
+    font-size: 48px;
     line-height: 1.1;
     font-weight: bold;
 }
 
 h3 {
-    font-size: var(--fs-h3);
+    font-size: 25px;
     line-height: 28px;
     font-weight: bold;
 }
@@ -88,37 +77,89 @@ ol li {
     list-style: none outside;
 }
 
-
+/* Links */
 
 a {
-    font-family: 'Gost Type A',arial, sans-serif;
-    font-size: var(--fs-a);
-
-}
-p {
-    font-family: 'Open Sans Light';
-    font-size: var(--fs-p);
+    color: inherit;
+    fill: inherit;
+    text-decoration: none;
+    transition: var(--time);
 }
 
+a:hover {
+    text-decoration: none;
+}
+
+a {
+    font-family: 'Gost Type A', arial, sans-serif;
+    font-size: 23px;
+}
+ 
 a.disabled,
 a.is-disabled {
     cursor: default;
     pointer-events: none;
 }
 
-/* Тестовый кегель для шрифтов */
+/* MEDIA
+============================================================*/
+/* DESKTOP */
 
-@media (max-width:var(--desktop-size)){
-    h1{
-
+@media (max-width:1279px) {
+    h1 {
+         font-size: 30px;
     }
 
+    h2 {
+         font-size: 30px;
+    }
+
+    p {
+         font-size: 18px;
+    }
+
+    a {
+        font-size: 20px;
+    }
 }
-@media (max-width:var(--tablet-lg-size)){
-    h1{
-
+/* TABLET */
+@media (max-width:767px) {
+    h1 {
+         font-size: 25px;
     }
-    p{
 
+    h2 {
+         font-size: 30px;
+    }
+
+    p {
+         font-size: 18px;
+    }
+
+    a {
+         font-size: 20px;
+    }
+}
+
+/* MOBILE */
+@media(max-width:479px) {
+    h1 {
+         font-size:25px ;
+    }
+
+    h2 {
+         font-size:25px ;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    p {
+         font-size: 14px;
+    }
+
+    a {
+         font-size: 17px;
     }
 }

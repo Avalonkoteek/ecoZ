@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <svg>
-      <use xlink:href="../../assets/img/MAIN__BG/bg.svg#Illustration_Reserve_1" />
-    </svg>
+<!-- Это временно -->
+  <div ref="bg">
+
   </div>
 </template>
 <style scoped>
@@ -14,33 +13,36 @@ div {
   z-index: -1;
   height: 100%;
   width: 100%;
+  --position:-0%;
   transition: all 1s ease;
+  background: url("../../assets/img/MAIN__BG/bg.svg") no-repeat;
+  background-position:var(--position) 0%;
+ background-size: cover;
+ transition: background-position 2s ease-out;
+ animation: bg 2s ease ;
 }
-svg g{
-   all: inherit; 
+img{
+  height: 100%;
+  width: auto;
 }
-use #Illustration_Reserve_1 {
-    all: inherit;
-  opacity: 0;
+svg g {
+  all: inherit;
 }
-use #Back_Trees {
-all: inherit;
-  opacity: 0;
-}
+
 svg {
   height: 100%;
   min-width: 100%;
   width: auto;
   top: 0;
-  animation: transf 5s ease;
+ 
 }
 
-@keyframes transf {
+@keyframes bg {
   0% {
-    transform: translateX(40%) scale(1);
+   background-position:-23% 0%;
   }
   100% {
-    transform: translateX(0%) scale(1.1);
+     background-position:0% 0%;
   }
 }
 @keyframes scale {
@@ -56,12 +58,13 @@ svg {
 export default {
   name: "background",
   props: ["position"],
-  methods: {
-    updateWidth() {
-      this.isMobile = window.innerWidth > 786;
-      console.log(this.$route);
-    }
-  },
-   
+  // mounted() {
+  //   if(this.$route.name == "about"){
+  //      t
+  //   }
+// console.log(this.$refs.bg);
+// console.log(this.$route)
+
+  
 };
 </script>

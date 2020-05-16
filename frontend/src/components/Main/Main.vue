@@ -1,4 +1,5 @@
 <template>
+
   <section class="main">
     <div class="container">
       <div class="main__section">
@@ -9,7 +10,7 @@
           v-for="link in content.links"
           :key="link.url"
         >
-          <a href="#" @click.prevent="">{{link.title}}</a>
+          <a href="/" @click.prevent="">{{link.title}}</a>
         </li>
        </ul>
       </div>
