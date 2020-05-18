@@ -17,9 +17,8 @@
     </div>
   </section>
 </template>
-<script>
 
-import './Main.css';
+<script>
 
 export default {
   props:['content'],

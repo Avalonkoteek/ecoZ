@@ -1,0 +1,11 @@
+.link {
+    color: var(--cl-grey);
+
+    &:hover {
+        color: var(--cl-brown);
+    }
+
+    &.active {
+        color: var(--cl-brown);
+    }
+}

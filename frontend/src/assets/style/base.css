@@ -39,14 +39,14 @@ img {
 
 p {
     line-height: 24px;
-    font-family: 'Open Sans Light';
+    font-family: var(--base-font);
     font-size: 20px;
 }
 
 h1 {
     font-size: var(--fs-h1);
     line-height: 1;
-    font-family: 'GOST2_304typeA', arial, sans-serif;
+    font-family: var(--title-font);
     color: var(--cl-brown);
 
 }
@@ -91,10 +91,10 @@ a:hover {
 }
 
 a {
-    font-family: 'Gost Type A', arial, sans-serif;
+    font-family: var(--title-font);
     font-size: 23px;
 }
- 
+
 a.disabled,
 a.is-disabled {
     cursor: default;

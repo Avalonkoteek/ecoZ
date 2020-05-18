@@ -4,17 +4,19 @@
     <component :is="layout" />
 
     <router-view />
-  
+
     <Footer />
   </div>
 </template>
+
 <script>
 
-import "./App.css";
+import './App.css';
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import MainLayout from "./layouts/MainLayout";
+
 
 
 export default {
@@ -31,14 +33,3 @@ export default {
   }
 };
 </script>
-<style>
-/* @import './assets/styles/normalize.css';
-@import './assets/styles/fonts.css';
-@import './assets/styles/customProperties.css';
-@import './assets/styles/customMedia.css';
-@import './assets/styles/base.css';
-@import './assets/styles/container.css'; */
-
-
-</style>
-

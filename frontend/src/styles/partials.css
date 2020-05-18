@@ -1,0 +1,12 @@
+/* Элементы */
+@import './elements/link.css';
+
+/* Компоненты */
+@import './components/Background.css';
+@import './components/Burger.css';
+@import './components/Footer.css';
+@import './components/Main.css';
+@import './components/MainLayout.css';
+@import './components/NavBar.css';
+
+/* Страницы */

@@ -1,7 +1,9 @@
-@import './assets/styles/normalize.css';
-@import './assets/styles/fonts.css';
-@import './assets/styles/customProperties.css';
-@import './assets/styles/customMedia.css';
-@import './assets/styles/base.css';
-@import './assets/styles/container.css';
+/* Базовые стили */
+@import './assets/style/normalize.css';
+@import './assets/style/fonts.css';
+@import './assets/style/customProperties.css';
+@import './assets/style/customMedia.css';
+@import './assets/style/base.css';
+@import './assets/style/container.css';
 
+@import './styles/partials.css';

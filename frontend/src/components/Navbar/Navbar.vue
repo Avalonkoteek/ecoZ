@@ -1,27 +1,27 @@
 <template>
   <nav class="navbar" display="none">
     <div class="container">
-      <Burger @click="isOpen = !isOpen" v-model="isOpen" v-if="!isMobile" />
-      <div class="navbar__logo">
-        <img v-if="isMobile" alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z.svg" />
-        <img v-else alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z__mobile.svg" />
-      </div>
-      <div class="navbar__links" :class="{open:isOpen}">
-        <ul>
-          <li  v-for="link in links" :key="link.url" @click="isOpen = false">
-            <router-link
-              :to="link.url"
-              class="navbar__link"
-              active-class="active"
-              :exact="link.exact"
-              
-            >{{link.title}}
-            </router-link>
-          </li>
-        </ul>
-        <div class="navbar__fond-img">
-          <img src="../../assets/img/navbar/president_logo.svg" />
+      <div class="navbar__wrapper">
+        <Burger @click="isOpen = !isOpen" v-model="isOpen" v-if="!isMobile" />
+        <div class="navbar__logo">
+          <img v-if="isMobile" class="navbar__img" alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z.svg" />
+          <img v-else alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z__mobile.svg" />
         </div>
+          <ul class="navbar__list" :class="{open:isOpen}">
+            <li class="navbar__item" v-for="link in links" :key="link.url" @click="isOpen = false">
+              <router-link
+                :to="link.url"
+                class="navbar__link link"
+                active-class="active"
+                :exact="link.exact"
+
+              >{{link.title}}
+              </router-link>
+            </li>
+          </ul>
+          <div class="navbar__fond-img">
+            <img src="../../assets/img/navbar/president_logo.svg" />
+          </div>
       </div>
     </div>
   </nav>
@@ -30,7 +30,6 @@
 <script>
 
 import Burger from "./Burger";
-import "./Navbar.css";
 
 export default {
   name: "navbar",
