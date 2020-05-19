@@ -1,0 +1,284 @@
+.fade,
+.fade-absolute,
+.fade-out,
+.fade-in,
+.fade-in-slide-out-bottom,
+.slide,
+.slide-absolute,
+.slide-in-top,
+.slide-in-left,
+.slide-in-right,
+.slide-in-bottom,
+.slide-in-bottom-absolute,
+.slide-top,
+.slide-left,
+.slide-right,
+.slide-bottom {
+    &-enter {
+        opacity: 0;
+
+        &-to {
+            opacity: 1;
+            transition: all var(--animation-time) ease;
+        }
+    }
+
+    &-leave {
+        opacity: 1;
+
+        &-to {
+            opacity: 0;
+            transition: all var(--animation-time) ease;
+        }
+    }
+}
+
+.slide {
+    &-enter {
+        transform: translateX(100%);
+
+        &-to {
+            transform: translateX(0);
+        }
+    }
+
+    &-leave {
+        transform: translateX(0);
+
+        &-to {
+            transform: translateX(-100%);
+        }
+    }
+}
+
+.slide-absolute {
+    &-enter {
+        transform: translateX(100%);
+
+        &-to {
+            transform: translateX(0);
+        }
+    }
+
+    &-leave {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+
+        &-to {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(-100%);
+        }
+    }
+}
+
+.slide-left {
+    &-enter {
+        transform: translateX(-100%);
+
+        &-to {
+            transform: translateX(0);
+        }
+    }
+
+    &-leave {
+        transform: translateX(0);
+
+        &-to {
+            transform: translateX(-100%);
+        }
+    }
+}
+
+.slide-right {
+    &-enter {
+        transform: translateX(100%);
+
+        &-to {
+            transform: translateX(0);
+        }
+    }
+
+    &-leave {
+        transform: translateX(0);
+
+        &-to {
+            transform: translateX(100%);
+        }
+    }
+}
+
+.slide-top {
+    &-enter {
+        transform: translateY(-100%);
+
+        &-to {
+            transform: translateY(0);
+        }
+    }
+
+    &-leave {
+        transform: translateY(0);
+
+        &-to {
+            transform: translateY(-100%);
+        }
+    }
+}
+
+.slide-bottom {
+    &-enter {
+        transform: translateY(100%);
+
+        &-to {
+            transform: translateY(0);
+        }
+    }
+
+    &-leave {
+        transform: translateY(0);
+
+        &-to {
+            transform: translateY(100%);
+        }
+    }
+}
+
+.fade-in {
+    &-leave {
+        &-to {
+            transition: none;
+        }
+    }
+}
+
+.fade-out {
+    &-enter {
+        &-to {
+            transition: none;
+        }
+    }
+}
+
+.fade-in-slide-out-bottom {
+    &-leave {
+        transform: translateY(0);
+
+        &-to {
+            transform: translateY(100%);
+        }
+    }
+}
+
+.slide-in-right {
+    &-enter {
+        transform: translateX(100%);
+
+        &-to {
+            transform: translateX(0);
+        }
+    }
+
+    &-leave {
+        transform: translateX(0);
+
+        &-to {
+            transform: translateX(100%);
+            transition: none;
+        }
+    }
+}
+
+.slide-in-top {
+    &-enter {
+        transform: translateY(-100%);
+
+        &-to {
+            transform: translateY(0);
+        }
+    }
+
+    &-leave {
+        transform: translateY(0);
+
+        &-to {
+            transform: translateY(-100%);
+            transition: none;
+        }
+    }
+}
+
+.slide-in-bottom {
+    &-enter {
+        transform: translateY(100%);
+
+        &-to {
+            transform: translateY(0);
+        }
+    }
+
+    &-leave {
+        &-to {
+            transition: none;
+        }
+    }
+}
+
+.slide-in-left {
+    &-enter {
+        transform: translateX(-100%);
+
+        &-to {
+            transform: translateX(0);
+        }
+    }
+
+    &-leave {
+        transform: translateX(0);
+
+        &-to {
+            transform: translateX(-100%);
+            transition: none;
+        }
+    }
+}
+
+.slide-in-bottom-absolute {
+    &-enter {
+        transform: translateY(100%);
+
+        &-to {
+            transform: translateY(0);
+        }
+    }
+
+    &-leave {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &-to {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: none;
+        }
+    }
+}
+
+.fade-absolute {
+    &-leave {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+
+        &-to {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+        }
+    }
+}

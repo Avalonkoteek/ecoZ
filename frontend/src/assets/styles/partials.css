@@ -4,6 +4,7 @@
 @import './base/customMedia.css';
 @import './base/base.css';
 @import './base/container.css';
+@import './base/animation.css';
 
 /* Элементы */
 @import './elements/link.css';

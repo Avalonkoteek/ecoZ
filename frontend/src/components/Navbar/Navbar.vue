@@ -19,29 +19,36 @@
               </router-link>
             </li>
           </ul>
-          <button class="navbar__btn" />
-
-          <!-- <div class="navbar__fond-img">
-            <img src="../../assets/img/navbar/president_logo.svg" />
-          </div> -->
+          <button @click="onOpen" class="navbar__btn" />
       </div>
     </div>
-    <div class="navbar__mobile-menu">
-
-    </div>
+    <transition name="slide-in-left" mode="out-in">
+      <div v-if="isOpen" class="navbar__mobile-menu">
+        <button class="navbar__mobile-menu-btn" @click="onClose"></button>
+        <ul class="navbar__mobile-menu-list">
+            <li class="navbar__mobile-menu-item" v-for="link in links" :key="link.url"  @click="isOpen = false">
+              <router-link
+                :to="link.url"
+                class="navbar__link link"
+                active-class="active"
+                :exact="link.exact"
+                @click="onClose"
+                >
+                {{link.title}}
+                </router-link>
+            </li>
+        </ul>
+      </div>
+    </transition>
   </nav>
 </template>
 
 <script>
 
-
-// import Burger from "./Burger";
-
 export default {
   name: "navbar",
   data: () => ({
-    // isOpen: false,
-    isMobile: false,
+    isOpen: false,
 
     links: [
       { title: "Главная", url: "/", exact: true },
@@ -54,6 +61,13 @@ export default {
   }),
 
   methods: {
+    onOpen() {
+      this.isOpen = true;
+    },
+
+    onClose() {
+      this.isOpen = false;
+    }
     // updateWidth() {
     //   this.isMobile = window.innerWidth > 1023;
     // }

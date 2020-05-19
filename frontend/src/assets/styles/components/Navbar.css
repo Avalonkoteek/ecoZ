@@ -127,15 +127,31 @@
     }
 
     &__mobile-menu {
-        display: block;
-        background: url('../../img/navbar/Menu_BG.svg');
-        background-position-y: top;
+        display: none;
+        background: url('../../img/navbar/Menu_BG.svg') no-repeat;
         background-size: cover;
         position: fixed;
         left: 0;
         top: 0;
-        width: 57%;
-        transform: translateY(-4%);
-        height: 105vh;
+        width: 28vh;
+        height: 100vh;
+        transform-origin: right bottom;
+        background-position: 0% 0%;
+        transform:  scale(1.05);
+        padding: calc(var(--gs) * 6) 0 calc(var(--gs) * 2.5) calc(var(--gs) * 3.5);
+
+        &-btn {
+            display: block;
+            background: url('../../img/navbar/close.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 16px;
+            height: 16px;
+            margin-bottom: calc(var(--gs) * 2);
+        }
+
+        @media (--tablet) {
+            display: block;
+        }
     }
 }
