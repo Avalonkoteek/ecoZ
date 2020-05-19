@@ -1,0 +1,29 @@
+/* Шрифты */
+
+@font-face {
+    font-family: 'Open Sans Light';
+    font-weight: 500;
+    src: url('../../fonts/OpenSansLight/OpenSansLight.woff2') format('woff2'),
+        url('../../fonts/OpenSansLight/OpenSansLight.woff') format('woff'),
+        url('../../fonts/OpenSansLight/OpenSansLight.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Gost Type A';
+    font-weight: 500;
+    src: url('../../fonts/GostTypeA/GostTypeA.woff2') format('woff2'),
+        url('../../fonts/GostTypeA/GostTypeA.woff') format('woff'),
+        url('../../fonts/GostTypeA/GostTypeA.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'GOST2_304typeA';
+    font-weight: 400;
+
+    src: url('../../fonts/GostTypeA2.304/GOST2_304typeA.eot');
+    src: url('../../fonts/GostTypeA2.304/GOST2_304typeA.eot') format('embedded-opentype'),
+         url('../../fonts/GostTypeA2.304/GOST2_304typeA.woff2') format('woff2'),
+         url('../../fonts/GostTypeA2.304/GOST2_304typeA.woff') format('woff'),
+         url('../../fonts/GostTypeA2.304/GOST2_304typeA.ttf') format('truetype'),
+         url('../../fonts/GostTypeA2.304/GOST2_304typeA.svg#GOST2_304typeA') format('svg');
+}

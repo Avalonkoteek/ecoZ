@@ -1,0 +1,141 @@
+.navbar {
+    width: 100%;
+    height: 110px;
+    background-color: #fffaeb;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+
+    @media (--tablet-lg) {
+        height: 52px;
+    }
+
+    @media (--mobile) {
+        background: url('../../img/navbar/mobile_bg_top.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        @media (--tablet-lg) {
+            height: 100%;
+        }
+    }
+    &__wrapper {
+        display: flex;
+        padding-top: calc(var(--gs) * 2);
+        position: relative;
+
+        @media (--tablet-lg) {
+            height: 100%;
+        }
+
+        @media (--tablet) {
+            padding: calc(var(--gs) * 0.75) 0;
+        }
+        /* @media (--tablet) {
+            justify-content: flex-start;
+            align-items: center;
+            padding-bottom: 0;
+        } */
+    }
+
+    &__logo {
+        max-width: 248px;
+        margin-right: 30px;
+
+        @media (--tablet) {
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+
+        &--desk {
+            @media (--tablet-lg) {
+                display: none;
+            }
+        }
+
+        &--mobile {
+            display: none;
+
+            @media (--tablet-lg) {
+                display: block;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+
+        @media (--tablet) {
+            display: none;
+        }
+    }
+
+    &__item {
+        margin-right: 30px;
+        height: fit-content;
+        margin-top: calc(var(--gs) * 1.75);
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @media (--tablet-lg) {
+            margin-top: 0;
+        }
+    }
+
+    &__link {
+        font-size: 30px;
+
+        @media (--desktop) {
+            font-size: 24px;
+        }
+
+        @media (--tablet-lg) {
+            font-size: 20px;
+        }
+    }
+
+    &__btn {
+        display: none;
+        position: absolute;
+        background: url('../../img/navbar/mobile_menu.svg');
+        width: 16px;
+        height: 14px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        left: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @media (--tablet) {
+            display: block;
+        }
+    }
+
+    &__mobile-menu {
+        display: block;
+        background: url('../../img/navbar/Menu_BG.svg');
+        background-position-y: top;
+        background-size: cover;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 57%;
+        transform: translateY(-4%);
+        height: 105vh;
+    }
+}

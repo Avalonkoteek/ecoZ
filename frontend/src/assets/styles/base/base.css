@@ -71,6 +71,18 @@ h6 {
     font-weight: 500;
 }
 
+button {
+    border: none;
+    outline: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border: none;
+        outline: none;
+    }
+}
+
 ul,
 ol li {
     position: relative;

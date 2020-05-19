@@ -14,10 +14,10 @@
     transition: background-position 2s ease-out;
     animation: bg 2s ease ;
   } */
-  img{
+  /* img{
     height: 100%;
     width: auto;
-  }
+  } */
   svg g {
     all: inherit;
   }

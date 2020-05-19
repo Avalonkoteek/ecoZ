@@ -6,13 +6,6 @@ module.exports = {
        'postcss-normalize': {},
        'postcss-nested': {},
 
-       'postcss-preset-env': {
-            // features: {
-            //     'custom-properties': {
-            //         importFrom: 'src/assets/styles/customProperties.css',
-            //         preserve: false,
-            //     },
-            // }
-       }
+       'postcss-preset-env': {}
     }
 }

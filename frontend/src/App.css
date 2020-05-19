@@ -1,9 +1,1 @@
-/* Базовые стили */
-@import './assets/style/normalize.css';
-@import './assets/style/fonts.css';
-@import './assets/style/customProperties.css';
-@import './assets/style/customMedia.css';
-@import './assets/style/base.css';
-@import './assets/style/container.css';
-
-@import './styles/partials.css';
+@import './assets/styles/partials.css';

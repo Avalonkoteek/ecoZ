@@ -1,3 +1,10 @@
+/* Базовые стили */
+@import './base/fonts.css';
+@import './base/customProperties.css';
+@import './base/customMedia.css';
+@import './base/base.css';
+@import './base/container.css';
+
 /* Элементы */
 @import './elements/link.css';
 
@@ -7,6 +14,6 @@
 @import './components/Footer.css';
 @import './components/Main.css';
 @import './components/MainLayout.css';
-@import './components/NavBar.css';
+@import './components/Navbar.css';
 
 /* Страницы */

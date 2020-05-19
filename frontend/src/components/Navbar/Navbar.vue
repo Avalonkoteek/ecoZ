@@ -1,11 +1,11 @@
 <template>
-  <nav class="navbar" display="none">
+  <nav class="navbar">
     <div class="container">
       <div class="navbar__wrapper">
-        <Burger @click="isOpen = !isOpen" v-model="isOpen" v-if="!isMobile" />
+        <!-- <Burger @click="isOpen = !isOpen" v-model="isOpen" v-if="!isMobile" /> -->
         <div class="navbar__logo">
-          <img v-if="isMobile" class="navbar__img" alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z.svg" />
-          <img v-else alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z__mobile.svg" />
+          <img class="navbar__img navbar__img--desk" alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z.svg" />
+          <img class="navbar__img navbar__img--mobile" alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z__mobile.svg" />
         </div>
           <ul class="navbar__list" :class="{open:isOpen}">
             <li class="navbar__item" v-for="link in links" :key="link.url" @click="isOpen = false">
@@ -19,22 +19,28 @@
               </router-link>
             </li>
           </ul>
-          <div class="navbar__fond-img">
+          <button class="navbar__btn" />
+
+          <!-- <div class="navbar__fond-img">
             <img src="../../assets/img/navbar/president_logo.svg" />
-          </div>
+          </div> -->
       </div>
+    </div>
+    <div class="navbar__mobile-menu">
+
     </div>
   </nav>
 </template>
 
 <script>
 
-import Burger from "./Burger";
+
+// import Burger from "./Burger";
 
 export default {
   name: "navbar",
   data: () => ({
-    isOpen: false,
+    // isOpen: false,
     isMobile: false,
 
     links: [
@@ -48,16 +54,16 @@ export default {
   }),
 
   methods: {
-    updateWidth() {
-      this.isMobile = window.innerWidth > 1023;
-    }
+    // updateWidth() {
+    //   this.isMobile = window.innerWidth > 1023;
+    // }
   },
   created() {
-    window.addEventListener("resize", this.updateWidth);
-    this.updateWidth();
+    // window.addEventListener("resize", this.updateWidth);
+    // this.updateWidth();
   },
   components: {
-    Burger
+    // Burger
   }
 };
 </script>
