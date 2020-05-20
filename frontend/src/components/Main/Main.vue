@@ -10,7 +10,12 @@
           v-for="link in content.links"
           :key="link.url"
         >
-          <a href="/" @click.prevent="">{{link.title}}</a>
+        <router-link
+          :to="link.url"
+          active-class="active"
+          append>
+        {{link.title}}
+        </router-link>
         </li>
        </ul>
       </div>
@@ -21,7 +26,8 @@
 <script>
 
 export default {
-  props:['content'],
-
+  props: {
+    content: Object
+  }
 }
 </script>

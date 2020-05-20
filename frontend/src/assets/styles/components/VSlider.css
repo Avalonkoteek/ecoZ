@@ -1,0 +1,83 @@
+.v-slider {
+    position: relative;
+    opacity: 0;
+
+    &.swiper-container-initialized {
+        opacity: 1;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 44px;
+        width: 44px;
+        border-radius: 50%;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+
+    .swiper-button-next {
+        background-image: none;
+        right: 0;
+    }
+
+        .icon {
+            transform: rotate(180deg);
+        }
+
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        &:after {
+            content: none
+        }
+
+        .icon {
+            fill: transparent;
+            margin: 0;
+        }
+    }
+
+
+    .swiper-button-prev {
+        background-image: none;
+        left: 0;
+    }
+
+
+
+    .swiper-button-disabled {
+        visibility: hidden;
+    }
+
+
+    .swiper-pagination {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin: 0 var(--gs);
+        top: 0;
+        left: 0;
+    }
+
+
+    /* .swiper-pagination-bullet
+        margin: 0 $gutter-step
+        width: $gutter-step / 2
+        height: $gutter-step / 2
+        background-color: $cl-grey
+        transition: all $time ease-in
+
+        &-active
+            background-color: $cl-black
+            transform: scale(2) */
+}
