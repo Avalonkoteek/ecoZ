@@ -6,49 +6,37 @@ export const routes = [
     {
         path: '/',
         name: 'home',
-        meta: {
-          layout: 'main'
-        },
+        meta:{layout:'main'},
         component: () => import('../views/Home.vue')
     },
     {
         path: '/about',
         name: 'about',
-        meta: {
-          layout: 'main'
-        },
+        meta:{layout:'about'},
         component: () => import('../views/About.vue')
     },
     {
         path: '/business',
         name: 'business',
-        meta: {
-          layout: 'main'
-        },
+        meta:{layout:'business'},
         component: () => import('../views/Business.vue')
     },
     {
         path: '/school',
         name: 'school',
-        meta: {
-          layout: 'main'
-        },
+        meta:{layout:'school'},
         component: () => import('../views/School.vue')
     },
     {
         path: '/volunteers',
         name: 'volunteers',
-        meta: {
-          layout: 'main'
-        },
+        meta:{layout:'volunteers'},
         component: () => import('../views/Volunteers.vue')
     },
     {
         path: '/contact',
         name: 'contact',
-        meta: {
-          layout: 'main'
-        },
+        meta:{layout:'contact'},
         component: () => import('../views/Contact.vue')
     },
 ];

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Navbar />
-    <component :is="layout" />
-
+    
+<Background v-model="layout"/>
     <router-view />
 
     <Footer />
@@ -15,21 +15,23 @@ import './App.css';
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import MainLayout from "./layouts/MainLayout";
+import Background from './components/Background/Background'
+
 
 
 
 export default {
-  components: {
-    MainLayout,
-    Navbar,
-    Footer
-  },
-
   computed: {
     layout() {
-      return (this.$route.meta.layout || "empty") + "-layout";
+      return (this.$route.meta.layout || 'empty')+ '-layout';
     }
-  }
+  },
+  components: {
+    Navbar,
+    Footer,
+    Background
+  },
+
+
 };
 </script>

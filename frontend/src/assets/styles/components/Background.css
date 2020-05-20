@@ -1,4 +1,4 @@
-/* div {
+.background{
     position: absolute;
     overflow: hidden;
     top: 0;
@@ -6,30 +6,33 @@
     z-index: -1;
     height: 100%;
     width: 100%;
-    --position:-0%;
     transition: all 1s ease;
-
-    background-position:var(--position) 0%;
-    background-size: cover;
-    transition: background-position 2s ease-out;
-    animation: bg 2s ease ;
-  } */
-  /* img{
-    height: 100%;
-    width: auto;
-  } */
-  svg g {
-    all: inherit;
   }
-
-  svg {
+  .background::after{
+    content: "";
+    width: 100%;
     height: 100%;
-    min-width: 100%;
-    width: auto;
-    top: 0;
-
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 0;
+    background: url('../../img/Header/BG.svg');
   }
-
+  .background__svg{
+    height: 100%;
+    transform: matrix(1.4,0,0,1.4,1000,-200);
+    
+  }
+@media(--tablet){
+  .background{
+    background-color: #000;
+    position: relative;
+    height: 300px;
+  }
+  .background::after{
+    background:none;
+  }
+}
   @keyframes bg {
     0% {
      background-position:-23% 0%;
