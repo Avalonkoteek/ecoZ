@@ -16,7 +16,8 @@
     top:0;
     left:0;
     z-index: 0;
-    background: url('../../img/Header/BG.svg');
+    background: url('../../img/Header/BG.svg') no-repeat;
+    background-size: cover;
   }
   .background__svg{
     height: 100%;
