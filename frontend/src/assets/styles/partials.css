@@ -8,6 +8,7 @@
 
 /* Элементы */
 @import './elements/link.css';
+@import './elements/icons.css';
 
 /* Компоненты */
 @import './components/Background.css';
@@ -16,5 +17,7 @@
 @import './components/Main.css';
 @import './components/MainLayout.css';
 @import './components/Navbar.css';
+@import './components/VSlider.css';
 
 /* Страницы */
+@import './pages/partners.css'

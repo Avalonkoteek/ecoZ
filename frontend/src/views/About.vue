@@ -5,7 +5,9 @@
 </template>
 
 <script>
+
 import Main from "../components/Main/Main";
+
 
 export default {
   data: () => ({
@@ -15,7 +17,7 @@ export default {
     links: [
       { title: "Цели", url: "#1"},
       { title: "Деятельность", url: "#2" },
-      { title: "Партнеры", url: "#3" },
+      { title: "Партнеры", url: "partners" },
 
     ]
     }

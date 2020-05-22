@@ -1,19 +1,38 @@
 
 // const Home = () => import("../views/Home.vue");
+
+//About
+const About = () => import('../views/About')
+const AboutPartners = () => import('../components/About/Parthners')
 // const About = () => import("../views/About.vue")
 
 export const routes = [
     {
-        path: '/',
+        path: '/home',
         name: 'home',
         meta:{layout:'main'},
         component: () => import('../views/Home.vue')
     },
     {
+        path: '/',
+        redirect:'/home',
+    },
+    {
         path: '/about',
         name: 'about',
         meta:{layout:'about'},
-        component: () => import('../views/About.vue')
+        component: About,
+        children: [
+
+        ]
+    },
+    {
+        path: '/about/partners',
+        component: AboutPartners,
+        meta: {
+            layout:'empty'
+        },
+        name: 'AboutPartners'
     },
     {
         path: '/business',

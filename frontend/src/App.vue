@@ -6,7 +6,10 @@
     <router-view />
 
     <Footer />
+
+    <Icons />
   </div>
+
 </template>
 
 <script>

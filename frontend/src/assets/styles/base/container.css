@@ -18,3 +18,7 @@
         padding: 0 calc(var(--gs) * 2);
     }
 }
+
+.section {
+    padding-top: calc(var(--gs) * 18.75);
+}

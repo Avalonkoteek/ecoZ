@@ -14,7 +14,7 @@
               class="navbar__link"
               active-class="active"
               :exact="link.exact"
-              
+
             >{{link.title}}
             </router-link>
           </li>
@@ -39,7 +39,7 @@ export default {
     isMobile: false,
 
     links: [
-      { title: "Главная", url: "/", exact: true },
+      { title: "Главная", url: "/home", exact: true },
       { title: "О Проекте", url: "/about" },
       { title: "Бизнесу", url: "/business" },
       { title: "Школам", url: "/school" },
