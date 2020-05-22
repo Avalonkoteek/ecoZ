@@ -1,6 +1,24 @@
 .v-slider {
     position: relative;
     opacity: 0;
+    transition: opacity var(--animation-time) ease-in;
+    overflow: hidden;
+    margin: 0 auto;
+
+    .swiper-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        box-sizing: content-box;
+    }
+
+    .swiper-slide {
+        flex-shrink: 0;
+        height: 100%;
+        position: relative;
+    }
 
     &.swiper-container-initialized {
         opacity: 1;
@@ -8,14 +26,18 @@
 
     .swiper-button-next,
     .swiper-button-prev {
-        position: relative;
+        position: absolute;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 44px;
-        width: 44px;
+        height: 40px;
+        width: 40px;
         border-radius: 50%;
         transition: all 0.2s ease-in;
+        z-index: 99;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
 
         &:hover {
             opacity: 0.8;
@@ -28,29 +50,14 @@
         right: 0;
     }
 
-        .icon {
-            transform: rotate(180deg);
-        }
-
-
-    .swiper-button-prev,
-    .swiper-button-next {
-        &:after {
-            content: none
-        }
-
-        .icon {
-            fill: transparent;
-            margin: 0;
-        }
-    }
-
-
     .swiper-button-prev {
         background-image: none;
         left: 0;
-    }
 
+        .icon {
+            transform: rotate(180deg);
+        }
+    }
 
 
     .swiper-button-disabled {
@@ -58,14 +65,16 @@
     }
 
 
-    .swiper-pagination {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
+    .swiper-pagination-bullet {
         margin: 0 var(--gs);
-        top: 0;
-        left: 0;
+        width: calc(var(--gs) / 2);
+        height: calc(var(--gs) / 2);
+        background-color: var(--cl-grey);
+        transition: all var(--time) ease-in;
+
+        &-active {
+            background-color: var(--cl-global);
+            transform: scale(2);
+        }
     }
 }

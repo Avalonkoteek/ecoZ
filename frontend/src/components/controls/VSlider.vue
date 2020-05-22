@@ -1,32 +1,34 @@
 <template>
     <div class="v-slider" v-swiper:slider="options">
+        <button class="swiper-button-prev">
+                <v-svg name="arrow_next" width="40" height="40" />
+            </button>
         <div class="swiper-wrapper">
             <slot />
         </div>
-
+        <button class="swiper-button-next">
+            <v-svg name="arrow_next" width="40" height="40" />
+        </button>
+        <div class="swiper-pagination" />
         <div class="v-slider__controls">
-            <button class="swiper-button-prev">
-                <v-svg name="arrow_next" width="40" height="40" />
-            </button>
-            <div class="swiper-pagination" />
-            <button class="swiper-button-next">
-                <v-svg name="arrow_next" width="40" height="40" />
-            </button>
+
+
+
         </div>
     </div>
 </template>
 
 <script>
 import VSvg from './VSvg.vue';
-//Swiper, SwiperSlide,
+
 import {  directive } from 'vue-awesome-swiper'
+
 
 export default {
     name: 'v-slider',
     components: {
         VSvg,
-        // Swiper,
-        // SwiperSlide
+
     },
     directives: {
         swiper: directive

@@ -1,20 +1,21 @@
 <template>
     <section class="section">
         <div class="container">
-            <v-slider
-                class="popup-view-shop__slider"
-                name="view-shop"
-                :options="sliderOptions"
-                >
+            <div class="partners__container-slider">
+                <v-slider
+                    class="partners__swiper"
+                    name="view-shop"
+                    :options="sliderOptions"
+                    >
+                        <div class="swiper-slide partners__slide"><img src="../../assets/img/partners/Image_1.jpg" alt="img_1"></div>
+                        <div class="swiper-slide partners__slide"><img src="../../assets/img/partners/Image_1.jpg" alt="img_1"></div>
+                        <div class="swiper-slide partners__slide"><img src="../../assets/img/partners/Image_1.jpg" alt="img_1"></div>
+                        <div class="swiper-slide partners__slide"><img src="../../assets/img/partners/Image_1.jpg" alt="img_1"></div>
+                        <div class="swiper-slide partners__slide"><img src="../../assets/img/partners/Image_1.jpg" alt="img_1"></div>
+                        <div class="swiper-slide partners__slide"><img src="../../assets/img/partners/Image_1.jpg" alt="img_1"></div>
 
-                        <div class="swiper-slide">1</div>
-                        <div class="swiper-slide">1</div>
-                        <div class="swiper-slide">1</div>
-                        <div class="swiper-slide">1</div>
-                        <div class="swiper-slide">1</div>
-                        <div class="swiper-slide">1</div>
-
-            </v-slider>
+                </v-slider>
+            </div>
         </div>
 
     </section>
@@ -26,13 +27,23 @@ import VSlider from '../controls/VSlider.vue'
 
 
 const sliderOptions = {
-    slidesPerView: 1,
+    // loop: true,
+    centeredSlides: true,
+    spaceBetween: 24,
+    // slidesOffsetBefore: 24,
+    // slidesOffsetAfter: 24,
+    slidesPerView: 3,
     grabCursor: true,
     autoHeight: true,
+    simulateTouch: false,
 
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
     },
 };
 
