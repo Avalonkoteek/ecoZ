@@ -68,16 +68,4 @@
         top: 0;
         left: 0;
     }
-
-
-    /* .swiper-pagination-bullet
-        margin: 0 $gutter-step
-        width: $gutter-step / 2
-        height: $gutter-step / 2
-        background-color: $cl-grey
-        transition: all $time ease-in
-
-        &-active
-            background-color: $cl-black
-            transform: scale(2) */
 }

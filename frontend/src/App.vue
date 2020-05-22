@@ -36,7 +36,5 @@ export default {
     Background,
     Icons
   },
-
-
 };
 </script>
