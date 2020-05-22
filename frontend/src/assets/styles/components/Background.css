@@ -1,51 +1,51 @@
-.background{
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    transition: all 1s ease;
-  }
-  .background::after{
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top:0;
-    left:0;
-    z-index: 0;
-    background: url('../../img/Header/BG.svg');
-  }
-  .background__svg{
-    height: 100%;
-    transform: matrix(1.4,0,0,1.4,1000,-200);
-    
-  }
-@media(--tablet){
-  .background{
+.background {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  height: 100%;
+  width: 100%;
+  transition: all 1s ease;
+}
+
+/* Overlay 
+==================================================== */
+.background__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index:0;
+}
+
+/* illustration 
+==================================================== */
+.background__illustration-wrapper{
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: -1;
+}
+
+.background__svg {
+ height: 100%;
+ width: auto;
+  position: absolute;
+  bottom: 0;
+  left:0;
+}
+
+@media(--tablet) {
+  .background {
     background-color: #000;
     position: relative;
     height: 300px;
   }
-  .background::after{
-    background:none;
+
+  .background::after {
+    background: none;
   }
 }
-  @keyframes bg {
-    0% {
-     background-position:-23% 0%;
-    }
-    100% {
-       background-position:0% 0%;
-    }
-  }
-  @keyframes scale {
-    0% {
-      transform: translateX(40%) scale(1);
-    }
-    100% {
-      transform: translateX(0%) scale(1.1);
-    }
-  }

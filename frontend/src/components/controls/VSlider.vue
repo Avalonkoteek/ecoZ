@@ -18,15 +18,15 @@
 
 <script>
 import VSvg from './VSvg.vue';
-
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+//Swiper, SwiperSlide,
+import {  directive } from 'vue-awesome-swiper'
 
 export default {
     name: 'v-slider',
     components: {
         VSvg,
-        Swiper,
-        SwiperSlide
+        // Swiper,
+        // SwiperSlide
     },
     directives: {
         swiper: directive
