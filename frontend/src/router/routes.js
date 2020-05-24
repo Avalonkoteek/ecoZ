@@ -4,6 +4,7 @@
 //About
 const About = () => import('../views/About')
 const AboutPartners = () => import('../components/About/Parthners')
+const AboutTargets = () => import('../components/About/Targets')
 // const About = () => import("../views/About.vue")
 
 export const routes = [
@@ -17,6 +18,7 @@ export const routes = [
         path: '/',
         redirect:'/home',
     },
+    //About
     {
         path: '/about',
         name: 'about',
@@ -34,6 +36,15 @@ export const routes = [
         },
         name: 'AboutPartners'
     },
+    {
+        path: '/about/targets',
+        component: AboutTargets,
+        meta: {
+            layout:'empty'
+        },
+        name: 'AboutTargets'
+    },
+
     {
         path: '/business',
         name: 'business',

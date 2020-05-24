@@ -64,7 +64,7 @@ export default {
             links: [
                 {
                     name: "Цели",
-                    to: '/about',
+                    to: '/about/targets',
                 },
                 {
                     name: "Деятельность",

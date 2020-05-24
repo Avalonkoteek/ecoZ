@@ -21,4 +21,5 @@
 @import './components/Breadcrumbs.css';
 
 /* Страницы */
-@import './pages/partners.css'
+@import './pages/partners.css';
+@import './pages/targets.css';
