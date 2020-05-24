@@ -18,6 +18,7 @@
 @import './components/MainLayout.css';
 @import './components/Navbar.css';
 @import './components/VSlider.css';
+@import './components/Breadcrumbs.css';
 
 /* Страницы */
 @import './pages/partners.css'

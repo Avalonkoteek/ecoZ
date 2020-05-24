@@ -10,11 +10,6 @@
             <v-svg name="arrow_next" width="40" height="40" />
         </button>
         <div class="swiper-pagination" />
-        <div class="v-slider__controls">
-
-
-
-        </div>
     </div>
 </template>
 

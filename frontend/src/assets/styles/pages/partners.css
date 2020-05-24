@@ -5,6 +5,8 @@
         width: 80%;
         padding: 0 calc(var(--gs) * 11.25);
         margin: 0 auto;
+        padding-bottom: calc(var(--gs) * 6);
+        margin-bottom: calc(var(--gs) * 4);
     }
 
     &__swiper {
@@ -42,8 +44,13 @@
         }
 
         .swiper-pagination-bullets {
+            display: flex;
             position: absolute;
             bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
+
     }
+
 }

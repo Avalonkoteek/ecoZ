@@ -1,0 +1,21 @@
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        margin-right: calc(var(--gs) * 1.75);
+    }
+
+    &__link {
+        border-bottom: 1px solid var(--cl-grey);
+
+        &.router-link-exact-active {
+            color: var(--cl-brown);
+            border-bottom: none;
+        }
+
+        &:hover {
+            border-bottom: none;
+        }
+    }
+}

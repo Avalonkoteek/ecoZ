@@ -5,5 +5,5 @@
     line-height: 0;
     text-align: center;
     vertical-align: middle;
-    transition: color $time ease, background-color $time ease, border-color $time ease, opacity $time ease;
+    transition: color var(--time) ease, background-color var(--time) ease, border-color var(--time) ease, opacity var(--time) ease;
 }

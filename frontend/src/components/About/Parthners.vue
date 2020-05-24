@@ -1,6 +1,7 @@
 <template>
     <section class="section">
         <div class="container">
+            <ButtonBack :to="'/about'" />
             <div class="partners__container-slider">
                 <v-slider
                     class="partners__swiper"
@@ -16,6 +17,8 @@
 
                 </v-slider>
             </div>
+
+            <Breadcrumbs :links="links"/>
         </div>
 
     </section>
@@ -24,7 +27,8 @@
 <script>
 
 import VSlider from '../controls/VSlider.vue'
-
+import ButtonBack from "../controls/ButtonBack.vue"
+import Breadcrumbs from "../controls/Breadcrumbs.vue"
 
 const sliderOptions = {
     // loop: true,
@@ -44,14 +48,35 @@ const sliderOptions = {
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
+        clickable: true,
     },
 };
 
 export default {
     components: {
-        VSlider
+        VSlider,
+        ButtonBack,
+        Breadcrumbs,
     },
 
+    data() {
+        return {
+            links: [
+                {
+                    name: "Цели",
+                    to: '/about',
+                },
+                {
+                    name: "Деятельность",
+                    to: '/about',
+                },
+                {
+                    name: "Партнеры",
+                    to: '/about/partners',
+                },
+            ]
+        }
+    },
     mounted() {
     },
 
