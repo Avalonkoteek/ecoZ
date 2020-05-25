@@ -10414,17 +10414,20 @@
 
 <script>
 // IMPORTS
-// import { TimelineLite, TweenMax } from "gsap";
+//==========================================
 import { overlayAnimation } from "./overlay-animation";
 import anime from "animejs";
 
+// EXPORT
+// =========================================
 export default {
   name: "background",
   props: ["value"],
 
   // DATA ===================================>
   data: () => ({
-    position: 1000
+    position: 1000,
+    overlayIsActive:false
   }),
 
   // WATCH
@@ -10438,38 +10441,37 @@ export default {
       const { overlayPath } = this.$refs;
       if (newVal === "empty-layout") {
         overlayAnimation.overlayAnimationStart(overlayPath);
+        this.overlayIsActive = true
       }
-      if (oldVal === "empty-layout") {
+      if (oldVal === "empty-layout" && newVal !== "empty-layout") {
         overlayAnimation.overlayAnimationEnd(overlayPath);
+        this.overlayIsActive = false
       }
     }
   },
 
-  mounted() {},
+  mounted() {
+       const { overlayPath } = this.$refs;
+    if(this.overlayIsActive===true){
+       overlayAnimation.overlayAnimationStart(overlayPath);
+    }
+  },
   // Methods ===================================>
   methods: {
     movingStart(from, to) {
       const { illustration } = this.$refs;
-      let a = anime({
-        targets: illustration,
-
-        translateX: {
-          value: [from, to],
-          duration: 1000
-        },
-        scale:{
-          value: [1,1.4],
-          duration: 1800
-        },
-        translateY: {
-          value: ["0","-20%"],
-          duration: 1800
-        },
-        easing: "easeInOutSine",
-        direction: "normal",
-        autoplay: true
-      });
-   a.play;
+      const a = anime
+        .timeline({
+          targets: illustration,
+          easing: "easeInOutSine",
+          direction: "normal",
+          autoplay: true,
+          duration: 750
+        })
+        .add({
+          translateX: [from, to]
+        });
+      a.play();
     },
     getPosition(Layout) {
       let Position = "0%";

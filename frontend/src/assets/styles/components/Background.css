@@ -6,7 +6,11 @@
   z-index: -2;
   height: 100%;
   width: 100%;
-  transition: all 1s ease;
+  @media (--tablet-lg) {
+    position: relative;
+    height: 400px;
+    padding-top: 80px;
+  }
 }
 
 /* Overlay 
@@ -17,12 +21,15 @@
   height: 100%;
   top: 0;
   left: 0;
-  z-index:0;
+  z-index: 0;
+  @media (--tablet-lg) {
+    display: none;
+  }
 }
 
 /* illustration 
 ==================================================== */
-.background__illustration-wrapper{
+.background__illustration-wrapper {
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -31,14 +38,17 @@
 }
 
 .background__svg {
- height: 100%;
- width: auto;
+  height: 100%;
+  width: auto;
   position: absolute;
   bottom: 0;
-  left:0;
+  left: 0;
+  @media (--tablet-lg) {
+    transform: scale(3) translateY(-14%) translateX(20%);
+  }
 }
 
-@media(--tablet) {
+@media (--tablet) {
   .background {
     background-color: #000;
     position: relative;
