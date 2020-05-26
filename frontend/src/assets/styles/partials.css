@@ -25,3 +25,5 @@
 /* Страницы */
 @import "./pages/partners.css";
 @import "./pages/targets.css";
+@import "./pages/contact.css";
+@import "./pages/contactForm.css";

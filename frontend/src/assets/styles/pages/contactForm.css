@@ -1,0 +1,20 @@
+.contactForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding-left: 70px;
+  input {
+    background-color: #fffefb;
+    height: 40px;
+    padding-left: 10px;
+    color: #bcbcbc;
+    border: 1px solid #e2e2e2;
+    border-radius: 7px;
+    font-family: var(--base-font);
+  }
+}
+.contactForm__box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}

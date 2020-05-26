@@ -1,0 +1,20 @@
+.contact__wrapper {
+  width: 100%;
+}
+.contact__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.contact__item:last-of-type {
+  margin-bottom: 45px;
+}
+.contact__social-img {
+  width: 35px;
+  height: 35px;
+  margin-right: 17px;
+}
+.contact__links {
+  font-family: var(--base-font);
+}
