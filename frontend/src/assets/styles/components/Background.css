@@ -42,4 +42,7 @@
   height: 100%;
   width: auto;
   transform: translateX(35vw);
+  @media (--tablet-lg) {
+    transform: translateX(-10vw);
+  }
 }
