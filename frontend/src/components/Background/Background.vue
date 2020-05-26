@@ -5,27 +5,28 @@
       class="background__overlay"
       ref="overlay"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1440 902"
+      viewBox="0 0 1440 900"
       preserveAspectRatio="none"
     >
       <path
         id="BG"
         ref="overlayPath"
-        d="M0,0h1441.629v124.166s-779.258-68.518-841.809,57.484,44.479,158.338,106.336,290.912,58.348,255.676,47.33,324.352-29.576,104.979-29.576,104.979h-722.326l-.043-24.158-1.5-855.541Z"
+        d="M0,0h1441.727v125.506s-831.476-58.914-848.645,78.438,115.032,224.91,144.219,381.146-19.609,314.93-19.609,314.93h-717.427Z"
         fill="#fffaeb"
         stroke="#707070"
         stroke-width="0"
       />
     </svg>
 
-    <!-- BG_SVG -->
+    <!-- BG_SVG background__svg-->
     <div class="background__illustration-wrapper">
       <svg
-        preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
         class="background__svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 0 3629 1088"
+        width="3834"
+        height="1087"
+        viewBox="0 0 3834 1087"
       >
         <defs>
           <linearGradient
@@ -78,25 +79,307 @@
             xlink:href="#linear-gradient-3"
           />
           <clipPath id="clip-Illustration_Reserve_1">
-            <rect width="3629" height="1088" />
+            <rect width="3834" height="1087" />
           </clipPath>
         </defs>
         <g
           id="Illustration_Reserve_1"
+          ref="illustration"
           data-name="Illustration Reserve – 1"
           clip-path="url(#clip-Illustration_Reserve_1)"
         >
-          <g id="ILLUSTRATION" ref="illustration" transform="translate(84.884 -3.303)">
-            <path
-              id="Subtraction_1"
-              data-name="Subtraction 1"
-              d="M4678.191,961.5H1044.372V.476H.372V961.5H0V0H4678.191V961.5Z"
-              transform="translate(-1127.756 3.305)"
-              stroke="rgba(0,0,0,0)"
-              stroke-miterlimit="10"
-              stroke-width="1"
-              fill="url(#linear-gradient)"
-            />
+          <rect width="3834" height="1087" fill="#fff" />
+          <g id="ILLUSTRATION" transform="translate(291.884 -3.303)">
+            <g
+              id="Sky_and_Clouds"
+              data-name="Sky and Clouds"
+              transform="translate(-1127.754 3.303)"
+            >
+              <path
+                id="Path_1045"
+                data-name="Path 1045"
+                d="M0,0H4678.188V1004.979H0Z"
+                transform="translate(0)"
+                fill="url(#linear-gradient)"
+              />
+              <g
+                id="Clouds_ANIMATION"
+                ref="clouds"
+                data-name="Clouds ANIMATION"
+                transform="translate(1262.751 97.585)"
+              >
+                <g id="Clouds_Up" data-name="Clouds Up" transform="translate(0 0)">
+                  <g
+                    id="Cloud_8_Up"
+                    data-name="Cloud 8 Up"
+                    transform="translate(2776.671 329.686)"
+                  >
+                    <path
+                      id="Path_22"
+                      data-name="Path 22"
+                      d="M6646.375,1008.481q.88-.659,1.757-1.3l-36.172,11.6h2.309Z"
+                      transform="translate(-6611.96 -973.404)"
+                      fill="#fff"
+                    />
+                    <path
+                      id="Path_23"
+                      data-name="Path 23"
+                      d="M7040.737,962.143a62.419,62.419,0,0,1,20.787,19.883l21.285,4.876h35.6l-43.4-9.942a62.422,62.422,0,0,0-20.787-19.883c-19.994-11.553-46.095-10.7-70.914.579C7003.841,951.537,7024.342,952.669,7040.737,962.143Z"
+                      transform="translate(-6814.726 -941.525)"
+                      fill="#fff"
+                    />
+                    <path
+                      id="Path_24"
+                      data-name="Path 24"
+                      d="M6841.4,945.268c3.355,3.026,7.291,8.313,9.038,18.075a119.257,119.257,0,0,1,12.969-7.555c-1.926-8.19-5.465-12.828-8.523-15.585-11.582-10.447-33.8-9.786-59.541,1.537C6815.236,935.6,6831.9,936.7,6841.4,945.268Z"
+                      transform="translate(-6712.094 -932.784)"
+                      fill="#fff"
+                    />
+                    <path
+                      id="Path_4"
+                      data-name="Path 4"
+                      d="M6611.96,978.158h303.684l-43.4-9.941a62.423,62.423,0,0,0-20.787-19.883c-24.57-14.2-58.361-9.667-87.664,9.941-1.747-9.761-5.683-15.049-9.038-18.075-16.67-15.037-55.378-7.069-94.9,22.594Z"
+                      transform="translate(-6611.96 -932.782)"
+                      fill="#eff5fe"
+                    />
+                  </g>
+                  <g
+                    id="Cloud_7_Up"
+                    data-name="Cloud 7 Up"
+                    transform="translate(2349.795 189.165)"
+                  >
+                    <path
+                      id="Path_19"
+                      data-name="Path 19"
+                      d="M6228.457,646.07c6.858,5.423,19.082,18.438,21.689,50.611,1.58-.516,32.7-10.1,56.636,10.845,18.319,16.032,19.193,38.374,19.28,42.175l15.462,4.36h46.008l-47.01-13.255c-.086-3.8-.96-26.143-19.279-42.175-23.932-20.944-55.057-11.361-56.636-10.845-2.608-32.173-14.832-45.187-21.69-50.61-26.2-20.714-77.79-12.607-134.139,24.258C6159.375,632.282,6204.516,627.142,6228.457,646.07Z"
+                      transform="translate(-5910.333 -624.752)"
+                      fill="#fff"
+                    />
+                    <path
+                      id="Path_20"
+                      data-name="Path 20"
+                      d="M5694.542,889.5c2.848-1.716,5.493-3.482,7.956-5.257a117.235,117.235,0,0,1-30.851,10.822h12.494A115.83,115.83,0,0,0,5694.542,889.5Z"
+                      transform="translate(-5671.648 -765.758)"
+                      fill="#fff"
+                    />
+                    <path
+                      id="Path_21"
+                      data-name="Path 21"
+                      d="M5877.772,750.61c14.085,4.73,20.8,19.908,22.895,25.305q6.557-6.283,13.133-12.058c-3.04-6.716-9.678-18.151-21.567-22.142-11.684-3.923-26.6-.039-39.5,10.718C5861.485,748.79,5870.292,748.1,5877.772,750.61Z"
+                      transform="translate(-5770.525 -687.117)"
+                      fill="#fff"
+                    />
+                    <path
+                      id="Path_3"
+                      data-name="Path 3"
+                      d="M5671.648,751.3h477.2l-47.009-13.255c-.086-3.8-.96-26.143-19.28-42.175-23.932-20.944-55.057-11.361-56.635-10.845-2.609-32.173-14.831-45.187-21.691-50.61-34.425-27.218-112.687-4.687-187.981,67.48-2.093-5.4-8.809-20.576-22.9-25.3-19.681-6.608-48.539,8.933-61.456,42.175a116.244,116.244,0,0,1-60.25,32.535Z"
+                      transform="translate(-5671.648 -623.244)"
+                      fill="#eff5fe"
+                    />
+                  </g>
+                  <g id="Cloud_6_Up" data-name="Cloud 6 Up" transform="translate(1667.76 75.132)">
+                    <path
+                      id="Path_17"
+                      data-name="Path 17"
+                      d="M4805.848,390.024c36.646,13.292,50.729,50.321,53.021,56.635,9.759-6.513,130.526,20.023,133.75,26.5h51.82L5002.263,459.9c-3.105-6.461-123.992-33.027-133.757-26.51-2.292-6.314-16.375-43.344-53.02-56.636-39.187-14.213-88.567,4.378-115.966,47.93C4727.861,390.76,4770.908,377.35,4805.848,390.024Z"
+                      transform="translate(-4458.803 -372.056)"
+                      fill="#fff"
+                    />
+                    <path
+                      id="Path_18"
+                      data-name="Path 18"
+                      d="M4382.308,511.076c37.131-22.714,48.915-37.1,71.1-38.56,10.191-.669,25.343,1.212,44.585,14.46a122.467,122.467,0,0,1,9.447-13.394c-19.15-13.128-34.236-15-44.394-14.331-22.181,1.455-33.965,15.846-71.1,38.56a462.934,462.934,0,0,1-42.175,22.9h16.043C4370.97,517.835,4376.5,514.63,4382.308,511.076Z"
+                      transform="translate(-4267.83 -419.603)"
+                      fill="#fff"
+                    />
+                    <path
+                      id="Path_5"
+                      data-name="Path 5"
+                      d="M4349.771,473.158h503.694L4811.291,459.9c-3.106-6.461-123.993-33.027-133.757-26.51-2.291-6.314-16.375-43.344-53.021-56.636-39.627-14.373-89.683,4.8-116.885,49.406-19.243-13.248-34.4-15.129-44.585-14.46-22.181,1.455-33.965,15.846-71.1,38.56A462.928,462.928,0,0,1,4349.771,473.158Z"
+                      transform="translate(-4267.83 -372.055)"
+                      fill="#eff5fe"
+                    />
+                    <ellipse
+                      id="Ellipse_5"
+                      data-name="Ellipse 5"
+                      cx="246.425"
+                      cy="3.778"
+                      rx="246.425"
+                      ry="3.778"
+                      transform="translate(0 114.033)"
+                      fill="#eff5fe"
+                    />
+                  </g>
+                  <g id="Cloud_5_Up" data-name="Cloud 5 Up">
+                    <path
+                      id="Path_6"
+                      data-name="Path 6"
+                      d="M1539.131,347.845H495.567c7.738-14.706,24.368-40.741,55.455-57.84,73.913-40.655,155.637,9.858,159.061,12.05,6.721-12.194,17.939-27.549,36.15-38.56,37.832-22.873,90.225-17.556,134.961,12.05-4.28-20.273-1.268-33.917,4.82-43.38,46.3-71.96,315.434,27.978,380.783,53.02a91.556,91.556,0,0,1,33.74-16.87c50.236-12.877,93.369,24.106,98.811,28.92,12.133-9.362,23.28-12.973,31.33-14.46C1468.37,275.812,1511.031,301.938,1539.131,347.845Z"
+                      transform="translate(-495.567 -206.556)"
+                      fill="#eff5fe"
+                    />
+                    <path
+                      id="Path_10"
+                      data-name="Path 10"
+                      d="M1717.957,304.095a91.549,91.549,0,0,1,33.74-16.87c50.236-12.877,93.369,24.106,98.811,28.92,12.133-9.362,23.28-12.973,31.33-14.46,32.546-6.013,68.8,12.651,96.179,47.416h25.039c-28.1-45.907-70.761-72.034-108.451-65.07-8.05,1.488-19.2,5.1-31.33,14.46-5.442-4.814-48.575-41.8-98.811-28.92a91.553,91.553,0,0,0-33.74,16.87c-65.349-25.042-334.485-124.979-380.783-53.02a39.959,39.959,0,0,0-3.915,7.9C1410.6,189.193,1655.964,280.339,1717.957,304.095Z"
+                      transform="translate(-959.941 -207.241)"
+                      fill="#fff"
+                    />
+                    <path
+                      id="Path_11"
+                      data-name="Path 11"
+                      d="M543.66,390.313c73.913-40.655,155.637,9.858,159.062,12.05a112.156,112.156,0,0,1,12.263-17.97c-7.708-4.761-86.812-51.2-158.558-11.735-25.269,13.9-40.985,33.7-50.139,48.525A132.2,132.2,0,0,1,543.66,390.313Z"
+                      transform="translate(-501.421 -288.64)"
+                      fill="#fff"
+                    />
+                    <path
+                      id="Path_12"
+                      data-name="Path 12"
+                      d="M992.282,333.823c37.831-22.873,90.225-17.556,134.961,12.05-2.177-10.307-2.465-18.9-1.425-26.1-41.292-21.957-86.875-24.1-120.769-3.6-16.933,10.238-27.817,24.23-34.664,35.946A95.489,95.489,0,0,1,992.282,333.823Z"
+                      transform="translate(-754.83 -258.66)"
+                      fill="#fff"
+                    />
+                  </g>
+                </g>
+                <ellipse
+                  id="Cloud_4"
+                  data-name="Cloud 4"
+                  cx="177.137"
+                  cy="4.519"
+                  rx="177.137"
+                  ry="4.519"
+                  transform="translate(2463.066 470.86)"
+                  fill="#fff"
+                />
+                <g id="Cloud_3" data-name="Cloud 3" transform="translate(1336.984 384.702)">
+                  <ellipse
+                    id="Ellipse_4"
+                    data-name="Ellipse 4"
+                    cx="136.932"
+                    cy="5.423"
+                    rx="136.932"
+                    ry="5.423"
+                    transform="translate(253.93 37.355)"
+                    fill="#fff"
+                  />
+                  <ellipse
+                    id="Cloud_3-2"
+                    data-name="Cloud 3"
+                    cx="241.303"
+                    cy="6.929"
+                    rx="241.303"
+                    ry="6.929"
+                    fill="#fff"
+                  />
+                </g>
+                <g id="Cloud_2" data-name="Cloud 2" transform="translate(743.215 219.108)">
+                  <path
+                    id="Path_2"
+                    data-name="Path 2"
+                    d="M2132.706,804.487c67.745,5.866,141.177,9.62,219.613,9.941,78.408.322,151.843-2.827,219.613-8.134l-64.167-10.845a90.743,90.743,0,0,0-27.112-33.439c-8.208-6.166-31.324-23.53-57.841-16.268-15.068,4.127-24.558,14.378-28.92,19.883,1.111-3.925,7.778-29.008-7.23-50.611-14.192-20.427-45.363-34.286-69.589-19.883-18.329,10.9-27.575,34.937-21.69,58.744-3.9-2.6-13.173-7.943-25.3-7.23-16.151.949-30.775,12.25-37.958,28.92-5.018-8.025-10.857-10.758-13.556-11.749-13.665-5.018-32.343,3.229-44.284,21.69a95.531,95.531,0,0,1-41.573,18.979Z"
+                    transform="translate(-2132.706 -689.201)"
+                    fill="#eff4ed"
+                  />
+                  <path
+                    id="Path_13"
+                    data-name="Path 13"
+                    d="M2384.886,827.065c12.131-.713,21.405,4.632,25.305,7.23a59.727,59.727,0,0,1-1.689-17.219,38.6,38.6,0,0,0-12.754-1.414c-12.968.762-24.948,8.2-32.886,19.733A40.668,40.668,0,0,1,2384.886,827.065Z"
+                    transform="translate(-2258.378 -758.217)"
+                    fill="#fff"
+                  />
+                  <path
+                    id="Path_14"
+                    data-name="Path 14"
+                    d="M2510.639,706.536c24.226-14.4,55.4-.545,69.589,19.883,15.008,21.6,8.341,46.686,7.23,50.61,4.361-5.5,13.851-15.756,28.92-19.883,26.517-7.263,49.632,10.1,57.841,16.268a90.746,90.746,0,0,1,27.113,33.439l19.105,3.229q28.562-1.634,55.925-3.787l-64.167-10.845a90.749,90.749,0,0,0-27.113-33.439c-8.208-6.166-31.323-23.53-57.84-16.268-15.068,4.127-24.558,14.378-28.92,19.883,1.111-3.925,7.778-29.008-7.23-50.611-14.192-20.427-45.363-34.286-69.589-19.883a45.424,45.424,0,0,0-14.4,13.758C2508.239,708.051,2509.417,707.262,2510.639,706.536Z"
+                    transform="translate(-2337.135 -689.201)"
+                    fill="#fff"
+                  />
+                  <path
+                    id="Path_15"
+                    data-name="Path 15"
+                    d="M2163.416,917.158a61.549,61.549,0,0,1,5.908-7.736,95.47,95.47,0,0,1-36.618,15.311q8.489.735,17.1,1.423A95.681,95.681,0,0,0,2163.416,917.158Z"
+                    transform="translate(-2132.706 -809.448)"
+                    fill="#fff"
+                  />
+                  <path
+                    id="Path_16"
+                    data-name="Path 16"
+                    d="M2260.025,863.231c2.7.991,8.538,3.725,13.555,11.749a52.594,52.594,0,0,1,8.963-14.156,25.868,25.868,0,0,0-11.656-9c-12.95-4.755-30.4,2.409-42.353,18.885C2238.854,862.6,2250.625,859.779,2260.025,863.231Z"
+                    transform="translate(-2185.031 -777.211)"
+                    fill="#fff"
+                  />
+                </g>
+              </g>
+              <g
+                id="Birds_ANIMATION"
+                data-name="Birds ANIMATION"
+                transform="translate(1376.247 360.152)"
+                ref="birds"
+              >
+                <path
+                  id="Bird_1"
+                  data-name="Bird 1"
+                  d="M726.552,1086.31a58.842,58.842,0,0,1,30.728-7.23,44.668,44.668,0,0,1,29.523-14.46c-4.837,2.219-8.673,3.9-11.146,4.971-5.469,2.366-8.505,3.571-11.749,6.628a27.846,27.846,0,0,0-3.163,3.615c-.46.658-.811,1.234-1.054,1.657-3.828.047-7.961.269-12.352.753A127.152,127.152,0,0,0,726.552,1086.31Z"
+                  transform="translate(-726.552 -942.964)"
+                  fill="#7698b4"
+                />
+                <path
+                  id="Bird_2"
+                  data-name="Bird 2"
+                  d="M1033.246,1103.1a27.374,27.374,0,0,1,13.886,4.786,20.776,20.776,0,0,1,15.207,1.642c-2.454-.328-4.381-.619-5.62-.812-2.74-.427-4.233-.707-6.269-.31a12.988,12.988,0,0,0-2.142.637c-.344.144-1.257.379-1.457.485a44.742,44.742,0,0,0-4.416-2.866A59.189,59.189,0,0,0,1033.246,1103.1Z"
+                  transform="translate(-894.016 -963.973)"
+                  fill="#7698b4"
+                />
+                <path
+                  id="Bird_3"
+                  data-name="Bird 3"
+                  d="M1156.869,1087.611a27.383,27.383,0,0,1,14.43-2.738,20.782,20.782,0,0,1,14.016-6.123c-2.293.933-4.11,1.637-5.282,2.085-2.59.989-4.026,1.487-5.6,2.843a12.928,12.928,0,0,0-1.544,1.616c-.228.3-.9.953-1.024,1.144a44.706,44.706,0,0,0-5.256-.3A59.189,59.189,0,0,0,1156.869,1087.611Z"
+                  transform="translate(-936.276 -924.774)"
+                  fill="#7698b4"
+                />
+                <path
+                  id="Bird_4"
+                  data-name="Bird 4"
+                  d="M998.869,1038.612a27.381,27.381,0,0,1,14.43-2.739,20.781,20.781,0,0,1,14.016-6.123c-2.293.933-4.11,1.637-5.282,2.085-2.59.989-4.026,1.487-5.6,2.843a12.927,12.927,0,0,0-1.544,1.616c-.228.3-.9.953-1.024,1.144a44.735,44.735,0,0,0-5.256-.3A59.173,59.173,0,0,0,998.869,1038.612Z"
+                  transform="translate(-891.85 -936.544)"
+                  fill="#7698b4"
+                />
+                <path
+                  id="Bird_5"
+                  data-name="Bird 5"
+                  d="M1128.912,946.546a27.376,27.376,0,0,1,14.353,3.117,20.787,20.787,0,0,1,15.295-.16c-2.476-.037-4.424-.1-5.677-.145-2.771-.1-4.287-.2-6.261.431a12.933,12.933,0,0,0-2.052.884c-.325.184-1.2.525-1.39.653a44.824,44.824,0,0,0-4.723-2.326A59.165,59.165,0,0,0,1128.912,946.546Z"
+                  transform="translate(-946.252 -878.467)"
+                  fill="#7698b4"
+                />
+                <path
+                  id="Bird_6"
+                  data-name="Bird 6"
+                  d="M1074.57,796.638a27.38,27.38,0,0,1,13.913,4.706A20.78,20.78,0,0,1,1103.7,802.9c-2.456-.314-4.384-.594-5.624-.78-2.742-.411-4.237-.683-6.271-.274a12.982,12.982,0,0,0-2.139.649c-.344.146-1.254.386-1.455.494a44.622,44.622,0,0,0-4.432-2.841A59.145,59.145,0,0,0,1074.57,796.638Z"
+                  transform="translate(-916.579 -796.638)"
+                  fill="#7698b4"
+                />
+              </g>
+              <g id="Sun" transform="translate(3567.751 455.651)">
+                <circle
+                  id="Ellipse_6"
+                  data-name="Ellipse 6"
+                  cx="60.803"
+                  cy="60.803"
+                  r="60.803"
+                  fill="#fff"
+                  opacity="0.39"
+                />
+                <circle
+                  id="Ellipse_7"
+                  data-name="Ellipse 7"
+                  cx="51.966"
+                  cy="51.966"
+                  r="51.966"
+                  transform="translate(9.297 9.046)"
+                  fill="#ffffd9"
+                />
+              </g>
+            </g>
             <g
               id="Ground_and_River"
               data-name="Ground and River"
@@ -1485,9 +1768,9 @@
               />
               <g
                 id="Windmils_ANIMATION"
-                ref="Windmils_ANIMATION"
                 data-name="Windmils ANIMATION"
                 transform="translate(524.742 -30.146)"
+                ref="windmils"
               >
                 <g id="Слой_26" data-name="Слой 26" transform="translate(47.174 42.696)">
                   <rect
@@ -1649,7 +1932,7 @@
                 </g>
               </g>
             </g>
-            <g id="Boats" transform="translate(357.045 745.616)">
+            <g id="Boats" ref="boats" transform="translate(357.045 745.616)">
               <path
                 id="Path_160"
                 data-name="Path 160"
@@ -3842,6 +4125,7 @@
               id="Red_Boat_ANIMATION"
               data-name="Red Boat ANIMATION"
               transform="translate(315.953 693.279)"
+              ref="redBoat"
             >
               <path
                 id="Path_156"
@@ -10416,7 +10700,7 @@
 // IMPORTS
 //==========================================
 import { overlayAnimation } from "./overlay-animation";
-import anime from "animejs";
+import { illustrationAnimation } from "./illustration-animation";
 
 // EXPORT
 // =========================================
@@ -10427,80 +10711,37 @@ export default {
   // DATA ===================================>
   data: () => ({
     position: 1000,
-    overlayIsActive:false
+    overlayIsActive: false
   }),
 
   // WATCH
   //====================================================================>
   watch: {
     value: function(newVal, oldVal) {
-      let from = this.getPosition(oldVal);
-      let to = this.getPosition(newVal);
-      this.movingStart(from, to);
-      //  здесь конструкция из swith case
+      // overlay
       const { overlayPath } = this.$refs;
       if (newVal === "empty-layout") {
         overlayAnimation.overlayAnimationStart(overlayPath);
-        this.overlayIsActive = true
+        this.overlayIsActive = true;
       }
       if (oldVal === "empty-layout" && newVal !== "empty-layout") {
         overlayAnimation.overlayAnimationEnd(overlayPath);
-        this.overlayIsActive = false
+        this.overlayIsActive = false;
       }
-    }
-  },
-
-  mounted() {
-       const { overlayPath } = this.$refs;
-    if(this.overlayIsActive===true){
-       overlayAnimation.overlayAnimationStart(overlayPath);
-    }
-  },
-  // Methods ===================================>
-  methods: {
-    movingStart(from, to) {
+      // illustration
+      let from = illustrationAnimation.getPosition(oldVal);
+      let to = illustrationAnimation.getPosition(newVal);
       const { illustration } = this.$refs;
-      const a = anime
-        .timeline({
-          targets: illustration,
-          easing: "easeInOutSine",
-          direction: "normal",
-          autoplay: true,
-          duration: 750
-        })
-        .add({
-          translateX: [from, to]
-        });
-      a.play();
-    },
-    getPosition(Layout) {
-      let Position = "0%";
-      switch (Layout) {
-        case "main-layout":
-          Position = "15%";
-          break;
-        case "about-layout":
-          Position = "0%";
-          break;
-        case "business-layout":
-          Position = "-15%";
-          break;
-        case "school-layout":
-          Position = "-30%";
-          break;
-        case "volunteers-layout":
-          Position = "-45%";
-          break;
-        case "contact-layout":
-          Position = "-60%";
-          break;
-
-        default:
-          Position = "0%";
-          break;
+      illustrationAnimation.movingStart(illustration, from, to);
+      if (newVal === "main-layout") {
+        illustrationAnimation.animationHome(this.$refs);
       }
-      return Position;
+      //  здесь конструкция из swith case
     }
-  }
+  },
+
+  mounted() {},
+  // Methods ===================================>
+  methods: {}
 };
 </script>

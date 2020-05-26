@@ -1,25 +1,27 @@
 /* Базовые стили */
-@import './base/fonts.css';
-@import './base/customProperties.css';
-@import './base/customMedia.css';
-@import './base/base.css';
-@import './base/container.css';
-@import './base/animation.css';
+@import "./base/fonts.css";
+@import "./base/customProperties.css";
+@import "./base/customMedia.css";
+@import "./base/base.css";
+@import "./base/container.css";
+@import "./base/animation.css";
 
 /* Элементы */
-@import './elements/link.css';
-@import './elements/icons.css';
+@import "./elements/link.css";
+@import "./elements/icons.css";
+/* Особая ссылка на главной странице */
+@import "./elements/home-button.css";
 
 /* Компоненты */
-@import './components/Background.css';
-@import './components/Burger.css';
-@import './components/Footer.css';
-@import './components/Main.css';
-@import './components/MainLayout.css';
-@import './components/Navbar.css';
-@import './components/VSlider.css';
-@import './components/Breadcrumbs.css';
+@import "./components/Background.css";
+@import "./components/Burger.css";
+@import "./components/Footer.css";
+@import "./components/Main.css";
+@import "./components/MainLayout.css";
+@import "./components/Navbar.css";
+@import "./components/VSlider.css";
+@import "./components/Breadcrumbs.css";
 
 /* Страницы */
-@import './pages/partners.css';
-@import './pages/targets.css';
+@import "./pages/partners.css";
+@import "./pages/targets.css";

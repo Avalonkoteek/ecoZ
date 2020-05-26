@@ -1,0 +1,36 @@
+.home-button {
+  width: 380px;
+  border: 5px solid #d6af9a;
+  height: 80px;
+  border-radius: 40px;
+  transition: border 0.4s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    border: 5px solid #349a8a;
+  }
+  @media (--tablet-lg) {
+    border: none;
+    background-color: #349a8a;
+    height: 42px;
+    width: 200px;
+  }
+}
+
+.home-button a {
+  color: #343434;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover {
+    color: #949494;
+  }
+  @media (--tablet-lg) {
+    color: #fffaeb;
+    font-size: 14px;
+    &:hover {
+      color: #fffaeb;
+    }
+  }
+}

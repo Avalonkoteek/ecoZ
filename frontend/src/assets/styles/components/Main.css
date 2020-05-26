@@ -4,6 +4,9 @@
   padding-bottom: 200px;
   background-position: top left;
   background-size: cover;
+  @media (--desktop) {
+    min-height: 800px;
+  }
 }
 
 .main__section {

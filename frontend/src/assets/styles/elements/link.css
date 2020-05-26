@@ -1,35 +1,34 @@
 .link {
-    color: var(--cl-grey);
+  color: var(--cl-grey);
+  user-select: none;
+  transition: all var(--time) ease;
+
+  .icon {
+    fill: var(--cl-grey);
     transition: all var(--time) ease;
+  }
 
-        .icon {
-            fill: var(--cl-grey);
-            transition: all var(--time) ease;
-        }
+  &:hover {
+    color: var(--cl-brown);
 
-    &:hover {
-        color: var(--cl-brown);
-
-        .icon {
-            fill: var(--cl-brown);
-        }
-
-        .link__buttom-line {
-            border-bottom: none;
-        }
+    .icon {
+      fill: var(--cl-brown);
     }
 
-    &.active {
-        color: var(--cl-brown);
-
-        .icon {
-            fill: var(--cl-brown);
-        }
+    .link__buttom-line {
+      border-bottom: none;
     }
+  }
 
-    &__buttom-line {
-        border-bottom: 1px solid var(--cl-grey);
+  &.active {
+    color: var(--cl-brown);
 
+    .icon {
+      fill: var(--cl-brown);
     }
+  }
 
+  &__buttom-line {
+    border-bottom: 1px solid var(--cl-grey);
+  }
 }
