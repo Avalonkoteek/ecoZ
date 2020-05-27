@@ -5,14 +5,10 @@
       <div class="contactForm__wrapper">
         <form class="contactForm">
           <div class="contactForm__box">
-            <label class>
-              <input type="checkbox" />
-              Я соглашаюсь с
-              <a>политикой обработки персональных данных</a>
-            </label>
+            <Checkbox />
             <label for="name">Ваши ФИО или ФИ</label>
             <input type="text" name="name" placeholder="Антон Антонович Ерошин" />
-            <label for="name">Ваши ФИО или ФИ</label>
+            <label for="name">E-mail для связи</label>
             <input type="email" name="name" />
             <label for="name">Ваши ФИО или ФИ</label>
             <input type="text" name="name" />
@@ -30,9 +26,11 @@
 </template>
 <script>
 import ButtonBack from "../controls/ButtonBack.vue";
+import Checkbox from "../controls/Checkbox.vue";
 export default {
   components: {
-    ButtonBack
+    ButtonBack,
+    Checkbox
   }
 };
 </script>
