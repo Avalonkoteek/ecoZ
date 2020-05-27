@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section section__contact">
     <div class="container">
       <ButtonBack :to="'/contact'" />
       <div class="contactForm__wrapper">
@@ -10,10 +10,12 @@
             <input type="text" name="name" placeholder="Антон Антонович Ерошин" />
             <label for="name">E-mail для связи</label>
             <input type="email" name="name" />
-            <label for="name">Ваши ФИО или ФИ</label>
-            <input type="text" name="name" />
-            <label for="name">Ваши ФИО или ФИ</label>
-            <input type="text" name="name" />
+            <label for="name">Ваш номер телефона</label>
+            <input type="tel" name="name" />
+            <select>
+              <option>Пункт 1</option>
+              <option>Пункт 2</option>
+            </select>
           </div>
           <div class="contactForm__box">
             <textarea />
