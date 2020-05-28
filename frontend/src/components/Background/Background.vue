@@ -1,22 +1,7 @@
 <template>
   <div ref="bg" class="background">
     <!-- Overlay -->
-    <svg
-      class="background__overlay"
-      ref="overlay"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1440 900"
-      preserveAspectRatio="none"
-    >
-      <path
-        id="BG"
-        ref="overlayPath"
-        d="M0,0h1441.727v125.506s-831.476-58.914-848.645,78.438,115.032,224.91,144.219,381.146-19.609,314.93-19.609,314.93h-717.427Z"
-        fill="#fffaeb"
-        stroke="#707070"
-        stroke-width="0"
-      />
-    </svg>
+<Overlay  v-model="value" />
 
     <!-- BG_SVG background__svg-->
     <div class="background__illustration-wrapper">
@@ -10699,7 +10684,8 @@
 <script>
 // IMPORTS
 //==========================================
-import { overlayAnimation } from "./overlay-animation";
+import Overlay from "./Overlay"
+
 import { illustrationAnimation } from "./illustration-animation";
 
 // EXPORT
@@ -10718,16 +10704,7 @@ export default {
   //====================================================================>
   watch: {
     value: function(newVal, oldVal) {
-      // overlay
-      const { overlayPath } = this.$refs;
-      if (newVal === "empty-layout") {
-        overlayAnimation.overlayAnimationStart(overlayPath);
-        this.overlayIsActive = true;
-      }
-      if (oldVal === "empty-layout" && newVal !== "empty-layout") {
-        overlayAnimation.overlayAnimationEnd(overlayPath);
-        this.overlayIsActive = false;
-      }
+    
       // illustration
       let from = illustrationAnimation.getPosition(oldVal);
       let to = illustrationAnimation.getPosition(newVal);
@@ -10742,6 +10719,9 @@ export default {
 
   mounted() {},
   // Methods ===================================>
-  methods: {}
+  methods: {},
+  components:{
+Overlay
+  }
 };
 </script>
