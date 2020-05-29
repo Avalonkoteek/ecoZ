@@ -22,13 +22,13 @@ export default {
   props: ["value"],
   name: "overlay",
   watch: {
-    value: function(newVal, oldVal) {
+    value: function(newVal) {
+      console.log(newVal);
       const { overlayPath } = this.$refs;
-      if (newVal === true) {
+      if (newVal) {
         overlayAnimation.overlayAnimationStart(overlayPath);
         this.overlayIsActive = true;
-      }
-      if (oldVal === "empty-layout" && newVal !== "empty-layout") {
+      } else {
         overlayAnimation.overlayAnimationEnd(overlayPath);
         this.overlayIsActive = false;
       }

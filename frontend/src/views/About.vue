@@ -1,29 +1,31 @@
 <template>
   <div class="about">
-    <Main v-bind:content="content"/>
+    <Overlay />
+    <Main v-bind:content="content" />
   </div>
 </template>
 
 <script>
-
 import Main from "../components/Main/Main";
-
+import Overlay from "../components/Background/Overlay";
 
 export default {
   data: () => ({
-    content:{
+    content: {
       title: "Eco-Z - проект организации «Экология будущего»",
-      description: "Хотите знать, с чего начать? Куда и какие продукты сдавать? Какие законы регулируют обращение с отходами? Как в офисе внедрить «зелёный подход»? ",
+      description:
+        "Хотите знать, с чего начать? Куда и какие продукты сдавать? Какие законы регулируют обращение с отходами? Как в офисе внедрить «зелёный подход»? ",
       links: [
-        { name: "Цели", to: "about/targets"},
+        { name: "Цели", to: "about/targets" },
         { name: "Деятельность", to: "#2" },
-        { name: "Партнеры", to: "about/partners" },
+        { name: "Партнеры", to: "about/partners" }
       ]
-      }
-    }),
+    }
+  }),
   name: "about",
   components: {
-    Main
+    Main,
+    Overlay
   }
 };
 </script>

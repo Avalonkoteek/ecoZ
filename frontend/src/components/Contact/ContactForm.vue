@@ -1,5 +1,6 @@
 <template>
   <section class="section section__contact">
+    <Overlay v-model="isOpen" />
     <div class="container">
       <ButtonBack :to="'/contact'" />
       <div class="contactForm__wrapper">
@@ -27,12 +28,23 @@
   </section>
 </template>
 <script>
+import Overlay from "../Background/Overlay";
 import ButtonBack from "../controls/ButtonBack.vue";
 import Checkbox from "../controls/Checkbox.vue";
 export default {
   components: {
     ButtonBack,
-    Checkbox
+    Checkbox,
+    Overlay
+  },
+  data: () => ({
+    isOpen: false
+  }),
+  mounted() {
+    this.isOpen = true;
+  },
+  beforeDestroy() {
+    this.isOpen = false;
   }
 };
 </script>

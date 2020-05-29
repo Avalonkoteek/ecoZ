@@ -1,5 +1,6 @@
 <template>
   <section class="main">
+    <Overlay />
     <div class="container">
       <div class="main__section">
         <h2 class="main__title">{{content.title}}</h2>
@@ -60,6 +61,7 @@
 </template>
 
 <script>
+import Overlay from "../components/Background/Overlay";
 import Breadcrumbs from "../components/controls/Breadcrumbs";
 export default {
   data: () => ({
@@ -71,7 +73,8 @@ export default {
     }
   }),
   components: {
-    Breadcrumbs
+    Breadcrumbs,
+    Overlay
   },
   name: "contact"
 };

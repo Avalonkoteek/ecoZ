@@ -5,6 +5,8 @@ const About = () => import("../views/About");
 const AboutPartners = () => import("../components/About/Parthners");
 const AboutTargets = () => import("../components/About/Targets");
 const ContactForm = () => import("../components/Contact/ContactForm");
+// Buisness
+const Services = () => import("../components/Buisness/Services");
 // const About = () => import("../views/About.vue")
 
 export const routes = [
@@ -48,6 +50,11 @@ export const routes = [
     name: "business",
     meta: { layout: "business" },
     component: () => import("../views/Business.vue"),
+  },
+  {
+    path: "/business/services",
+    name: "services",
+    component: Services,
   },
   {
     path: "/school",

@@ -1,7 +1,7 @@
 <template>
   <div ref="bg" class="background">
     <!-- Overlay -->
-<Overlay  v-model="value" />
+    <!-- <Overlay  v-model="value" /> -->
 
     <!-- BG_SVG background__svg-->
     <div class="background__illustration-wrapper">
@@ -10684,7 +10684,7 @@
 <script>
 // IMPORTS
 //==========================================
-import Overlay from "./Overlay"
+// import Overlay from "./Overlay"
 
 import { illustrationAnimation } from "./illustration-animation";
 
@@ -10704,7 +10704,6 @@ export default {
   //====================================================================>
   watch: {
     value: function(newVal, oldVal) {
-    
       // illustration
       let from = illustrationAnimation.getPosition(oldVal);
       let to = illustrationAnimation.getPosition(newVal);
@@ -10720,8 +10719,8 @@ export default {
   mounted() {},
   // Methods ===================================>
   methods: {},
-  components:{
-Overlay
+  components: {
+    // Overlay
   }
 };
 </script>
