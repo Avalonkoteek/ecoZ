@@ -4,7 +4,7 @@
     <!-- <Overlay  v-model="value" /> -->
 
     <!-- BG_SVG background__svg-->
-    <div class="background__illustration-wrapper">
+    <div class="background__illustration-wrapper" ref="svg__bg">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="background__svg"
@@ -1918,62 +1918,67 @@
               </g>
             </g>
             <g id="Boats" ref="boats" transform="translate(357.045 745.616)">
-              <path
-                id="Path_160"
-                data-name="Path 160"
-                d="M0,4.35.773,6.684H38.142L40.2,0Z"
-                transform="matrix(0.996, 0.087, -0.087, 0.996, 17.169, 26.119)"
-                fill="#70a4b7"
-              />
-              <path
-                id="Path_161"
-                data-name="Path 161"
-                d="M2.9,29.44,0,0,17.343,27.935Z"
-                transform="matrix(0.996, 0.087, -0.087, 0.996, 36.147, 0.41)"
-                fill="#ffedc5"
-              />
-              <path
-                id="Path_162"
-                data-name="Path 162"
-                d="M4.7,0,0,24.188,7.606,29.44Z"
-                transform="matrix(0.996, 0.087, -0.087, 0.996, 31.46, 0)"
-                fill="#70a4b7"
-              />
-              <path
-                id="Path_163"
-                data-name="Path 163"
-                d="M39.729,1.537,40.2,0,0,4.35.475,5.784Z"
-                transform="matrix(0.996, 0.087, -0.087, 0.996, 17.169, 26.119)"
-                fill="#4c7c89"
-              />
-              <path
-                id="Path_164"
-                data-name="Path 164"
-                d="M0,6.076l1.08,3.26h52.2L56.159,0Z"
-                transform="matrix(0.999, 0.035, -0.035, 0.999, 123.923, 57.994)"
-                fill="#70a4b7"
-              />
-              <path
-                id="Path_165"
-                data-name="Path 165"
-                d="M4.052,41.123,0,0,24.225,39.022Z"
-                transform="matrix(0.999, 0.035, -0.035, 0.999, 148.517, 20.744)"
-                fill="#fff"
-              />
-              <path
-                id="Path_166"
-                data-name="Path 166"
-                d="M6.572,0,0,33.788l10.624,7.336Z"
-                transform="matrix(0.999, 0.035, -0.035, 0.999, 141.949, 20.515)"
-                fill="#8bc6c3"
-              />
-              <path
-                id="Path_167"
-                data-name="Path 167"
-                d="M55.5,2.146,56.159,0,0,6.076l.663,2Z"
-                transform="matrix(0.999, 0.035, -0.035, 0.999, 123.923, 57.994)"
-                fill="#4c7c89"
-              />
+              <g>
+                <path
+                  id="Path_160"
+                  data-name="Path 160"
+                  d="M0,4.35.773,6.684H38.142L40.2,0Z"
+                  transform="matrix(0.996, 0.087, -0.087, 0.996, 17.169, 26.119)"
+                  fill="#70a4b7"
+                />
+                <path
+                  id="Path_161"
+                  data-name="Path 161"
+                  d="M2.9,29.44,0,0,17.343,27.935Z"
+                  transform="matrix(0.996, 0.087, -0.087, 0.996, 36.147, 0.41)"
+                  fill="#ffedc5"
+                />
+                <path
+                  id="Path_162"
+                  data-name="Path 162"
+                  d="M4.7,0,0,24.188,7.606,29.44Z"
+                  transform="matrix(0.996, 0.087, -0.087, 0.996, 31.46, 0)"
+                  fill="#70a4b7"
+                />
+
+                <path
+                  id="Path_163"
+                  data-name="Path 163"
+                  d="M39.729,1.537,40.2,0,0,4.35.475,5.784Z"
+                  transform="matrix(0.996, 0.087, -0.087, 0.996, 17.169, 26.119)"
+                  fill="#4c7c89"
+                />
+              </g>
+              <g>
+                <path
+                  id="Path_164"
+                  data-name="Path 164"
+                  d="M0,6.076l1.08,3.26h52.2L56.159,0Z"
+                  transform="matrix(0.999, 0.035, -0.035, 0.999, 123.923, 57.994)"
+                  fill="#70a4b7"
+                />
+                <path
+                  id="Path_165"
+                  data-name="Path 165"
+                  d="M4.052,41.123,0,0,24.225,39.022Z"
+                  transform="matrix(0.999, 0.035, -0.035, 0.999, 148.517, 20.744)"
+                  fill="#fff"
+                />
+                <path
+                  id="Path_166"
+                  data-name="Path 166"
+                  d="M6.572,0,0,33.788l10.624,7.336Z"
+                  transform="matrix(0.999, 0.035, -0.035, 0.999, 141.949, 20.515)"
+                  fill="#8bc6c3"
+                />
+                <path
+                  id="Path_167"
+                  data-name="Path 167"
+                  d="M55.5,2.146,56.159,0,0,6.076l.663,2Z"
+                  transform="matrix(0.999, 0.035, -0.035, 0.999, 123.923, 57.994)"
+                  fill="#4c7c89"
+                />
+              </g>
               <rect
                 id="Rectangle_69"
                 data-name="Rectangle 69"
@@ -10696,7 +10701,7 @@ export default {
 
   // DATA ===================================>
   data: () => ({
-    position: 1000,
+    svgWidth: 0,
     overlayIsActive: false
   }),
 
@@ -10705,25 +10710,24 @@ export default {
   watch: {
     value: function(newVal, oldVal) {
       // illustration
-      let from = illustrationAnimation.getPosition(oldVal);
-      let to = illustrationAnimation.getPosition(newVal);
-      const { illustration } = this.$refs;
-      illustrationAnimation.movingStart(illustration, from, to);
+      console.log(oldVal);
+      // let to = illustrationAnimation.getPosition(newVal);
+      // const { illustration } = this.$refs;
+      // illustrationAnimation.movingStart(illustration, to, this.svgWidth);
       if (newVal === "main-layout") {
         illustrationAnimation.animationHome(this.$refs);
       }
       //  здесь конструкция из swith case
     }
   },
-   beforeRouteLeave(to, from, next) {
-    console.log("почти ушел");
-    console.log(to, from);
-    next();
-  },
 
-  mounted() {},
+  mounted() {
+    var svgWidth = this.$refs.svg__bg.offsetWidth;
+    this.svgWidth = svgWidth;
+    console.log(svgWidth);
+  },
   // Methods ===================================>
-  methods: {},
+
   components: {
     // Overlay
   }

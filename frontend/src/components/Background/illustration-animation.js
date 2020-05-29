@@ -3,7 +3,9 @@ import anime from "animejs";
 export const illustrationAnimation = {
   // MOVING ILLUSTRATION
   //====================================
-  movingStart: function(illustration, from, to) {
+  movingStart: function(illustration, to, width) {
+    let newPosition = -0.15 * width + "px";
+    console.log(width);
     const a = anime
       .timeline({
         targets: illustration,
@@ -14,7 +16,7 @@ export const illustrationAnimation = {
       })
 
       .add({
-        translateX: to,
+        translateX: newPosition,
       });
 
     a.play();
@@ -55,17 +57,43 @@ export const illustrationAnimation = {
     //315.953 693.279)
     const { clouds, boats, redBoat, birds } = refs;
     console.log(clouds, boats, birds, redBoat);
-    console.log(refs);
+    let boatsArr = [];
+    boatsArr.push(boats.children[0]);
+    boatsArr.push(boats.children[1]);
+    console.log(boatsArr);
     anime({
-      targets: boats,
-      translateX: [420, 425],
-      translateY: [745, 746],
-
+      targets: [boats.children[0], boats.children[1]],
+      translateX: 2,
+      rotate: [{ value: "+=0.5" }, { value: "-=0.5" }],
+      duration: 1200,
+      delay: anime.stagger(100),
       loop: true,
-
-      delay: anime.stagger(200),
-      easing: "linear",
-      autoplay: true,
+      direction: "alternate",
+      easing: "easeInOutSine",
+    });
+    anime({
+      targets: [
+        birds.children[0],
+        birds.children[1],
+        birds.children[2],
+        birds.children[3],
+        birds.children[4],
+        birds.children[5],
+      ],
+      translateX: {
+        value: [-726, -725], // 100px * 2.5 = '250px'
+        duration: 100,
+      },
+      translateY: {
+        value: [-942, -941], // 100px * 2.5 = '250px'
+        duration: 100,
+      },
+      rotate: [{ value: "+=0.5" }, { value: "-=411" }],
+      duration: 4000,
+      delay: anime.stagger(1000),
+      loop: true,
+      direction: "alternate",
+      easing: "easeInOutSine",
     });
     anime({
       targets: redBoat,

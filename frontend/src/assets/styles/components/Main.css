@@ -1,9 +1,15 @@
 .main {
   width: 100%;
-  min-height: 900px;
+
   padding-bottom: 200px;
   background-position: top left;
   background-size: cover;
+  @media (--desktop-xl) {
+    min-height: 1600px;
+  }
+  @media (--desktop-lg) {
+    min-height: 900px;
+  }
   @media (--desktop) {
     min-height: 800px;
   }
