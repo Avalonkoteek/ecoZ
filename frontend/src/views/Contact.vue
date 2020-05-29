@@ -76,6 +76,11 @@ export default {
     Breadcrumbs,
     Overlay
   },
+  beforeRouteLeave(to, from, next) {
+    console.log("почти ушел");
+    console.log(to, from);
+    next();
+  },
   name: "contact"
 };
 </script>

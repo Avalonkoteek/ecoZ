@@ -29,7 +29,11 @@
     color: #565d8d;
   }
 }
+/* Price LIST
+================================================== */
 .services__item-box {
   display: flex;
   flex-direction: column;
+}
+.services__item {
 }

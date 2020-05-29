@@ -1,3 +1,5 @@
+/* HOME BUTTON
+========================================== */
 .home-button {
   width: 380px;
   border: 5px solid #d6af9a;
@@ -11,26 +13,32 @@
   &:hover {
     border: 5px solid #349a8a;
   }
+  /* Link in button */
+  a {
+    color: #343434;
+    text-decoration: none;
+    text-transform: uppercase;
+    @media (--tablet-lg) {
+      color: #fffaeb;
+      font-size: 14px;
+      &:hover {
+        color: #fffaeb;
+      }
+    }
+  }
+  &:hover a {
+    color: #949494;
+  }
+  /* Media  */
+
   @media (--tablet-lg) {
     border: none;
     background-color: #349a8a;
     height: 42px;
     width: 200px;
-  }
-}
-
-.home-button a {
-  color: #343434;
-  text-decoration: none;
-  text-transform: uppercase;
-  &:hover {
-    color: #949494;
-  }
-  @media (--tablet-lg) {
-    color: #fffaeb;
-    font-size: 14px;
-    &:hover {
-      color: #fffaeb;
-    }
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
 }

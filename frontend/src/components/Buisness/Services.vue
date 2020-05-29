@@ -1,5 +1,6 @@
 <template>
   <section class="section section__services">
+    <Overlay v-model="isOpen" />
     <div class="container container__services">
       <ButtonBack :to="'/about'" />
       <div class="services__wrapper">
@@ -46,3 +47,24 @@
     </div>
   </section>
 </template>
+<script>
+import Overlay from "../Background/Overlay";
+import ButtonBack from "../controls/ButtonBack.vue";
+
+export default {
+  components: {
+    ButtonBack,
+    Overlay
+  },
+  data: () => ({
+    isOpen: false
+  }),
+  mounted() {
+    this.isOpen = true;
+  },
+  beforeRouteLeave(to, from, next) {
+    this.isOpen = false;
+    setTimeout(next, 750);
+  }
+};
+</script>

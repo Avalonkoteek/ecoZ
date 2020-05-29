@@ -10715,6 +10715,11 @@ export default {
       //  здесь конструкция из swith case
     }
   },
+   beforeRouteLeave(to, from, next) {
+    console.log("почти ушел");
+    console.log(to, from);
+    next();
+  },
 
   mounted() {},
   // Methods ===================================>

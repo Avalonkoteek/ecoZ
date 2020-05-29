@@ -43,8 +43,9 @@ export default {
   mounted() {
     this.isOpen = true;
   },
-  beforeDestroy() {
+  beforeRouteLeave(to, from, next) {
     this.isOpen = false;
+    setTimeout(next, 750);
   }
 };
 </script>
