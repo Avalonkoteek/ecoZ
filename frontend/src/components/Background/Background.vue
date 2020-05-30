@@ -93,7 +93,11 @@
                 data-name="Clouds ANIMATION"
                 transform="translate(1262.751 97.585)"
               >
-                <g id="Clouds_Up" data-name="Clouds Up" transform="translate(0 0)">
+                <g
+                  id="Clouds_Up"
+                  data-name="Clouds Up"
+                  transform="translate(0 0)"
+                >
                   <g
                     id="Cloud_8_Up"
                     data-name="Cloud 8 Up"
@@ -162,7 +166,11 @@
                       fill="#eff5fe"
                     />
                   </g>
-                  <g id="Cloud_6_Up" data-name="Cloud 6 Up" transform="translate(1667.76 75.132)">
+                  <g
+                    id="Cloud_6_Up"
+                    data-name="Cloud 6 Up"
+                    transform="translate(1667.76 75.132)"
+                  >
                     <path
                       id="Path_17"
                       data-name="Path 17"
@@ -236,7 +244,11 @@
                   transform="translate(2463.066 470.86)"
                   fill="#fff"
                 />
-                <g id="Cloud_3" data-name="Cloud 3" transform="translate(1336.984 384.702)">
+                <g
+                  id="Cloud_3"
+                  data-name="Cloud 3"
+                  transform="translate(1336.984 384.702)"
+                >
                   <ellipse
                     id="Ellipse_4"
                     data-name="Ellipse 4"
@@ -257,7 +269,11 @@
                     fill="#fff"
                   />
                 </g>
-                <g id="Cloud_2" data-name="Cloud 2" transform="translate(743.215 219.108)">
+                <g
+                  id="Cloud_2"
+                  data-name="Cloud 2"
+                  transform="translate(743.215 219.108)"
+                >
                   <path
                     id="Path_2"
                     data-name="Path 2"
@@ -493,7 +509,12 @@
                   transform="translate(-191.138 -1541.859)"
                   fill="url(#linear-gradient-2)"
                 />
-                <g id="Слой_49" data-name="Слой 49" transform="translate(2.855)" opacity="0.1">
+                <g
+                  id="Слой_49"
+                  data-name="Слой 49"
+                  transform="translate(2.855)"
+                  opacity="0.1"
+                >
                   <path
                     id="Path_47"
                     data-name="Path 47"
@@ -530,7 +551,12 @@
                     fill="#4db5b0"
                   />
                 </g>
-                <g id="Слой_50" data-name="Слой 50" transform="translate(0 47.247)" opacity="0.27">
+                <g
+                  id="Слой_50"
+                  data-name="Слой 50"
+                  transform="translate(0 47.247)"
+                  opacity="0.27"
+                >
                   <path
                     id="Path_52"
                     data-name="Path 52"
@@ -1500,7 +1526,11 @@
                 transform="translate(-2059.826 -1230.47)"
                 fill="#93e1e5"
               />
-              <g id="trees_2" data-name="trees 2" transform="translate(185.773 63.187)">
+              <g
+                id="trees_2"
+                data-name="trees 2"
+                transform="translate(185.773 63.187)"
+              >
                 <path
                   id="Path_118"
                   data-name="Path 118"
@@ -1573,7 +1603,11 @@
                 />
               </g>
             </g>
-            <g id="Back_Trees" data-name="Back Trees" transform="translate(725.075 681.994)">
+            <g
+              id="Back_Trees"
+              data-name="Back Trees"
+              transform="translate(725.075 681.994)"
+            >
               <path
                 id="Path_128"
                 data-name="Path 128"
@@ -1582,7 +1616,11 @@
                 fill="#3e6d45"
               />
             </g>
-            <g id="Back_Things" data-name="Back Things" transform="translate(342.066 645.711)">
+            <g
+              id="Back_Things"
+              data-name="Back Things"
+              transform="translate(342.066 645.711)"
+            >
               <g id="Roads" transform="translate(0 63.316)">
                 <path
                   id="Path_129"
@@ -1642,7 +1680,11 @@
                   transform="translate(-1370.64 -1738.545)"
                   fill="#5b5b5b"
                 />
-                <g id="Road_Lines" data-name="Road Lines" transform="translate(903.663 101.39)">
+                <g
+                  id="Road_Lines"
+                  data-name="Road Lines"
+                  transform="translate(903.663 101.39)"
+                >
                   <path
                     id="Road_Line"
                     data-name="Road Line"
@@ -1757,7 +1799,11 @@
                 transform="translate(524.742 -30.146)"
                 ref="windmils"
               >
-                <g id="Слой_26" data-name="Слой 26" transform="translate(47.174 42.696)">
+                <g
+                  id="Слой_26"
+                  data-name="Слой 26"
+                  transform="translate(47.174 42.696)"
+                >
                   <rect
                     id="Rectangle_66"
                     data-name="Rectangle 66"
@@ -1766,7 +1812,10 @@
                     transform="translate(13.255 31.328)"
                     fill="#dde8eb"
                   />
-                  <g id="Spin1" transform="translate(-2.056 89.599) rotate(-118)">
+                  <g
+                    id="Spin1"
+                    transform="translate(-2.056 89.599) rotate(-118)"
+                  >
                     <path
                       id="Path_147"
                       data-name="Path 147"
@@ -1810,7 +1859,11 @@
                     />
                   </g>
                 </g>
-                <g id="Слой_27" data-name="Слой 27" transform="translate(249.828 33.542)">
+                <g
+                  id="Слой_27"
+                  data-name="Слой 27"
+                  transform="translate(249.828 33.542)"
+                >
                   <rect
                     id="Rectangle_67"
                     data-name="Rectangle 67"
@@ -1862,7 +1915,11 @@
                     />
                   </g>
                 </g>
-                <g id="Слой_28" data-name="Слой 28" transform="translate(185.056 48.543)">
+                <g
+                  id="Слой_28"
+                  data-name="Слой 28"
+                  transform="translate(185.056 48.543)"
+                >
                   <rect
                     id="Rectangle_68"
                     data-name="Rectangle 68"
@@ -1871,7 +1928,10 @@
                     transform="translate(7.264 17.702)"
                     fill="#dde8eb"
                   />
-                  <g id="Spin2" transform="translate(-1.752 50.74) rotate(-118)">
+                  <g
+                    id="Spin2"
+                    transform="translate(-1.752 50.74) rotate(-118)"
+                  >
                     <path
                       id="Path_153"
                       data-name="Path 153"
@@ -2004,7 +2064,11 @@
                 fill="#ccfffa"
               />
             </g>
-            <g id="Ground_3" data-name="Ground 3" transform="translate(613.611 816.71)">
+            <g
+              id="Ground_3"
+              data-name="Ground 3"
+              transform="translate(613.611 816.71)"
+            >
               <path
                 id="Path_168"
                 data-name="Path 168"
@@ -2035,7 +2099,11 @@
               />
             </g>
             <g id="Houses" transform="translate(965.292 718.26)">
-              <g id="Слой_29" data-name="Слой 29" transform="translate(0 17.922)">
+              <g
+                id="Слой_29"
+                data-name="Слой 29"
+                transform="translate(0 17.922)"
+              >
                 <path
                   id="Path_182"
                   data-name="Path 182"
@@ -2289,7 +2357,11 @@
                   fill="#e8c2a2"
                 />
               </g>
-              <g id="Слой_31" data-name="Слой 31" transform="translate(125.766 25.591)">
+              <g
+                id="Слой_31"
+                data-name="Слой 31"
+                transform="translate(125.766 25.591)"
+              >
                 <path
                   id="Path_188"
                   data-name="Path 188"
@@ -2422,7 +2494,11 @@
               data-name="City, Buildings"
               transform="translate(318.365 142.371)"
             >
-              <g id="Слой_33" data-name="Слой 33" transform="translate(0 478.367)">
+              <g
+                id="Слой_33"
+                data-name="Слой 33"
+                transform="translate(0 478.367)"
+              >
                 <circle
                   id="Ellipse_21"
                   data-name="Ellipse 21"
@@ -3066,7 +3142,11 @@
                   fill="#fff"
                 />
               </g>
-              <g id="Слой_32" data-name="Слой 32" transform="translate(1283.578)">
+              <g
+                id="Слой_32"
+                data-name="Слой 32"
+                transform="translate(1283.578)"
+              >
                 <path
                   id="Path_237"
                   data-name="Path 237"
@@ -3763,7 +3843,11 @@
                   fill="#3e7887"
                 />
               </g>
-              <g id="Слой_34" data-name="Слой 34" transform="translate(1292.013 346.792)">
+              <g
+                id="Слой_34"
+                data-name="Слой 34"
+                transform="translate(1292.013 346.792)"
+              >
                 <path
                   id="Path_257"
                   data-name="Path 257"
@@ -4146,7 +4230,11 @@
                 fill="#4c7c89"
               />
             </g>
-            <g id="_2_Islands" data-name="2 Islands" transform="translate(-81.368 591.778)">
+            <g
+              id="_2_Islands"
+              data-name="2 Islands"
+              transform="translate(-81.368 591.778)"
+            >
               <path
                 id="Path_105"
                 data-name="Path 105"
@@ -5310,7 +5398,11 @@
                 data-name="Indication ANIMATION"
                 transform="translate(33.339 38.277)"
               >
-                <g id="Indication_4" data-name="Indication 4" transform="translate(277.554 85.94)">
+                <g
+                  id="Indication_4"
+                  data-name="Indication 4"
+                  transform="translate(277.554 85.94)"
+                >
                   <rect
                     id="Rectangle_369"
                     data-name="Rectangle 369"
@@ -5327,7 +5419,11 @@
                     fill="#f89d5e"
                   />
                 </g>
-                <g id="Indication_3" data-name="Indication 3" transform="translate(167.002)">
+                <g
+                  id="Indication_3"
+                  data-name="Indication 3"
+                  transform="translate(167.002)"
+                >
                   <path
                     id="Path_279"
                     data-name="Path 279"
@@ -5391,7 +5487,11 @@
                     fill="#db7e40"
                   />
                 </g>
-                <g id="Indication_1" data-name="Indication 1" transform="translate(0 145.186)">
+                <g
+                  id="Indication_1"
+                  data-name="Indication 1"
+                  transform="translate(0 145.186)"
+                >
                   <rect
                     id="Rectangle_371"
                     data-name="Rectangle 371"
@@ -5436,7 +5536,11 @@
                     fill="#5ef891"
                   />
                 </g>
-                <g id="Indication_3-2" data-name="Indication 3" transform="translate(167.002)">
+                <g
+                  id="Indication_3-2"
+                  data-name="Indication 3"
+                  transform="translate(167.002)"
+                >
                   <path
                     id="Path_279-2"
                     data-name="Path 279"
@@ -5500,7 +5604,11 @@
                     fill="#4cc574"
                   />
                 </g>
-                <g id="Indication_1-2" data-name="Indication 1" transform="translate(0 145.186)">
+                <g
+                  id="Indication_1-2"
+                  data-name="Indication 1"
+                  transform="translate(0 145.186)"
+                >
                   <rect
                     id="Rectangle_371-2"
                     data-name="Rectangle 371"
@@ -5669,7 +5777,10 @@
                   transform="translate(22.564 27.26)"
                   fill="#dde8eb"
                 />
-                <g id="Spin4" transform="matrix(0.309, -0.951, 0.951, 0.309, -13.325, 46.335)">
+                <g
+                  id="Spin4"
+                  transform="matrix(0.309, -0.951, 0.951, 0.309, -13.325, 46.335)"
+                >
                   <path
                     id="Path_295"
                     data-name="Path 295"
@@ -6172,7 +6283,11 @@
                 transform="translate(-4579.923 -1443.306)"
                 fill="#63547a"
               />
-              <g id="Hat_ANINATION" data-name="Hat ANINATION" transform="translate(16.945 13.637)">
+              <g
+                id="Hat_ANINATION"
+                data-name="Hat ANINATION"
+                transform="translate(16.945 13.637)"
+              >
                 <path
                   id="Path_319"
                   data-name="Path 319"
@@ -6208,7 +6323,11 @@
                 fill="#090f3a"
               />
             </g>
-            <g id="Слой_72" data-name="Слой 72" transform="translate(2508.134 598.177)">
+            <g
+              id="Слой_72"
+              data-name="Слой 72"
+              transform="translate(2508.134 598.177)"
+            >
               <ellipse
                 id="Ellipse_36"
                 data-name="Ellipse 36"
@@ -6568,7 +6687,11 @@
                 transform="translate(-5479.127 -1116.212)"
                 fill="#62b778"
               />
-              <g id="Group_23" data-name="Group 23" transform="translate(509.972 7.06)">
+              <g
+                id="Group_23"
+                data-name="Group 23"
+                transform="translate(509.972 7.06)"
+              >
                 <path
                   id="Path_357"
                   data-name="Path 357"
@@ -6612,7 +6735,11 @@
                 transform="translate(-5557.391 -1294.059)"
                 fill="#6b9f4b"
               />
-              <g id="Слой_43" data-name="Слой 43" transform="translate(724.211 17.627)">
+              <g
+                id="Слой_43"
+                data-name="Слой 43"
+                transform="translate(724.211 17.627)"
+              >
                 <path
                   id="Path_363"
                   data-name="Path 363"
@@ -6663,7 +6790,11 @@
                 transform="translate(-5336.703 -1462.424)"
                 fill="#aed667"
               />
-              <g id="Group_24" data-name="Group 24" transform="translate(814.328 151.769)">
+              <g
+                id="Group_24"
+                data-name="Group 24"
+                transform="translate(814.328 151.769)"
+              >
                 <path
                   id="Path_370"
                   data-name="Path 370"
@@ -7698,7 +7829,11 @@
                 fill="#567f43"
               />
             </g>
-            <g id="ALL_PEOPLE" data-name="ALL PEOPLE" transform="translate(1884.145 748.424)">
+            <g
+              id="ALL_PEOPLE"
+              data-name="ALL PEOPLE"
+              transform="translate(1884.145 748.424)"
+            >
               <g
                 id="Shadow_for_People_near_the_School"
                 data-name="Shadow for People near the School"
@@ -7811,7 +7946,11 @@
                   transform="translate(-5463.646 -1671.066)"
                   fill="#ffdb43"
                 />
-                <g id="Group_26" data-name="Group 26" transform="translate(32.964 23.986)">
+                <g
+                  id="Group_26"
+                  data-name="Group 26"
+                  transform="translate(32.964 23.986)"
+                >
                   <path
                     id="Path_461"
                     data-name="Path 461"
@@ -7998,7 +8137,11 @@
                   transform="translate(-5987.286 -1770.417)"
                   fill="#fff"
                 />
-                <g id="Group_27" data-name="Group 27" transform="translate(31.148 29.363)">
+                <g
+                  id="Group_27"
+                  data-name="Group 27"
+                  transform="translate(31.148 29.363)"
+                >
                   <path
                     id="Path_482"
                     data-name="Path 482"
@@ -8046,7 +8189,11 @@
                   data-name="V2 Head ANIMATION"
                   transform="translate(38.881)"
                 >
-                  <g id="V2_Head" data-name="V2 Head" transform="translate(0 9.814)">
+                  <g
+                    id="V2_Head"
+                    data-name="V2 Head"
+                    transform="translate(0 9.814)"
+                  >
                     <path
                       id="Head"
                       d="M6040.256,1777.928q.105-5.711.211-11.421a21.782,21.782,0,0,0-7.288-5.886,20.352,20.352,0,0,0-1.963-.841,13.591,13.591,0,0,1-1.281,6c-.374.7-1.292,1.641-1.17,1.848.251.43,1.272.222,1.331.21a4.813,4.813,0,0,0-.42,1.822c-.1,3.424,3.693,5.645,3.994,5.816q.034,1.3.069,2.593Z"
@@ -8063,7 +8210,11 @@
                       fill="#090f3a"
                     />
                   </g>
-                  <g id="V2_Hair" data-name="V2 Hair" transform="translate(0.458)">
+                  <g
+                    id="V2_Hair"
+                    data-name="V2 Hair"
+                    transform="translate(0.458)"
+                  >
                     <path
                       id="Path_487"
                       data-name="Path 487"
@@ -8176,7 +8327,11 @@
                   fill="#fff"
                 />
               </g>
-              <g id="Boy_School" data-name="Boy, School" transform="translate(87.017 43.585)">
+              <g
+                id="Boy_School"
+                data-name="Boy, School"
+                transform="translate(87.017 43.585)"
+              >
                 <path
                   id="Path_494"
                   data-name="Path 494"
@@ -8280,7 +8435,11 @@
                   fill="#00999b"
                 />
               </g>
-              <g id="Man_School" data-name="Man, School" transform="translate(31.985 6.489)">
+              <g
+                id="Man_School"
+                data-name="Man, School"
+                transform="translate(31.985 6.489)"
+              >
                 <path
                   id="Path_506"
                   data-name="Path 506"
@@ -8338,7 +8497,11 @@
                   fill="#41093d"
                 />
               </g>
-              <g id="Woman_School" data-name="Woman, School" transform="translate(135.171 8.344)">
+              <g
+                id="Woman_School"
+                data-name="Woman, School"
+                transform="translate(135.171 8.344)"
+              >
                 <rect
                   id="Rectangle_435"
                   data-name="Rectangle 435"
@@ -9071,7 +9234,11 @@
                 fill="#fff"
               />
             </g>
-            <g id="Left_Ground" data-name="Left Ground" transform="translate(-81.341 841.822)">
+            <g
+              id="Left_Ground"
+              data-name="Left Ground"
+              transform="translate(-81.341 841.822)"
+            >
               <g id="Слой_41" data-name="Слой 41">
                 <path
                   id="Path_172"
@@ -9101,7 +9268,11 @@
                   transform="translate(0 -1895.421)"
                   fill="#8eae3b"
                 />
-                <g id="Group_16" data-name="Group 16" transform="translate(158.647)">
+                <g
+                  id="Group_16"
+                  data-name="Group 16"
+                  transform="translate(158.647)"
+                >
                   <path
                     id="Path_176"
                     data-name="Path 176"
@@ -9172,7 +9343,11 @@
               data-name="Foreground trees"
               transform="translate(448.002 79.933)"
             >
-              <g id="Group_33" data-name="Group 33" transform="translate(195.735 148.496)">
+              <g
+                id="Group_33"
+                data-name="Group 33"
+                transform="translate(195.735 148.496)"
+              >
                 <path
                   id="Path_563"
                   data-name="Path 563"
@@ -9279,7 +9454,11 @@
                   transform="matrix(0.07, -0.998, 0.998, 0.07, 781.689, 402.155)"
                   fill="#131f51"
                 />
-                <g id="Group_28" data-name="Group 28" transform="translate(540.286 452.651)">
+                <g
+                  id="Group_28"
+                  data-name="Group 28"
+                  transform="translate(540.286 452.651)"
+                >
                   <path
                     id="Path_575"
                     data-name="Path 575"
@@ -9309,7 +9488,11 @@
                   transform="translate(-1917.158 -554.747)"
                   fill="#37437a"
                 />
-                <g id="Group_29" data-name="Group 29" transform="translate(671.67 196.328)">
+                <g
+                  id="Group_29"
+                  data-name="Group 29"
+                  transform="translate(671.67 196.328)"
+                >
                   <path
                     id="Path_579"
                     data-name="Path 579"
@@ -9325,7 +9508,11 @@
                     fill="#37437a"
                   />
                 </g>
-                <g id="Group_30" data-name="Group 30" transform="translate(723.508 39.286)">
+                <g
+                  id="Group_30"
+                  data-name="Group 30"
+                  transform="translate(723.508 39.286)"
+                >
                   <path
                     id="Path_581"
                     data-name="Path 581"
@@ -10702,7 +10889,7 @@ export default {
   // DATA ===================================>
   data: () => ({
     svgWidth: 0,
-    overlayIsActive: false
+    overlayIsActive: false,
   }),
 
   // WATCH
@@ -10718,7 +10905,7 @@ export default {
         illustrationAnimation.animationHome(this.$refs);
       }
       //  здесь конструкция из swith case
-    }
+    },
   },
 
   mounted() {
@@ -10730,6 +10917,6 @@ export default {
 
   components: {
     // Overlay
-  }
+  },
 };
 </script>

@@ -6,6 +6,7 @@ export const illustrationAnimation = {
   movingStart: function(illustration, width) {
     let newPosition = -1 * width + "px";
     console.log(width);
+
     const a = anime
       .timeline({
         targets: illustration,
@@ -14,7 +15,6 @@ export const illustrationAnimation = {
         autoplay: false,
         duration: 3000,
       })
-
       .add({
         translateX: newPosition,
       });

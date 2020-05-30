@@ -1,27 +1,26 @@
 .scrollbar {
-    height: 100%;
-    overflow: auto;
+  height: 100%;
+  overflow: auto;
 
-    &::-webkit-scrollbar-thumb {
-        background-color: #BCBCC4;
-        border-radius: 12px;
+  &::-webkit-scrollbar-thumb {
+    background-color: #bcbcc4;
+    border-radius: 12px;
+  }
+
+  &::-webkit-scrollbar {
+    max-width: calc(var(--gs));
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f3eee2;
+    border-radius: 12px;
+  }
+
+  &--desktop-hidden {
+    overflow: visible;
+
+    @media (--tablet-lg) {
+      overflow: auto;
     }
-
-    &::-webkit-scrollbar {
-        max-width: calc(var(--gs) * 2);
-    }
-
-
-    &::-webkit-scrollbar-track {
-        background-color: #F3EEE2;
-        border-radius: 12px;
-    }
-
-    &--desktop-hidden {
-        overflow: visible;
-
-        @media (--tablet-lg) {
-            overflow: auto;
-        }
-    }
+  }
 }

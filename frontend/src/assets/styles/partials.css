@@ -11,6 +11,7 @@
 @import "./elements/icons.css";
 @import "./elements/checkbox.css";
 @import "./elements/scrollbar.css";
+@import "./elements/select.css";
 
 /* Особая ссылка на главной странице */
 @import "./elements/home-button.css";

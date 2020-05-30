@@ -1,0 +1,83 @@
+.select-box {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.option-container {
+  background: #fbf6ea;
+  color: #000;
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  order: 1;
+}
+.option-container.active {
+  max-height: 240px;
+  opacity: 1;
+  overflow-y: scroll;
+}
+.option,
+.selected {
+  padding: 12px 10px;
+  cursor: pointer;
+}
+.option {
+  padding: 12px 18px;
+}
+/* SELECTED */
+.selected {
+  background: #fff;
+  border-radius: 7px;
+  border: 1px solid #e2e2e2;
+  width: 100%;
+  color: #000000;
+  order: 0;
+  position: relative;
+}
+.selected::after {
+  content: "";
+  background: url("../../img/Contact/Polygon.svg") no-repeat;
+  background-size: contain;
+
+  position: absolute;
+  height: 10px;
+  top: 50%;
+  transform: rotateX(0deg) translateY(-50%);
+  width: 10px;
+  right: 50px;
+  transition: all 0.4s;
+}
+
+.option-container.active + .selected::after {
+  transform: rotateX(180deg) translateY(50%);
+}
+/* OPTION */
+.option {
+  color: #959595;
+  border: 1px solid #dedede;
+  width: 90%;
+  background-color: #fbf6ea;
+  transition: all 0.3s;
+}
+.option:last-of-type {
+  border-radius: 0 0 10px 10px;
+}
+.option:hover {
+  background-color: #dedede;
+}
+
+/* label */
+.select-box label {
+  cursor: pointer;
+}
+/* radio */
+.select__radio {
+  display: none;
+}
