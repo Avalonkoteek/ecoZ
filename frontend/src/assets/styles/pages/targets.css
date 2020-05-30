@@ -26,6 +26,7 @@
         padding: 0 calc(var(--gs) * 8.75);
         margin-bottom: calc(var(--gs) * 3);
         height: 55vh;
+        align-items: center;
 
         @media (--tablet) {
             height: 600px;
@@ -85,6 +86,7 @@
 
         @media (--tablet) {
             width: 100%;
+            margin-right: 0;
         }
     }
 

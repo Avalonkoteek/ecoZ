@@ -80,6 +80,10 @@
         cursor: pointer;
         outline: none;
 
+        @media (--mobile-lg) {
+            width: calc(var(--gs));
+            height: calc(var(--gs));
+        }
 
         &-active {
             background-color: var(--cl-brown);

@@ -103,7 +103,7 @@
 
       &-text {
         font-size: 20px;
-
+        line-height: 1.25;
         @media (--tablet-lg) {
           font-size: 14px;
         }

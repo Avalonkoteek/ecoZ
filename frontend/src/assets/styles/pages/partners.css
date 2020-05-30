@@ -25,6 +25,11 @@
             padding-right: calc(var(--gs) * 3);
             padding-left: calc(var(--gs) * 3);
         }
+
+        @media (--mobile) {
+            padding-right: 0;
+            padding-left: 0;
+        }
     }
 
     &__swiper {
