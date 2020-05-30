@@ -10,6 +10,8 @@
 @import "./elements/link.css";
 @import "./elements/icons.css";
 @import "./elements/checkbox.css";
+@import "./elements/scrollbar.css";
+
 /* Особая ссылка на главной странице */
 @import "./elements/home-button.css";
 
