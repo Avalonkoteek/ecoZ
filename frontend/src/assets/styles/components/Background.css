@@ -7,12 +7,13 @@
   height: 100%;
   width: 100%;
   @media (--tablet-lg) {
+    /* position: relative; */
     height: 400px;
     padding-top: 80px;
   }
 }
 
-/* Overlay 
+/* Overlay
 ==================================================== */
 .background__overlay {
   position: absolute;
@@ -32,7 +33,7 @@
   top: -5vw;
 }
 
-/* illustration 
+/* illustration
 ==================================================== */
 .background__illustration-wrapper {
   overflow: hidden;

@@ -2,7 +2,7 @@
   <div id="app">
     <Navbar />
 
-    <Background v-model="layout" />
+    <Background class="backgound-animation" v-model="layout" />
     <router-view />
 
     <Footer />

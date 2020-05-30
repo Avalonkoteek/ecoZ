@@ -1,6 +1,5 @@
 <template>
   <section class="section">
-    <Overlay v-model="isOpen" />
     <div class="container">
       <ButtonBack :to="'/about'" />
       <div class="partners__container-slider">
@@ -33,7 +32,6 @@
 
 <script>
 import VSlider from "../controls/VSlider.vue";
-import Overlay from "../Background/Overlay";
 import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 
@@ -64,7 +62,6 @@ export default {
     VSlider,
     ButtonBack,
     Breadcrumbs,
-    Overlay
   },
 
   data() {
@@ -85,9 +82,6 @@ export default {
       ],
       isOpen: false
     };
-  },
-  mounted() {
-    this.isOpen = true;
   },
 
   computed: {
