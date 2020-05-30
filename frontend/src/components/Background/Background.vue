@@ -10712,9 +10712,9 @@ export default {
       // illustration
       console.log(oldVal);
       // let to = illustrationAnimation.getPosition(newVal);
-      // const { illustration } = this.$refs;
-      // illustrationAnimation.movingStart(illustration, to, this.svgWidth);
-      if (newVal === "main-layout") {
+      const { illustration } = this.$refs;
+      illustrationAnimation.movingStart(illustration, this.svgWidth);
+      if (newVal === "contact-layout") {
         illustrationAnimation.animationHome(this.$refs);
       }
       //  здесь конструкция из swith case

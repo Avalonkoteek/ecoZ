@@ -3,8 +3,8 @@ import anime from "animejs";
 export const illustrationAnimation = {
   // MOVING ILLUSTRATION
   //====================================
-  movingStart: function(illustration, to, width) {
-    let newPosition = -0.15 * width + "px";
+  movingStart: function(illustration, width) {
+    let newPosition = -1 * width + "px";
     console.log(width);
     const a = anime
       .timeline({
@@ -20,6 +20,7 @@ export const illustrationAnimation = {
       });
 
     a.play();
+    console.log(this.getPosition("f"));
   },
   //   getPosition
   // =============================================

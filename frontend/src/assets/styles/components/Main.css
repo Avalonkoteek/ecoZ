@@ -4,12 +4,7 @@
   padding-bottom: 200px;
   background-position: top left;
   background-size: cover;
-  @media (--desktop-xl) {
-    min-height: 1600px;
-  }
-  @media (--desktop-lg) {
-    min-height: 900px;
-  }
+
   @media (--desktop) {
     min-height: 800px;
   }
@@ -32,6 +27,12 @@
   margin-bottom: 45px;
   animation: fade-in 0.4s ease;
   padding-right: calc(var(--gs) * 2);
+  p {
+    margin-bottom: 15px;
+  }
+  p:last-of-type {
+    margin-bottom: 0px;
+  }
 }
 
 .main__links {
