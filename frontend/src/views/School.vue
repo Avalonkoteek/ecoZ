@@ -1,13 +1,11 @@
 <template>
   <div class="school">
-    <Overlay v-model="isOpen" />
     <Main v-bind:content="content" />
   </div>
 </template>
 
 <script>
 import Main from "../components/Main/Main";
-import Overlay from "../components/Background/Overlay";
 
 export default {
   data: () => ({
@@ -23,8 +21,7 @@ export default {
   }),
   name: "school",
   components: {
-    Main,
-    Overlay
+    Main
   }
 };
 </script>

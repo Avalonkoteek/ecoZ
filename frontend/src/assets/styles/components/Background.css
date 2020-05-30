@@ -27,6 +27,11 @@
     display: none;
   }
 }
+.overlay-mobile {
+  position: absolute;
+  width: 100%;
+  top: -5vw;
+}
 
 /* illustration 
 ==================================================== */

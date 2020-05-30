@@ -1,12 +1,10 @@
 <template>
   <div class="home">
-    <Overlay />
     <Main v-bind:content="content" />
   </div>
 </template>
 
 <script>
-import Overlay from "../components/Background/Overlay";
 import Main from "../components/Main/Main";
 
 export default {
@@ -20,8 +18,7 @@ export default {
   }),
   name: "home",
   components: {
-    Main,
-    Overlay
+    Main
   }
 };
 </script>

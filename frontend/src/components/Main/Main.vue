@@ -1,5 +1,6 @@
 <template>
   <section class="main">
+    <Overlay />
     <div class="container">
       <!-- Main Section -->
       <div class="main__section">
@@ -16,11 +17,13 @@
 <script>
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 import MainButton from "../controls/MainButton.vue";
+import Overlay from "../Background/Overlay";
 
 export default {
   components: {
     Breadcrumbs,
-    MainButton
+    MainButton,
+    Overlay
   },
   computed: {
     isHome() {
