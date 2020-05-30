@@ -1,7 +1,7 @@
 <template>
-  <section class="section">
+  <section class="section partners">
     <div class="container">
-      <ButtonBack :to="'/about'" />
+      <ButtonBack class="partners__button-back" :to="'/about'" />
       <div class="partners__container-slider">
         <v-slider class="partners__swiper" name="view-shop" :options="sliderOptions">
           <div class="swiper-slide partners__slide">
@@ -36,24 +36,27 @@ import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 
 const sliderOptions = {
-  // loop: true,
+  slidesPerView: 1,
   centeredSlides: true,
   spaceBetween: 24,
-  // slidesOffsetBefore: 24,
-  // slidesOffsetAfter: 24,
-  slidesPerView: 3,
   grabCursor: true,
-  autoHeight: true,
   simulateTouch: false,
 
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
   },
+
   pagination: {
     el: ".swiper-pagination",
     type: "bullets",
     clickable: true
+  },
+
+  breakpoints: {
+    639: {
+      slidesPerView: 3,
+    },
   }
 };
 

@@ -1,13 +1,11 @@
 .targets {
-    padding-bottom: calc(var(--gs) * 20);
-
-
     &__button-back {
         margin-bottom: calc(var(--gs) * 3);
     }
 
     &__container-slider {
         position: relative;
+        height: 375px;
         width: 55%;
         padding: 0 calc(var(--gs) * 11.25);
         padding-bottom: calc(var(--gs) * 6);
@@ -16,14 +14,21 @@
         @media (--tablet) {
             width: 100%;
         }
+
+        @media (--mobile) {
+            padding-right: 0;
+            padding-left: 0;
+        }
     }
 
     &__content {
         display: flex;
         padding: 0 calc(var(--gs) * 8.75);
         margin-bottom: calc(var(--gs) * 3);
+        height: 55vh;
 
         @media (--tablet) {
+            height: 600px;
             flex-direction: column-reverse;
             padding: 0;
         }
@@ -33,14 +38,6 @@
         display: flex;
         position: static;
         height: 100%;
-
-        @media (--tablet) {
-            height: 320px;
-        }
-
-        @media (--mobile-lg) {
-            height: 180px;
-        }
 
         .swiper-slide {
             display: flex;
@@ -65,10 +62,24 @@
             transform: translateX(-50%);
         }
 
+        .swiper-button-prev {
+            left: 24px;
+        }
+
+        .swiper-button-next {
+            right: 24px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            @media (--mobile) {
+                display: none;
+            }
+        }
+
     }
 
     &__wrapper {
-        max-height: 55vh;
         width: 45%;
         margin-right: calc(var(--gs) * 2.75);
 

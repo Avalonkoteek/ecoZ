@@ -88,10 +88,7 @@ import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 
 const sliderOptions = {
-  // loop: true,
   spaceBetween: 24,
-  // slidesOffsetBefore: 24,
-  // slidesOffsetAfter: 24,
   slidesPerView: 1,
   grabCursor: true,
   autoHeight: true,
