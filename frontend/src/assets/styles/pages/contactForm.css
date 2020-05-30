@@ -22,11 +22,8 @@
     border-radius: 7px;
     font-family: var(--base-font);
     margin-bottom: 31px;
-    margin-top: 7px;
   }
-  label:first-of-type {
-    margin-top: 35px;
-  }
+
   label {
     color: #7e7e7e;
   }
@@ -58,6 +55,43 @@
     padding-left: 0px;
   }
 }
+.contact__text {
+  margin-bottom: 10px;
+  color: #7e7e7e;
+  font-size: 15px;
+}
+/* ==============================================*/
+/* ==================== SELECT ==================*/
+/* ==============================================*/
+.select {
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 7px;
+}
+.select option {
+  border: 1px solid #dedede;
+  color: #959595;
+  padding: 6px 18px;
+}
+.select option:hover {
+  background: #000;
+}
+/* Placeholder */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #bcbcbc;
+  font-size: var(--fs-p);
+  font-family: var(--base-font);
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #bcbcbc;
+  font-size: var(--fs-p);
+  font-family: var(--base-font);
+}
+
 @media (--tablet-lg) {
   .contactForm {
     display: flex;

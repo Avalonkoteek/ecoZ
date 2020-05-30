@@ -7,19 +7,20 @@
         <form class="contactForm">
           <div class="contactForm__box">
             <Checkbox />
-            <label for="name">Ваши ФИО или ФИ</label>
+            <label class="contact__text" for="name">Ваши ФИО или ФИ</label>
             <input type="text" name="name" placeholder="Антон Антонович Ерошин" />
-            <label for="name">E-mail для связи</label>
-            <input type="email" name="name" />
-            <label for="name">Ваш номер телефона</label>
+            <label class="contact__text" for="name">E-mail для связи</label>
+            <input type="email" name="name" placeholder="Антон Антонович Ерошин" />
+            <label class="contact__text" for="name">Ваш номер телефона</label>
             <input type="tel" name="name" />
-            <select>
+            <select class="select">
               <option>Пункт 1</option>
               <option>Пункт 2</option>
             </select>
           </div>
           <div class="contactForm__box">
-            <textarea />
+            <p class="contact__text">Текст сообщения</p>
+            <textarea placeholder="Ваше сообщение..." />
             <button class="contactForm__submit-button"></button>
           </div>
         </form>
