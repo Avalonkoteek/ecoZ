@@ -1,39 +1,175 @@
-.section__services {
-  min-height: 100%;
-}
-.container__services {
-  background-color: #000;
-  min-height: 100%;
-}
+.services {
+    &__btn-back {
+      margin-bottom: calc(var(--gs) * 2);
+    }
 
-.services__wrapper {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #000;
-  min-height: 100%;
-}
-.services__vip-item,
-.services__item {
-  background-color: #fff3e1;
-  border-radius: 10px;
-  flex: 280px 1 0;
-  padding: 33px 30px 0 30px;
-  min-height: 100%;
-}
-.services__vip-item {
-  margin-right: 30px;
-  .price {
-    background-color: #ffe6d5;
-    flex-grow: 1;
-    color: #565d8d;
-  }
-}
-/* Price LIST
-================================================== */
-.services__item-box {
-  display: flex;
-  flex-direction: column;
-}
-.services__item {
+    &__cols {
+      display: flex;
+      height: 400px;
+      margin-bottom: calc(var(--gs) * 6.75);
+      padding: 0 calc(var(--gs) * 8.75);
+
+      @media(--tablet-lg) {
+        flex-direction: column;
+        height: auto;
+      }
+    }
+
+    &__col {
+      &-wide {
+        width: 66%;
+
+        @media(--tablet-lg) {
+          width: 100%;
+        }
+      }
+
+      &-narrow {
+        min-width: 280px;
+        width: 33%;
+        margin-right: calc(var(--gs) * 3.5);
+
+        @media(--tablet-lg) {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: calc(var(--gs) * 1.5);
+        }
+      }
+    }
+
+    &__list {
+      padding-right: calc(var(--gs) * 3.5);
+
+      @media (--tablet-lg) {
+        height: 240px;
+      }
+    }
+
+    &__item {
+      border-radius: 25px;
+      background: #FFF3E1;
+      margin-bottom: calc(var(--gs) * 1.5);
+      display: flex;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @media (--tablet-lg) {
+        flex-direction: column;
+      }
+      &--stock {
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      &-wrapper {
+        padding: calc(var(--gs) * 3.5);
+
+        &--scrollbar {
+          max-height: 330px;
+
+          @media (--tablet-lg) {
+            height: 210px;
+          }
+        }
+
+        &--number {
+
+          @media (--tablet-lg) {
+            display: flex;
+            justify-content: space-between;
+            padding: calc(var(--gs) * 1.25) calc(var(--gs) * 2);
+          }
+        }
+
+        &--red {
+          background: var(--cl-lg-orange);
+          border-bottom-right-radius: 25px;
+          border-bottom-left-radius: 25px;
+
+          @media (--tablet-lg) {
+            padding: calc(var(--gs) * 1.25) calc(var(--gs) * 2);
+          }
+        }
+
+        &--text {
+          @media (--tablet-lg) {
+            padding: calc(var(--gs) * 1.25) calc(var(--gs) * 2);
+          }
+        }
+      }
+
+      &-text {
+        font-size: 20px;
+        line-height: 1.25;
+        @media (--tablet-lg) {
+          font-size: 14px;
+        }
+
+        &--stock {
+          font-size: 24px;
+
+          @media (--tablet-lg) {
+            font-size: 16px;
+          }
+        }
+
+        &--right {
+          text-align: right;
+        }
+      }
+
+      &-price {
+        white-space: nowrap;
+        font-size: 20px;
+        color: var(--cl-blue);
+        margin-bottom: var(--gs);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        @media (--tablet-lg) {
+          margin-bottom: 0;
+        }
+
+        &--old {
+          color: var(--cl-grey);
+          font-size: 16px;
+        }
+
+        &--stock {
+          @media (--tablet-lg) {
+            text-align: right;
+          }
+        }
+      }
+
+      &-number {
+        font-size: 35px;
+
+        @media (--tablet-lg) {
+          font-size: 18px;
+        }
+
+        &--stock {
+          font-size: 40px;
+
+          @media (--tablet-lg) {
+            font-size: 18px;
+          }
+        }
+
+        &--old {
+          font-size: 30px;
+          text-decoration: line-through;
+
+          @media (--tablet-lg) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
 }
