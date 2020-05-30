@@ -17,11 +17,19 @@
         display: flex;
         padding: 0 calc(var(--gs) * 8.75);
         margin-bottom: calc(var(--gs) * 3);
+
+        @media (--tablet) {
+            flex-direction: column-reverse;
+        }
     }
 
     &__text {
         width: 45%;
         margin-right: calc(var(--gs) * 2.75);
+
+        @media (--tablet) {
+            width: 100%;
+        }
     }
 
     &__swiper {

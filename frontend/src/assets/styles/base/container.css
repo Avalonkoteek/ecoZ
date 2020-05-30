@@ -22,10 +22,10 @@
 .section {
   padding-top: calc(var(--gs) * 18.75);
   position: relative;
+  background: var(--cl-beige);
+  min-height: 100vh;
+
   @media (--tablet-lg) {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
+    padding-top: calc(var(--gs) * 11);
   }
 }
