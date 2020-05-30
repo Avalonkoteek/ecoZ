@@ -8,6 +8,9 @@
   @media (--desktop) {
     min-height: 800px;
   }
+  @media (--tablet-lg) {
+    margin-top: 400px;
+  }
 }
 
 .main__section {
