@@ -9,7 +9,7 @@
             <Checkbox />
             <div class="contactForm__item">
               <label
-                class="contact__text"
+                class="contact__text importand-field"
                 :class="{
                   invalid: $v.name.$error,
                   correct: !$v.name.$invalid,
@@ -17,6 +17,7 @@
                 for="name"
               >Ваши ФИО или ФИ</label>
               <input
+                autofocus
                 class="contactForm__input"
                 type="text"
                 name="name"
@@ -30,7 +31,7 @@
             </div>
             <div class="contactForm__item">
               <label
-                class="contact__text"
+                class="contact__text importand-field"
                 for="email"
                 :class="{
                   invalid: $v.email.$error,
@@ -38,6 +39,7 @@
                 }"
               >E-mail для связи</label>
               <input
+                autofocus
                 class="contactForm__input"
                 type="email"
                 name="name"
@@ -75,7 +77,7 @@
           </div>
           <div class="contactForm__box">
             <p
-              class="contact__text"
+              class="contact__text importand-field"
               :class="{
                 invalid: $v.text.$error,
                 correct: !$v.text.$invalid,

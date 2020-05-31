@@ -19,7 +19,9 @@
     padding: 0 0px 135px 0px;
   }
 }
+/* ================================================ */
 /* FORM BOX */
+/* ================================================ */
 .contactForm__box {
   width: 50%;
   display: flex;
@@ -38,16 +40,17 @@
     padding-right: 0;
   }
 }
+/* ================================================ */
 /*  FORM ITEM 
-================================================ */
+/* ================================================ */
 .contactForm__item {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
 }
-
-/*  FORM INPUT 
-================================================ */
+/* ================================================ */
+/*  FORM INPUT AND TEXTAREA
+/* ================================================ */
 textarea:focus,
 input:focus {
   outline: none;
@@ -73,12 +76,6 @@ input:focus {
   resize: none;
   min-height: 250px;
 }
-
-.contact__text {
-  margin-bottom: 10px;
-  color: #7e7e7e;
-  font-size: 15px;
-}
 .contactForm__input.invalid,
 .contactForm__textarea.invalid {
   border: 1px solid #c23232;
@@ -93,6 +90,29 @@ input:focus {
 .contact__text.correct {
   color: #349a8a;
 }
+/* ================================================ */
+/*  FORM LABEL 
+/* ================================================ */
+.contact__text {
+  margin-bottom: 10px;
+  color: #7e7e7e;
+  font-size: 15px;
+  width: 100%;
+}
+.importand-field {
+  position: relative;
+}
+.importand-field::after {
+  content: "*";
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #c99072;
+}
+.contact__text.invalid.importand-field::after {
+  color: #c23232;
+}
+
 /* ==============================================*/
 /* ==================== SELECT ==================*/
 /* ==============================================*/
