@@ -19,60 +19,16 @@
         </div>
 
         <div class="services__col-wide">
-          <ul class="services__list scrollbar">
-            <li class="services__item">
+          <ul class="services__list scrollbar" :class="{'services__list--scroll': scroll}">
+            <li class="services__item" v-for="item in items" :key="item.id">
               <div class="services__item-wrapper services__item-wrapper--text">
-                <p class="services__item-text services__item-text--right">Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании</p>
+                <p class="services__item-text services__item-text--right">{{item.text}}</p>
               </div>
               <div class="services__item-wrapper services__item-wrapper--number">
+                <p v-if="item.oldPrice" class="services__item-price services__item-price--old">от <span class="services__item-number services__item-number--old">{{item.oldPrice}}</span> руб.</p>
                 <p class="services__item-price">от
-                  <span class="services__item-number">100 000</span>
+                  <span class="services__item-number">{{item.price}}</span>
                   руб.</p>
-                <p class="services__item-price services__item-price--old">от <span class="services__item-number services__item-number--old">100 000</span> руб.</p>
-              </div>
-            </li>
-            <li class="services__item">
-              <div class="services__item-wrapper services__item-wrapper--text">
-                <p class="services__item-text services__item-text--right">Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании</p>
-              </div>
-              <div class="services__item-wrapper services__item-wrapper--number">
-                <p class="services__item-price">от
-                  <span class="services__item-number">100 000</span>
-                  руб.</p>
-                <p class="services__item-price services__item-price--old">от <span class="services__item-number services__item-number--old">100 000</span> руб.</p>
-              </div>
-            </li>
-            <li class="services__item">
-              <div class="services__item-wrapper services__item-wrapper--text">
-                <p class="services__item-text services__item-text--right">Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании</p>
-              </div>
-              <div class="services__item-wrapper services__item-wrapper--number">
-                <p class="services__item-price">от
-                  <span class="services__item-number">100 000</span>
-                  руб.</p>
-                <p class="services__item-price services__item-price--old">от <span class="services__item-number services__item-number--old">100 000</span> руб.</p>
-              </div>
-            </li>
-            <li class="services__item">
-              <div class="services__item-wrapper services__item-wrapper--text">
-                <p class="services__item-text services__item-text--right">Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании</p>
-              </div>
-              <div class="services__item-wrapper services__item-wrapper--number">
-                <p class="services__item-price">от
-                  <span class="services__item-number">100 000</span>
-                  руб.</p>
-                <p class="services__item-price services__item-price--old">от <span class="services__item-number services__item-number--old">100 000</span> руб.</p>
-              </div>
-            </li>
-            <li class="services__item">
-              <div class="services__item-wrapper services__item-wrapper--text">
-                <p class="services__item-text services__item-text--right">Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании</p>
-              </div>
-              <div class="services__item-wrapper services__item-wrapper--number">
-                <p class="services__item-price">от
-                  <span class="services__item-number">100 000</span>
-                  руб.</p>
-                <p class="services__item-price services__item-price--old">от <span class="services__item-number services__item-number--old">100 000</span> руб.</p>
               </div>
             </li>
           </ul>
@@ -109,7 +65,32 @@ export default {
           to: "/about/partners"
         }
       ],
-    };
+      scroll: false,
+
+      items: [
+        {
+          id: 1,
+          text: 'Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании',
+          price: '1223',
+          oldPrice: '12512'
+        },
+        {
+          id: 2,
+          text: 'Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании',
+          price: '1223',
+        },
+        {
+          id: 3,
+          text: 'Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании',
+          price: '1223',
+        },
+      ]
+    }
   },
+
+  mounted() {
+    if (this.items.length > 2)
+       this.scroll = true
+  }
 };
 </script>
