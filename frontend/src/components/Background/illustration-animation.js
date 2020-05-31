@@ -32,19 +32,19 @@ export const illustrationAnimation = {
         Position = "0%";
         break;
       case "about-layout":
-        Position = "-9%";
+        Position = "-12%";
         break;
       case "business-layout":
-        Position = "-18%";
-        break;
-      case "school-layout":
         Position = "-28%";
         break;
+      case "school-layout":
+        Position = "-41%";
+        break;
       case "volunteers-layout":
-        Position = "-37%";
+        Position = "-54%";
         break;
       case "contact-layout":
-        Position = "-68%";
+        Position = "-70.2%";
         break;
 
       default:
