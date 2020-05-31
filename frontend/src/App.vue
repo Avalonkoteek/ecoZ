@@ -9,7 +9,6 @@
 
     <Icons />
   </div>
-
 </template>
 
 <script>
@@ -26,11 +25,14 @@ export default {
       return (this.$route.meta.layout || "empty") + "-layout";
     }
   },
+  mounted() {
+    console.log(this.$route.meta.layout);
+  },
   components: {
     Navbar,
     Footer,
     Background,
     Icons
-  },
+  }
 };
 </script>

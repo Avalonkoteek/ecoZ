@@ -32,19 +32,19 @@ export const illustrationAnimation = {
         Position = "0%";
         break;
       case "about-layout":
-        Position = "-12%";
+        Position = "-10%";
         break;
       case "business-layout":
-        Position = "-28%";
+        Position = "-23%";
         break;
       case "school-layout":
-        Position = "-41%";
+        Position = "-33%";
         break;
       case "volunteers-layout":
-        Position = "-54%";
+        Position = "-44%";
         break;
       case "contact-layout":
-        Position = "-70.2%";
+        Position = "-58%";
         break;
 
       default:
@@ -83,23 +83,46 @@ export const illustrationAnimation = {
   //===================================================================================
 
   startHome: function(refs) {
-    //315.953 693.279)
-    const { clouds, boats, redBoat, birds } = refs;
-    console.log(clouds, boats, birds, redBoat);
-    let boatsArr = [];
-    boatsArr.push(boats.children[0]);
-    boatsArr.push(boats.children[1]);
-    console.log(boatsArr);
+    const { clouds, boats, redBoat, birds, leaf } = refs;
+    console.log(clouds, boats, birds, redBoat, leaf);
+
+    // RED BOAT
+    //=================================================================================
+    anime({
+      targets: redBoat,
+      translateX: 200,
+      direction: "normal",
+      duration: 6000,
+      delay: 3000,
+      rotate: [{ value: -5 }, { value: 0 }],
+      easing: "easeInQuad",
+      autoplay: true,
+    });
+
+    // BOATS
+    //=================================================================================
     anime({
       targets: [boats.children[0], boats.children[1]],
-      translateX: 2,
-      rotate: [{ value: "+=0.5" }, { value: "-=0.5" }],
-      duration: 1200,
-      delay: anime.stagger(100),
+      translateX: [
+        { value: anime.stagger([0, 3]) },
+        { value: anime.stagger([3, 0]) },
+      ],
+      translateY: [
+        { value: anime.stagger([-1, 1]) },
+        { value: anime.stagger([1, -1]) },
+      ],
+      rotate: [
+        { value: anime.stagger([-5, 5]) },
+        { value: anime.stagger([5, -5]) },
+      ],
+      duration: 3000,
+      // delay: anime.stagger(100),
       loop: true,
       direction: "alternate",
-      easing: "easeInOutSine",
+      easing: "linear",
     });
+    // BIRDS
+    //=================================================================================
     anime({
       targets: [
         birds.children[0],
@@ -109,29 +132,67 @@ export const illustrationAnimation = {
         birds.children[4],
         birds.children[5],
       ],
-      translateX: {
-        value: [-726, -725], // 100px * 2.5 = '250px'
-        duration: 100,
+      scale: [
+        { value: anime.stagger([0.8, 1.2]) },
+        { value: anime.stagger([1.1, 1]) },
+      ],
+      translateX: [
+        { value: anime.stagger([0, 3]) },
+        { value: anime.stagger([3, 0]) },
+      ],
+      translateY: [
+        { value: anime.stagger([-6, 6]) },
+        { value: anime.stagger([6, -6]) },
+      ],
+      rotate: [
+        { value: anime.stagger([-10, 40]) },
+        { value: anime.stagger([50, -18]) },
+        { value: anime.stagger([5, -30]) },
+        { value: anime.stagger([16, -4]) },
+      ],
+      duration: function() {
+        return anime.random(2200, 5800);
       },
-      translateY: {
-        value: [-942, -941], // 100px * 2.5 = '250px'
-        duration: 100,
-      },
-      rotate: [{ value: "+=0.5" }, { value: "-=411" }],
-      duration: 4000,
-      delay: anime.stagger(1000),
+
       loop: true,
       direction: "alternate",
-      easing: "easeInOutSine",
+      easing: "easeInOutExpo",
     });
+
+    // LEAF
+    //=================================================================================
     anime({
-      targets: redBoat,
-      translateX: [315.953, 425],
-      translateY: [693.279, 693],
-      direction: "normal",
-      duration: 3000,
-      delay: 3000,
-      autoplay: true,
+      targets: leaf,
+      easing: "easeInOutQuart",
+      delay: 8000,
+
+      rotate: [
+        { value: 6, duration: 8000 },
+        { value: -6, duration: 8000 },
+      ],
+
+      translateX: [
+        { value: -80, duration: 6000 },
+        { value: -20, duration: 2000 },
+      ],
+      translateY: [
+        { value: 500, duration: 4000 },
+        { value: 620, duration: 4000 },
+      ],
+      scale: { value: 0.8, duration: 4000 },
     });
+
+    // CLOUDS
+    //=================================================================================
+
+    // Add children
+  },
+
+  //===================================================================================
+  //============================== О НАС ===============================
+  //===================================================================================
+  startAbout: function(refs) {
+    const { squirrel, windmils, bike } = refs;
+    console.log(squirrel, windmils, bike);
   },
 };

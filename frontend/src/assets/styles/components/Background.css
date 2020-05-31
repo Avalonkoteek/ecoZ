@@ -50,11 +50,18 @@
 .background__svg {
   position: absolute;
   bottom: 0;
+  --height: calc(0.64 * 100vw);
   height: calc(0.64 * 100vw);
   width: auto;
-  transform: translateX(35vw);
+  transform: translateX(30vw);
   @media (--tablet-lg) {
-    transform: translateX(-25vw) translateY(5vw);
+    transform: scaleZ(0.5) translateX(-35vw) translateY(5vw);
     height: calc(1.15 * 100vw);
   }
+}
+
+path,
+g {
+  transform-origin: center;
+  transform-box: fill-box;
 }
