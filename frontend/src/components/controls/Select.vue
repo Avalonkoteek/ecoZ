@@ -50,6 +50,7 @@ export default {
   methods: {
     changeTextSelector: function(event) {
       this.$refs.selected.innerHTML = event.target.lastChild.innerHTML;
+      this.isOpen = !this.isOpen;
     },
   },
 };

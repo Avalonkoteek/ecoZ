@@ -9,7 +9,7 @@
   }
 
   @media (--tablet-lg) {
-    padding-top: calc(var(--gs) * 50);
+    /* padding-top: calc(var(--gs) * 50); */
     padding-bottom: calc(var(--gs) * 11);
   }
 

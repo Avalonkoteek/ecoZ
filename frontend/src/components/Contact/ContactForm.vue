@@ -11,19 +11,20 @@
               <label
                 class="contact__text"
                 :class="{
-                  invalid: $v.name.$dirty && !$v.name.required,
+                  invalid: $v.name.$error,
+                  correct: !$v.name.$invalid,
                 }"
                 for="name"
-                >Ваши ФИО или ФИ</label
-              >
+              >Ваши ФИО или ФИ</label>
               <input
                 class="contactForm__input"
                 type="text"
                 name="name"
                 placeholder="Антон Антонович Ерошин"
-                v-model.trim="email"
+                v-model.trim="$v.name.$model"
                 :class="{
-                  invalid: $v.name.$dirty && !$v.name.required,
+                  invalid: $v.name.$error,
+                  correct: !$v.name.$invalid,
                 }"
               />
             </div>
@@ -32,31 +33,41 @@
                 class="contact__text"
                 for="email"
                 :class="{
-                  invalid:
-                    ($v.email.$dirty && !$v.email.required) ||
-                    ($v.email.$dirty && !$v.email.email),
+                  invalid: $v.email.$error,
+                  correct: !$v.email.$invalid,
                 }"
-                >E-mail для связи</label
-              >
+              >E-mail для связи</label>
               <input
                 class="contactForm__input"
                 type="email"
                 name="name"
-                placeholder="Антон Антонович Ерошин"
+                v-model.trim="$v.email.$model"
+                placeholder="Антон@Anton.ha"
                 :class="{
-                  invalid:
-                    ($v.email.$dirty && !$v.email.required) ||
-                    ($v.email.$dirty && !$v.email.email),
+                  invalid: $v.email.$error,
+                  correct: !$v.email.$invalid,
                 }"
               />
             </div>
             <div class="contactForm__item">
-              <label class="contact__text" for="tel">Ваш номер телефона</label>
+              <label
+                class="contact__text"
+                for="tel"
+                :class="{
+                  invalid: $v.phone.$error,
+                  correct: !$v.phone.$invalid,
+                }"
+              >Ваш номер телефона</label>
               <input
                 type="tel"
                 name="tel"
                 placeholder="+7 777 777 77 77"
                 class="contactForm__input"
+                v-model.trim="$v.phone.$model"
+                :class="{
+                  invalid: $v.phone.$error,
+                  correct: !$v.phone.$invalid,
+                }"
               />
             </div>
 
@@ -66,16 +77,17 @@
             <p
               class="contact__text"
               :class="{
-                correct: $v.text.$dirty && !$v.text.required,
+                invalid: $v.text.$error,
+                correct: !$v.text.$invalid,
               }"
-            >
-              Текст сообщения
-            </p>
+            >Текст сообщения</p>
             <textarea
               class="contactForm__textarea"
               placeholder="Ваше сообщение..."
+              v-model.trim="$v.text.$model"
               :class="{
-                correct: $v.text.$dirty && !$v.text.required,
+                invalid: $v.text.$error,
+                correct: !$v.text.$invalid,
               }"
             />
             <button class="contactForm__submit-button" type="submit">
@@ -92,13 +104,18 @@ import Overlay from "../Background/Overlay";
 import ButtonBack from "../controls/ButtonBack.vue";
 import Checkbox from "../controls/Checkbox.vue";
 import Select from "../controls/Select.vue";
-import { email, required } from "vuelidate/lib/validators";
+import {
+  email,
+  required,
+  minLength,
+  maxLength
+} from "vuelidate/lib/validators";
 export default {
   components: {
     ButtonBack,
     Checkbox,
     Overlay,
-    Select,
+    Select
   },
   name: "contactForm",
 
@@ -107,12 +124,16 @@ export default {
     email: "",
     name: "",
     text: "",
-    phone: "",
+    phone: ""
   }),
   validations: {
     email: { email, required },
     name: { required },
     text: { required },
+    phone: {
+      minLength: minLength(10),
+      maxLength: maxLength(12)
+    }
   },
   mounted() {
     this.isOpen = true;
@@ -128,7 +149,7 @@ export default {
         return;
       }
       this.$router.push("/");
-    },
-  },
+    }
+  }
 };
 </script>

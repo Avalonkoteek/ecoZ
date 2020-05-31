@@ -1,9 +1,9 @@
 <template>
   <section class="main">
-    <Overlay />
+    <Overlay class="main__overlay" />
     <div class="container">
       <div class="main__section">
-        <h2 class="main__title">{{content.title}}</h2>
+        <h2 class="main__title">{{ content.title }}</h2>
         <ul class="contact__wrapper">
           <li class="contact__item">
             <img
@@ -61,8 +61,8 @@
 </template>
 
 <script>
-import Overlay from "../components/Background/Overlay";
 import Breadcrumbs from "../components/controls/Breadcrumbs";
+import Overlay from "../components/Background/Overlay";
 export default {
   data: () => ({
     content: {
@@ -76,14 +76,13 @@ export default {
     Breadcrumbs,
     Overlay
   },
-  beforeRouteLeave(to, from, next) {
-    console.log("почти ушел");
-    console.log(to, from);
-    next();
-  },
+  // beforeRouteLeave(to, from, next) {
+  //   console.log("почти ушел");
+  //   console.log(to, from);
+  //   next();
+  // },
   name: "contact"
 };
 </script>
 
-<style >
-</style>
+<style></style>

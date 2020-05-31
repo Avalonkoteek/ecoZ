@@ -1,32 +1,33 @@
 import anime from "animejs";
 
 export const illustrationAnimation = {
-  // MOVING ILLUSTRATION
-  //====================================
-  movingStart: function(illustration, width) {
-    let newPosition = -1 * width + "px";
-    console.log(width);
-
+  //===================================================================================
+  //============================== Двигаем illustration ===============================
+  //===================================================================================
+  movingTo: function(illustration, to) {
     const a = anime
       .timeline({
         targets: illustration,
         easing: "easeInOutSine",
         direction: "normal",
         autoplay: false,
-        duration: 3000,
+        duration: 1500,
       })
       .add({
-        translateX: newPosition,
+        translateX: to,
       });
 
     a.play();
-    console.log(this.getPosition("f"));
   },
-  //   getPosition
-  // =============================================
-  getPosition: function(Layout) {
+  //===================================================================================
+  //============================== На сколько Двигаем illustration ====================
+  //===================================================================================
+  getLayoutPosition: function(newLayout, oldLayout) {
+    if (newLayout === "empty-layout") {
+      newLayout = oldLayout;
+    }
     let Position = "0%";
-    switch (Layout) {
+    switch (newLayout) {
       case "main-layout":
         Position = "0%";
         break;
@@ -52,9 +53,36 @@ export const illustrationAnimation = {
     }
     return Position;
   },
-  // First window
-  // =============================================>
-  animationHome: function(refs) {
+  //===================================================================================
+  //============================== На каком экране и какие анимации проигрывать =======
+  //===================================================================================
+  startAnimationFrame: function(newLayout, oldLayout, refs) {
+    console.log(newLayout, oldLayout);
+    switch (newLayout) {
+      case "main-layout":
+        this.startHome(refs);
+        break;
+      case "about-layout":
+        break;
+      case "business-layout":
+        break;
+      case "school-layout":
+        break;
+      case "volunteers-layout":
+        break;
+      case "contact-layout":
+        break;
+
+      default:
+        break;
+    }
+  },
+
+  //===================================================================================
+  //============================== Анимации для страниц ===============================
+  //===================================================================================
+
+  startHome: function(refs) {
     //315.953 693.279)
     const { clouds, boats, redBoat, birds } = refs;
     console.log(clouds, boats, birds, redBoat);

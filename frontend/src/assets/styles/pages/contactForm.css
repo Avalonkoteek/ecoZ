@@ -2,6 +2,9 @@
 ================================================ */
 .section--contact {
   animation: fade-left 0.4s ease;
+  @media (--tablet-lg) {
+    animation: fade-to-top 0.4s ease;
+  }
 }
 
 .contactForm {
@@ -45,6 +48,10 @@
 
 /*  FORM INPUT 
 ================================================ */
+textarea:focus,
+input:focus {
+  outline: none;
+}
 .contactForm__input {
   height: 40px;
 }
@@ -63,6 +70,8 @@
   height: 100%;
   width: 100%;
   padding-top: 20px;
+  resize: none;
+  min-height: 250px;
 }
 
 .contact__text {
@@ -122,8 +131,9 @@
   @media (--tablet-lg) {
     width: 125px;
     height: 42px;
-    bottom: -21px;
-    bottom: -10px;
+    right: 0;
+    bottom: 0px;
+    transform: translateY(50%);
   }
 }
 .contactForm__submit-button span {
@@ -169,6 +179,16 @@ textarea:-moz-placeholder {
   }
   100% {
     transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes fade-to-top {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
     opacity: 1;
   }
 }
