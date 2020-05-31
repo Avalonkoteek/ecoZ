@@ -3,7 +3,7 @@
   padding-bottom: 200px;
   background-position: top left;
   background-size: cover;
-
+  min-height: 900px;
   @media (--desktop) {
     /* min-height: 800px; */
   }

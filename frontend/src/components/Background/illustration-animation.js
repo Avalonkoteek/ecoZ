@@ -44,7 +44,7 @@ export const illustrationAnimation = {
         Position = "-37%";
         break;
       case "contact-layout":
-        Position = "-62%";
+        Position = "-68%";
         break;
 
       default:
