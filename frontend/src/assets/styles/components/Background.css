@@ -44,7 +44,9 @@
 }
 
 .background__svg {
-  height: 100%;
+  position: absolute;
+  bottom: 0;
+  height: calc(0.62 * 100vw);
   width: auto;
   transform: translateX(35vw);
   @media (--tablet-lg) {
