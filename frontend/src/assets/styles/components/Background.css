@@ -8,9 +8,12 @@
   width: 100%;
   background-color: #8ddeda;
   @media (--tablet-lg) {
-    /* position: relative; */
-    height: 400px;
+    position: absolute;
+    height: 600px;
     padding-top: 80px;
+  }
+  @media (--tablet) {
+    height: 400px;
   }
 }
 
@@ -51,6 +54,7 @@
   width: auto;
   transform: translateX(35vw);
   @media (--tablet-lg) {
-    transform: translateX(-10vw);
+    transform: translateX(-25vw) translateY(5vw);
+    height: calc(1.15 * 100vw);
   }
 }

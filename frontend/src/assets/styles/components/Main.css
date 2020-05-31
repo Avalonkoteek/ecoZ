@@ -19,6 +19,9 @@
     }
   }
   @media (--tablet-lg) {
+    margin-top: 600px;
+  }
+  @media (--tablet) {
     margin-top: 400px;
   }
 }
