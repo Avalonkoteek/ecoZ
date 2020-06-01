@@ -9,7 +9,7 @@ export default {
   name: "checkbox",
   data: () => ({
     prop:
-      '<p>Я соглашаюсь с <a href="#">политикой обработки персональных данных</a></p>'
+      '<p class="importand-field">Я соглашаюсь с <a href="#">политикой обработки персональных данных</a></p>'
   })
 };
 </script>

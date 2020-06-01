@@ -6985,9 +6985,7 @@ export default {
     }
   },
 
-  mounted() {
-    console.log("layot" + this.$router);
-  },
+  mounted() {},
   // Methods ===================================>
 
   components: {

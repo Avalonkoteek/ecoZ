@@ -57,7 +57,6 @@ export const illustrationAnimation = {
   //============================== На каком экране и какие анимации проигрывать =======
   //===================================================================================
   startAnimationFrame: function(newLayout, oldLayout, refs) {
-    console.log(newLayout, oldLayout);
     switch (newLayout) {
       case "main-layout":
         this.startHome(refs);
@@ -88,8 +87,7 @@ export const illustrationAnimation = {
   //===================================================================================
 
   startHome: function(refs) {
-    const { clouds, boats, redBoat, birds, leaf } = refs;
-    console.log(clouds, boats, birds, redBoat, leaf);
+    const { boats, redBoat, birds, leaf } = refs;
 
     // RED BOAT
     //=================================================================================
@@ -235,9 +233,9 @@ export const illustrationAnimation = {
       targets: [spin1, spin2, spin3],
       rotate: 720,
       loop: true,
-      duration: 6000,
-
-      easing: "linear",
+      duration: 9000,
+      direction: "alternate",
+      easing: "easeInOutQuad",
       autoplay: true,
     });
     anime({
@@ -258,11 +256,11 @@ export const illustrationAnimation = {
     const { spin4, spin5, sign } = refs;
     anime({
       targets: [spin4, spin5],
-      rotate: [0, 360],
+      rotate: [0, 1440],
       loop: true,
-      duration: 5000,
+      duration: 10000,
 
-      easing: "linear",
+      easing: "easeInOutQuad",
       autoplay: true,
     });
     anime({
