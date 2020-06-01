@@ -98,7 +98,7 @@ export const illustrationAnimation = {
       duration: 6000,
       delay: 3000,
       rotate: [{ value: -5 }, { value: 0 }],
-      easing: "easeInQuad",
+      easing: "easeInOutQuad",
       autoplay: true,
     });
 
