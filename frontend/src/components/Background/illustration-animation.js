@@ -63,14 +63,19 @@ export const illustrationAnimation = {
         this.startHome(refs);
         break;
       case "about-layout":
+        this.startAbout(refs);
         break;
       case "business-layout":
+        this.startBusiness(refs);
         break;
       case "school-layout":
+        this.startScool(refs);
         break;
       case "volunteers-layout":
+        this.startVolunteers(refs);
         break;
       case "contact-layout":
+        this.startContact(refs);
         break;
 
       default:
@@ -192,7 +197,174 @@ export const illustrationAnimation = {
   //============================== О НАС ===============================
   //===================================================================================
   startAbout: function(refs) {
-    const { squirrel, windmils, bike } = refs;
-    console.log(squirrel, windmils, bike);
+    const { squirrel, bike, spin1, spin2, spin3 } = refs;
+
+    anime({
+      targets: bike,
+      translateX: 340,
+      direction: "normal",
+      duration: 3000,
+      delay: 3000,
+      easing: "easeInOutQuad",
+      autoplay: true,
+    });
+    //wheels
+    anime({
+      targets: [bike.children[0], bike.children[1]],
+      rotate: 900,
+      direction: "normal",
+      duration: 3000,
+      delay: 3000,
+      easing: "easeInOutQuad",
+      autoplay: true,
+    });
+    //head
+    anime({
+      targets: bike.children[2],
+      translateY: -3,
+      translateX: -2,
+      rotate: -36,
+      direction: "normal",
+      duration: 1000,
+      delay: 6000,
+      easing: "easeInOutQuad",
+      autoplay: true,
+    });
+
+    anime({
+      targets: [spin1, spin2, spin3],
+      rotate: 720,
+      loop: true,
+      duration: 6000,
+
+      easing: "linear",
+      autoplay: true,
+    });
+    anime({
+      targets: squirrel,
+      translateY: 4,
+      rotate: "+=2",
+      loop: true,
+      duration: 6000,
+      direction: "alternate",
+      easing: "linear",
+      autoplay: true,
+    });
+  },
+  //===================================================================================
+  //============================== Бизнесу ===============================
+  //===================================================================================
+  startBusiness: function(refs) {
+    const { spin4, spin5, sign } = refs;
+    anime({
+      targets: [spin4, spin5],
+      rotate: [0, 360],
+      loop: true,
+      duration: 5000,
+
+      easing: "linear",
+      autoplay: true,
+    });
+    anime({
+      targets: sign,
+      rotate: [0, -360],
+      loop: true,
+      duration: 6000,
+
+      easing: "linear",
+      autoplay: true,
+    });
+  },
+  //===================================================================================
+  //============================== Школы ===============================
+  //===================================================================================
+  startScool: function(refs) {
+    const { motherHair } = refs;
+
+    anime({
+      targets: motherHair,
+      translateY: 3,
+      rotate: -3,
+      duration: 2000,
+      easing: "easeInOutSine",
+      direction: "alternate",
+      autoplay: true,
+      loop: true,
+    });
+  },
+  //===================================================================================
+  //============================== Volunteers ===============================
+  //===================================================================================
+  startVolunteers: function(refs) {
+    const {
+      handAnimationV2,
+      handAnimationV1,
+      headAnimationV1,
+      headAnimationV2,
+    } = refs;
+
+    anime({
+      targets: [handAnimationV2, handAnimationV1],
+      translateX: "-=3",
+      translateY: "+=3",
+      rotate: 6,
+      duration: 3000,
+      easing: "easeInOutSine",
+      direction: "alternate",
+      autoplay: true,
+      loop: true,
+    });
+    anime({
+      targets: [headAnimationV1, headAnimationV2],
+
+      translateY: "+=2",
+      duration: 3000,
+      rotate: 13,
+      easing: "easeInOutSine",
+      direction: "alternate",
+      autoplay: true,
+      loop: true,
+    });
+  },
+  //===================================================================================
+  //============================== Volunteers ===============================
+  //===================================================================================
+  startContact: function(refs) {
+    const { phone, mail, message } = refs;
+    const tl = anime
+      .timeline({
+        loop: true,
+        easing: "easeInOutSine",
+        direction: "alternate",
+      })
+      .add({
+        targets: phone,
+        rotate: 60,
+        duration: 1000,
+        direction: "alternate",
+      })
+      .add(
+        {
+          targets: message.children[2],
+          scale: [0.98, 1.2],
+          duration: 1000,
+          easing: "easeInOutCirc",
+          direction: "alternate",
+        },
+        "+=1500"
+      )
+      .add(
+        {
+          targets: mail.children[3],
+          translateY: [{ value: -9 }],
+          scaleY: [{ value: [1, 0] }, { value: [0, -1] }],
+
+          duration: 1000,
+          easing: "easeInOutSine",
+          direction: "alternate",
+        },
+        "+=1500"
+      );
+    tl.play();
   },
 };
