@@ -26,6 +26,7 @@ export const illustrationAnimation = {
     if (newLayout === "empty-layout") {
       newLayout = oldLayout;
     }
+    let isDesktop = document.body.clientHeight < 1023;
     let Position = "0%";
     switch (newLayout) {
       case "main-layout":
@@ -44,7 +45,8 @@ export const illustrationAnimation = {
         Position = "-44%";
         break;
       case "contact-layout":
-        Position = "-58%";
+        isDesktop == true ? (Position = "-58%") : (Position = "-56%");
+
         break;
 
       default:
@@ -220,7 +222,7 @@ export const illustrationAnimation = {
       targets: bike,
       translateX: 340,
       direction: "normal",
-      duration: 3000,
+      duration: 5000,
       delay: 3000,
       easing: "easeInOutQuad",
       autoplay: true,
@@ -230,7 +232,7 @@ export const illustrationAnimation = {
       targets: [bike.children[0], bike.children[1]],
       rotate: 900,
       direction: "normal",
-      duration: 3000,
+      duration: 5000,
       delay: 3000,
       easing: "easeInOutQuad",
       autoplay: true,
@@ -243,7 +245,7 @@ export const illustrationAnimation = {
       rotate: -36,
       direction: "normal",
       duration: 1000,
-      delay: 6000,
+      delay: 8000,
       easing: "easeInOutQuad",
       autoplay: true,
     });
@@ -252,7 +254,7 @@ export const illustrationAnimation = {
       targets: [spin1, spin2, spin3],
       rotate: [0, -720],
       loop: true,
-      duration: 10000,
+      duration: 15000,
       easing: "linear",
       autoplay: true,
     });
@@ -276,7 +278,7 @@ export const illustrationAnimation = {
       targets: [spin4, spin5],
       rotate: [0, -720],
       loop: true,
-      duration: 10000,
+      duration: 15000,
 
       easing: "linear",
       autoplay: true,

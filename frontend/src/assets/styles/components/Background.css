@@ -7,7 +7,9 @@
   height: 100vh;
   width: 100%;
   background-color: #8ddeda;
+  min-height: 600px;
   @media (--tablet-lg) {
+    min-height: auto;
     position: absolute;
     height: 600px;
     padding-top: 80px;
@@ -55,7 +57,7 @@
   width: auto;
   transform: translateX(30vw);
   @media (--tablet-lg) {
-    transform: scaleZ(0.5) translateX(-35vw) translateY(5vw);
+    transform: scaleZ(0.6) translateX(-35vw) translateY(5vw);
     height: calc(1.15 * 100vw);
   }
 }
