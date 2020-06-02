@@ -80,3 +80,47 @@ g {
 #Spin5 {
   transform-origin: 50% 64%;
 }
+
+@keyframes change-fill-dark {
+  0% {
+    fill: #db7e40;
+  }
+  50% {
+    fill: #4cc574;
+  }
+  100% {
+    fill: #db7e40;
+  }
+}
+@keyframes change-fill {
+  0% {
+    fill: #f89d5e;
+  }
+  50% {
+    fill: #5ef891;
+  }
+  100% {
+    fill: #f89d5e;
+  }
+}
+.indication--green-dark {
+  animation: change-fill-dark 16s ease-in-out infinite;
+}
+.indication--green {
+  animation: change-fill 16s ease-in-out infinite;
+}
+.cloud-animation {
+  position: absolute;
+  width: 563px;
+  height: 142px;
+  background: url("../../img/MAIN__BG/CLOUD.svg") no-repeat;
+  background-size: contain;
+  top: 30%;
+  left: 40%;
+  transition: all 8s ease;
+  opacity: 1;
+}
+.cloud-animation--left {
+  left: 20%;
+  opacity: 0;
+}

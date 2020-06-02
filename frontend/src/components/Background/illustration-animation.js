@@ -57,6 +57,9 @@ export const illustrationAnimation = {
   //============================== На каком экране и какие анимации проигрывать =======
   //===================================================================================
   startAnimationFrame: function(newLayout, oldLayout, refs) {
+    document
+      .querySelector(".cloud-animation")
+      .classList.add("cloud-animation--left");
     switch (newLayout) {
       case "main-layout":
         this.startHome(refs);
@@ -93,17 +96,35 @@ export const illustrationAnimation = {
     //=================================================================================
     anime({
       targets: redBoat,
-      translateX: 200,
+      translateX: 150,
       direction: "normal",
-      duration: 6000,
-      delay: 3000,
-      rotate: [{ value: -5 }, { value: 0 }],
+      duration: 9000,
+      delay: 2000,
+      rotate: [
+        { value: [0, -5], duration: 1600 },
+        { value: [-5, 0], duration: 1600 },
+        { value: [0, 5], duration: 1600 },
+        { value: [5, -3], duration: 1600 },
+        { value: [-3, 4], duration: 1600 },
+      ],
       easing: "easeInOutQuad",
       autoplay: true,
     });
 
     // BOATS
     //=================================================================================
+    setTimeout(() => {
+      anime({
+        targets: redBoat,
+        translateX: [150, 151],
+        translateY: [{ value: [0, 1] }, { value: [1, -1] }],
+        rotate: [{ value: [4, -4] }, { value: [-4, 4] }],
+        duration: 5000,
+        loop: true,
+        direction: "alternate",
+        easing: "linear",
+      });
+    }, 11000);
     anime({
       targets: [boats.children[0], boats.children[1]],
       translateX: [
@@ -119,7 +140,6 @@ export const illustrationAnimation = {
         { value: anime.stagger([5, -5]) },
       ],
       duration: 3000,
-      // delay: anime.stagger(100),
       loop: true,
       direction: "alternate",
       easing: "linear",
@@ -136,7 +156,7 @@ export const illustrationAnimation = {
         birds.children[5],
       ],
       scale: [
-        { value: anime.stagger([0.8, 1.2]) },
+        { value: anime.stagger([0.9, 1.1]) },
         { value: anime.stagger([1.1, 1]) },
       ],
       translateX: [
@@ -144,13 +164,13 @@ export const illustrationAnimation = {
         { value: anime.stagger([3, 0]) },
       ],
       translateY: [
-        { value: anime.stagger([-6, 6]) },
-        { value: anime.stagger([6, -6]) },
+        { value: anime.stagger([-3, 3]) },
+        { value: anime.stagger([3, -3]) },
       ],
       rotate: [
-        { value: anime.stagger([-10, 40]) },
-        { value: anime.stagger([50, -18]) },
-        { value: anime.stagger([5, -30]) },
+        { value: anime.stagger([-10, 30]) },
+        { value: anime.stagger([30, -10]) },
+        { value: anime.stagger([5, -15]) },
         { value: anime.stagger([16, -4]) },
       ],
       duration: function() {
@@ -159,30 +179,29 @@ export const illustrationAnimation = {
 
       loop: true,
       direction: "alternate",
-      easing: "easeInOutExpo",
+      easing: "linear",
     });
 
     // LEAF
     //=================================================================================
     anime({
       targets: leaf,
-      easing: "easeInOutQuart",
+      easing: "linear",
       delay: 8000,
 
-      rotate: [
-        { value: 6, duration: 8000 },
-        { value: -6, duration: 8000 },
-      ],
-
       translateX: [
-        { value: -80, duration: 6000 },
-        { value: -20, duration: 2000 },
+        { value: -80, duration: 2000 },
+        { value: 80, duration: 2000 },
+        { value: -80, duration: 2000 },
+        { value: 80, duration: 2000 },
       ],
       translateY: [
-        { value: 500, duration: 4000 },
-        { value: 620, duration: 4000 },
+        { value: 200, duration: 2000 },
+        { value: 198, duration: 100 },
+        { value: 400, duration: 2000 },
+        { value: 600, duration: 2000 },
+        { value: 700, duration: 2000 },
       ],
-      scale: { value: 0.8, duration: 4000 },
     });
 
     // CLOUDS
@@ -195,7 +214,7 @@ export const illustrationAnimation = {
   //============================== О НАС ===============================
   //===================================================================================
   startAbout: function(refs) {
-    const { squirrel, bike, spin1, spin2, spin3 } = refs;
+    const { bike, spin1, spin2, spin3 } = refs;
 
     anime({
       targets: bike,
@@ -231,23 +250,22 @@ export const illustrationAnimation = {
 
     anime({
       targets: [spin1, spin2, spin3],
-      rotate: 720,
+      rotate: [0, -720],
       loop: true,
-      duration: 9000,
-      direction: "alternate",
-      easing: "easeInOutQuad",
-      autoplay: true,
-    });
-    anime({
-      targets: squirrel,
-      translateY: 4,
-      rotate: "+=2",
-      loop: true,
-      duration: 6000,
-      direction: "alternate",
+      duration: 10000,
       easing: "linear",
       autoplay: true,
     });
+    // anime({
+    //   targets: squirrel,
+    //   translateY: 4,
+    //   rotate: "+=2",
+    //   loop: true,
+    //   duration: 6000,
+    //   direction: "alternate",
+    //   easing: "linear",
+    //   autoplay: true,
+    // });
   },
   //===================================================================================
   //============================== Бизнесу ===============================
@@ -256,22 +274,31 @@ export const illustrationAnimation = {
     const { spin4, spin5, sign } = refs;
     anime({
       targets: [spin4, spin5],
-      rotate: [0, 1440],
+      rotate: [0, -720],
       loop: true,
       duration: 10000,
-
-      easing: "easeInOutQuad",
-      autoplay: true,
-    });
-    anime({
-      targets: sign,
-      rotate: [0, -360],
-      loop: true,
-      duration: 6000,
 
       easing: "linear",
       autoplay: true,
     });
+
+    anime({
+      targets: sign,
+      rotate: [0, 360],
+      loop: true,
+      duration: 10000,
+
+      easing: "linear",
+      autoplay: true,
+    });
+    const light = document.querySelectorAll(".indication-light");
+    const dark = document.querySelectorAll(".indication-dark");
+    for (let path of light) {
+      path.classList.add("indication--green");
+    }
+    for (let path of dark) {
+      path.classList.add("indication--green-dark");
+    }
   },
   //===================================================================================
   //============================== Школы ===============================
@@ -328,41 +355,56 @@ export const illustrationAnimation = {
   //============================== Volunteers ===============================
   //===================================================================================
   startContact: function(refs) {
-    const { phone, mail, message } = refs;
-    const tl = anime
-      .timeline({
-        loop: true,
-        easing: "easeInOutSine",
-        direction: "alternate",
-      })
-      .add({
+    const { phone, mail, message, deerEye } = refs;
+    anime({
+      targets: deerEye,
+      translateY: 50,
+      duration: 1000,
+      easing: "linear",
+      direction: "alternate",
+      autoplay: true,
+      loop: true,
+      delay: 1000,
+    });
+
+    setTimeout(() => {
+      anime({
         targets: phone,
         rotate: 60,
         duration: 1000,
+        easing: "easeInOutSine",
         direction: "alternate",
-      })
-      .add(
-        {
-          targets: message.children[2],
-          scale: [0.98, 1.2],
-          duration: 1000,
-          easing: "easeInOutCirc",
-          direction: "alternate",
-        },
-        "+=1500"
-      )
-      .add(
-        {
-          targets: mail.children[3],
-          translateY: [{ value: -9 }],
-          scaleY: [{ value: [1, 0] }, { value: [0, -1] }],
+        autoplay: true,
+        loop: true,
+        delay: 6000,
+      });
+    }, 2000);
 
-          duration: 1000,
-          easing: "easeInOutSine",
-          direction: "alternate",
-        },
-        "+=1500"
-      );
-    tl.play();
+    setTimeout(() => {
+      anime({
+        targets: message.children[2],
+        scale: [0.98, 1.1],
+        duration: 1000,
+        easing: "easeInOutCirc",
+        direction: "alternate",
+        autoplay: true,
+        loop: true,
+        delay: 6000,
+      });
+    }, 4000);
+
+    setTimeout(() => {
+      anime({
+        targets: mail.children[3],
+        translateY: [{ value: -9 }],
+        scaleY: [{ value: [1, 0] }, { value: [0, -1] }],
+
+        duration: 1000,
+        easing: "easeInOutSine",
+        direction: "alternate",
+        loop: true,
+        delay: 6000,
+      });
+    }, 6000);
   },
 };
