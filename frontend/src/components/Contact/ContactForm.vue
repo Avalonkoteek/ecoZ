@@ -1,7 +1,7 @@
 <template>
   <section class="section section--contact">
     <Overlay v-model="isOpen" />
-    <div class="container">
+    <div class="container" ref="pageExit">
       <ButtonBack :to="'/contact'" />
       <div class="contactForm__wrapper">
         <form class="contactForm" @submit.prevent="submitHandler">
@@ -138,9 +138,14 @@ export default {
     }
   },
   mounted() {
+    let { pageExit } = this.$refs;
+    pageExit.classList.add("container--contact");
     this.isOpen = true;
   },
   beforeRouteLeave(to, from, next) {
+    let { pageExit } = this.$refs;
+    pageExit.classList.remove("container--contact");
+    pageExit.classList.add("container--contact-exit");
     this.isOpen = false;
     setTimeout(next, 750);
   },
