@@ -60,6 +60,7 @@ export const illustrationAnimation = {
   //============================== На каком экране и какие анимации проигрывать =======
   //===================================================================================
   startAnimationFrame: function(newLayout, oldLayout, refs) {
+    // бесконечные анимации вращения для мельниц и движения облаков через css
     const { spin1, spin2, spin3, spin4, spin5, allClouds } = refs;
     let spinArr = [spin1, spin2, spin3, spin4, spin5];
 
@@ -67,6 +68,8 @@ export const illustrationAnimation = {
       item.classList.add("spin-animation");
     });
     allClouds.classList.add("clouds-move");
+
+    // анимации на страцницах
     switch (newLayout) {
       case "main-layout":
         this.startHome(refs);
@@ -258,14 +261,6 @@ export const illustrationAnimation = {
       autoplay: true,
     });
 
-    // anime({
-    //   targets: [spin1, spin2, spin3],
-    //   rotate: [0, -720],
-    //   loop: true,
-    //   duration: 15000,
-    //   easing: "linear",
-    //   autoplay: true,
-    // });
     anime({
       targets: squirrel.children[1],
       d: {

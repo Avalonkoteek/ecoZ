@@ -110,7 +110,7 @@ g {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 }
 @keyframes move-left {
@@ -124,10 +124,10 @@ g {
   }
 }
 .indication--green-dark {
-  animation: change-fill-dark 16s ease-in-out infinite;
+  animation: change-fill-dark 16s ease-in-out;
 }
 .indication--green {
-  animation: change-fill 16s ease-in-out infinite;
+  animation: change-fill 16s ease-in-out;
 }
 .spin-animation {
   animation: spin 10s linear infinite;
