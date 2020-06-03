@@ -105,24 +105,33 @@ g {
     fill: #f89d5e;
   }
 }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes move-left {
+  0% {
+    transform: translateX(0) translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-200px) translateY(4px);
+    opacity: 0.5;
+  }
+}
 .indication--green-dark {
   animation: change-fill-dark 16s ease-in-out infinite;
 }
 .indication--green {
   animation: change-fill 16s ease-in-out infinite;
 }
-.cloud-animation {
-  position: absolute;
-  width: 563px;
-  height: 142px;
-  background: url("../../img/MAIN__BG/CLOUD.svg") no-repeat;
-  background-size: contain;
-  top: 30%;
-  left: 40%;
-  transition: all 8s ease;
-  opacity: 1;
+.spin-animation {
+  animation: spin 10s linear infinite;
 }
-.cloud-animation--left {
-  left: 20%;
-  opacity: 0;
+.clouds-move {
+  animation: move-left 20s ease-in-out infinite alternate;
 }
