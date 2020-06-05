@@ -1,6 +1,7 @@
 <template>
   <section class="section services">
-    <div class="container">
+    <Overlay v-model="isOpen" />
+    <div class="container" ref="pageExit">
       <ButtonBack class="services__btn-back" :to="'/about'" />
       <div class="services__cols">
         <div class="services__col-narrow">
@@ -52,14 +53,17 @@
 <script>
 import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
+import Overlay from "../Background/Overlay";
 
 export default {
   components: {
     ButtonBack,
-    Breadcrumbs
+    Breadcrumbs,
+    Overlay
   },
   data() {
     return {
+      isOpen: false,
       links: [
         {
           name: "Цели",
@@ -102,6 +106,16 @@ export default {
 
   mounted() {
     if (this.items.length > 2) this.scroll = true;
+    let { pageExit } = this.$refs;
+    pageExit.classList.add("container--contact");
+    this.isOpen = true;
+  },
+  beforeRouteLeave(to, from, next) {
+    let { pageExit } = this.$refs;
+    pageExit.classList.remove("container--contact");
+    pageExit.classList.add("container--contact-exit");
+    this.isOpen = false;
+    setTimeout(next, 750);
   }
 };
 </script>

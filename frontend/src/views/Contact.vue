@@ -1,6 +1,6 @@
 <template>
   <section class="main">
-    <Overlay class="main__overlay" />
+    <Overlay />
     <div class="container">
       <div class="main__section">
         <h2 class="main__title">{{ content.title }}</h2>

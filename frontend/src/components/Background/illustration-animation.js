@@ -26,7 +26,6 @@ export const illustrationAnimation = {
     if (newLayout === "empty-layout") {
       newLayout = oldLayout;
     }
-    let isDesktop = document.body.clientHeight < 1023; //
 
     let Position = "0%";
     switch (newLayout) {
@@ -46,7 +45,7 @@ export const illustrationAnimation = {
         Position = "-44%";
         break;
       case "contact-layout":
-        isDesktop == true ? (Position = "-58%") : (Position = "-56%");
+        Position = "-56%";
 
         break;
 

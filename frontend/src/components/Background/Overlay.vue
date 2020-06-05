@@ -1,20 +1,26 @@
 <template>
   <div>
     <svg
+      width="334"
+      height="43"
+      viewBox="0 0 334 43"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 322.563 243.488"
-      v-if="!isMobile"
-      preserveAspectRatio="none"
       class="overlay-mobile"
+      preserveAspectRatio="none"
     >
-      <path
-        id="BG"
-        d="M238.777-1.668c-39.968,3.962,25.133,312.1-37.9,321.036-27.667,0-64.126-.1-102.217,0-49.714.134-101.432,0-101.432,0S-2.779,158.18-2.772.151C-2.772.151,257.206-3.5,238.777-1.668Z"
-        transform="translate(2.681 240.217) rotate(-90)"
-        fill="#fffaeb"
-        stroke="#fff"
-        stroke-width="1"
-      />
+      <g id="Frame 4" clip-path="url(#clip0)">
+        <path
+          id="BG"
+          d="M0 1.99985C0.301676 42.0601 333.5 -18.5 333.5 42.5C333.5 69.0003 340.384 106.469 340.487 144.56C340.621 194.274 332.664 243.549 332.664 243.549L0 243.549L0 1.99985Z"
+          fill="#FFFAEB"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0">
+          <rect width="334" height="43" fill="white" />
+        </clipPath>
+      </defs>
     </svg>
 
     <svg
@@ -23,7 +29,6 @@
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1440 900"
       preserveAspectRatio="none"
-      v-else
     >
       <path
         id="BG"

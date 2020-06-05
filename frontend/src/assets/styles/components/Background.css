@@ -36,7 +36,17 @@
 .overlay-mobile {
   position: absolute;
   width: 100%;
-  top: -5vw;
+  top: 0;
+  height: 50px;
+  left: 0;
+  display: none;
+  transform: translateY(-98%);
+  @media (--tablet-lg) {
+    display: block;
+  }
+  @media (--tablet) {
+    height: 36px;
+  }
 }
 
 /* illustration

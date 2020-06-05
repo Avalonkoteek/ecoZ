@@ -1,6 +1,6 @@
 <template>
   <section class="main">
-    <Overlay class="main__overlay" />
+    <Overlay />
     <div class="container">
       <!-- Main Section -->
       <div class="main__section">

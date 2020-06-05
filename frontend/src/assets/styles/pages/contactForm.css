@@ -1,15 +1,19 @@
 /* CONTACT
 ================================================ */
 .container--contact {
-  animation: fade-left 0.75s ease-in-out;
+  animation: fade-left 0.8s ease-in-out;
+
   @media (--tablet-lg) {
-    animation: fade-to-top 1s ease;
+    position: relative;
+    background-color: #fffaeb;
+    animation: fade-to-top 1s ease-in-out;
   }
 }
 .container--contact-exit {
-  animation: fade-right 0.75s ease-in-out;
+  animation: fade-right 0.8s ease-in-out;
   @media (--tablet-lg) {
-    animation: fade-to-top 0.7s ease;
+    background-color: #fffaeb;
+    animation: fade-to-bottom 1s ease-in-out;
   }
 }
 
@@ -220,11 +224,21 @@ textarea:-moz-placeholder {
 }
 @keyframes fade-to-top {
   0% {
-    transform: translateY(100%);
+    transform: translateY(60%);
     opacity: 0;
   }
   100% {
     transform: translateY(0%);
     opacity: 1;
+  }
+}
+@keyframes fade-to-bottom {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(60%);
+    opacity: 0;
   }
 }

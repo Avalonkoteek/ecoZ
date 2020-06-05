@@ -1,13 +1,12 @@
 <template>
-  <header class="navbar" >
+  <header class="navbar">
     <div class="container">
       <Burger class="navbar__burger" @click="isOpen = !isOpen" v-model="isOpen" v-if="!isMobile" />
       <div class="navbar__logo">
         <img v-if="isMobile" alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z.svg" />
-
         <img v-else alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z__mobile.svg" />
-
       </div>
+
       <nav class="navbar__wrapper" :class="{open:isOpen}">
         <ul class="navbar__list">
           <li class="navbar__item" v-for="link in links" :key="link.url" @click="isOpen = false">
@@ -16,9 +15,7 @@
               class="link navbar__link"
               active-class="active"
               :exact="link.exact"
-
-            >{{link.title}}
-            </router-link>
+            >{{link.title}}</router-link>
           </li>
         </ul>
         <div class="navbar__fond-img">
@@ -30,8 +27,9 @@
 </template>
 
 <script>
-
 import Burger from "./Burger";
+
+// import MobileSvgBackground from "./MobileSVGBackground/MobileSvgBackground";
 
 export default {
   name: "navbar",
@@ -60,6 +58,7 @@ export default {
   },
   components: {
     Burger
+    // MobileSvgBackground
   }
 };
 </script>

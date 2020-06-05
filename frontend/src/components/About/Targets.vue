@@ -1,6 +1,7 @@
 <template>
   <section class="targets section">
-    <div class="container">
+    <Overlay v-model="isOpen" />
+    <div class="container" ref="pageExit">
       <ButtonBack class="targets__button-back" :to="'/about'" />
 
       <div class="targets__content">
@@ -86,6 +87,7 @@
 import VSlider from "../controls/VSlider.vue";
 import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
+import Overlay from "../Background/Overlay";
 
 const sliderOptions = {
   spaceBetween: 24,
@@ -110,6 +112,7 @@ export default {
     VSlider,
     ButtonBack,
     Breadcrumbs,
+    Overlay
   },
 
   data() {
@@ -137,5 +140,17 @@ export default {
       return sliderOptions;
     }
   },
+  mounted() {
+    let { pageExit } = this.$refs;
+    pageExit.classList.add("container--contact");
+    this.isOpen = true;
+  },
+  beforeRouteLeave(to, from, next) {
+    let { pageExit } = this.$refs;
+    pageExit.classList.remove("container--contact");
+    pageExit.classList.add("container--contact-exit");
+    this.isOpen = false;
+    setTimeout(next, 750);
+  }
 };
 </script>
