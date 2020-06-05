@@ -150,7 +150,7 @@ export default {
     pageExit.classList.remove("container--contact");
     pageExit.classList.add("container--contact-exit");
     this.isOpen = false;
-    setTimeout(next, 750);
+    setTimeout(next, 400);
   }
 };
 </script>

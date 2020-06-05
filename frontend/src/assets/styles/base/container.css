@@ -29,6 +29,7 @@
 
   @media (--tablet-lg) {
     padding-top: calc(var(--gs) * 11);
+    padding-top: 79px;
     padding-bottom: calc(var(--gs) * 10);
   }
 }

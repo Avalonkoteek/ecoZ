@@ -1,19 +1,19 @@
 /* CONTACT
 ================================================ */
 .container--contact {
-  animation: fade-left 0.8s ease-in-out;
+  animation: fade-left 0.4s ease-in-out;
 
   @media (--tablet-lg) {
     position: relative;
     background-color: #fffaeb;
-    animation: fade-to-top 1s ease-in-out;
+    animation: fade-to-top 0.4s ease-in-out;
   }
 }
 .container--contact-exit {
-  animation: fade-right 0.8s ease-in-out;
+  animation: fade-right 0.4s ease-in-out;
   @media (--tablet-lg) {
     background-color: #fffaeb;
-    animation: fade-to-bottom 1s ease-in-out;
+    animation: fade-to-bottom 0.4s ease-in-out;
   }
 }
 

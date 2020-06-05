@@ -196,14 +196,16 @@ export const illustrationAnimation = {
 
     anime({
       targets: leaf,
-      easing: "easeInOutQuart",
+      easing: "linear",
       duration: 6000,
       delay: 6000,
       keyframes: [
-        { translateY: 200, translateX: -80, rotate: 30 },
-        { translateX: 20, translateY: 400, rotate: 60 },
-        { translateY: 600, rotate: 190 },
+        { translateY: 300, translateX: -60, rotate: 30 },
+        { translateX: 20, translateY: 500, rotate: 60 },
+        { translateY: 650, rotate: 190 },
       ],
+      autoplay: true,
+      loop: false,
     });
 
     // CLOUDS
