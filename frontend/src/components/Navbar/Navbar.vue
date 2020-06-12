@@ -2,10 +2,10 @@
   <header class="navbar">
     <div class="container">
       <Burger class="navbar__burger" @click="isOpen = !isOpen" v-model="isOpen" v-if="!isMobile" />
-      <div class="navbar__logo">
-        <img v-if="isMobile" alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z.svg" />
+      <router-link to="/" class="navbar__logo">
+        <img v-if="isMobile" alt="Логотип ecoZ" src="../../assets/img/logo/Logo.svg" />
         <img v-else alt="Логотип ecoZ" src="../../assets/img/logo/Logo_ECO-Z__mobile.svg" />
-      </div>
+      </router-link>
 
       <nav class="navbar__wrapper" :class="{open:isOpen}">
         <ul class="navbar__list">

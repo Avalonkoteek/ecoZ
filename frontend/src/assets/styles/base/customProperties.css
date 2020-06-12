@@ -1,91 +1,89 @@
 :root {
-    --gs: 8px;
+  --gs: 8px;
 
-    --cl-white: #ffffff;
-    --cl-black: #000000;
-    --cl-brown: #c99072;
-    --cl-grey: #AFB0BC;
-    --cl-lg-grey: #DADADA;
-    --cl-lg-orange: #D6AF9A;
-    --cl-beige:#FFFAEB;
-    --cl-blue : #565D8D;
+  --cl-white: #ffffff;
+  --cl-black: #000000;
+  --cl-brown: #c99072;
+  --cl-grey: #afb0bc;
+  --cl-lg-grey: #dadada;
+  --cl-lg-orange: #d6af9a;
+  --cl-beige: #fffaeb;
+  --cl-blue: #565d8d;
 
-    --time: 200ms;
+  --time: 200ms;
 
-    --animation-time: 400ms;
+  --animation-time: 400ms;
 
-    --title-font: 'Gost Type A', arial, sans-serif;
-    --base-font: 'Open Sans Light', arial, sans-serif;
+  --title-font: "Gost Type A", arial, sans-serif;
+  --base-font: "Open Sans Light", arial, sans-serif;
 
-      /* Кегель для шрифтов font-size(fs)*/
-      --fs-h1:48px;
-      --fs-h2:48px;
-      --fs-h3:24px;
-      --fs-p:20px;
-      --fs-a:23px;
-      --fs-a-nav:30px;
+  /* Кегель для шрифтов font-size(fs)*/
+  --fs-h1: 40px;
+  --fs-h2: 40px;
+  --fs-h3: 24px;
+  --fs-p: 20px;
+  --fs-a: 23px;
+  --fs-a-nav: 30px;
 
-    /* Максимальная длина контейнера */
-    --container-max-width: 1440px;
+  /* Максимальная длина контейнера */
+  --container-max-width: 1440px;
 
-    /* Точки адаптива */
-    --mobile-sm-size-min: 320px;
-    --mobile-size: 479px;
-    --mobile-size-min: 480px;
-    --mobile-lg-size: 639px;
-    --mobile-lg-size-min: 640px;
-    --tablet-size: 767px;
-    --tablet-size-min: 768px;
-    --tablet-lg-size: 1023px;
-    --tablet-lg-size-min: 1024px;
-    --desktop-size: 1279px;
-    --desktop-size-min: 1280px;
-    --desktop-lg-size: 1599px;
-    --desktop-lg-size-min: 1600px;
-    --desktop-xl-size: 1909px;
-    --desktop-xl-size-min: 1910px;
+  /* Точки адаптива */
+  --mobile-sm-size-min: 320px;
+  --mobile-size: 479px;
+  --mobile-size-min: 480px;
+  --mobile-lg-size: 639px;
+  --mobile-lg-size-min: 640px;
+  --tablet-size: 767px;
+  --tablet-size-min: 768px;
+  --tablet-lg-size: 1023px;
+  --tablet-lg-size-min: 1024px;
+  --desktop-size: 1279px;
+  --desktop-size-min: 1280px;
+  --desktop-lg-size: 1599px;
+  --desktop-lg-size-min: 1600px;
+  --desktop-xl-size: 1909px;
+  --desktop-xl-size-min: 1910px;
 }
-
 
 /* наверное это не самое лучшее место для медиазапросов, но пока пока они побудут туть */
-@media(max-width:var(--desktop-size-min)){
-    .app{
-        --fs-h1:40px;
-        --fs-h2:40px;
-        --fs-h3:25px;
-        --fs-p:18px;
-        --fs-a:20px;
-        --fs-a-nav:25px;
-    }
-
+@media (--desktop) {
+  .app {
+    --fs-h1: 35px;
+    --fs-h2: 35px;
+    --fs-h3: 25px;
+    --fs-p: 18px;
+    --fs-a: 20px;
+    --fs-a-nav: 25px;
+  }
 }
-@media(max-width:var(--tablet-lg-size-min)){
-    .app{
-        --fs-h1:35px;
-        --fs-h2:35px;
-        --fs-h3:22px;
-        --fs-p:18px;
-        --fs-a:20px;
-        --fs-a-nav:20px;
-    }
+@media (max-width: var(--tablet-lg-size-min)) {
+  .app {
+    --fs-h1: 30px;
+    --fs-h2: 30px;
+    --fs-h3: 22px;
+    --fs-p: 18px;
+    --fs-a: 20px;
+    --fs-a-nav: 20px;
+  }
 }
-@media(max-width:var(--mobile-lg-size-min)){
-    .app{
-        --fs-h1:30px;
-        --fs-h2:30px;
-        --fs-h3:20px;
-        --fs-p:16px;
-        --fs-a:20px;
-        --fs-a-nav:16px;
-    }
+@media (max-width: var(--mobile-lg-size-min)) {
+  .app {
+    --fs-h1: 30px;
+    --fs-h2: 30px;
+    --fs-h3: 20px;
+    --fs-p: 16px;
+    --fs-a: 20px;
+    --fs-a-nav: 16px;
+  }
 }
-@media(max-width:var(--mobile-size-min)){
-    .app{
-        --fs-h1:25px;
-        --fs-h2:25px;
-        --fs-h3:16px;
-        --fs-p:14px;
-        --fs-a:17px;
-        --fs-a-nav:14px;
-    }
+@media (max-width: var(--mobile-size-min)) {
+  .app {
+    --fs-h1: 25px;
+    --fs-h2: 25px;
+    --fs-h3: 16px;
+    --fs-p: 14px;
+    --fs-a: 17px;
+    --fs-a-nav: 14px;
+  }
 }

@@ -1,5 +1,5 @@
 <template>
   <button class="home-button">
-    <router-link to="/">Записаться на консультацию</router-link>
+    <a>Записаться на консультацию</a>
   </button>
 </template>

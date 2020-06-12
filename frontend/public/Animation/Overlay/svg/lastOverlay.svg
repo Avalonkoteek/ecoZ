@@ -1,0 +1,16 @@
+ <svg
+      class="background__overlay"
+      ref="overlay"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 900"
+      preserveAspectRatio="none"
+    >
+      <path
+        id="BG"
+        ref="overlayPath"
+        d="M0,0h1441.727v125.506s48.275,9.268,31.106,146.619-29.187,148.424,0,304.66-31.106,323.234-31.106,323.234h-1441.462Z"
+        fill="#fffaeb"
+        stroke="#707070"
+        stroke-width="0"
+      />
+    </svg>

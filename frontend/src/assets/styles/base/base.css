@@ -10,6 +10,9 @@
 html,
 body {
   min-height: 100vh;
+  @media (--tablet-lg) {
+    min-height: 850px;
+  }
 }
 
 body {
@@ -41,7 +44,7 @@ img {
 p {
   line-height: 24px;
   font-family: var(--base-font);
-  font-size: 20px;
+  font-size: var(--fs-p);
 }
 
 h1 {
@@ -52,7 +55,7 @@ h1 {
 }
 
 h2 {
-  font-size: 48px;
+  font-size: var(--fs-h1);
   line-height: 1.1;
   font-weight: bold;
 }

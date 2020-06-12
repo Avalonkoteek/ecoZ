@@ -1,15 +1,14 @@
 import anime from "animejs";
 
 export const overlayAnimation = {
-  // START ANIME
   overlayAnimationStart: function(partOfSvg) {
-    const last =
+    const first =
       "M0,0h1441.727v125.506s48.275,9.268,31.106,146.619-29.187,148.424,0,304.66-31.106,323.234-31.106,323.234h-1441.462Z";
     anime({
       targets: partOfSvg,
       d: [
         {
-          value: last,
+          value: first,
         },
       ],
       duration: 400,

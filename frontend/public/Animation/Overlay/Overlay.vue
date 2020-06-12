@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Мобильный оверлей -->
     <svg
       width="334"
       height="43"
@@ -22,7 +23,7 @@
         </clipPath>
       </defs>
     </svg>
-
+    <!-- Десктопный оверлей -->
     <svg
       class="background__overlay"
       ref="overlay"
@@ -47,29 +48,33 @@ export default {
   props: ["value"],
   name: "overlay",
   watch: {
-    value: function(newVal) {
+    value: function(isOpen) {
       const { overlayPath } = this.$refs;
-      if (newVal) {
-        overlayAnimation.overlayAnimationStart(overlayPath);
-        this.overlayIsActive = true;
+      const firstD =
+        "M0,0h1441.727v125.506s48.275,9.268,31.106,146.619-29.187,148.424,0,304.66-31.106,323.234-31.106,323.234h-1441.462Z";
+      const lastD =
+        "M0,0h1441.727v125.506s-831.476-58.914-848.645,78.438,115.032,224.91,144.219,381.146-19.609,314.93-19.609,314.93h-717.427Z";
+      if (isOpen) {
+        overlayAnimation.overlayAnimationPath(overlayPath, lastD); //анимация при переходе на дочерние страницы
+        this.overlayIsOpen = true;
       } else {
-        overlayAnimation.overlayAnimationEnd(overlayPath);
-        this.overlayIsActive = false;
+        overlayAnimation.overlayAnimationPath(overlayPath, firstD); //анимация при уходе с дочерних страниц
+        this.overlayIsOpen = false;
       }
     }
   },
+
+  created() {
+    window.addEventListener("resize", this.updateWidth);
+    this.updateWidth();
+  },
   data: () => ({
-    isMobile: false
+    isMobile
   }),
-  // check mobile width
   methods: {
     updateWidth() {
       this.isMobile = window.innerWidth > 1023;
     }
-  },
-  created() {
-    window.addEventListener("resize", this.updateWidth);
-    this.updateWidth();
   }
 };
 </script>

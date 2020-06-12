@@ -66,16 +66,8 @@ export default {
       isOpen: false,
       links: [
         {
-          name: "Цели",
+          name: "Услуги",
           to: "/about/targets"
-        },
-        {
-          name: "Деятельность",
-          to: "/about"
-        },
-        {
-          name: "Партнеры",
-          to: "/about/partners"
         }
       ],
       scroll: false,

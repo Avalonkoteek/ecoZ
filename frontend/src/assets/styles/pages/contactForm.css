@@ -1,18 +1,20 @@
 /* CONTACT
 ================================================ */
 .container--contact {
-  animation: fade-left 0.4s ease-in-out;
+  animation: fade-left 0.5s ease-in-out;
 
   @media (--tablet-lg) {
     position: relative;
     background-color: #fffaeb;
+    /* animation: fade-left 0.5s ease-in-out; */
     animation: fade-to-top 0.4s ease-in-out;
   }
 }
 .container--contact-exit {
-  animation: fade-right 0.4s ease-in-out;
+  animation: fade-right 0.5s ease-in-out;
   @media (--tablet-lg) {
     background-color: #fffaeb;
+    /* animation: fade-right 0.5s ease-in-out; */
     animation: fade-to-bottom 0.4s ease-in-out;
   }
 }
@@ -224,8 +226,8 @@ textarea:-moz-placeholder {
 }
 @keyframes fade-to-top {
   0% {
-    transform: translateY(60%);
-    opacity: 0;
+    transform: translateY(400px);
+    opacity: 1;
   }
   100% {
     transform: translateY(0%);
@@ -238,7 +240,7 @@ textarea:-moz-placeholder {
     opacity: 1;
   }
   100% {
-    transform: translateY(60%);
-    opacity: 0;
+    transform: translateY(400px);
+    opacity: 1;
   }
 }

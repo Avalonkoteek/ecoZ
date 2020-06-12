@@ -15,6 +15,7 @@
     padding-top: 80px;
   }
   @media (--tablet) {
+    min-height: 400px;
     height: 400px;
   }
 }
@@ -41,6 +42,7 @@
   left: 0;
   display: none;
   transform: translateY(-98%);
+  animation: ovelay-mobile 0.3s ease;
   @media (--tablet-lg) {
     display: block;
   }
@@ -92,27 +94,28 @@ g {
 #Spin5 {
   transform-origin: 50% 64%;
 }
-
+@keyframes ovelay-mobile {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-98%);
+  }
+}
 @keyframes change-fill-dark {
   0% {
     fill: #db7e40;
   }
-  50% {
-    fill: #4cc574;
-  }
   100% {
-    fill: #db7e40;
+    fill: #4cc574;
   }
 }
 @keyframes change-fill {
   0% {
     fill: #f89d5e;
   }
-  50% {
-    fill: #5ef891;
-  }
   100% {
-    fill: #f89d5e;
+    fill: #5ef891;
   }
 }
 @keyframes spin {
@@ -135,9 +138,11 @@ g {
 }
 .indication--green-dark {
   animation: change-fill-dark 16s ease-in-out;
+  fill: #4cc574;
 }
 .indication--green {
   animation: change-fill 16s ease-in-out;
+  fill: #5ef891;
 }
 .spin-animation {
   animation: spin 10s linear infinite;

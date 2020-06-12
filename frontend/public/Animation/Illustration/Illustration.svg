@@ -1,7 +1,4 @@
-<template>
-  <div ref="bg" class="background">
-    <div class="background__illustration-wrapper">
-      <svg
+   <svg
         class="background__svg"
         viewBox="0 0 3943 1088"
         fill="none"
@@ -6992,25 +6989,3 @@
           </clipPath>
         </defs>
       </svg>
-    </div>
-  </div>
-</template>
-
-<script>
-import { illustrationAnimation } from "./illustration-animation";
-
-export default {
-  name: "background",
-  props: ["value"], //meta данные роута, полученные от родителя всех страниц
-  // Следим за изменением
-  //====================================================================>
-  watch: {
-    value: function(newLayout, oldLayout) {
-      const to = illustrationAnimation.getLayoutPosition(newLayout, oldLayout); // получаем инфу на сколько перемещать иллюстрацию
-      const { illustration } = this.$refs; //получаем компонент illustration(аналог функции querySelector('#illustration') id и ref совпадают) this.$refs - массив всех анимируемых объектов
-      illustrationAnimation.movingTo(illustration, to); //премещаем иллюстрацию до нужной точки
-      illustrationAnimation.startAnimationFrame(newLayout, this.$refs); //анимируем элементы на экране
-    }
-  }
-};
-</script>

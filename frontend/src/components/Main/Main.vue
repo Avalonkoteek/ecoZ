@@ -8,7 +8,9 @@
         <div class="main__description" v-html="content.description"></div>
         <!-- Links -->
         <Breadcrumbs :links="content.links" />
-        <MainButton v-if="isHome" />
+        <router-link to="/contact/contact_form">
+          <MainButton v-if="isHome" />
+        </router-link>
       </div>
     </div>
   </section>
