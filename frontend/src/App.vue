@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar />
+    <Navbar :pageTitle="getpageTitle" />
 
     <Background class="backgound-animation" v-model="layout" />
     <router-view />
@@ -21,6 +21,9 @@ import Icons from "./components/controls/Icons";
 
 export default {
   computed: {
+    getpageTitle() {
+      return this.$route.meta.title || "Не знаю";
+    },
     layout() {
       return (this.$route.meta.layout || "empty") + "-layout";
     }

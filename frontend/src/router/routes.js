@@ -13,7 +13,7 @@ export const routes = [
   {
     path: "/home",
     name: "home",
-    meta: { layout: "main" },
+    meta: { layout: "main", title: "Главная" },
     component: () => import("../views/Home.vue"),
   },
   {
@@ -24,7 +24,7 @@ export const routes = [
   {
     path: "/about",
     name: "about",
-    meta: { layout: "about" },
+    meta: { layout: "about", title: "О Проекте" },
     component: About,
     children: [{ path: "partner", component: AboutPartners }],
   },
@@ -48,7 +48,7 @@ export const routes = [
   {
     path: "/business",
     name: "business",
-    meta: { layout: "business" },
+    meta: { layout: "business", title: "Бизнесу" },
     component: () => import("../views/Business.vue"),
   },
   {
@@ -59,19 +59,19 @@ export const routes = [
   {
     path: "/school",
     name: "school",
-    meta: { layout: "school" },
+    meta: { layout: "school", title: "Школам" },
     component: () => import("../views/School.vue"),
   },
   {
     path: "/volunteers",
     name: "volunteers",
-    meta: { layout: "volunteers" },
+    meta: { layout: "volunteers", title: "Волонтерам" },
     component: () => import("../views/Volunteers.vue"),
   },
   {
     path: "/contact",
     name: "contact",
-    meta: { layout: "contact" },
+    meta: { layout: "contact", title: "Контакты" },
     component: () => import("../views/Contact.vue"),
   },
   {

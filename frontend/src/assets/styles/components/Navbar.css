@@ -36,6 +36,7 @@
   &__pageTitle {
     color: #c99072;
     margin-left: 14px;
+    animation: fade-up 0.4s ease-in-out;
   }
 
   /* ======================= ЛОГОТИП =============================================*/
@@ -66,7 +67,7 @@
     @media (--tablet-lg) {
       position: absolute;
       left: 0;
-      top: -15px;
+      top: -25px;
       height: 100vh;
       min-height: 322px;
       width: 35vw;
@@ -81,8 +82,9 @@
       transform-origin: right bottom;
     }
 
-    @media (--mobile-lg) {
+    @media (--mobile) {
       width: 240px;
+      top: -15px;
     }
 
     &.open {
@@ -151,7 +153,7 @@
     }
   }
 }
-
+/* ======================== SVG задник================================= */
 .navbar__topBackground {
   position: absolute;
   top: 0;

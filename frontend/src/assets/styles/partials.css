@@ -21,10 +21,9 @@
 @import "./components/Burger.css";
 @import "./components/Footer.css";
 @import "./components/Main.css";
-@import "./components/MainLayout.css";
+@import "./components/Breadcrumbs.css";
 @import "./components/Navbar.css";
 @import "./components/VSlider.css";
-@import "./components/Breadcrumbs.css";
 
 /* Страницы */
 @import "./pages/partners.css";

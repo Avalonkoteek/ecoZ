@@ -25,7 +25,7 @@
     <div class="container">
       <!-- Компоненты для планшетов и мобильных --------------------->
       <Burger class="navbar__burger" @click="isOpen = !isOpen" v-model="isOpen" v-if="!isMobile" />
-      <a href="#" class="navbar__pageTitle" v-if="!isMobile">page title</a>
+      <a href="#" class="navbar__pageTitle" v-if="!isMobile">{{pageTitle}}</a>
 
       <!-- ЛОГОТИП ------------------------------->
       <router-link to="/" class="navbar__logo">
@@ -56,10 +56,9 @@
 <script>
 import Burger from "./Burger";
 
-// import MobileSvgBackground from "./MobileSVGBackground/MobileSvgBackground";
-
 export default {
   name: "navbar",
+  props: ["pageTitle"],
   data: () => ({
     isOpen: false,
     isMobile: false,
@@ -85,7 +84,6 @@ export default {
   },
   components: {
     Burger
-    // MobileSvgBackground
   }
 };
 </script>
