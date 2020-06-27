@@ -26,6 +26,7 @@
                   v-if="slideOpen === index"
                 >
                   <div class="partners__slide-info-scrollbar scrollbar">
+
                     <span class="partners__slide-info-close" @click.stop="closeInfo"/>
                     <img class="partners__slide-info-img" :src="item.logo" alt="">
                     <p class="partners__slide-info-text">{{item.text}}</p>

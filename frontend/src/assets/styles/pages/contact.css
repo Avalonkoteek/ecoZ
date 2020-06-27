@@ -9,11 +9,24 @@
 }
 .contact__item:last-of-type {
   margin-bottom: 45px;
+
+  @media (--tablet) {
+    margin-bottom: 16px;
+  }
 }
 .contact__social-img {
   width: 35px;
   height: 35px;
-  margin-right: 17px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: -3px 4px 0 0;
+
+  @media (--tablet) {
+    width: 20px;
+    height: 20px;
+    margin: 2px 0 0 0;
+  }
 }
 .contact__links {
   font-family: var(--base-font);
@@ -21,10 +34,9 @@
   position: relative;
   margin-bottom: calc(var(--gs) * 1.5);
 
-  .icon {
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin: -3px 4px 0 0;
+  @media (--tablet) {
+    font-size: 16px;
+    padding-left: calc(var(--gs) * 3.5);
+    margin-bottom: calc(var(--gs) * .5);
   }
 }

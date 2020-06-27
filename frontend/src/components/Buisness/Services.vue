@@ -46,7 +46,7 @@
         </div>
       </div>
 
-      <Breadcrumbs :links="links" />
+      <Breadcrumbs v-if="links.length && links.length !== 1" :links="links" />
     </div>
   </section>
 </template>
@@ -67,7 +67,7 @@ export default {
       links: [
         {
           name: "Услуги",
-          to: "/about/targets"
+          to: "/business/services"
         }
       ],
       scroll: false,
@@ -101,6 +101,7 @@ export default {
     let { pageExit } = this.$refs;
     pageExit.classList.add("container--contact");
     this.isOpen = true;
+    console.log(this.links.length)
   },
   beforeRouteLeave(to, from, next) {
     let { pageExit } = this.$refs;
