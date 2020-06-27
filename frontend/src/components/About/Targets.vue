@@ -5,7 +5,10 @@
       <ButtonBack class="template__button-back" :to="'/about'" />
 
       <div class="template__content">
-        <div class="template__wrapper scrollbar">
+        <div
+          class="template__wrapper scrollbar"
+          :class="{'template__wrapper--full': !items.length }"
+        >
           <p class="template__text">
             Мы создали нашу некоммерческую организацию чтобы достичь следующих целей:
             - общество должно знать всё о способах сортировки отходов, адресах мест их переработки;
@@ -54,48 +57,29 @@
             Для решения наших задач мы проводим эко-занятия в образовательных учреждениях, акции и эко-квесты, готовим предложения по сокращению потребления ресурсов, внедряем эко-привычки в кафе и офисах.
           </p>
         </div>
-        <div class="template__container-slider">
+        <div v-if="items.length" class="template__container-slider">
           <v-slider class="template__swiper" name="view-shop" :options="sliderOptions">
-            <div class="swiper-slide">
+            <div
+              class="swiper-slide"
+              v-for="(item, index) in items"
+              :key="index"
+            >
               <div class="template__swiper-img">
-                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="template__swiper-img">
-                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="template__swiper-img">
-                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="template__swiper-img">
-                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="template__swiper-img">
-                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="template__swiper-img">
-                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
+                <img :src="item.img" alt="img_1" />
               </div>
             </div>
           </v-slider>
         </div>
       </div>
 
-      <Breadcrumbs :links="links" />
+      <Breadcrumbs v-if="links.length && links.length !== 1" :links="links" />
     </div>
   </section>
 </template>
 
 <script>
+const img = "/img/targets.56c06f8c.jpg";
+
 import VSlider from "../controls/VSlider.vue";
 import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
@@ -132,7 +116,7 @@ export default {
       links: [
         {
           name: "Цели",
-          to: "/about/template"
+          to: "/about/targets"
         },
         {
           name: "Деятельность",
@@ -143,7 +127,27 @@ export default {
           to: "/about/partners"
         }
       ],
-      isOpen: false
+      isOpen: false,
+      items: [
+        {
+          img: img
+        },
+        {
+          img: img
+        },
+        {
+          img: img
+        },
+        {
+          img: img
+        },
+        {
+          img: img
+        },
+        {
+          img: img
+        }
+      ]
     };
   },
 
