@@ -65,7 +65,7 @@
               :key="index"
             >
               <div class="template__swiper-img">
-                <img :src="item.img" alt="img_1" />
+                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
               </div>
             </div>
           </v-slider>

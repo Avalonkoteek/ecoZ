@@ -5,14 +5,17 @@
 
     &__cols {
       display: flex;
-      height: 400px;
+      height: 500px;
       margin-bottom: calc(var(--gs) * 6.75);
       padding: 0 calc(var(--gs) * 8.75);
+
+      @media (--desktop) {
+        padding: 0;
+      }
 
       @media(--tablet-lg) {
         flex-direction: column;
         height: auto;
-        padding: 0;
       }
     }
 
@@ -77,7 +80,11 @@
         padding: calc(var(--gs) * 3.5);
 
         &--scrollbar {
-          max-height: 330px;
+          max-height: 415px;
+
+          @media (--tablet-lg) {
+            max-height: 250px;
+          }
 
           @media (--tablet) {
             max-height: 210px;
