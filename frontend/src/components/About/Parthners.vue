@@ -16,7 +16,7 @@
                 <img
                   class="partners__slide-background"
                   :class="{'is-active': (slideOpen === index)}"
-                  :src="item.img"
+                  src="../../assets/img/partners/Sergio_Pizza.png"
                   alt=""
                 />
                 <p class="partners__slide-title">{{item.title}}</p>
@@ -28,7 +28,7 @@
                   <div class="partners__slide-info-scrollbar scrollbar">
 
                     <span class="partners__slide-info-close" @click.stop="closeInfo"/>
-                    <img class="partners__slide-info-img" :src="item.logo" alt="">
+                    <img class="partners__slide-info-img" src="../../assets/img/partners/Image_1.jpg" alt="">
                     <p class="partners__slide-info-text">{{item.text}}</p>
                     <a class="partners__slide-info-link link" :href="item.to">
                       <v-svg name="link" width="11" height="11" />
