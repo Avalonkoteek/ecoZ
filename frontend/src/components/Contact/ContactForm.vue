@@ -81,7 +81,7 @@
               <Multiselect
                 v-model="selectValue"
                 :options="options"
-                :max-height="150"
+                :max-height="160"
                 placeholder="Хочу узнать о мероприятии"
                 selectLabel="Выбрать"
                 selectedLabel="Выбрано"
@@ -163,6 +163,9 @@ export default {
     let { pageExit } = this.$refs;
     pageExit.classList.add("container--contact");
     this.isOpen = true;
+    let selector = document.querySelector(".multiselect__content-wrapper");
+    selector.classList.add("scrollbar");
+    console.log(selector);
   },
   beforeRouteLeave(to, from, next) {
     let { pageExit } = this.$refs;
