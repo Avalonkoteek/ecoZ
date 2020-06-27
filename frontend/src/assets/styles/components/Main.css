@@ -37,6 +37,10 @@
   color: #c99072;
   animation: fade-in 0.4s ease;
   padding-right: calc(var(--gs) * 7);
+
+  @media (--tablet-lg) {
+    padding-right: 0;
+  }
 }
 
 .main__description {
@@ -45,13 +49,23 @@
   padding-right: calc(var(--gs) * 5);
   font-size: 20px;
 
+  @media (--tablet-lg) {
+    padding-right: 0;
+  }
+
   @media (--tablet) {
     font-size: 16px;
   }
 
   p {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+
+    @media (--tablet) {
+      font-size: 16px;
+    }
   }
+
+
   p:last-of-type {
     margin-bottom: 0px;
   }
