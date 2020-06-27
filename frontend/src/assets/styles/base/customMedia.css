@@ -13,6 +13,7 @@
 @custom-media --desktop-diff (1024px <= width <= 1279px);
 @custom-media --desktop (width <= 1279px);
 @custom-media --desktop-min (width >= 1280px);
+@custom-media --desktop-md (width <= 1440px);
 @custom-media --desktop-lg-diff (1280px <= width <= 1599px);
 @custom-media --desktop-lg (width <= 1599px);
 @custom-media --desktop-lg-min (width >= 1600px);

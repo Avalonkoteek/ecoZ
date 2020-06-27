@@ -24,7 +24,7 @@
   padding-top: calc(var(--gs) * 18.75);
   padding-bottom: calc(var(--gs) * 20);
   position: relative;
-  /* background: var(--cl-beige); */
+  background: var(--cl-beige);
   min-height: 100vh;
 
   @media (--tablet-lg) {

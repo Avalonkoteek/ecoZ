@@ -37,6 +37,10 @@
   color: #c99072;
   animation: fade-in 0.4s ease;
   padding-right: calc(var(--gs) * 2);
+
+  @media (--tablet-lg) {
+
+  }
 }
 
 .main__description {
@@ -93,5 +97,11 @@
   100% {
     opacity: 1;
     transform: translateX(0%);
+  }
+}
+
+@media (max-width: 767px) {
+  .main__section {
+    padding-top: 16px;
   }
 }
