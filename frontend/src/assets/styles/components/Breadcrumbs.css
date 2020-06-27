@@ -19,6 +19,10 @@
     &:hover {
       border-bottom: none;
     }
+
+    @media (--tablet) {
+      font-size: 18px;
+    }
   }
 }
 @keyframes fade-up {

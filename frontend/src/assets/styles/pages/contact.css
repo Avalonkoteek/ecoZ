@@ -17,4 +17,14 @@
 }
 .contact__links {
   font-family: var(--base-font);
+  padding-left: calc(var(--gs) * 6.5);
+  position: relative;
+  margin-bottom: calc(var(--gs) * 1.5);
+
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: -3px 4px 0 0;
+  }
 }

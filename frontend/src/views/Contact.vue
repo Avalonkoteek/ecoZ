@@ -6,52 +6,32 @@
         <h2 class="main__title">{{ content.title }}</h2>
         <ul class="contact__wrapper">
           <li class="contact__item">
-            <img
-              class="contact__social-img"
-              alt="instagram"
-              src="../assets/img/Contact/Insta_Icon.svg"
-            />
             <a
               href="https://www.instagram.com/ecozelenograd/"
               target="__blank"
               class="contact__links link"
-            >@ecozelenograd</a>
+            ><v-svg name="ig" width="35" height="35" />@ecozelenograd</a>
           </li>
           <li class="contact__item">
-            <img
-              class="contact__social-img"
-              alt="instagram"
-              src="../assets/img/Contact/Vk_Icon.svg"
-            />
             <a
               href="https://www.instagram.com/ecozelenograd/"
               target="__blank"
               class="contact__links link"
-            >vk.com/ecozrecycle</a>
+            ><v-svg name="vk" width="35" height="35" />vk.com/ecozrecycle</a>
           </li>
           <li class="contact__item">
-            <img
-              class="contact__social-img"
-              alt="instagram"
-              src="../assets/img/Contact/Mail_Icon.svg"
-            />
             <a
               href="https://www.instagram.com/ecozelenograd/"
               target="__blank"
               class="contact__links link"
-            >info.ecoz.org@gmail.com</a>
+            ><v-svg name="mail" width="35" height="35" />info.ecoz.org@gmail.com</a>
           </li>
           <li class="contact__item">
-            <img
-              class="contact__social-img"
-              alt="instagram"
-              src="../assets/img/Contact/Phone_Icon.svg"
-            />
             <a
               href="https://www.instagram.com/ecozelenograd/"
               target="__blank"
               class="contact__links link"
-            >+7 (111) 111-11-11</a>
+            ><v-svg name="phone" width="35" height="35" />+7 (111) 111-11-11</a>
           </li>
         </ul>
         <Breadcrumbs :links="content.links" />
@@ -61,6 +41,10 @@
 </template>
 
 <script>
+
+import VSvg from "../components/controls/VSvg.vue";
+
+
 import Breadcrumbs from "../components/controls/Breadcrumbs";
 import Overlay from "../components/Background/Overlay";
 export default {
@@ -73,6 +57,8 @@ export default {
     }
   }),
   components: {
+    VSvg,
+
     Breadcrumbs,
     Overlay
   },

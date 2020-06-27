@@ -36,17 +36,19 @@
   margin-bottom: 25px;
   color: #c99072;
   animation: fade-in 0.4s ease;
-  padding-right: calc(var(--gs) * 2);
-
-  @media (--tablet-lg) {
-
-  }
+  padding-right: calc(var(--gs) * 7);
 }
 
 .main__description {
   margin-bottom: 45px;
   animation: fade-in 0.4s ease;
-  padding-right: calc(var(--gs) * 2);
+  padding-right: calc(var(--gs) * 5);
+  font-size: 20px;
+
+  @media (--tablet) {
+    font-size: 16px;
+  }
+
   p {
     margin-bottom: 15px;
   }

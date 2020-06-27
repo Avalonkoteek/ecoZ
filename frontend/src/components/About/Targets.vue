@@ -1,12 +1,12 @@
 <template>
-  <section class="targets section">
+  <section class="template section">
     <Overlay v-model="isOpen" />
     <div class="container" ref="pageExit">
-      <ButtonBack class="targets__button-back" :to="'/about'" />
+      <ButtonBack class="template__button-back" :to="'/about'" />
 
-      <div class="targets__content">
-        <div class="targets__wrapper scrollbar">
-          <p class="targets__text">
+      <div class="template__content">
+        <div class="template__wrapper scrollbar">
+          <p class="template__text">
             Мы создали нашу некоммерческую организацию чтобы достичь следующих целей:
             - общество должно знать всё о способах сортировки отходов, адресах мест их переработки;
             - экологичные пространства (офисные, производственные, лично-бытовые) должны применяться повсеместно;
@@ -54,25 +54,37 @@
             Для решения наших задач мы проводим эко-занятия в образовательных учреждениях, акции и эко-квесты, готовим предложения по сокращению потребления ресурсов, внедряем эко-привычки в кафе и офисах.
           </p>
         </div>
-        <div class="targets__container-slider">
-          <v-slider class="targets__swiper" name="view-shop" :options="sliderOptions">
+        <div class="template__container-slider">
+          <v-slider class="template__swiper" name="view-shop" :options="sliderOptions">
             <div class="swiper-slide">
-              <img src="../../assets/img/partners/Image_1.jpg" alt="img_1" />
+              <div class="template__swiper-img">
+                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
+              </div>
             </div>
             <div class="swiper-slide">
-              <img src="../../assets/img/partners/Image_1.jpg" alt="img_1" />
+              <div class="template__swiper-img">
+                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
+              </div>
             </div>
             <div class="swiper-slide">
-              <img src="../../assets/img/partners/Image_1.jpg" alt="img_1" />
+              <div class="template__swiper-img">
+                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
+              </div>
             </div>
             <div class="swiper-slide">
-              <img src="../../assets/img/partners/Image_1.jpg" alt="img_1" />
+              <div class="template__swiper-img">
+                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
+              </div>
             </div>
             <div class="swiper-slide">
-              <img src="../../assets/img/partners/Image_1.jpg" alt="img_1" />
+              <div class="template__swiper-img">
+                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
+              </div>
             </div>
             <div class="swiper-slide">
-              <img src="../../assets/img/partners/Image_1.jpg" alt="img_1" />
+              <div class="template__swiper-img">
+                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
+              </div>
             </div>
           </v-slider>
         </div>
@@ -120,7 +132,7 @@ export default {
       links: [
         {
           name: "Цели",
-          to: "/about/targets"
+          to: "/about/template"
         },
         {
           name: "Деятельность",
