@@ -8,9 +8,9 @@
         <div class="main__description" v-html="content.description"></div>
         <!-- Links -->
         <Breadcrumbs :links="content.links" />
-        <router-link to="/contact/contact_form">
-          <MainButton v-if="isHome" />
-        </router-link>
+        <a class="home-button" v-if="isHome" to="/contact/contact_form">
+        Записаться на консультацию
+        </a>
       </div>
     </div>
   </section>
@@ -18,13 +18,11 @@
 
 <script>
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
-import MainButton from "../controls/MainButton.vue";
 import Overlay from "../Background/Overlay";
 
 export default {
   components: {
     Breadcrumbs,
-    MainButton,
     Overlay
   },
   computed: {
