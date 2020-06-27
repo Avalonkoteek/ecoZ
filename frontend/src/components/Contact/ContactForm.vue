@@ -166,7 +166,7 @@ export default {
     this.isOpen = true;
     let selector = document.querySelector(".multiselect__content-wrapper");
     selector.classList.add("scrollbar");
-    console.log(selector);
+    selector.classList.add("scrollbar--select");
   },
   beforeRouteLeave(to, from, next) {
     let { pageExit } = this.$refs;
