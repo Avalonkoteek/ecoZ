@@ -15,7 +15,8 @@
                   correct: !$v.name.$invalid,
                 }"
                 for="name"
-              >Ваши ФИО или ФИ</label>
+                >Ваши ФИО или ФИ</label
+              >
               <input
                 autofocus
                 class="contactForm__input"
@@ -37,7 +38,8 @@
                   invalid: $v.email.$error,
                   correct: !$v.email.$invalid,
                 }"
-              >E-mail для связи</label>
+                >E-mail для связи</label
+              >
               <input
                 autofocus
                 class="contactForm__input"
@@ -59,7 +61,8 @@
                   invalid: $v.phone.$error,
                   correct: !$v.phone.$invalid,
                 }"
-              >Ваш номер телефона</label>
+                >Ваш номер телефона</label
+              >
               <input
                 type="tel"
                 name="tel"
@@ -73,7 +76,18 @@
               />
             </div>
 
-            <Select />
+            <!-- <Select /> -->
+            <div class="select">
+              <Multiselect
+                v-model="selectValue"
+                :options="options"
+                :max-height="150"
+                placeholder="Хочу узнать о мероприятии"
+                selectLabel="Выбрать"
+                selectedLabel="Выбрано"
+                deselectLabel="Удалить"
+              ></Multiselect>
+            </div>
           </div>
           <div class="contactForm__box">
             <p
@@ -82,7 +96,9 @@
                 invalid: $v.text.$error,
                 correct: !$v.text.$invalid,
               }"
-            >Текст сообщения</p>
+            >
+              Текст сообщения
+            </p>
             <textarea
               class="contactForm__textarea"
               placeholder="Ваше сообщение..."
@@ -105,28 +121,34 @@
 import Overlay from "../Background/Overlay";
 import ButtonBack from "../controls/ButtonBack.vue";
 import Checkbox from "../controls/Checkbox.vue";
-import Select from "../controls/Select.vue";
+
 import {
   email,
   required,
   minLength,
-  maxLength
+  maxLength,
 } from "vuelidate/lib/validators";
 export default {
   components: {
     ButtonBack,
     Checkbox,
     Overlay,
-    Select
   },
   name: "contactForm",
 
   data: () => ({
+    options: [
+      "Предложение партнерства",
+      "Хочу написать о вас статью",
+      "Вопрос по услугам",
+      "Другое",
+    ],
+    selectValue: null,
     isOpen: false,
     email: "",
     name: "",
     text: "",
-    phone: ""
+    phone: "",
   }),
   validations: {
     email: { email, required },
@@ -134,8 +156,8 @@ export default {
     text: { required },
     phone: {
       minLength: minLength(10),
-      maxLength: maxLength(12)
-    }
+      maxLength: maxLength(12),
+    },
   },
   mounted() {
     let { pageExit } = this.$refs;
@@ -156,7 +178,12 @@ export default {
         return;
       }
       this.$router.push("/");
-    }
-  }
+    },
+  },
 };
 </script>
+<style scoped>
+.select {
+  margin-top: 50px;
+}
+</style>
