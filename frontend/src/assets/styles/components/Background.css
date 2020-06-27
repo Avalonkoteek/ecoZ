@@ -4,10 +4,10 @@
   top: 0;
   left: 0;
   z-index: -2;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-color: #8ddeda;
-  min-height: 600px;
+  min-height: 700px;
   @media (--tablet-lg) {
     min-height: auto;
     position: absolute;
