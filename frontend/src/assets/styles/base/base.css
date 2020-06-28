@@ -64,7 +64,7 @@ h2 {
   font-family: 'GOST2_304typeA';
   font-size: var(--fs-h2);
   line-height: 1.1;
-  font-weight: bold;
+  font-weight: normal;
 
   @media (--tablet-lg) {
     font-size: 32px;

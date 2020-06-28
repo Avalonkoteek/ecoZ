@@ -6,7 +6,10 @@
       <div class="contactForm__wrapper">
         <form class="contactForm" @submit.prevent="submitHandler">
           <div class="contactForm__box">
-            <Checkbox />
+            <Checkbox v-model.trim="$v.check.$model" :class="{
+                  invalid: $v.check.$error,
+                  correct: !$v.check.$invalid,
+                }"/>
             <div class="contactForm__item">
               <label
                 class="contact__text importand-field"
@@ -60,13 +63,17 @@
                 :class="{
                   invalid: $v.phone.$error,
                   correct: !$v.phone.$invalid,
+
                 }"
                 >Ваш номер телефона</label
               >
               <input
-                type="tel"
+                type="text"
                 name="tel"
                 placeholder="+7 777 777 77 77"
+                @keyup="mask($event)"
+                @focus="mask($event)"
+                @blur="mask($event)"
                 class="contactForm__input"
                 v-model.trim="$v.phone.$model"
                 :class="{
@@ -115,11 +122,34 @@
         </form>
       </div>
     </div>
+    <transition name='fade-in' >
+      <v-popup class="contactForm__popup" v-if="showPopup" @close="closePopup">
+        <template v-slot:body>
+          <div class="contactForm__popup-img">
+            <img src="../../assets/img/checkbox.png" alt="">
+          </div>
+          <p class="contactForm__popup-text">
+              Заявка успешно отправлена
+          </p>
+        </template>
+        <template v-slot:footer>
+            <button class="close">
+              <span class="v-popup__close" @click="closePopup"/>
+            </button>
+            <button class="contactForm__popup-btn" @click="closePopup">
+              OK
+            </button>
+        </template>
+      </v-popup>
+    </transition>
   </section>
 </template>
 <script>
+
+
 import Overlay from "../Background/Overlay";
 import ButtonBack from "../controls/ButtonBack.vue";
+import VPopup from "../controls/VPopup.vue";
 import Checkbox from "../controls/Checkbox.vue";
 
 import {
@@ -127,12 +157,17 @@ import {
   required,
   minLength,
   maxLength,
+  helpers
 } from "vuelidate/lib/validators";
+
+const nameRu = /^[ \-а-яё]*$/i;
+
 export default {
   components: {
     ButtonBack,
     Checkbox,
     Overlay,
+    VPopup,
   },
   name: "contactForm",
 
@@ -149,14 +184,23 @@ export default {
     name: "",
     text: "",
     phone: "",
+    showPopup: true,
   }),
   validations: {
-    email: { email, required },
-    name: { required },
+    name: {
+      name: helpers.regex('name', nameRu),
+      required
+    },
+    email: {
+      email,
+      required },
+    check: {
+      required,
+    },
     text: { required },
     phone: {
-      minLength: minLength(10),
-      maxLength: maxLength(12),
+      minLength: minLength(18),
+      maxLength: maxLength(18),
     },
   },
   mounted() {
@@ -174,6 +218,7 @@ export default {
     this.isOpen = false;
     setTimeout(next, 400);
   },
+
   methods: {
     submitHandler() {
       if (this.$v.$invalid) {
@@ -182,11 +227,67 @@ export default {
       }
       this.$router.push("/");
     },
+
+    mask(event) {
+      const keyCode = event.keyCode;
+      const mask = "+7 (___) ___ __-__";
+      let length = 0;
+      const defaultValue = mask.replace(/\D/g, "");
+      const number = this.phone.replace(/\D/g, "");
+
+      let newNumber = mask.replace(/[_\d]/g, (value) => {
+          return length < number.length ? number.charAt(length++) || defaultValue.charAt(length) : value
+      });
+
+      length = newNumber.indexOf("_");
+
+      if (length != -1) {
+        length < 5 && (length = 3);
+        newNumber = newNumber.slice(0, length)
+      }
+
+      let reg = mask.substr(0, this.phone.length)
+      .replace(/_+/g, (string) => "\\d{1," + string.length + "}")
+      .replace(/[+()]/g, "\\$&");
+      reg = new RegExp("^" + reg + "$");
+
+      if (!reg.test(this.phone) || this.phone.length < 5 || keyCode > 47 && keyCode < 58) this.phone = newNumber;
+
+      if (this.phone.slice(-1) == '-' || this.phone.slice(-1) == ' ') {
+        this.phone = this.phone.slice(0, -1)
+      }
+
+      if (event.type == "blur" && this.phone.length < 5)
+        this.phone = ""
+
+    },
+
+    closePopup() {
+      this.showPopup = false;
+    }
   },
 };
 </script>
-<style scoped>
-.select {
-  margin-top: 50px;
-}
+
+<style>
+  .select {
+    margin-top: 50px;
+  }
+
+  .multiselect__tags {
+    padding-left: 10px;
+  }
+
+  .select .multiselect__tags {
+    font-size: 20px !important;
+  }
+
+  .multiselect__input {
+    font-size: 20px !important;
+    padding-left: 0;
+  }
+
+  .multiselect__single {
+    font-size: 20px !important;
+  }
 </style>

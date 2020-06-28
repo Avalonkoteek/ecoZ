@@ -53,7 +53,7 @@
   }
 }
 /* ================================================ */
-/*  FORM ITEM 
+/*  FORM ITEM
 /* ================================================ */
 .contactForm__item {
   display: flex;
@@ -103,7 +103,7 @@ input:focus {
   color: #349a8a;
 }
 /* ================================================ */
-/*  FORM LABEL 
+/*  FORM LABEL
 /* ================================================ */
 .contact__text {
   margin-bottom: 10px;
@@ -113,8 +113,10 @@ input:focus {
 }
 .importand-field {
   position: relative;
+  padding-right: calc(var(--gs) * 2);
 }
 .importand-field::after {
+  font-size: 15px;
   content: "*";
   position: absolute;
   right: 0;
@@ -168,6 +170,34 @@ input:focus {
     transform: translateY(50%);
   }
 }
+
+.contactForm__popup {
+  &-img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  &-text {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &-btn {
+    display: block;
+    padding: 16px 24px;
+    font-size: 24px;
+    color: white;
+    background: #1ab71d;
+    border-radius: 24px;
+    text-transform: uppercase;
+    min-width: 120px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+}
+
 .contactForm__submit-button span {
   position: relative;
 }
