@@ -10,22 +10,17 @@
               class="services__item-wrapper services__item-wrapper--text services__item-wrapper--scrollbar scrollbar"
             >
               <p class="services__item-text services__item-text--stock">
-                Проведение квеста «Чистые игры» для укрепления корпоративной
-                культуры и формирования имиджа компанииПроведение квеста «Чистые
-                игры» для укрепления корпоративной культуры и формирования
-                имиджа компанииПроведение квеста «Чистые игры» для укрепления
-                корпоративной культуры и формирования имиджа компанииПроведение
-                квеста «Чистые игры» для укрепления корпоративной культуры и
-                формирования имиджа компанииПроведение квеста «Чистые игры» для
-                укрепления корпоративной культуры и формирования имиджа компании
+                {{ mainItem.text }}
               </p>
             </div>
 
             <div class="services__item-wrapper services__item-wrapper--red">
               <p class="services__item-price services__item-price--stock">
                 от
-                <span class="services__item-number services__item-number--stock"
-                  >100 000</span
+                <span
+                  class="services__item-number services__item-number--stock"
+                >
+                  {{ mainItem.price }}</span
                 >
                 руб.
               </p>
@@ -48,7 +43,7 @@
                 class="services__item-wrapper services__item-wrapper--number"
               >
                 <p
-                  v-if="item.oldPrice"
+                  v-if="item.oldPrice.length"
                   class="services__item-price services__item-price--old"
                 >
                   от
@@ -94,11 +89,19 @@ export default {
       ],
       scroll: false,
       items: [],
+      mainItem: {},
     };
   },
 
   async mounted() {
-    this.items = await this.$store.dispatch("fetchServices");
+    let items = await this.$store.dispatch("fetchServices");
+    items.sort((prev, next) => {
+      if (+prev.price > +next.price) return 1;
+      if (+prev.price < +next.price) return -1;
+      return 0;
+    });
+    this.mainItem = items[items.length - 1];
+    this.items = items.slice(0, -1);
 
     if (this.items.length > 2) this.scroll = true;
     let { pageExit } = this.$refs;

@@ -14,7 +14,7 @@ export default {
       let data = await axios
         .get("https://eco-z.org//wp-json/wp/v2/b2b_service")
         .then((response) => response.data);
-
+      console.log(data);
       const newArr = data.map((el) => {
         return {
           id: el.id,
@@ -25,6 +25,8 @@ export default {
       });
 
       commit("setServise", newArr);
+
+      console.log(newArr);
       return newArr;
     },
   },

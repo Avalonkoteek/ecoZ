@@ -26,14 +26,16 @@ export default {
     },
     layout() {
       return (this.$route.meta.layout || "empty") + "-layout";
-    }
+    },
   },
-  mounted() {},
+  async mounted() {
+    await this.$store.dispatch("fetchPages");
+  },
   components: {
     Navbar,
     Footer,
     Background,
-    Icons
-  }
+    Icons,
+  },
 };
 </script>
