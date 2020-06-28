@@ -95,8 +95,14 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        width: 35%;
+
+        @media (--tablet-lg) {
+          width: 25%;
+        }
 
         @media (--tablet) {
+          width: 100%;
           flex-direction: row;
           /* justify-content: space-between; */
           flex-wrap: wrap;
@@ -125,6 +131,18 @@
 
         @media (--tablet) {
           padding: calc(var(--gs) * 1.25) calc(var(--gs) * 2);
+        }
+      }
+
+      &--narrow {
+        width: 65%;
+
+        @media (--tablet-lg) {
+          width: 75%;
+        }
+
+        @media (--tablet) {
+          width: 100%;
         }
       }
     }

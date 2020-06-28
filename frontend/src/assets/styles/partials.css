@@ -24,6 +24,7 @@
 @import "./components/Breadcrumbs.css";
 @import "./components/Navbar.css";
 @import "./components/VSlider.css";
+@import "./components/VPopup.css";
 
 /* Страницы */
 @import "./pages/partners.css";

@@ -32,10 +32,11 @@ input[type="checkbox"] + label::after {
   border-radius: 7px;
   transition: all 0.3s ease;
 }
-.checkbox.error input[type="checkbox"]:not(:checked) + label::after {
+.checkbox.invalid input[type="checkbox"]:not(:checked) + label::after {
   border: 2px solid #c23232;
   background: none no-repeat;
 }
+
 .checkbox input[type="checkbox"]:checked + label::after {
   border: 2px solid #349a8a;
   background: url("../../img/svg/checkbox.svg") no-repeat;

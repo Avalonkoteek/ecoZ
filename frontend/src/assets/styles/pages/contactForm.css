@@ -53,7 +53,7 @@
   }
 }
 /* ================================================ */
-/*  FORM ITEM 
+/*  FORM ITEM
 /* ================================================ */
 .contactForm__item {
   display: flex;
@@ -103,7 +103,7 @@ input:focus {
   color: #349a8a;
 }
 /* ================================================ */
-/*  FORM LABEL 
+/*  FORM LABEL
 /* ================================================ */
 .contact__text {
   margin-bottom: 10px;
@@ -113,8 +113,10 @@ input:focus {
 }
 .importand-field {
   position: relative;
+  padding-right: calc(var(--gs) * 2);
 }
 .importand-field::after {
+  font-size: 15px;
   content: "*";
   position: absolute;
   right: 0;
@@ -168,6 +170,64 @@ input:focus {
     transform: translateY(50%);
   }
 }
+
+.contactForm__popup {
+  &-img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  &-text {
+    font-family: var(--base-font);
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  &-btn {
+    display: block;
+    padding: 16px 24px;
+    font-size: 24px;
+    color: white;
+    background: #349a8a;
+    border-radius: 50px;
+    text-transform: uppercase;
+    min-width: 120px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  &-close {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+
+    &:after,
+    &:before {
+        content: '';
+        display: block;
+        width: 21px;
+        height: 3px;
+        background: var(--cl-grey);
+        position: absolute;
+        top: 50%;
+    }
+
+    &:after {
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    &:before {
+        transform: translateY(-50%) rotate(45deg);
+    }
+  }
+}
+
 .contactForm__submit-button span {
   position: relative;
 }

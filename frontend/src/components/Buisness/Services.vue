@@ -9,9 +9,7 @@
             <div
               class="services__item-wrapper services__item-wrapper--text services__item-wrapper--scrollbar scrollbar"
             >
-              <p class="services__item-text services__item-text--stock">
-                {{ mainItem.text }}
-              </p>
+              <p class="services__item-text services__item-text--stock">{{ mainItem.text }}</p>
             </div>
 
             <div class="services__item-wrapper services__item-wrapper--red">
@@ -19,9 +17,7 @@
                 от
                 <span
                   class="services__item-number services__item-number--stock"
-                >
-                  {{ mainItem.price }}</span
-                >
+                >{{ mainItem.price }}</span>
                 руб.
               </p>
             </div>
@@ -29,28 +25,22 @@
         </div>
 
         <div class="services__col-wide">
-          <ul
-            class="services__list scrollbar"
-            :class="{ 'services__list--scroll': scroll }"
-          >
+          <ul class="services__list scrollbar" :class="{ 'services__list--scroll': scroll }">
             <li class="services__item" v-for="item in items" :key="item.id">
-              <div class="services__item-wrapper services__item-wrapper--text">
-                <p class="services__item-text services__item-text--right">
-                  {{ item.text }}
-                </p>
-              </div>
               <div
-                class="services__item-wrapper services__item-wrapper--number"
+                class="services__item-wrapper services__item-wrapper--narrow services__item-wrapper--text"
               >
+                <p class="services__item-text services__item-text--right">{{ item.text }}</p>
+              </div>
+              <div class="services__item-wrapper services__item-wrapper--number">
                 <p
-                  v-if="item.oldPrice.length"
+                  v-if="item.oldPrice.length !== '0'"
                   class="services__item-price services__item-price--old"
                 >
                   от
                   <span
                     class="services__item-number services__item-number--old"
-                    >{{ item.oldPrice }}</span
-                  >
+                  >{{ item.oldPrice }}</span>
                   руб.
                 </p>
                 <p class="services__item-price">
@@ -76,7 +66,7 @@ export default {
   components: {
     ButtonBack,
     Breadcrumbs,
-    Overlay,
+    Overlay
   },
   data() {
     return {
@@ -84,12 +74,12 @@ export default {
       links: [
         {
           name: "Услуги",
-          to: "/business/services",
-        },
+          to: "/business/services"
+        }
       ],
       scroll: false,
       items: [],
-      mainItem: {},
+      mainItem: {}
     };
   },
 
@@ -114,6 +104,6 @@ export default {
     pageExit.classList.add("container--contact-exit");
     this.isOpen = false;
     setTimeout(next, 400);
-  },
+  }
 };
 </script>
