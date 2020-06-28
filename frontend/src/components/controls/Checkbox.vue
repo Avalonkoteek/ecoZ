@@ -1,6 +1,6 @@
 <template>
   <div class="checkbox">
-    <input type="checkbox" id="checkbox-a" name="checkbox" />
+    <input v-bind="$attrs" type="checkbox" id="checkbox-a" name="checkbox" />
     <label for="checkbox-a" class="checkbox__text" v-html="prop"></label>
   </div>
 </template>

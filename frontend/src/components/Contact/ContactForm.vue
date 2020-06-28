@@ -4,18 +4,23 @@
     <div class="container" ref="pageExit">
       <ButtonBack :to="'/contact'" />
       <div class="contactForm__wrapper">
-        <form class="contactForm" @submit.prevent="submitHandler">
+        <form ref="form" class="contactForm" enctype="multipart/form-data" @submit.prevent="submitHandler">
           <div class="contactForm__box">
-            <Checkbox v-model.trim="$v.check.$model" :class="{
-                  invalid: $v.check.$error,
-                  correct: !$v.check.$invalid,
-                }"/>
+            <div class="checkbox" :class="{
+                  invalid: $v.form.check.$error,
+                  correct: !$v.form.check.$invalid,
+                }">
+              <input aria-required="true" v-model="form.check"  @click="check" type="checkbox" id="checkbox-a" name="checkbox" />
+              <label for="checkbox-a" class="checkbox__text">
+                <p class="importand-field">Я соглашаюсь с <a href="#">политикой обработки персональных данных</a></p>
+              </label>
+            </div>
             <div class="contactForm__item">
               <label
                 class="contact__text importand-field"
                 :class="{
-                  invalid: $v.name.$error,
-                  correct: !$v.name.$invalid,
+                  invalid: $v.form.name.$error,
+                  correct: !$v.form.name.$invalid,
                 }"
                 for="name"
                 >Ваши ФИО или ФИ</label
@@ -26,10 +31,10 @@
                 type="text"
                 name="name"
                 placeholder="Антон Антонович Ерошин"
-                v-model.trim="$v.name.$model"
+                v-model.trim="$v.form.name.$model"
                 :class="{
-                  invalid: $v.name.$error,
-                  correct: !$v.name.$invalid,
+                  invalid: $v.form.name.$error,
+                  correct: !$v.form.name.$invalid,
                 }"
               />
             </div>
@@ -38,8 +43,8 @@
                 class="contact__text importand-field"
                 for="email"
                 :class="{
-                  invalid: $v.email.$error,
-                  correct: !$v.email.$invalid,
+                  invalid: $v.form.email.$error,
+                  correct: !$v.form.email.$invalid,
                 }"
                 >E-mail для связи</label
               >
@@ -48,11 +53,11 @@
                 class="contactForm__input"
                 type="email"
                 name="name"
-                v-model.trim="$v.email.$model"
+                v-model.trim="$v.form.email.$model"
                 placeholder="Антон@Anton.ha"
                 :class="{
-                  invalid: $v.email.$error,
-                  correct: !$v.email.$invalid,
+                  invalid: $v.form.email.$error,
+                  correct: !$v.form.email.$invalid,
                 }"
               />
             </div>
@@ -61,8 +66,8 @@
                 class="contact__text"
                 for="tel"
                 :class="{
-                  invalid: $v.phone.$error,
-                  correct: !$v.phone.$invalid,
+                  invalid: $v.form.phone.$error,
+                  correct: !$v.form.phone.$invalid,
 
                 }"
                 >Ваш номер телефона</label
@@ -75,10 +80,10 @@
                 @focus="mask($event)"
                 @blur="mask($event)"
                 class="contactForm__input"
-                v-model.trim="$v.phone.$model"
+                v-model.trim="$v.form.phone.$model"
                 :class="{
-                  invalid: $v.phone.$error,
-                  correct: !$v.phone.$invalid,
+                  invalid: $v.form.phone.$error,
+                  correct: !$v.form.phone.$invalid,
                 }"
               />
             </div>
@@ -86,7 +91,7 @@
             <!-- <Select /> -->
             <div class="select">
               <Multiselect
-                v-model="selectValue"
+                v-model="form.selectValue"
                 :options="options"
                 :max-height="160"
                 placeholder="Хочу узнать о мероприятии"
@@ -101,8 +106,8 @@
             <p
               class="contact__text importand-field"
               :class="{
-                invalid: $v.text.$error,
-                correct: !$v.text.$invalid,
+                invalid: $v.form.text.$error,
+                correct: !$v.form.text.$invalid,
               }"
             >
               Текст сообщения
@@ -110,10 +115,10 @@
             <textarea
               class="contactForm__textarea"
               placeholder="Ваше сообщение..."
-              v-model.trim="$v.text.$model"
+              v-model.trim="$v.form.text.$model"
               :class="{
-                invalid: $v.text.$error,
-                correct: !$v.text.$invalid,
+                invalid: $v.form.text.$error,
+                correct: !$v.form.text.$invalid,
               }"
             />
             <button class="contactForm__submit-button" type="submit">
@@ -146,11 +151,10 @@
 </template>
 <script>
 
-
+import axios from "axios";
 import Overlay from "../Background/Overlay";
 import ButtonBack from "../controls/ButtonBack.vue";
 import VPopup from "../controls/VPopup.vue";
-import Checkbox from "../controls/Checkbox.vue";
 
 import {
   email,
@@ -165,7 +169,6 @@ const nameRu = /^[ \-а-яё]*$/i;
 export default {
   components: {
     ButtonBack,
-    Checkbox,
     Overlay,
     VPopup,
   },
@@ -178,30 +181,34 @@ export default {
       "Вопрос по услугам",
       "Другое",
     ],
-    selectValue: null,
     isOpen: false,
-    email: "",
-    name: "",
-    text: "",
-    phone: "",
+    form: {
+      selectValue: null,
+      email: "",
+      name: "",
+      text: "",
+      phone: "",
+    },
     showPopup: true,
   }),
   validations: {
-    name: {
-      name: helpers.regex('name', nameRu),
-      required
-    },
-    email: {
-      email,
-      required },
-    check: {
-      required,
-    },
-    text: { required },
-    phone: {
-      minLength: minLength(18),
-      maxLength: maxLength(18),
-    },
+    form: {
+      name: {
+        name: helpers.regex('name', nameRu),
+        required
+      },
+      email: {
+        email,
+        required },
+      check: {
+        required: value => value === true,
+      },
+      text: { required },
+      phone: {
+        minLength: minLength(18),
+        maxLength: maxLength(18),
+      },
+    }
   },
   mounted() {
     let { pageExit } = this.$refs;
@@ -221,11 +228,36 @@ export default {
 
   methods: {
     submitHandler() {
-      if (this.$v.$invalid) {
-        this.$v.$touch();
-        return;
-      }
-      this.$router.push("/");
+      const vm = this;
+      vm.$v.form.$touch();
+
+      if (vm.$v.form.$invalid)
+        return
+
+      const { form } = vm.$refs;
+
+      const data = new FormData(form)
+      // data.append('theme', vm.form.select);
+
+      console.log(form)
+      // vm.success = true;
+      // vm.timer = setTimeout(() => {
+      //   vm.closePopup()
+      // }, 3000);
+      // axios.post('emailSending.php', data).then(request => {
+      //   if (request.data.status == "200") {
+      //     console.log('отправлено')
+          // vm.success = true;
+          // vm.timer = setTimeout(() => {
+          //   vm.closePopup()
+          // }, 3000);
+      //   }
+      // });
+      // this.$router.push("/");
+    },
+
+    check() {
+      console.log('12312')
     },
 
     mask(event) {
@@ -233,7 +265,7 @@ export default {
       const mask = "+7 (___) ___ __-__";
       let length = 0;
       const defaultValue = mask.replace(/\D/g, "");
-      const number = this.phone.replace(/\D/g, "");
+      const number = this.form.phone.replace(/\D/g, "");
 
       let newNumber = mask.replace(/[_\d]/g, (value) => {
           return length < number.length ? number.charAt(length++) || defaultValue.charAt(length) : value
@@ -246,19 +278,19 @@ export default {
         newNumber = newNumber.slice(0, length)
       }
 
-      let reg = mask.substr(0, this.phone.length)
+      let reg = mask.substr(0, this.form.phone.length)
       .replace(/_+/g, (string) => "\\d{1," + string.length + "}")
       .replace(/[+()]/g, "\\$&");
       reg = new RegExp("^" + reg + "$");
 
-      if (!reg.test(this.phone) || this.phone.length < 5 || keyCode > 47 && keyCode < 58) this.phone = newNumber;
+      if (!reg.test(this.form.phone) || this.form.phone.length < 5 || keyCode > 47 && keyCode < 58) this.form.phone = newNumber;
 
-      if (this.phone.slice(-1) == '-' || this.phone.slice(-1) == ' ') {
-        this.phone = this.phone.slice(0, -1)
+      if (this.form.phone.slice(-1) == '-' || this.form.phone.slice(-1) == ' ') {
+        this.form.phone = this.form.phone.slice(0, -1)
       }
 
-      if (event.type == "blur" && this.phone.length < 5)
-        this.phone = ""
+      if (event.type == "blur" && this.form.phone.length < 5)
+        this.form.phone = ""
 
     },
 
