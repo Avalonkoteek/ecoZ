@@ -33,6 +33,7 @@ export const routes = [
     component: AboutPartners,
     meta: {
       layout: "empty",
+      title: "Партнеры"
     },
     name: "AboutPartners",
   },
@@ -41,6 +42,7 @@ export const routes = [
     component: AboutTargets,
     meta: {
       layout: "empty",
+      title: "Цели"
     },
     name: "AboutTargets",
   },
@@ -54,6 +56,7 @@ export const routes = [
   {
     path: "/business/services",
     name: "services",
+    meta: { title: "Услуги" },
     component: Services,
   },
   {

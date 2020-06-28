@@ -29,8 +29,8 @@ export default {
     name: 'v-popup',
     methods: {
         clickOutSide(e) {
-            if (e.target.className === 'v-popup-wrapper');
-            this.$emit('close')
+            if (e.target.className === 'v-popup-wrapper')
+                this.$emit('close')
         }
     }
 }

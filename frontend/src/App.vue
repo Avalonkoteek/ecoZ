@@ -28,7 +28,6 @@ export default {
       return (this.$route.meta.layout || "empty") + "-layout";
     }
   },
-  mounted() {},
   components: {
     Navbar,
     Footer,

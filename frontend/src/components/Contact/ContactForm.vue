@@ -130,12 +130,11 @@
             <img src="../../assets/img/checkbox.png" alt="">
           </div>
           <p class="contactForm__popup-text">
-              Заявка успешно отправлена
+              Сообщение успешно отправлено!<br>В скором времени мы свяжемся с Вами.
           </p>
         </template>
         <template v-slot:footer>
-            <button class="close">
-              <span class="v-popup__close" @click="closePopup"/>
+            <button class="contactForm__popup-close" @click="closePopup">
             </button>
             <button class="contactForm__popup-btn" @click="closePopup">
               OK

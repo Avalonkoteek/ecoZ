@@ -179,9 +179,11 @@ input:focus {
   }
 
   &-text {
+    font-family: var(--base-font);
     font-size: 24px;
+    line-height: 1.5;
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   &-btn {
@@ -189,12 +191,40 @@ input:focus {
     padding: 16px 24px;
     font-size: 24px;
     color: white;
-    background: #1ab71d;
-    border-radius: 24px;
+    background: #349a8a;
+    border-radius: 50px;
     text-transform: uppercase;
     min-width: 120px;
     margin: 0 auto;
     cursor: pointer;
+  }
+
+  &-close {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+
+    &:after,
+    &:before {
+        content: '';
+        display: block;
+        width: 21px;
+        height: 3px;
+        background: var(--cl-grey);
+        position: absolute;
+        top: 50%;
+    }
+
+    &:after {
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    &:before {
+        transform: translateY(-50%) rotate(45deg);
+    }
   }
 }
 

@@ -39,7 +39,7 @@
             :class="{ 'services__list--scroll': scroll }"
           >
             <li class="services__item" v-for="item in items" :key="item.id">
-              <div class="services__item-wrapper services__item-wrapper--text">
+              <div class="services__item-wrapper services__item-wrapper--narrow services__item-wrapper--text">
                 <p class="services__item-text services__item-text--right">
                   {{ item.text }}
                 </p>
@@ -48,7 +48,7 @@
                 class="services__item-wrapper services__item-wrapper--number"
               >
                 <p
-                  v-if="item.oldPrice"
+                  v-if="item.oldPrice !== '0'"
                   class="services__item-price services__item-price--old"
                 >
                   от
