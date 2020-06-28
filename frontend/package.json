@@ -10,6 +10,7 @@
   "dependencies": {
     "animejs": "^3.2.0",
     "autoprefixer": "^9.8.0",
+    "axios": "^0.19.2",
     "browserslist": "^4.12.0",
     "core-js": "^3.6.4",
     "gsap": "^3.2.6",
@@ -56,12 +57,19 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "vue/no-unused-components": [
-        "error",
-        {
-          "ignoreWhenBindingPresent": true
-        }
-      ]
+      "vue/no-unused-components": "off",
+      "vue/no-dupe-keys": "off",
+      "vue/no-duplicate-attributes": "off",
+      "vue/no-reserved-keys": "off",
+      "vue/no-shared-component-data": "off",
+      "vue/no-template-key": "off",
+      "vue/no-unused-vars": "off",
+      "vue/no-use-v-if-with-v-for": "off",
+      "vue/require-component-is": "off",
+      "vue/require-prop-type-constructor": "off",
+      "vue/require-render-return": "off",
+      "vue/require-v-for-key": "off",
+      "vue/require-valid-default-prop": "off"
     }
   }
 }

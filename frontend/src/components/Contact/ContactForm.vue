@@ -93,6 +93,7 @@
                 selectLabel="Выбрать"
                 selectedLabel="Выбрано"
                 deselectLabel="Удалить"
+                :option-height="150"
               ></Multiselect>
             </div>
           </div>
