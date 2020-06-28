@@ -24,7 +24,9 @@
             <div class="services__item-wrapper services__item-wrapper--red">
               <p class="services__item-price services__item-price--stock">
                 от
-                <span class="services__item-number services__item-number--stock">100 000</span>
+                <span class="services__item-number services__item-number--stock"
+                  >100 000</span
+                >
                 руб.
               </p>
             </div>
@@ -32,17 +34,28 @@
         </div>
 
         <div class="services__col-wide">
-          <ul class="services__list scrollbar" :class="{ 'services__list--scroll': scroll }">
+          <ul
+            class="services__list scrollbar"
+            :class="{ 'services__list--scroll': scroll }"
+          >
             <li class="services__item" v-for="item in items" :key="item.id">
               <div class="services__item-wrapper services__item-wrapper--text">
-                <p class="services__item-text services__item-text--right">{{ item.text }}</p>
+                <p class="services__item-text services__item-text--right">
+                  {{ item.text }}
+                </p>
               </div>
-              <div class="services__item-wrapper services__item-wrapper--number">
-                <p v-if="item.oldPrice" class="services__item-price services__item-price--old">
+              <div
+                class="services__item-wrapper services__item-wrapper--number"
+              >
+                <p
+                  v-if="item.oldPrice"
+                  class="services__item-price services__item-price--old"
+                >
                   от
                   <span
                     class="services__item-number services__item-number--old"
-                  >{{ item.oldPrice }}</span>
+                    >{{ item.oldPrice }}</span
+                  >
                   руб.
                 </p>
                 <p class="services__item-price">
@@ -64,12 +77,11 @@
 import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 import Overlay from "../Background/Overlay";
-import axios from "axios";
 export default {
   components: {
     ButtonBack,
     Breadcrumbs,
-    Overlay
+    Overlay,
   },
   data() {
     return {
@@ -77,73 +89,16 @@ export default {
       links: [
         {
           name: "Услуги",
-          to: "/business/services"
-        }
+          to: "/business/services",
+        },
       ],
       scroll: false,
-
-      items: [
-        {
-          id: 1,
-          text:
-            "Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании",
-          price: "1223",
-          oldPrice: "12512"
-        },
-        {
-          id: 2,
-          text:
-            "Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании",
-          price: "1223"
-        },
-        {
-          id: 3,
-          text:
-            "Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании",
-          price: "1223"
-        },
-        {
-          id: 4,
-          text:
-            "Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании",
-          price: "1223"
-        },
-        {
-          id: 5,
-          text:
-            "Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании",
-          price: "1223"
-        },
-        {
-          id: 6,
-          text:
-            "Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании",
-          price: "1223"
-        },
-        {
-          id: 7,
-          text:
-            "Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании",
-          price: "1223"
-        }
-      ]
+      items: [],
     };
   },
 
   async mounted() {
-    let data = await axios
-      .get("https://eco-z.org//wp-json/wp/v2/b2b_service")
-      .then(response => response.data);
-
-    const newArr = data.map(el => {
-      return {
-        id: el.id,
-        text: el.slug,
-        price: el.b2b_service_price
-      };
-    });
-    this.items = [...this.items, ...newArr];
-    console.log(this.items);
+    this.items = await this.$store.dispatch("fetchServices");
 
     if (this.items.length > 2) this.scroll = true;
     let { pageExit } = this.$refs;
@@ -156,6 +111,6 @@ export default {
     pageExit.classList.add("container--contact-exit");
     this.isOpen = false;
     setTimeout(next, 400);
-  }
+  },
 };
 </script>
