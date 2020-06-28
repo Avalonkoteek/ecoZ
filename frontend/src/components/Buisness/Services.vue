@@ -9,9 +9,16 @@
             <div
               class="services__item-wrapper services__item-wrapper--text services__item-wrapper--scrollbar scrollbar"
             >
-              <p
-                class="services__item-text services__item-text--stock"
-              >Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компанииПроведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компанииПроведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компанииПроведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компанииПроведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании</p>
+              <p class="services__item-text services__item-text--stock">
+                Проведение квеста «Чистые игры» для укрепления корпоративной
+                культуры и формирования имиджа компанииПроведение квеста «Чистые
+                игры» для укрепления корпоративной культуры и формирования
+                имиджа компанииПроведение квеста «Чистые игры» для укрепления
+                корпоративной культуры и формирования имиджа компанииПроведение
+                квеста «Чистые игры» для укрепления корпоративной культуры и
+                формирования имиджа компанииПроведение квеста «Чистые игры» для
+                укрепления корпоративной культуры и формирования имиджа компании
+              </p>
             </div>
 
             <div class="services__item-wrapper services__item-wrapper--red">
@@ -25,19 +32,22 @@
         </div>
 
         <div class="services__col-wide">
-          <ul class="services__list scrollbar" :class="{'services__list--scroll': scroll}">
+          <ul class="services__list scrollbar" :class="{ 'services__list--scroll': scroll }">
             <li class="services__item" v-for="item in items" :key="item.id">
               <div class="services__item-wrapper services__item-wrapper--text">
-                <p class="services__item-text services__item-text--right">{{item.text}}</p>
+                <p class="services__item-text services__item-text--right">{{ item.text }}</p>
               </div>
               <div class="services__item-wrapper services__item-wrapper--number">
                 <p v-if="item.oldPrice" class="services__item-price services__item-price--old">
                   от
-                  <span class="services__item-number services__item-number--old">{{item.oldPrice}}</span> руб.
+                  <span
+                    class="services__item-number services__item-number--old"
+                  >{{ item.oldPrice }}</span>
+                  руб.
                 </p>
                 <p class="services__item-price">
                   от
-                  <span class="services__item-number">{{item.price}}</span>
+                  <span class="services__item-number">{{ item.price }}</span>
                   руб.
                 </p>
               </div>
@@ -54,7 +64,7 @@
 import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 import Overlay from "../Background/Overlay";
-
+import axios from "axios";
 export default {
   components: {
     ButtonBack,
@@ -115,17 +125,30 @@ export default {
           text:
             "Проведение квеста «Чистые игры» для укрепления корпоративной культуры и формирования имиджа компании",
           price: "1223"
-        },
+        }
       ]
     };
   },
 
-  mounted() {
+  async mounted() {
+    let data = await axios
+      .get("https://eco-z.org//wp-json/wp/v2/b2b_service")
+      .then(response => response.data);
+
+    const newArr = data.map(el => {
+      return {
+        id: el.id,
+        text: el.slug,
+        price: el.b2b_service_price
+      };
+    });
+    this.items = [...this.items, ...newArr];
+    console.log(this.items);
+
     if (this.items.length > 2) this.scroll = true;
     let { pageExit } = this.$refs;
     pageExit.classList.add("container--contact");
     this.isOpen = true;
-    console.log(this.links.length)
   },
   beforeRouteLeave(to, from, next) {
     let { pageExit } = this.$refs;
