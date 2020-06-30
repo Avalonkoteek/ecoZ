@@ -151,7 +151,7 @@
 </template>
 <script>
 
-import axios from "axios";
+// import axios from "axios";
 import Overlay from "../Background/Overlay";
 import ButtonBack from "../controls/ButtonBack.vue";
 import VPopup from "../controls/VPopup.vue";
@@ -236,7 +236,7 @@ export default {
 
       const { form } = vm.$refs;
 
-      const data = new FormData(form)
+      // const data = new FormData(form)
       // data.append('theme', vm.form.select);
 
       console.log(form)

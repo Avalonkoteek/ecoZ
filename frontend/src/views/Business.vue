@@ -16,6 +16,11 @@ export default {
       links: [{ name: "Услуги", to: "/business/services" }]
     }
   }),
+  async mounted() {
+    const pages = await this.$store.state.mainPage.allPages;
+    console.log(this.$route);
+    console.log(pages);
+  },
   name: "business",
   components: {
     Main
