@@ -84,6 +84,7 @@ export default {
   },
 
   async mounted() {
+    
     let items = await this.$store.dispatch("fetchServices");
     items.sort((prev, next) => {
       if (+prev.price > +next.price) return 1;
