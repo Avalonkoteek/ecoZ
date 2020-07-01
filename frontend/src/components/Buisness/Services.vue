@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <Breadcrumbs v-if="getBusinessLinks" :links="getBusinessLinks" />
+      <Breadcrumbs v-if="getBusinessLinks.length" :links="getBusinessLinks" />
     </div>
   </section>
 </template>
@@ -85,7 +85,7 @@ export default {
   },
 
   created() {
-    console.log(this.mainOffer)
+    console.log(this.mainOffer);
     this.fetchServices();
   },
   mounted() {

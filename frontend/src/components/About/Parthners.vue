@@ -4,7 +4,13 @@
     <div class="container container--contact" ref="pageExit">
       <ButtonBack class="partners__button-back" :to="'/about'" />
       <div class="partners__container-slider">
-        <v-slider :disabled="!(getPartners.length !== 1)" ref="swiper" class="partners__swiper" name="view-shop" :options="sliderOptions">
+        <v-slider
+          :disabled="!(getPartners.length !== 1)"
+          ref="swiper"
+          class="partners__swiper"
+          name="view-shop"
+          :options="sliderOptions"
+        >
           <div
             class="swiper-slide partners__slide"
             v-for="(item, index) in getPartners"
@@ -27,9 +33,18 @@
                 >
                   <div class="partners__slide-info-scrollbar scrollbar">
                     <span class="partners__slide-info-close" @click.stop="closeInfo" />
-                    <img class="partners__slide-info-img" v-if="item.logo.src" :src="item.logo.src" :alt="item.logo.alt" />
+                    <img
+                      class="partners__slide-info-img"
+                      v-if="item.logo.src"
+                      :src="item.logo.src"
+                      :alt="item.logo.alt"
+                    />
                     <p v-if="item.text" class="partners__slide-info-text">{{item.text}}</p>
-                    <a class="partners__slide-info-link link" v-if="item.link && item.titleLink" :href="item.link">
+                    <a
+                      class="partners__slide-info-link link"
+                      v-if="item.link && item.titleLink"
+                      :href="item.link"
+                    >
                       <v-svg name="link" width="11" height="11" />
                       <span class="link__buttom-line">{{item.titleLink}}</span>
                     </a>
@@ -41,7 +56,7 @@
         </v-slider>
       </div>
 
-      <!-- <Breadcrumbs v-if="getAboutLinks.length" :links="getAboutLinks" /> -->
+      <Breadcrumbs v-if="getAboutLinks.length" :links="getAboutLinks" />
     </div>
   </section>
 </template>
@@ -53,7 +68,6 @@ import { mapActions, mapGetters } from "vuex";
 import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 import Overlay from "../Background/Overlay";
-
 
 const sliderOptions = {
   slidesPerView: 1,
