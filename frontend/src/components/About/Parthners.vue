@@ -41,7 +41,7 @@
         </v-slider>
       </div>
 
-      <Breadcrumbs v-if="getAboutLinks.length>1 " :links="getAboutLinks" />
+      <!-- <Breadcrumbs v-if="getAboutLinks.length" :links="getAboutLinks" /> -->
     </div>
   </section>
 </template>
