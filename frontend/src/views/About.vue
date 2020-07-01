@@ -1,28 +1,21 @@
 <template>
   <div class="about">
-    <Main v-bind:content="content" />
+    <Main v-bind:content="getAbout" />
   </div>
 </template>
 
 <script>
 import Main from "../components/Main/Main";
 
-export default {
-  data: () => ({
-    content: {
-      title: "Eco-Z - проект организации «Экология будущего»",
-      description:
-        "Хотите знать, с чего начать? Куда и какие продукты сдавать? Какие законы регулируют обращение с отходами? Как в офисе внедрить «зелёный подход»? ",
-      links: [
-        { name: "Цели", to: "about/targets" },
+import { mapGetters } from "vuex";
 
-        { name: "Партнеры", to: "about/partners" }
-      ]
-    }
-  }),
+export default {
   name: "about",
   components: {
     Main
-  }
+  },
+  computed: {
+    ...mapGetters(['getAbout'])
+  },
 };
 </script>

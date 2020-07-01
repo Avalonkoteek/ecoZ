@@ -1,13 +1,19 @@
 <template>
   <div class="volunteers">
-    <Main v-bind:content="content" />
+    <Main v-bind:content="getVolunteers" />
   </div>
 </template>
 
 <script>
 import Main from "../components/Main/Main";
 
+import { mapGetters } from "vuex";
+
 export default {
+  name: "volunteers",
+  components: {
+    Main
+  },
   data: () => ({
     content: {
       title: "Присоединяйтесь к нашему дружному сообществу!",
@@ -16,9 +22,8 @@ export default {
       links: []
     }
   }),
-  name: "volunteers",
-  components: {
-    Main
+  computed: {
+    ...mapGetters(['getVolunteers'])
   }
 };
 </script>

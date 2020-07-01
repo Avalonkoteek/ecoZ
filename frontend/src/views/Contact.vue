@@ -4,7 +4,8 @@
     <div class="container">
       <div class="main__section">
         <h2 class="main__title">{{ content.title }}</h2>
-        <ul class="contact__wrapper">
+        <ul>{{links}}</ul>
+        <!-- <ul class="contact__wrapper">
           <li class="contact__item">
 
             <a
@@ -57,8 +58,8 @@
             />
             +7 (111) 111-11-11</a>
           </li>
-        </ul>
-        <Breadcrumbs :links="content.links" />
+        </ul> -->
+        <Breadcrumbs :links="content.breadcrumbs" />
       </div>
     </div>
   </section>
@@ -67,21 +68,59 @@
 <script>
 import Breadcrumbs from "../components/controls/Breadcrumbs";
 import Overlay from "../components/Background/Overlay";
+
+import { mapGetters } from "vuex";
+
 export default {
-  data: () => ({
-    content: {
-      img: "../assets/img/Contact/Insta_Icon.svg",
-      title: "Свяжитесь с нами удобным для вас способом",
-      description: "",
-      links: [{ name: "Контактная форма", to: "contact/contact_form" }]
-    }
-  }),
+  name: "contact",
+
   components: {
     Breadcrumbs,
     Overlay
   },
 
-  name: "contact"
+  data: () => ({
+    content: {
+      // img: "../assets/img/Contact/Insta_Icon.svg",
+      title: "Свяжитесь с нами удобным для вас способом",
+      description: "",
+      breadcrumbs: [{ name: "Контактная форма", to: "contact/contact_form" }]
+    }
+  }),
+
+  computed: {
+    ...mapGetters(['getContacts']),
+    links() {
+      // const titleRegx = />[!"':;-_=+|(),./@,A-zА-я0-9]*</;
+      // const numberRegx = /\d+/g;
+      // const socials = this.getContacts.description.split('</>');
+      // RegExp
+      // for (let social of socials) {
+      //   for (let string of social.split()) {
+
+      //   }
+      // }
+      return ''
+    }
+  },
+
+  mounted() {
+    // console.log(this.getContacts);
+    // console.log(links)
+    //  for (let pageSlug of pageSlugArray) {
+    //     const page = data.filter(
+    //       (el) => el.slug.toLowerCase() === pageSlug.toLowerCase()
+    //       );
+
+    //       if (page.length === 0) continue;
+    //       const newPage = {
+    //         title: page[0].title.rendered,
+    //         description: page[0].excerpt.rendered,
+    //         links: page[0]._links,
+    //       };
+    //       state.allPages = [...state.allPages, newPage];
+    //     }
+  }
 };
 </script>
 

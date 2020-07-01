@@ -1,13 +1,18 @@
 <template>
   <div class="business">
-    <Main v-bind:content="content" />
+    <Main v-bind:content="getBusiness" />
   </div>
 </template>
 
 <script>
 import Main from "../components/Main/Main";
+import { mapGetters } from "vuex";
 
 export default {
+  name: "business",
+  components: {
+    Main
+  },
   data: () => ({
     content: {
       title: "Приглашаем предприятия к сотрудничеству ",
@@ -16,14 +21,8 @@ export default {
       links: [{ name: "Услуги", to: "/business/services" }]
     }
   }),
-  async mounted() {
-    const pages = await this.$store.state.mainPage.allPages;
-    console.log(this.$route);
-    console.log(pages);
+  computed: {
+    ...mapGetters(['getBusiness'])
   },
-  name: "business",
-  components: {
-    Main
-  }
 };
 </script>

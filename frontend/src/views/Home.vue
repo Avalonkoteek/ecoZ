@@ -1,13 +1,19 @@
 <template>
   <div class="home">
-    <Main v-bind:content="content" />
+    <Main v-bind:content="getMain" />
   </div>
 </template>
 
 <script>
 import Main from "../components/Main/Main";
 
+import { mapGetters } from "vuex";
+
 export default {
+  name: "home",
+  components: {
+    Main
+  },
   data: () => ({
     content: {
       title: "Экология — ответственность каждого",
@@ -16,9 +22,8 @@ export default {
       links: []
     }
   }),
-  name: "home",
-  components: {
-    Main
+  computed: {
+    ...mapGetters(['getMain'])
   }
 };
 </script>

@@ -29,6 +29,7 @@ export default {
     },
   },
   async mounted() {
+    console.log('tut')
     await this.$store.dispatch("fetchPages");
   },
   components: {

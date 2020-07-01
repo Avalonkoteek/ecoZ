@@ -7,8 +7,8 @@
         <h2 class="main__title">{{content.title}}</h2>
         <div class="main__description" v-html="content.description"></div>
         <!-- Links -->
-        <Breadcrumbs :links="content.links" />
-        <a class="home-button" v-if="isHome" to="/contact/contact_form">
+        <Breadcrumbs v-if="!isHome" :links="content.links" />
+        <a class="home-button" v-else to="/contact/contact_form">
         Записаться на консультацию
         </a>
       </div>

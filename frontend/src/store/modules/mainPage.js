@@ -1,26 +1,66 @@
 import axios from "axios";
 export default {
   state: {
-    allPages: [],
-    volunteers: {},
+    main: {
+      title: '',
+      description: '',
+      links: [],
+    },
+    business: {
+      title: '',
+      description: '',
+      links: [],
+    },
+    about: {
+      title: '',
+      description: '',
+      links: [],
+    },
+    volunteers: {
+      title: '',
+      description: '',
+      links: [],
+    },
+    education: {
+      title: '',
+      description: '',
+      links: [],
+    },
+    contacts: {
+      title: '',
+      description: '',
+      links: [],
+    },
+    // allPages: [],
   },
   mutations: {
     SET_PAGES: (state, data) => {
-      const pageSlugArray = ["business", "volunteers", "education", "about"];
-      // console.log(data.map((i) => i.slug));
-      for (let pageSlug of pageSlugArray) {
-        const page = data.filter(
-          (el) => el.slug.toLowerCase() === pageSlug.toLowerCase()
-        );
+      const pages = {
+        main: 'main',
+        business: 'business',
+        about: 'about',
+        volunteers: 'volunteers',
+        education: 'education',
+        contacts: 'contacts',
+      }
 
-        if (page.length === 0) continue;
-        const newPage = {
-          title: page[0].title.rendered,
-          description: page[0].excerpt.rendered,
-          links: page[0]._links,
-        };
-        console.log(newPage);
-        state.allPages = [...state.allPages, newPage];
+      for (let page of data) {
+        if (!page.parent) {
+          // Интерапт для страниц которых быть не должно
+          if (pages[page.slug]) {
+              state[page.slug].title = page.title.rendered;
+              state[page.slug].description = page.content.rendered;
+              continue;
+          } else continue;
+        }
+
+        const id = page.parent;
+        const homePage = data.find((page) => page.id === id);
+        const link = {};
+        link.name = page.title.rendered;
+        link.to = page.link.replace('https://eco-z.org', '');
+
+        state[homePage.slug].links.push(link)
       }
     },
   },
@@ -28,7 +68,11 @@ export default {
     async fetchPages({ commit }) {
       try {
         let data = await axios
-          .get("https://eco-z.org//wp-json/wp/v2/pages")
+          .get("https://eco-z.org//wp-json/wp/v2/pages/", {
+            params: {
+              per_page: 100
+            }
+          } )
           .then((response) => response.data)
           .catch((e) => console.log(e));
         commit("SET_PAGES", data);
@@ -36,6 +80,14 @@ export default {
         console.log(e);
       }
     },
+  },
+  getters: {
+    getMain: (state) => state.main,
+    getBusiness: (state) => state.business,
+    getAbout: (state) => state.about,
+    getVolunteers: (state) => state.volunteers,
+    getEducation: (state) => state.education,
+    getContacts: (state) => state.contacts,
   },
   modules: {},
 };
