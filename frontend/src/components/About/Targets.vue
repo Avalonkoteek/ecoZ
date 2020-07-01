@@ -7,86 +7,33 @@
       <div class="template__content">
         <div
           class="template__wrapper scrollbar"
-          :class="{'template__wrapper--full': !items.length }"
+          :class="{'template__wrapper--full': !getTemplateDate.images }"
         >
-          <p class="template__text">
-            Мы создали нашу некоммерческую организацию чтобы достичь следующих целей:
-            - общество должно знать всё о способах сортировки отходов, адресах мест их переработки;
-            - экологичные пространства (офисные, производственные, лично-бытовые) должны применяться повсеместно;
-            - принцип «Жить экологично» должен стать неотъемлемой частью развитого общества.
-            Для решения наших задач мы проводим эко-занятия в образовательных учреждениях, акции и эко-квесты, готовим предложения по сокращению потребления ресурсов, внедряем эко-привычки в кафе и офисах.
-            Мы создали нашу некоммерческую организацию чтобы достичь следующих целей:
-            - общество должно знать всё о способах сортировки отходов, адресах мест их переработки;
-            - экологичные пространства (офисные, производственные, лично-бытовые) должны применяться повсеместно;
-            - принцип «Жить экологично» должен стать неотъемлемой частью развитого общества.
-            Для решения наших задач мы проводим эко-занятия в образовательных учреждениях, акции и эко-квесты, готовим предложения по сокращению потребления ресурсов, внедряем эко-привычки в кафе и офисах.
-            Мы создали нашу некоммерческую организацию чтобы достичь следующих целей:
-            - общество должно знать всё о способах сортировки отходов, адресах мест их переработки;
-            - экологичные пространства (офисные, производственные, лично-бытовые) должны применяться повсеместно;
-            - принцип «Жить экологично» должен стать неотъемлемой частью развитого общества.
-            Для решения наших задач мы проводим эко-занятия в образовательных учреждениях, акции и эко-квесты, готовим предложения по сокращению потребления ресурсов, внедряем эко-привычки в кафе и офисах.
-            Мы создали нашу некоммерческую организацию чтобы достичь следующих целей:
-            - общество должно знать всё о способах сортировки отходов, адресах мест их переработки;
-            - экологичные пространства (офисные, производственные, лично-бытовые) должны применяться повсеместно;
-            - принцип «Жить экологично» должен стать неотъемлемой частью развитого общества.
-            Для решения наших задач мы проводим эко-занятия в образовательных учреждениях, акции и эко-квесты, готовим предложения по сокращению потребления ресурсов, внедряем эко-привычки в кафе и офисах.
-            Мы создали нашу некоммерческую организацию чтобы достичь следующих целей:
-            - общество должно знать всё о способах сортировки отходов, адресах мест их переработки;
-            - экологичные пространства (офисные, производственные, лично-бытовые) должны применяться повсеместно;
-            - принцип «Жить экологично» должен стать неотъемлемой частью развитого общества.
-            Для решения наших задач мы проводим эко-занятия в образовательных учреждениях, акции и эко-квесты, готовим предложения по сокращению потребления ресурсов, внедряем эко-привычки в кафе и офисах.
-            Мы создали нашу некоммерческую организацию чтобы достичь следующих целей:
-            - общество должно знать всё о способах сортировки отходов, адресах мест их переработки;
-            - экологичные пространства (офисные, производственные, лично-бытовые) должны применяться повсеместно;
-            - принцип «Жить экологично» должен стать неотъемлемой частью развитого общества.
-            Для решения наших задач мы проводим эко-занятия в образовательных учреждениях, акции и эко-квесты, готовим предложения по сокращению потребления ресурсов, внедряем эко-привычки в кафе и офисах.
-            Мы создали нашу некоммерческую организацию чтобы достичь следующих целей:
-            - общество должно знать всё о способах сортировки отходов, адресах мест их переработки;
-            - экологичные пространства (офисные, производственные, лично-бытовые) должны применяться повсеместно;
-            - принцип «Жить экологично» должен стать неотъемлемой частью развитого общества.
-            Для решения наших задач мы проводим эко-занятия в образовательных учреждениях, акции и эко-квесты, готовим предложения по сокращению потребления ресурсов, внедряем эко-привычки в кафе и офисах.
-            Мы создали нашу некоммерческую организацию чтобы достичь следующих целей:
-            - общество должно знать всё о способах сортировки отходов, адресах мест их переработки;
-            - экологичные пространства (офисные, производственные, лично-бытовые) должны применяться повсеместно;
-            - принцип «Жить экологично» должен стать неотъемлемой частью развитого общества.
-            Для решения наших задач мы проводим эко-занятия в образовательных учреждениях, акции и эко-квесты, готовим предложения по сокращению потребления ресурсов, внедряем эко-привычки в кафе и офисах.
-            Мы создали нашу некоммерческую организацию чтобы достичь следующих целей:
-            - общество должно знать всё о способах сортировки отходов, адресах мест их переработки;
-            - экологичные пространства (офисные, производственные, лично-бытовые) должны применяться повсеместно;
-            - принцип «Жить экологично» должен стать неотъемлемой частью развитого общества.
-            Для решения наших задач мы проводим эко-занятия в образовательных учреждениях, акции и эко-квесты, готовим предложения по сокращению потребления ресурсов, внедряем эко-привычки в кафе и офисах.
-            {{getTemplateDate}}
-          </p>
+          <div class="template__text" v-html="getTemplateDate.textHTML"></div>
         </div>
-        <div v-if="items.length" class="template__container-slider">
+        <div v-if="getTemplateDate.images" class="template__container-slider">
           <v-slider class="template__swiper" name="view-shop" :options="sliderOptions">
-            <div
-              class="swiper-slide"
-              v-for="(item, index) in items"
-              :key="index"
-            >
+            <div class="swiper-slide" v-for="(item, index) in getTemplateDate.images" :key="index">
               <div class="template__swiper-img">
-                <img src="../../assets/img/targets/targets.jpg" alt="img_1" />
+                <img :src="item.url" :alt="item.alt" />
               </div>
             </div>
           </v-slider>
         </div>
       </div>
 
-      <Breadcrumbs v-if="links.length && links.length !== 1" :links="links" />
+      <Breadcrumbs v-if="getTemplateDate.links" :links="getTemplateDate.links" />
     </div>
   </section>
 </template>
 
 <script>
-const img = "/img/targets.56c06f8c.jpg";
-
 import VSlider from "../controls/VSlider.vue";
 import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 import Overlay from "../Background/Overlay";
 
-import { mapActions, mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 
 const sliderOptions = {
   spaceBetween: 24,
@@ -131,75 +78,91 @@ export default {
         }
       ],
       isOpen: false,
-      items: [
-        {
-          img: img
-        },
-        {
-          img: img
-        },
-        {
-          img: img
-        },
-        {
-          img: img
-        },
-        {
-          img: img
-        },
-        {
-          img: img
-        }
-      ]
+      template: {}
     };
   },
 
   computed: {
-    ...mapGetters(['getAllPages']),
+    ...mapGetters(["getAllPages"]),
     sliderOptions() {
       return sliderOptions;
     },
 
+    // ===============
+    // ШАБЛОН
+    // ===============
+
     getTemplateDate() {
-      const template = {};
       const path = this.$route.path;
-      const page = this.getAllPages.find(page => page.link.indexOf(path) !== -1)
+      const page = this.getAllPages.find(
+        page => page.link.indexOf(path) !== -1
+      );
+      if (!page) return "";
 
-      if (!page)
-        return ''
+      // обработка контента
+      const content = page.content.rendered;
 
-      const parentId = page.parent;
+      // IMAGES
+      const images = this.getImages(content);
+
+      // TEXT
+      let textHTML =
+        content
+          .split("<br />")
+          .filter(i => !i.match("<img"))
+          .join("<br />") + "</p>";
+
+      // LINKS
+      const links = this.getLinks(page.parent);
+
+      // TEMPLATE
+      let template = {
+        textHTML: textHTML,
+        links: links,
+        images: images
+      };
+
+      console.log(template);
+
+      return (
+        template || {
+          textHTML: "",
+          links: [],
+          images: []
+        }
+      );
+    }
+  },
+  methods: {
+    getLinks(parentId) {
       let links = [];
-
       for (let page of this.getAllPages) {
         let link = {};
         if (page.parent === parentId) {
           link.name = page.title.rendered;
-          link.to = page.link.replace('https://eco-z.org', '');
+          link.to = page.link.replace("https://eco-z.org", "");
+          links.push(link);
         }
-
-        links.push(link)
       }
+      return links;
+    },
+    getImages(content) {
+      const srcRegx = /src="(.+?)"/g;
+      const altRegx = /alt=(.+?)"/g;
 
-      // console.log(links, page, template)
-      // const arr = page.content.splice('<br />')
-      console.log(template, page)
-      return ''
+      const alts = content.match(altRegx).map(item => {
+        if (item.replace("alt=", "") === '""') return "";
+        return item.replace("alt=", "");
+      });
+      const imagesUrls = content
+        .match(srcRegx)
+        .map(item => item.replace("src=", "").replace('"', ""));
+
+      const images = imagesUrls.map((i, index) => {
+        return { url: i.slice(0, -1), alt: alts[index] };
+      });
+      return images;
     }
-  },
-
-  watch: {
-    getAllPages() {
-      this.fetchTemplate({data: this.getAllPages});
-    }
-  },
-
-  methods: {
-    ...mapActions(['fetchTemplate']),
-  },
-
-  created() {
-    this.fetchTemplate({data: this.getAllPages});
   },
 
   mounted() {
