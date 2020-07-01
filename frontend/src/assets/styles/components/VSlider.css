@@ -42,6 +42,10 @@
         &:hover {
             opacity: 0.8;
         }
+
+        &.is-disabled {
+            display: none;
+        }
     }
 
 
@@ -64,6 +68,11 @@
         visibility: hidden;
     }
 
+    .swiper-pagination {
+        &.is-disabled {
+            display: none;
+        }
+    }
 
     .swiper-pagination-bullets {
         display: flex;

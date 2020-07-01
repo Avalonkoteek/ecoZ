@@ -4,7 +4,7 @@
     <div class="container container--contact" ref="pageExit">
       <ButtonBack class="services__btn-back" :to="'/business'" />
       <div class="services__cols">
-        <div class="services__col-narrow">
+        <div v-if="mainOffer" class="services__col-narrow">
           <div class="services__item services__item--stock">
             <div
               class="services__item-wrapper services__item-wrapper--text services__item-wrapper--scrollbar scrollbar"
@@ -24,7 +24,7 @@
           </div>
         </div>
 
-        <div class="services__col-wide">
+        <div class="services__col-wide" :class="{'services__col-wide--full': !mainOffer}">
           <ul class="services__list scrollbar" :class="{ 'services__list--scroll': scroll }">
             <li class="services__item" v-for="item in serviseList" :key="item.id">
               <div
@@ -85,6 +85,7 @@ export default {
   },
 
   created() {
+    console.log(this.mainOffer)
     this.fetchServices();
   },
   mounted() {
