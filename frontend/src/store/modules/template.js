@@ -3,9 +3,9 @@
 export default {
   state: {},
   mutations: {
-      setTemplate(state, payload) {
+    setTemplate(state, payload) {
         console.log(payload);
-      }
+    }
   },
   actions: {
     fetchTemplate({ commit }, data) {

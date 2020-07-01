@@ -5,7 +5,7 @@
       <div class="main__section">
         <h2 class="main__title">{{ content.title }}</h2>
         <ul class="contact__wrapper">
-          <!-- <li class="contact__item" v-for="(link, index) in links" :key="index">
+          <li class="contact__item" v-for="(link, index) in links" :key="index">
             <a
               :href="link.link"
               target="__blank"
@@ -16,7 +16,7 @@
               :alt="link.altImg"
               :src="link.srcImg"
             />{{link.titleLink}}</a>
-          </li> -->
+          </li>
         </ul>
         <!-- <ul class="contact__wrapper">
           <li class="contact__item">
@@ -110,8 +110,7 @@ export default {
       const srcRegx = /src="(.+?)"/g
       const altRegx = /alt="(.+?)"/g
 
-      console.log(this.getContacts);
-
+      console.log(this.getContacts.description.split('\n'));
       const socials = this.getContacts.description.split('</p>');
 
       for (let social of socials) {
@@ -132,7 +131,7 @@ export default {
         !(srcImg === null) ? srcImg = srcImg.join().replace('src="', '').slice(0, -1) : srcImg = '';
 
         altImg = social.match(altRegx);
-        !(altImg === null) ? altImg = altImg.join().replace('src="', '').slice(0, -1) : altImg = '';
+        !(altImg === null) ? altImg = altImg.join().replace('alt="', '').slice(0, -1) : altImg = '';
 
 
         links.push({titleLink, link, srcImg, altImg})
