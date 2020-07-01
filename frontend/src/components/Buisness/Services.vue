@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <Breadcrumbs v-if="getBusinessLinks.length>1 " :links="getBusinessLinks" />
+      <Breadcrumbs v-if="getBusinessLinks" :links="getBusinessLinks" />
     </div>
   </section>
 </template>
