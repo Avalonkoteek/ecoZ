@@ -1,15 +1,15 @@
 <template>
   <section class="section services">
     <Overlay v-model="isOpen" />
-    <div class="container" ref="pageExit">
-      <ButtonBack class="services__btn-back" :to="'/about'" />
+    <div class="container container--contact" ref="pageExit">
+      <ButtonBack class="services__btn-back" :to="'/business'" />
       <div class="services__cols">
         <div class="services__col-narrow">
           <div class="services__item services__item--stock">
             <div
               class="services__item-wrapper services__item-wrapper--text services__item-wrapper--scrollbar scrollbar"
             >
-              <p class="services__item-text services__item-text--stock">{{ mainItem.text }}</p>
+              <p class="services__item-text services__item-text--stock">{{ mainOffer.text }}</p>
             </div>
 
             <div class="services__item-wrapper services__item-wrapper--red">
@@ -17,7 +17,7 @@
                 от
                 <span
                   class="services__item-number services__item-number--stock"
-                >{{ mainItem.price }}</span>
+                >{{ mainOffer.price }}</span>
                 руб.
               </p>
             </div>
@@ -26,7 +26,7 @@
 
         <div class="services__col-wide">
           <ul class="services__list scrollbar" :class="{ 'services__list--scroll': scroll }">
-            <li class="services__item" v-for="item in items" :key="item.id">
+            <li class="services__item" v-for="item in serviseList" :key="item.id">
               <div
                 class="services__item-wrapper services__item-wrapper--narrow services__item-wrapper--text"
               >
@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <Breadcrumbs v-if="links.length && links.length !== 1" :links="links" />
+      <Breadcrumbs v-if="getBusinessLinks.length>1 " :links="getBusinessLinks" />
     </div>
   </section>
 </template>
@@ -62,6 +62,8 @@
 import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 import Overlay from "../Background/Overlay";
+import { mapActions, mapGetters } from "vuex";
+
 export default {
   components: {
     ButtonBack,
@@ -71,32 +73,21 @@ export default {
   data() {
     return {
       isOpen: false,
-      links: [
-        {
-          name: "Услуги",
-          to: "/business/services"
-        }
-      ],
-      scroll: false,
-      items: [],
-      mainItem: {}
+      scroll: false
     };
   },
+  computed: {
+    ...mapGetters(["serviseList", "mainOffer", "getBusinessLinks"])
+  },
 
-  async mounted() {
-    
-    let items = await this.$store.dispatch("fetchServices");
-    items.sort((prev, next) => {
-      if (+prev.price > +next.price) return 1;
-      if (+prev.price < +next.price) return -1;
-      return 0;
-    });
-    this.mainItem = items[items.length - 1];
-    this.items = items.slice(0, -1);
+  methods: {
+    ...mapActions(["fetchServices"])
+  },
 
-    if (this.items.length > 2) this.scroll = true;
-    let { pageExit } = this.$refs;
-    pageExit.classList.add("container--contact");
+  created() {
+    this.fetchServices();
+  },
+  mounted() {
     this.isOpen = true;
   },
   beforeRouteLeave(to, from, next) {
