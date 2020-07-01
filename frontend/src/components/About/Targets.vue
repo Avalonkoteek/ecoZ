@@ -117,20 +117,14 @@ export default {
 
       // TEMPLATE
       let template = {
-        textHTML: textHTML,
-        links: links,
-        images: images
+        textHTML: textHTML || "",
+        links: links || [],
+        images: images || []
       };
 
       console.log(template);
 
-      return (
-        template || {
-          textHTML: "",
-          links: [],
-          images: []
-        }
-      );
+      return template;
     }
   },
   methods: {
