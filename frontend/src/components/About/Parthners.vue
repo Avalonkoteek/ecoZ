@@ -1,13 +1,13 @@
 <template>
   <section class="section partners">
     <Overlay v-model="isOpen" />
-    <div class="container" ref="pageExit">
+    <div class="container container--contact" ref="pageExit">
       <ButtonBack class="partners__button-back" :to="'/about'" />
       <div class="partners__container-slider">
         <v-slider ref="swiper" class="partners__swiper" name="view-shop" :options="sliderOptions">
           <div
             class="swiper-slide partners__slide"
-            v-for="(item, index) in items"
+            v-for="(item, index) in getPartners"
             :key="index"
             @click.prevent="setInfo(index)"
           >
@@ -16,8 +16,8 @@
                 <img
                   class="partners__slide-background"
                   :class="{'is-active': (slideOpen === index)}"
-                  src="../../assets/img/partners/Image_1.jpg"
-                  alt=""
+                  :src="item.img.src"
+                  :alt="item.img.alt"
                 />
                 <p class="partners__slide-title">{{item.title}}</p>
                 <div
@@ -26,13 +26,13 @@
                   v-if="slideOpen === index"
                 >
                   <div class="partners__slide-info-scrollbar scrollbar">
-
-                    <span class="partners__slide-info-close" @click.stop="closeInfo"/>
-                    <img class="partners__slide-info-img" src="../../assets/img/partners/Sergio_Pizza.png" alt="">
+                    <span class="partners__slide-info-close" @click.stop="closeInfo" />
+                    <img class="partners__slide-info-img" :src="item.logo.src" :alt="item.logo.alt" />
                     <p class="partners__slide-info-text">{{item.text}}</p>
-                    <a class="partners__slide-info-link link" :href="item.to">
+                    <a class="partners__slide-info-link link" :href="item.link">
                       <v-svg name="link" width="11" height="11" />
-                      <span class="link__buttom-line">{{item.link}}</span></a>
+                      <span class="link__buttom-line">{{item.link}}</span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -41,23 +41,21 @@
         </v-slider>
       </div>
 
-      <Breadcrumbs :links="links" />
+      <Breadcrumbs v-if="getAboutLinks.length>1 " :links="getAboutLinks" />
     </div>
   </section>
 </template>
 
 <script>
-
 import VSlider from "../controls/VSlider.vue";
 import VSvg from "../controls/VSvg.vue";
-
-
+import { mapActions, mapGetters } from "vuex";
 import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 import Overlay from "../Background/Overlay";
 
-const img = '/img/Image_1.4bb88f8d.jpg'
-const sergio = '/img/Sergio_Pizza.c6f78a0e.png'
+// const img = "/img/Image_1.4bb88f8d.jpg";
+// const sergio = "/img/Sergio_Pizza.c6f78a0e.png";
 
 const sliderOptions = {
   slidesPerView: 1,
@@ -97,84 +95,25 @@ export default {
   data() {
     return {
       slideOpen: null,
-      links: [
-        {
-          name: "Цели",
-          to: "/about/targets"
-        },
-        {
-          name: "Деятельность",
-          to: "/about"
-        },
-        {
-          name: "Партнеры",
-          to: "/about/partners"
-        }
-      ],
-      isOpen: false,
-      items: [
-        {
-          img: img,
-          title: 'Sergio Pizza',
-          logo: sergio,
-          text: 'Sergio - это сочетание двух итальянских слов "sera" (вечер) и "giòia" (радость). Потому что пиццу чаще всего заказывают вечером, и она всегда приносит радость. Хотя многие думают, что Sergio - это имя одного из наших основателей ))Sergio - это сочетание двух итальянских слов "sera" (вечер) и "giòia" (радость). Потому что пиццу чаще всего заказывают вечером, и она всегда приносит радость. Хотя многие думают, что Sergio - это имя одного из наших основателей ))',
-          link: 'sergiopizza.ru',
-          to: 'javascript:;'
-        },
-        {
-          img: img,
-          title: 'Sergio Pizza',
-          logo: sergio,
-          text: 'Sergio - это сочетание двух итальянских слов "sera" (вечер) и "giòia" (радость). Потому что пиццу чаще всего заказывают вечером, и она всегда приносит радость. Хотя многие думают, что Sergio - это имя одного из наших основателей ))',
-          link: 'sergiopizza.ru',
-          to: 'javascript:;'
-        },
-        {
-          img: img,
-          title: 'Sergio Pizza',
-          logo: sergio,
-          text: 'Sergio - это сочетание двух итальянских слов "sera" (вечер) и "giòia" (радость). Потому что пиццу чаще всего заказывают вечером, и она всегда приносит радость. Хотя многие думают, что Sergio - это имя одного из наших основателей ))',
-          link: 'sergiopizza.ru',
-          to: 'javascript:;'
-        },
-        {
-          img: img,
-          title: 'Sergio Pizza',
-          logo: sergio,
-          text: 'Sergio - это сочетание двух итальянских слов "sera" (вечер) и "giòia" (радость). Потому что пиццу чаще всего заказывают вечером, и она всегда приносит радость. Хотя многие думают, что Sergio - это имя одного из наших основателей ))',
-          link: 'sergiopizza.ru',
-          to: 'javascript:;'
-        },
-        {
-          img: img,
-          title: 'Sergio Pizza',
-          logo: sergio,
-          text: 'Sergio - это сочетание двух итальянских слов "sera" (вечер) и "giòia" (радость). Потому что пиццу чаще всего заказывают вечером, и она всегда приносит радость. Хотя многие думают, что Sergio - это имя одного из наших основателей ))',
-          link: 'sergiopizza.ru',
-          to: 'javascript:;'
-        },
-        {
-          img: img,
-          title: 'Sergio Pizza',
-          logo: sergio,
-          text: 'Sergio - это сочетание двух итальянских слов "sera" (вечер) и "giòia" (радость). Потому что пиццу чаще всего заказывают вечером, и она всегда приносит радость. Хотя многие думают, что Sergio - это имя одного из наших основателей ))',
-          link: 'sergiopizza.ru',
-          to: 'javascript:;'
-        },
-      ]
+      isOpen: false
     };
   },
 
   computed: {
+    ...mapGetters(["getPartners", "getAboutLinks"]),
     sliderOptions() {
       return sliderOptions;
     }
   },
 
+  created() {
+    this.fetchParters();
+  },
+
   methods: {
+    ...mapActions(["fetchParters"]),
     setInfo(index) {
-      if (this.slideOpen === null)
-        this.slideOpen = index;
+      if (this.slideOpen === null) this.slideOpen = index;
     },
 
     closeInfo() {
@@ -183,12 +122,10 @@ export default {
   },
 
   mounted() {
-    let { pageExit } = this.$refs;
-    pageExit.classList.add("container--contact");
     this.isOpen = true;
-    this.$refs.swiper.slider.on('slideChange', () => {
+    this.$refs.swiper.slider.on("slideChange", () => {
       this.slideOpen = null;
-    })
+    });
   },
 
   beforeRouteLeave(to, from, next) {
@@ -198,6 +135,5 @@ export default {
     this.isOpen = false;
     setTimeout(next, 400);
   }
-
 };
 </script>
