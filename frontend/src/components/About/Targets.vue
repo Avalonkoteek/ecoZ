@@ -33,7 +33,7 @@ import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 import Overlay from "../Background/Overlay";
 
-import { mapActions, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 
 const sliderOptions = {
   spaceBetween: 24,
@@ -128,7 +128,6 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["fetchTemplate"]),
     getLinks(parentId) {
       let links = [];
       for (let page of this.getAllPages) {
@@ -158,16 +157,6 @@ export default {
       });
       return images;
     }
-  },
-
-  watch: {
-    getAllPages() {
-      this.fetchTemplate({ data: this.getAllPages });
-    }
-  },
-
-  created() {
-    this.fetchTemplate({ data: this.getAllPages });
   },
 
   mounted() {

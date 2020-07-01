@@ -8,12 +8,18 @@ export default {
     volunteersChildrenTemplate: [],
   },
   mutations: {
+<<<<<<< HEAD
+    setTemplate(state, payload) {
+        console.log(payload);
+    }
+=======
     setTemplate(payload) {
       // const about = payload.filter((item) => {
       //   item.link.match("https://eco-z.org/education/");
       // });
       console.log(payload);
     },
+>>>>>>> d87fff0bddfba7895a05410bb4d1a0a58709d36e
   },
   actions: {
     fetchTemplate({ commit }, data) {
