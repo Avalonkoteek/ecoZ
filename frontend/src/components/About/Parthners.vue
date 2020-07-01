@@ -4,7 +4,7 @@
     <div class="container container--contact" ref="pageExit">
       <ButtonBack class="partners__button-back" :to="'/about'" />
       <div class="partners__container-slider">
-        <v-slider ref="swiper" class="partners__swiper" name="view-shop" :options="sliderOptions">
+        <v-slider :disabled="!(getPartners.length !== 1)" ref="swiper" class="partners__swiper" name="view-shop" :options="sliderOptions">
           <div
             class="swiper-slide partners__slide"
             v-for="(item, index) in getPartners"
@@ -27,11 +27,11 @@
                 >
                   <div class="partners__slide-info-scrollbar scrollbar">
                     <span class="partners__slide-info-close" @click.stop="closeInfo" />
-                    <img class="partners__slide-info-img" :src="item.logo.src" :alt="item.logo.alt" />
-                    <p class="partners__slide-info-text">{{item.text}}</p>
-                    <a class="partners__slide-info-link link" :href="item.link">
+                    <img class="partners__slide-info-img" v-if="item.logo.src" :src="item.logo.src" :alt="item.logo.alt" />
+                    <p v-if="item.text" class="partners__slide-info-text">{{item.text}}</p>
+                    <a class="partners__slide-info-link link" v-if="item.link && item.titleLink" :href="item.link">
                       <v-svg name="link" width="11" height="11" />
-                      <span class="link__buttom-line">{{item.link}}</span>
+                      <span class="link__buttom-line">{{item.titleLink}}</span>
                     </a>
                   </div>
                 </div>
@@ -54,8 +54,6 @@ import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 import Overlay from "../Background/Overlay";
 
-// const img = "/img/Image_1.4bb88f8d.jpg";
-// const sergio = "/img/Sergio_Pizza.c6f78a0e.png";
 
 const sliderOptions = {
   slidesPerView: 1,

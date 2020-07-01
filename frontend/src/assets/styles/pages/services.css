@@ -26,6 +26,10 @@
       @media (--tablet-lg) {
         width: 100%;
       }
+
+      &--full {
+        width: 100%;
+      }
     }
 
     &-narrow {

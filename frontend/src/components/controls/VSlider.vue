@@ -1,15 +1,15 @@
 <template>
   <div class="v-slider" v-swiper:slider="options">
-    <button class="swiper-button-prev">
+    <button :class="{'is-disabled': disabled }" class="swiper-button-prev">
       <v-svg name="arrow_next" width="40" height="40" />
     </button>
     <div class="swiper-wrapper">
       <slot />
     </div>
-    <button class="swiper-button-next">
+    <button :class="{'is-disabled': disabled }"  class="swiper-button-next">
       <v-svg name="arrow_next" width="40" height="40" />
     </button>
-    <div class="swiper-pagination" />
+    <div class="swiper-pagination" :class="{'is-disabled': disabled }" />
   </div>
 </template>
 
@@ -33,6 +33,11 @@ export default {
     name: {
       type: String,
       required: true
+    },
+
+    disabled: {
+      type: Boolean,
+      default: false
     },
 
     options: {
