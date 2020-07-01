@@ -55,6 +55,7 @@
             - экологичные пространства (офисные, производственные, лично-бытовые) должны применяться повсеместно;
             - принцип «Жить экологично» должен стать неотъемлемой частью развитого общества.
             Для решения наших задач мы проводим эко-занятия в образовательных учреждениях, акции и эко-квесты, готовим предложения по сокращению потребления ресурсов, внедряем эко-привычки в кафе и офисах.
+            {{getTemplateDate}}
           </p>
         </div>
         <div v-if="items.length" class="template__container-slider">
@@ -84,6 +85,8 @@ import VSlider from "../controls/VSlider.vue";
 import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 import Overlay from "../Background/Overlay";
+
+import { mapActions, mapGetters } from 'vuex';
 
 const sliderOptions = {
   spaceBetween: 24,
@@ -152,15 +155,59 @@ export default {
   },
 
   computed: {
+    ...mapGetters(['getAllPages']),
     sliderOptions() {
       return sliderOptions;
+    },
+
+    getTemplateDate() {
+      const template = {};
+      const path = this.$route.path;
+      const page = this.getAllPages.find(page => page.link.indexOf(path) !== -1)
+
+      if (!page)
+        return ''
+
+      const parentId = page.parent;
+      let links = [];
+
+      for (let page of this.getAllPages) {
+        let link = {};
+        if (page.parent === parentId) {
+          link.name = page.title.rendered;
+          link.to = page.link.replace('https://eco-z.org', '');
+        }
+
+        links.push(link)
+      }
+
+      // console.log(links, page, template)
+      // const arr = page.content.splice('<br />')
+      console.log(template, page)
+      return ''
     }
   },
+
+  watch: {
+    getAllPages() {
+      this.fetchTemplate({data: this.getAllPages});
+    }
+  },
+
+  methods: {
+    ...mapActions(['fetchTemplate']),
+  },
+
+  created() {
+    this.fetchTemplate({data: this.getAllPages});
+  },
+
   mounted() {
     let { pageExit } = this.$refs;
     pageExit.classList.add("container--contact");
     this.isOpen = true;
   },
+
   beforeRouteLeave(to, from, next) {
     let { pageExit } = this.$refs;
     pageExit.classList.remove("container--contact");

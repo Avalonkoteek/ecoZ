@@ -19,6 +19,8 @@ import Footer from "./components/Footer/Footer";
 import Background from "./components/Background/Background";
 import Icons from "./components/controls/Icons";
 
+import { mapActions } from 'vuex';
+
 export default {
   computed: {
     getpageTitle() {
@@ -28,9 +30,17 @@ export default {
       return (this.$route.meta.layout || "empty") + "-layout";
     },
   },
+
+  methods: {
+    ...mapActions(['fetchPages']),
+  },
+
+  created() {
+    this.fetchPages();
+  },
   async mounted() {
-    console.log('tut')
-    await this.$store.dispatch("fetchPages");
+
+    // await this.$store.dispatch("fetchLinks");
   },
   components: {
     Navbar,

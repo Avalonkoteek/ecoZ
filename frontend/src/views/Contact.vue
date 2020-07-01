@@ -4,7 +4,20 @@
     <div class="container">
       <div class="main__section">
         <h2 class="main__title">{{ content.title }}</h2>
-        <ul>{{links}}</ul>
+        <ul class="contact__wrapper">
+          <!-- <li class="contact__item" v-for="(link, index) in links" :key="index">
+            <a
+              :href="link.link"
+              target="__blank"
+              class="contact__links link"
+            >
+            <img
+              class="contact__social-img"
+              :alt="link.altImg"
+              :src="link.srcImg"
+            />{{link.titleLink}}</a>
+          </li> -->
+        </ul>
         <!-- <ul class="contact__wrapper">
           <li class="contact__item">
 
@@ -91,16 +104,40 @@ export default {
   computed: {
     ...mapGetters(['getContacts']),
     links() {
-      // const titleRegx = />[!"':;-_=+|(),./@,A-zА-я0-9]*</;
-      // const numberRegx = /\d+/g;
-      // const socials = this.getContacts.description.split('</>');
-      // RegExp
-      // for (let social of socials) {
-      //   for (let string of social.split()) {
+      const links = []
+      const titleRegx = />[!"':;-_=+|(),./@,A-zА-я0-9]*</g;
+      const linkRegx = /href="(.+?)"/g
+      const srcRegx = /src="(.+?)"/g
+      const altRegx = /alt="(.+?)"/g
 
-      //   }
-      // }
-      return ''
+      console.log(this.getContacts);
+
+      const socials = this.getContacts.description.split('</p>');
+
+      for (let social of socials) {
+        let titleLink, link, srcImg, altImg;
+        Array.from(social.matchAll(titleRegx)).map((item) => {
+          const arrTitle = item[0].slice(1, -1);
+          if (arrTitle.length)
+            titleLink = arrTitle
+        });
+
+        if (!titleLink)
+          titleLink = '';
+
+        link = social.match(linkRegx);
+        !(link === null) ? link = link.join().replace('href="', '').slice(0, -1) : link = '';
+
+        srcImg = social.match(srcRegx);
+        !(srcImg === null) ? srcImg = srcImg.join().replace('src="', '').slice(0, -1) : srcImg = '';
+
+        altImg = social.match(altRegx);
+        !(altImg === null) ? altImg = altImg.join().replace('src="', '').slice(0, -1) : altImg = '';
+
+
+        links.push({titleLink, link, srcImg, altImg})
+      }
+      return links
     }
   },
 

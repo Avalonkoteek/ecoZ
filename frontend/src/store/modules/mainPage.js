@@ -31,7 +31,7 @@ export default {
       description: '',
       links: [],
     },
-    // allPages: [],
+    allPages: [],
   },
   mutations: {
     SET_PAGES: (state, data) => {
@@ -62,17 +62,20 @@ export default {
 
         state[homePage.slug].links.push(link)
       }
+
+      state.allPages = data;
     },
   },
   actions: {
     async fetchPages({ commit }) {
       try {
+        console.log('12312312')
         let data = await axios
           .get("https://eco-z.org//wp-json/wp/v2/pages/", {
             params: {
               per_page: 100
             }
-          } )
+          })
           .then((response) => response.data)
           .catch((e) => console.log(e));
         commit("SET_PAGES", data);
@@ -80,6 +83,35 @@ export default {
         console.log(e);
       }
     },
+    // async fetchTemplate({}) {
+    //   try {
+    //     let data = await axios
+    //       .get("https://eco-z.org//wp-json/", {
+    //         params: {
+    //           per_page: 100
+    //         }
+    //       })
+    //       .then((response) => response.data)
+    //       .catch((e) => console.log(e));
+    //       console.log(data)
+    //     // commit("SET_PAGES", data);
+    //   } catch (e) {
+    //     console.log(e);
+    //   }
+    // },
+    // async fetchLinks({}) {
+    //   try {
+    //     let data = await axios
+    //       .get("https://eco-z.org//wp-json/", {
+    //       })
+    //       .then((response) => response.data)
+    //       .catch((e) => console.log(e));
+    //     console.log(data)
+    //     commit("", data);
+    //   } catch (e) {
+    //     console.log(e)
+    //   }
+    // }
   },
   getters: {
     getMain: (state) => state.main,
@@ -88,6 +120,7 @@ export default {
     getVolunteers: (state) => state.volunteers,
     getEducation: (state) => state.education,
     getContacts: (state) => state.contacts,
+    getAllPages: (state) => state.allPages,
   },
   modules: {},
 };
