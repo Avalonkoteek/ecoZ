@@ -10,11 +10,14 @@ export default {
     SET_PARTNERS: (state, payload) => {
       if (state.partners.length === 0) {
         const PartnersList = payload.map((partner) => {
+          // формирование массива партнеров
+
           let description =
             partner.content.rendered.replace("</p>", "").replace("<p>", "") ||
             "";
           let title = partner.title.rendered;
-          console.log(title);
+          // Обработка текста и заголовка из стандартных полей
+
           return {
             id: partner.id,
             text: partner.description || description,
@@ -27,8 +30,9 @@ export default {
             link: partner.organization_link || "",
           };
         });
-        console.log(PartnersList);
+
         state.partners = [...PartnersList];
+        // SET_PARTNERS
       }
     },
   },
@@ -36,6 +40,7 @@ export default {
     // ===========================
     // FETCH =====================
     // ===========================
+
     async fetchParters({ commit }) {
       try {
         let data = await axios
