@@ -125,6 +125,7 @@ export default {
     getAboutLinks: (state) => state.about.links,
     getVolunteersLinks: (state) => state.volunteers.links,
     getEducationLinks: (state) => state.education.links,
+    getContactsLinks: (state) => state.contacts.links,
   },
   modules: {},
 };
