@@ -1,12 +1,13 @@
-// const Home = () => import("../views/Home.vue");
 
 //About
 const About = () => import("../views/About");
 const AboutPartners = () => import("../components/About/Parthners");
 const AboutTargets = () => import("../components/About/Targets");
 const ContactForm = () => import("../components/Contact/ContactForm");
+
 // Buisness
 const Services = () => import("../components/Buisness/Services");
+const NotFound = () => import("../views/NotFound");
 // const About = () => import("../views/About.vue")
 
 export const routes = [
@@ -80,7 +81,18 @@ export const routes = [
   {
     path: "/contact/contact_form",
     name: "contact_form",
-    meta: { layout: "empty" },
+    meta: { layout: "empty", title: "Контактная форма"},
     component: ContactForm,
   },
+
+  {
+    path: '/404',
+    name: '404',
+    component: NotFound,
+    meta: { title: "404"},
+  },
+  {
+    path: '*',
+    redirect: '/404'
+  }
 ];

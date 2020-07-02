@@ -25,6 +25,7 @@
 @import "./components/Navbar.css";
 @import "./components/VSlider.css";
 @import "./components/VPopup.css";
+@import "./components/Preloader.css";
 
 /* Страницы */
 @import "./pages/partners.css";
@@ -32,3 +33,4 @@
 @import "./pages/contact.css";
 @import "./pages/contactForm.css";
 @import "./pages/services.css";
+@import "./pages/notFound.css";
