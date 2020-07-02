@@ -67,6 +67,12 @@
                 opacity: 0.5;
                 border-radius: 25px;
             }
+
+            &:hover {
+                &:after {
+                    opacity: 0.35;
+                }
+            }
         }
 
         .swiper-slide {
@@ -115,6 +121,7 @@
 
         &--full {
             width: 100%;
+            margin-right: 0;
         }
 
         @media (--tablet) {

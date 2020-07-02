@@ -15,7 +15,7 @@
             class="swiper-slide partners__slide"
             v-for="(item, index) in getPartners"
             :key="index"
-            @click.prevent="setInfo(index)"
+            @click.stop="setInfo(index)"
           >
             <div class="partners__slide-wrapper">
               <div class="partners__slide-content">
@@ -124,8 +124,10 @@ export default {
 
   methods: {
     ...mapActions(["fetchParters"]),
+
     setInfo(index) {
-      if (this.slideOpen === null) this.slideOpen = index;
+      if (this.$refs.swiper.slider.activeIndex === index)
+        this.slideOpen = index;
     },
 
     closeInfo() {

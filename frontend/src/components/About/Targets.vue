@@ -7,12 +7,12 @@
       <div class="template__content">
         <div
           class="template__wrapper scrollbar"
-          :class="{'template__wrapper--full': !getTemplateDate.images }"
+          :class="{'template__wrapper--full': !(getTemplateDate.images && getTemplateDate.images.length) }"
         >
           <div class="template__text" v-html="getTemplateDate.textHTML"></div>
         </div>
-        <div v-if="getTemplateDate.images" class="template__container-slider">
-          <v-slider class="template__swiper" name="view-shop" :options="sliderOptions">
+        <div v-if="getTemplateDate.images && getTemplateDate.images.length" class="template__container-slider">
+          <v-slider class="template__swiper" name="slider-template" :disabled="!(getTemplateDate.images.length !== 1)" :options="sliderOptions">
             <div class="swiper-slide" v-for="(item, index) in getTemplateDate.images" :key="index">
               <div class="template__swiper-img">
                 <img :src="item.url" :alt="item.alt" />
@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <Breadcrumbs v-if="getTemplateDate.links" :links="getTemplateDate.links" />
+      <Breadcrumbs v-if="getTemplateDate.links && getTemplateDate.links.length" :links="getTemplateDate.links" />
     </div>
   </section>
 </template>
@@ -106,11 +106,10 @@ export default {
       const images = this.getImages(content);
 
       // TEXT
-      let textHTML =
-        content
-          .split("<br />")
-          .filter(i => !i.match("<img"))
-          .join("<br />") + "</p>";
+      let textHTML = content.split('</p>')[0].replace('<p>', '')
+
+      if (textHTML.indexOf('src="') !== -1)
+        textHTML = textHTML.split('<img')[0];
 
       // LINKS
       const links = this.getLinks(page.parent);
@@ -122,7 +121,7 @@ export default {
         images: images || []
       };
 
-      console.log(template);
+      // console.log(template);
 
       return template;
     }
@@ -144,15 +143,20 @@ export default {
       const srcRegx = /src="(.+?)"/g;
       const altRegx = /alt=(.+?)"/g;
 
-      const alts = content.match(altRegx).map(item => {
+      let alts, imagesUrls, images
+      if (altRegx.test(content))
+      alts = content.match(altRegx).map(item => {
         if (item.replace("alt=", "") === '""') return "";
         return item.replace("alt=", "");
       });
-      const imagesUrls = content
+
+      if (srcRegx.test(content))
+      imagesUrls = content
         .match(srcRegx)
         .map(item => item.replace("src=", "").replace('"', ""));
 
-      const images = imagesUrls.map((i, index) => {
+      if (srcRegx.test(content))
+      images = imagesUrls.map((i, index) => {
         return { url: i.slice(0, -1), alt: alts[index] };
       });
       return images;

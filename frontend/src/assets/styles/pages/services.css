@@ -42,6 +42,13 @@
         margin-right: 0;
         margin-bottom: calc(var(--gs) * 1.5);
       }
+
+      &--full {
+        width: 100%;
+        .services__item--stock {
+          width: 100%;
+        }
+      }
     }
   }
 
