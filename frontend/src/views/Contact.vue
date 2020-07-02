@@ -3,76 +3,25 @@
     <Overlay />
     <div class="container">
       <div class="main__section">
-        <h2 class="main__title">{{ content.title }}</h2>
+        <h2 class="main__title">{{ getContacts.title }}</h2>
+        <div class="main__description" v-html="pageContent.description"></div>
         <ul class="contact__wrapper">
-          <li class="contact__item" v-for="(link, index) in links" :key="index">
-            <a
-              :href="link.link"
-              target="__blank"
-              class="contact__links link"
-            >
-            <img
-              class="contact__social-img"
-              :alt="link.altImg"
-              :src="link.srcImg"
-            />{{link.titleLink}}</a>
+          <li class="contact__item" v-for="(link, index) in pageContent.linksData" :key="index">
+            <a v-if="link.mail" :href="'mailto: '+link.content.link" class="contact__links link">
+              <img class="contact__social-img" :alt="link.content.text" :src="link.img.src" />
+              {{link.content.text}}
+            </a>
+            <a v-else-if="link.tel" :href="'tel: +'+link.tel" class="contact__links link">
+              <img class="contact__social-img" :alt="link.content.text" :src="link.img.src" />
+              {{link.content.text}}
+            </a>
+            <a v-else :href="link.content.link" target="__blank" class="contact__links link">
+              <img class="contact__social-img" :alt="link.content.text" :src="link.img.src" />
+              {{link.content.text}}
+            </a>
           </li>
         </ul>
-        <!-- <ul class="contact__wrapper">
-          <li class="contact__item">
-
-            <a
-              href="https://www.instagram.com/ecozelenograd/"
-              target="__blank"
-              class="contact__links link"
-            >
-            <img
-              class="contact__social-img"
-              alt="instagram"
-              src="../assets/img/Contact/Insta_Icon.svg"
-            />@ecozelenograd</a>
-          </li>
-          <li class="contact__item">
-
-            <a
-              href="https://www.instagram.com/ecozelenograd/"
-              target="__blank"
-              class="contact__links link"
-            >
-            <img
-              class="contact__social-img"
-              alt="instagram"
-              src="../assets/img/Contact/Vk_Icon.svg"
-            />vk.com/ecozrecycle</a>
-          </li>
-          <li class="contact__item">
-            <a
-              href="https://www.instagram.com/ecozelenograd/"
-              target="__blank"
-              class="contact__links link"
-            >
-            <img
-              class="contact__social-img"
-              alt="instagram"
-              src="../assets/img/Contact/Mail_Icon.svg"
-            />
-            info.ecoz.org@gmail.com</a>
-          </li>
-          <li class="contact__item">
-            <a
-              href="https://www.instagram.com/ecozelenograd/"
-              target="__blank"
-              class="contact__links link"
-            >
-            <img
-              class="contact__social-img"
-              alt="instagram"
-              src="../assets/img/Contact/Phone_Icon.svg"
-            />
-            +7 (111) 111-11-11</a>
-          </li>
-        </ul> -->
-        <Breadcrumbs :links="content.breadcrumbs" />
+        <Breadcrumbs :links="getContacts.links" />
       </div>
     </div>
   </section>
@@ -94,7 +43,6 @@ export default {
 
   data: () => ({
     content: {
-      // img: "../assets/img/Contact/Insta_Icon.svg",
       title: "Свяжитесь с нами удобным для вас способом",
       description: "",
       breadcrumbs: [{ name: "Контактная форма", to: "contact/contact_form" }]
@@ -102,62 +50,77 @@ export default {
   }),
 
   computed: {
-    ...mapGetters(['getContacts']),
-    links() {
-      const links = []
-      const titleRegx = />[!"':;-_=+|(),./@,A-zА-я0-9]*</g;
-      const linkRegx = /href="(.+?)"/g
-      const srcRegx = /src="(.+?)"/g
-      const altRegx = /alt="(.+?)"/g
+    ...mapGetters(["getContacts"]),
+    pageContent() {
+      const ServerData = this.getContacts.description.split("\n");
+      const description = this.getTitle(ServerData);
+      const socialsData = this.getSocialData(ServerData);
 
-      console.log(this.getContacts.description.split('\n'));
-      const socials = this.getContacts.description.split('</p>');
-
-      for (let social of socials) {
-        let titleLink, link, srcImg, altImg;
-        Array.from(social.matchAll(titleRegx)).map((item) => {
-          const arrTitle = item[0].slice(1, -1);
-          if (arrTitle.length)
-            titleLink = arrTitle
-        });
-
-        if (!titleLink)
-          titleLink = '';
-
-        link = social.match(linkRegx);
-        !(link === null) ? link = link.join().replace('href="', '').slice(0, -1) : link = '';
-
-        srcImg = social.match(srcRegx);
-        !(srcImg === null) ? srcImg = srcImg.join().replace('src="', '').slice(0, -1) : srcImg = '';
-
-        altImg = social.match(altRegx);
-        !(altImg === null) ? altImg = altImg.join().replace('alt="', '').slice(0, -1) : altImg = '';
-
-
-        links.push({titleLink, link, srcImg, altImg})
-      }
-      return links
+      const self = this;
+      let linksData = [];
+      linksData = socialsData.map(item => {
+        let link = {};
+        link.tel = self.getNumber(item);
+        link.mail = self.getMail(item);
+        link.img = self.getImage(item);
+        let socialLink = item[0];
+        if (!(link.tel || link.mail) && socialLink) {
+          if (!socialLink.match(/https?/)) socialLink = "https://" + socialLink;
+        }
+        link.content = { text: item[1], link: socialLink };
+        return link;
+      });
+      return { linksData, description };
     }
   },
+  methods: {
+    getSocialData(content) {
+      let data = [];
+      let subdata = [];
+      content.forEach((item, i, arr) => {
+        if (item === "<p>&nbsp;</p>" || i === arr.length - 1) {
+          data.push(subdata);
+          subdata = [];
+        } else if (
+          !(item.match("<p>") || item.match("</p>") || item.match("<br />"))
+        ) {
+          subdata.push(item);
+        }
+      });
+      return data;
+    },
+    getTitle(arr) {
+      return arr
+        .filter(item => {
+          if (item.match("<p>&nbsp;</p>")) return false;
+          if (item.match("<p>") || item.match("</p>") || item.match("<br />"))
+            return true;
+        })
+        .join("");
+    },
+    getNumber(contentArr) {
+      const numberRegx = /(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?/g;
+      const tel = contentArr.filter(item => item.match(numberRegx))[0];
+      if (!tel) return null;
+      return tel.match(/[0-9]+/g).join("");
+    },
+    getMail(contentArr) {
+      const mailRegx = /([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}/g;
+      const mail = contentArr.filter(item => item.match(mailRegx))[0];
+      if (!mail) return null;
+      return mail;
+    },
+    getImage(contentArr) {
+      const srcRegx = /https?:\/\/\S+(?:jpg|jpeg|png|svg)/g;
+      const altRegx = /alt=(.+?)"/g;
+      const src = contentArr.filter(item => item.match(srcRegx))[0];
+      let alt = contentArr.filter(item => item.match(altRegx))[0];
+      if (!alt) alt = "";
 
-  mounted() {
-    // console.log(this.getContacts);
-    // console.log(links)
-    //  for (let pageSlug of pageSlugArray) {
-    //     const page = data.filter(
-    //       (el) => el.slug.toLowerCase() === pageSlug.toLowerCase()
-    //       );
-
-    //       if (page.length === 0) continue;
-    //       const newPage = {
-    //         title: page[0].title.rendered,
-    //         description: page[0].excerpt.rendered,
-    //         links: page[0]._links,
-    //       };
-    //       state.allPages = [...state.allPages, newPage];
-    //     }
+      if (!src) return "";
+      return { src, alt: alt || "" };
+    }
   }
 };
 </script>
 
-<style></style>

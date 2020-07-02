@@ -8,6 +8,7 @@ const ContactForm = () => import("../components/Contact/ContactForm");
 // Buisness
 const Services = () => import("../components/Buisness/Services");
 // const About = () => import("../views/About.vue")
+// const NotFoundComponent = () => import("../components/NotFoundComponent");
 
 export const routes = [
   {
@@ -16,6 +17,7 @@ export const routes = [
     meta: { layout: "main", title: "Главная" },
     component: () => import("../views/Home.vue"),
   },
+
   {
     path: "/",
     redirect: "/home",
@@ -33,7 +35,7 @@ export const routes = [
     component: AboutPartners,
     meta: {
       layout: "empty",
-      title: "Партнеры"
+      title: "Партнеры",
     },
     name: "AboutPartners",
   },
@@ -42,7 +44,7 @@ export const routes = [
     component: AboutTargets,
     meta: {
       layout: "empty",
-      title: "Цели"
+      title: "Цели",
     },
     name: "AboutTargets",
   },
@@ -83,4 +85,5 @@ export const routes = [
     meta: { layout: "empty" },
     component: ContactForm,
   },
+  // { path: "*", component: NotFoundComponent },
 ];

@@ -18,7 +18,17 @@
     height: 400px;
   }
 }
-
+.background::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fffaeb;
+  transform: translateX(-100%);
+  animation: tranlate-bg 0.6s ease-in-out;
+}
 /* Overlay
 ==================================================== */
 .background__overlay {
@@ -94,6 +104,14 @@ g {
 }
 #Spin5 {
   transform-origin: 50% 64%;
+}
+@keyframes tranlate-bg {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 @keyframes ovelay-mobile {
   0% {
