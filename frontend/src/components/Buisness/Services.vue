@@ -4,7 +4,7 @@
     <div class="container container--contact" ref="pageExit">
       <ButtonBack class="services__btn-back" :to="'/business'" />
       <div class="services__cols">
-        <div v-if="mainOffer" class="services__col-narrow">
+        <div v-if="mainOffer" class="services__col-narrow" :class="{'services__col-narrow--full': !(serviseList && serviseList.length)}">
           <div class="services__item services__item--stock">
             <div
               class="services__item-wrapper services__item-wrapper--text services__item-wrapper--scrollbar scrollbar"
@@ -24,7 +24,7 @@
           </div>
         </div>
 
-        <div class="services__col-wide" :class="{'services__col-wide--full': !mainOffer}">
+        <div class="services__col-wide" v-if="serviseList && serviseList.length" :class="{'services__col-wide--full': !mainOffer}">
           <ul class="services__list scrollbar" :class="{ 'services__list--scroll': scroll }">
             <li class="services__item" v-for="item in serviseList" :key="item.id">
               <div
