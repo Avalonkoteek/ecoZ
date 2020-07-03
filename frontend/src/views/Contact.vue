@@ -3,9 +3,13 @@
     <Overlay />
     <div class="container">
       <div class="main__section">
-        <h2 class="main__title">{{ getContacts.title }}</h2>
-        <div class="main__description" v-html="pageContent.description"></div>
-        <ul class="contact__wrapper">
+        <h2 class="main__title" v-if="getContacts.title">{{ getContacts.title }}</h2>
+        <div
+          class="main__description"
+          v-if="pageContent.description"
+          v-html="pageContent.description"
+        ></div>
+        <ul class="contact__wrapper" v-if="pageContent.linksData.length">
           <li class="contact__item" v-for="(link, index) in pageContent.linksData" :key="index">
             <a v-if="link.mail" :href="'mailto: '+link.content.link" class="contact__links link">
               <img class="contact__social-img" :alt="link.content.text" :src="link.img.src" />
@@ -21,7 +25,7 @@
             </a>
           </li>
         </ul>
-        <Breadcrumbs :links="getContacts.links" />
+        <Breadcrumbs v-if="getContacts.links.length" :links="getContacts.links" />
       </div>
     </div>
   </section>

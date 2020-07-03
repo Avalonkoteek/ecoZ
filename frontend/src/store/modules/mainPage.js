@@ -31,6 +31,7 @@ export default {
       description: "",
       links: [],
     },
+
     allPages: [],
   },
   mutations: {
@@ -50,6 +51,7 @@ export default {
           if (pages[page.slug]) {
             state[page.slug].title = page.title.rendered;
             state[page.slug].description = page.content.rendered;
+
             continue;
           } else continue;
         }

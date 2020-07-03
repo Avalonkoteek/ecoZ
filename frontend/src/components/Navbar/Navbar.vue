@@ -69,7 +69,7 @@ export default {
       { title: "Бизнесу", url: "/business" },
       { title: "Школам", url: "/school" },
       { title: "Волонтерам", url: "/volunteers" },
-      { title: "Контакты", url: "/contact" }
+      { title: "Контакты", url: "/contacts" }
     ]
   }),
 

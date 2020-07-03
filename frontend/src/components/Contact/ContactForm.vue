@@ -2,19 +2,56 @@
   <section class="section section--contact">
     <Overlay v-model="isOpen" />
     <div class="container" ref="pageExit">
-      <ButtonBack :to="'/contact'" />
+      <ButtonBack :to="'/contacts'" />
       <div class="contactForm__wrapper">
-        <form ref="form" class="contactForm" enctype="multipart/form-data" @submit.prevent="submitHandler">
+        <!-- ======================================================== -->
+        <!--========================= FORM ========================= -->
+        <!-- ======================================================== -->
+
+        <form
+          ref="form"
+          class="contactForm"
+          enctype="multipart/form-data"
+          @submit.prevent="submitHandler"
+        >
           <div class="contactForm__box">
-            <div class="checkbox" :class="{
+            <!--==========================================================
+            ========= !!CHECKBOX 
+            ============================================================-->
+            <div
+              class="checkbox"
+              :class="{
                   invalid: $v.form.check.$error,
                   correct: !$v.form.check.$invalid,
-                }">
-              <input aria-required="true" v-model="form.check"  @click="check" type="checkbox" id="checkbox-a" name="checkbox" />
+                }"
+            >
+              <input
+                aria-required="true"
+                v-model="form.check"
+                @click="check"
+                type="checkbox"
+                id="checkbox-a"
+                name="checkbox"
+              />
               <label for="checkbox-a" class="checkbox__text">
-                <p class="importand-field">Я соглашаюсь с <a href="#">политикой обработки персональных данных</a></p>
+                <p
+                  class="importand-field"
+                  :class="{
+                  invalid: !form.check,
+                  correct: form.check,
+                }"
+                >
+                  Я соглашаюсь с
+                  <a
+                    :href="pageContent.privacyPolicyLink"
+                  >политикой обработки персональных данных</a>
+                </p>
               </label>
             </div>
+
+            <!--==========================================================
+            ========= !! NAME 
+            ============================================================-->
             <div class="contactForm__item">
               <label
                 class="contact__text importand-field"
@@ -23,8 +60,7 @@
                   correct: !$v.form.name.$invalid,
                 }"
                 for="name"
-                >Ваши ФИО или ФИ</label
-              >
+              >Ваши ФИО или ФИ</label>
               <input
                 autofocus
                 class="contactForm__input"
@@ -38,6 +74,10 @@
                 }"
               />
             </div>
+
+            <!--==========================================================
+            ========= !! E_MAIL 
+            ============================================================-->
             <div class="contactForm__item">
               <label
                 class="contact__text importand-field"
@@ -46,8 +86,7 @@
                   invalid: $v.form.email.$error,
                   correct: !$v.form.email.$invalid,
                 }"
-                >E-mail для связи</label
-              >
+              >E-mail для связи</label>
               <input
                 autofocus
                 class="contactForm__input"
@@ -61,6 +100,10 @@
                 }"
               />
             </div>
+
+            <!--==========================================================
+            ========= !! PHONE 
+            ============================================================-->
             <div class="contactForm__item">
               <label
                 class="contact__text"
@@ -70,8 +113,7 @@
                   correct: !$v.form.phone.$invalid,
 
                 }"
-                >Ваш номер телефона</label
-              >
+              >Ваш номер телефона</label>
               <input
                 type="text"
                 name="tel"
@@ -88,20 +130,27 @@
               />
             </div>
 
-            <!-- <Select /> -->
-            <div class="select">
+            <!--==========================================================
+            ========= !! SELECT 
+            ============================================================-->
+            <div class="select" :class="{invalid:!form.selectValue}">
               <Multiselect
                 v-model="form.selectValue"
-                :options="options"
+                :options="pageContent.options"
                 :max-height="160"
-                placeholder="Хочу узнать о мероприятии"
+                placeholder="Тема сообщения"
                 selectLabel="Выбрать"
                 selectedLabel="Выбрано"
                 deselectLabel="Удалить"
-                :option-height="150"
+                :searchable="false"
+                :option-height="200"
               ></Multiselect>
             </div>
           </div>
+
+          <!--==========================================================
+            ========= !! TEXTAREA 
+          ============================================================-->
           <div class="contactForm__box">
             <p
               class="contact__text importand-field"
@@ -109,9 +158,7 @@
                 invalid: $v.form.text.$error,
                 correct: !$v.form.text.$invalid,
               }"
-            >
-              Текст сообщения
-            </p>
+            >Текст сообщения</p>
             <textarea
               class="contactForm__textarea"
               placeholder="Ваше сообщение..."
@@ -121,6 +168,9 @@
                 correct: !$v.form.text.$invalid,
               }"
             />
+            <!--==========================================================
+            ========= !! BUTTON 
+            ============================================================-->
             <button class="contactForm__submit-button" type="submit">
               <span>Отправить</span>
             </button>
@@ -128,34 +178,37 @@
         </form>
       </div>
     </div>
-    <transition name='fade-in' >
+
+    <!--==========================================================
+    ========= !! v-popup
+    ============================================================-->
+    <transition name="fade-in">
       <v-popup class="contactForm__popup" v-if="showPopup" @close="closePopup">
         <template v-slot:body>
           <div class="contactForm__popup-img">
-            <img src="../../assets/img/checkbox.png" alt="">
+            <img src="../../assets/img/checkbox.png" alt />
           </div>
-          <p class="contactForm__popup-text">
-              Сообщение успешно отправлено!<br>В скором времени мы свяжемся с Вами.
-          </p>
+          <p class="contactForm__popup-text">{{pageContent.push}}</p>
         </template>
         <template v-slot:footer>
-            <button class="contactForm__popup-close" @click="closePopup">
-            </button>
-            <button class="contactForm__popup-btn" @click="closePopup">
-              OK
-            </button>
+          <button class="contactForm__popup-close" @click="closePopup"></button>
+          <button class="contactForm__popup-btn" @click="closePopup">OK</button>
         </template>
       </v-popup>
     </transition>
   </section>
 </template>
-<script>
 
-// import axios from "axios";
+
+<script>
+// ======================================================
+// ========= SCRIPTS ===================================
+// ====================================================
+
 import Overlay from "../Background/Overlay";
 import ButtonBack from "../controls/ButtonBack.vue";
 import VPopup from "../controls/VPopup.vue";
-
+import { mapGetters } from "vuex";
 import {
   email,
   required,
@@ -167,53 +220,92 @@ import {
 const nameRu = /^[ \-а-яё]*$/i;
 
 export default {
+  // ========= EXPORTS ===================================
+  name: "contactForm",
   components: {
     ButtonBack,
     Overlay,
-    VPopup,
+    VPopup
   },
-  name: "contactForm",
+
+  // ==================================================
+  // ========= DATA ===================================
+  // ==================================================
 
   data: () => ({
-    options: [
-      "Предложение партнерства",
-      "Хочу написать о вас статью",
-      "Вопрос по услугам",
-      "Другое",
-    ],
     isOpen: false,
     form: {
-      selectValue: null,
+      selectValue: "",
       email: "",
       name: "",
       text: "",
       phone: "",
+      check: false
     },
-    showPopup: true,
+    showPopup: false
   }),
+  // ==================================================
+  // ========= validations ============================
+  // ==================================================
   validations: {
     form: {
       name: {
-        name: helpers.regex('name', nameRu),
+        name: helpers.regex("name", nameRu),
         required
       },
       email: {
         email,
-        required },
+        required
+      },
       check: {
-        required: value => value === true,
+        required: value => value === true
       },
       text: { required },
       phone: {
         minLength: minLength(18),
-        maxLength: maxLength(18),
-      },
+        maxLength: maxLength(18)
+      }
     }
   },
+  computed: {
+    ...mapGetters(["getAllPages"]),
+    pageContent() {
+      let data = [];
+      if (this.getAllPages.length) {
+        data = this.getAllPages
+          .filter(page => page.slug === "contact_form")[0]
+          .content.rendered.split("\n");
+      }
+      const mailRegx = /([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}/g;
+      let privacyPolicyLink = "";
+      let mails = [];
+      let push = [];
+      let options = [];
+      data.forEach(item => {
+        if (item.match(/https?:/) && !item.match(/<\/?pre>/))
+          privacyPolicyLink = item;
+        else if (item.match(mailRegx)) mails.push(item);
+        else if (item.match(/<\/?pre>/)) push.push(item);
+        else if (!(item === "" || item.match("<p>&nbsp;</p>")))
+          options.push(item);
+      });
+
+      let pushOk = push.map(item =>
+        item.replace("<pre>", "").replace("</pre>", "")
+      )[0];
+
+      return { privacyPolicyLink, mails, options, push: pushOk };
+    }
+  },
+
+  // ==================================================
+  // ========= validations ============================
+  // ==================================================
   mounted() {
     let { pageExit } = this.$refs;
     pageExit.classList.add("container--contact");
     this.isOpen = true;
+
     let selector = document.querySelector(".multiselect__content-wrapper");
     selector.classList.add("scrollbar");
     selector.classList.add("scrollbar--select");
@@ -227,37 +319,22 @@ export default {
   },
 
   methods: {
+    getOptions() {},
     submitHandler() {
       const vm = this;
       vm.$v.form.$touch();
 
-      if (vm.$v.form.$invalid)
-        return
+      if (vm.$v.form.$invalid || !this.form.selectValue) return;
+      const emailTo = this.pageContent.mails;
+      const formData = this.form;
 
-      const { form } = vm.$refs;
+      console.log(formData, emailTo);
 
-      // const data = new FormData(form)
-      // data.append('theme', vm.form.select);
-
-      console.log(form)
-      // vm.success = true;
-      // vm.timer = setTimeout(() => {
-      //   vm.closePopup()
-      // }, 3000);
-      // axios.post('emailSending.php', data).then(request => {
-      //   if (request.data.status == "200") {
-      //     console.log('отправлено')
-          // vm.success = true;
-          // vm.timer = setTimeout(() => {
-          //   vm.closePopup()
-          // }, 3000);
-      //   }
-      // });
-      // this.$router.push("/");
+      this.showPopup = true;
     },
 
     check() {
-      console.log('12312')
+      this.form.check = !this.form.check;
     },
 
     mask(event) {
@@ -267,59 +344,72 @@ export default {
       const defaultValue = mask.replace(/\D/g, "");
       const number = this.form.phone.replace(/\D/g, "");
 
-      let newNumber = mask.replace(/[_\d]/g, (value) => {
-          return length < number.length ? number.charAt(length++) || defaultValue.charAt(length) : value
+      let newNumber = mask.replace(/[_\d]/g, value => {
+        return length < number.length
+          ? number.charAt(length++) || defaultValue.charAt(length)
+          : value;
       });
 
       length = newNumber.indexOf("_");
 
       if (length != -1) {
         length < 5 && (length = 3);
-        newNumber = newNumber.slice(0, length)
+        newNumber = newNumber.slice(0, length);
       }
 
-      let reg = mask.substr(0, this.form.phone.length)
-      .replace(/_+/g, (string) => "\\d{1," + string.length + "}")
-      .replace(/[+()]/g, "\\$&");
+      let reg = mask
+        .substr(0, this.form.phone.length)
+        .replace(/_+/g, string => "\\d{1," + string.length + "}")
+        .replace(/[+()]/g, "\\$&");
       reg = new RegExp("^" + reg + "$");
 
-      if (!reg.test(this.form.phone) || this.form.phone.length < 5 || keyCode > 47 && keyCode < 58) this.form.phone = newNumber;
+      if (
+        !reg.test(this.form.phone) ||
+        this.form.phone.length < 5 ||
+        (keyCode > 47 && keyCode < 58)
+      )
+        this.form.phone = newNumber;
 
-      if (this.form.phone.slice(-1) == '-' || this.form.phone.slice(-1) == ' ') {
-        this.form.phone = this.form.phone.slice(0, -1)
+      if (
+        this.form.phone.slice(-1) == "-" ||
+        this.form.phone.slice(-1) == " "
+      ) {
+        this.form.phone = this.form.phone.slice(0, -1);
       }
 
       if (event.type == "blur" && this.form.phone.length < 5)
-        this.form.phone = ""
-
+        this.form.phone = "";
     },
 
     closePopup() {
       this.showPopup = false;
     }
-  },
+  }
 };
 </script>
 
 <style>
-  .select {
-    margin-top: 50px;
-  }
+.select {
+  margin-top: 50px;
+}
+.select.invalid {
+  border: 1px solid red !important;
+}
 
-  .multiselect__tags {
-    padding-left: 10px;
-  }
+.multiselect__tags {
+  padding-left: 10px;
+}
 
-  .select .multiselect__tags {
-    font-size: 20px !important;
-  }
+.select .multiselect__tags {
+  font-size: 20px !important;
+}
 
-  .multiselect__input {
-    font-size: 20px !important;
-    padding-left: 0;
-  }
+.multiselect__input {
+  font-size: 20px !important;
+  padding-left: 0;
+}
 
-  .multiselect__single {
-    font-size: 20px !important;
-  }
+.multiselect__single {
+  font-size: 20px !important;
+}
 </style>

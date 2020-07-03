@@ -74,13 +74,13 @@ export const routes = [
     component: () => import("../views/Volunteers.vue"),
   },
   {
-    path: "/contact",
-    name: "contact",
+    path: "/contacts",
+    name: "contacts",
     meta: { layout: "contact", title: "Контакты" },
     component: () => import("../views/Contact.vue"),
   },
   {
-    path: "/contact/contact_form",
+    path: "/contacts/contact_form",
     name: "contact_form",
     meta: { layout: "empty" },
     component: ContactForm,
