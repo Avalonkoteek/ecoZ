@@ -170,12 +170,19 @@ input:focus {
     transform: translateY(50%);
   }
 }
-
+/* ==============================================*/
+/* ==================== popup ==================*/
+/* ==============================================*/
 .contactForm__popup {
   &-img {
     display: flex;
     justify-content: center;
     margin-bottom: 16px;
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
   }
 
   &-text {
@@ -198,7 +205,9 @@ input:focus {
     margin: 0 auto;
     cursor: pointer;
   }
-
+  &-btn.error {
+    background: #c13232;
+  }
   &-close {
     position: absolute;
     width: 15px;
@@ -209,21 +218,21 @@ input:focus {
 
     &:after,
     &:before {
-        content: '';
-        display: block;
-        width: 21px;
-        height: 3px;
-        background: var(--cl-grey);
-        position: absolute;
-        top: 50%;
+      content: "";
+      display: block;
+      width: 21px;
+      height: 3px;
+      background: var(--cl-grey);
+      position: absolute;
+      top: 50%;
     }
 
     &:after {
-        transform: translateY(-50%) rotate(-45deg);
+      transform: translateY(-50%) rotate(-45deg);
     }
 
     &:before {
-        transform: translateY(-50%) rotate(45deg);
+      transform: translateY(-50%) rotate(45deg);
     }
   }
 }

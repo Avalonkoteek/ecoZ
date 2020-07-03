@@ -186,13 +186,14 @@
       <v-popup class="contactForm__popup" v-if="showPopup" @close="closePopup">
         <template v-slot:body>
           <div class="contactForm__popup-img">
-            <img src="../../assets/img/checkbox.png" alt />
+            <img src="../../assets/img/error.svg" v-if="popUpError" alt />
+            <img src="../../assets/img/checkbox.png" v-else alt />
           </div>
-          <p class="contactForm__popup-text">{{pageContent.push}}</p>
+          <p class="contactForm__popup-text" v-html="getPopupMessage"></p>
         </template>
         <template v-slot:footer>
           <button class="contactForm__popup-close" @click="closePopup"></button>
-          <button class="contactForm__popup-btn" @click="closePopup">OK</button>
+          <button class="contactForm__popup-btn" :class="{error:popUpError}" @click="closePopup">OK</button>
         </template>
       </v-popup>
     </transition>
@@ -209,7 +210,7 @@ import Overlay from "../Background/Overlay";
 import ButtonBack from "../controls/ButtonBack.vue";
 import VPopup from "../controls/VPopup.vue";
 
-import axios from 'axios';
+import axios from "axios";
 
 import { mapGetters } from "vuex";
 import {
@@ -237,6 +238,7 @@ export default {
 
   data: () => ({
     isOpen: false,
+    popUpError: true,
     form: {
       selectValue: "",
       email: "",
@@ -272,6 +274,10 @@ export default {
   },
   computed: {
     ...mapGetters(["getAllPages"]),
+    getPopupMessage() {
+      if (!this.popUpError) return this.pageContent.push.pushOk;
+      return this.pageContent.push.pushError;
+    },
     pageContent() {
       let data = [];
       if (this.getAllPages.length) {
@@ -296,8 +302,12 @@ export default {
       let pushOk = push.map(item =>
         item.replace("<pre>", "").replace("</pre>", "")
       )[0];
+      push.splice(0, 1);
+      let pushError = push
+        .map(item => item.replace("<pre>", "<p>").replace("</pre>", "</p>"))
+        .join("");
 
-      return { privacyPolicyLink, mails, options, push: pushOk };
+      return { privacyPolicyLink, mails, options, push: { pushOk, pushError } };
     }
   },
 
@@ -322,30 +332,35 @@ export default {
   },
 
   methods: {
-    getOptions() {},
-
     submitHandler() {
       const vm = this;
       vm.$v.form.$touch();
 
-      // if (vm.$v.form.$invalid || !vm.form.selectValue) return;
+      if (vm.$v.form.$invalid || !vm.form.selectValue) return;
 
       const emailTo = vm.pageContent.mails[0];
       const formData = vm.form;
       formData.emailTo = emailTo;
-      console.log(formData)
-
-      console.log(emailTo);
-
-      axios.post('/mail.php', formData).then(request => {
-        console.log(request);
-        if (request.data.status == "200") {
-          vm.showPopup = true;
-          // vm.timer = setTimeout(() => {
-          //   vm.closePopup()
-          // }, 3000);
-        }
-      });
+      try {
+        axios
+          .post("/mail.php", formData)
+          .then(request => {
+            console.log(request);
+            if (request.data.status == "200") {
+              vm.popUpError = false;
+              vm.showPopup = true;
+            }
+          })
+          .catch(e => {
+            console.log(e);
+            vm.popUpError = true;
+            vm.showPopup = true;
+          });
+      } catch (e) {
+        console.log(e);
+        vm.popUpError = true;
+        vm.showPopup = true;
+      }
     },
 
     check() {
