@@ -62,7 +62,7 @@
 import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 import Overlay from "../Background/Overlay";
-import { mapActions, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
@@ -73,24 +73,18 @@ export default {
   data() {
     return {
       isOpen: false,
-      scroll: false
+      scroll: false,
     };
   },
   computed: {
     ...mapGetters(["serviseList", "mainOffer", "getBusinessLinks"])
   },
 
-  methods: {
-    ...mapActions(["fetchServices"])
-  },
-
-  created() {
-    console.log(this.mainOffer);
-    this.fetchServices();
-  },
   mounted() {
+    console.log()
     this.isOpen = true;
   },
+
   beforeRouteLeave(to, from, next) {
     let { pageExit } = this.$refs;
     pageExit.classList.remove("container--contact");

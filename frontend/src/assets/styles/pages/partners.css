@@ -177,6 +177,7 @@
             left: 50%;
             transform: translateX(-50%);
             line-height: 1.2;
+            user-select: none;
         }
 
         &-wrapper {
@@ -256,6 +257,7 @@
                     width: 80%;
                     left: 50%;
                     transform: translateX(-50%);
+                    cursor: pointer;
                 }
             }
         }

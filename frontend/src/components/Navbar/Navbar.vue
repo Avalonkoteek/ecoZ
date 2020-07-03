@@ -46,7 +46,7 @@
           </li>
         </ul>
         <div class="navbar__fond-img">
-          <img src="../../assets/img/navbar/president_logo.svg" />
+          <a href="https://xn--80afcdbalict6afooklqi5o.xn--p1ai/" target="_blank"><img src="../../assets/img/navbar/president_logo.svg" /></a>
         </div>
       </nav>
     </div>
