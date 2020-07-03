@@ -10,7 +10,7 @@ $mail_to = 'fepifmel@gmail.com';
 
 $subject = 'Заявка с сайта ecoZ, тема сообщения: '.$select;
 $email_body = '' .$name . ' оставил заявку, его телефон ' .$phone. '<br>Почта этого пользователя: ' .$text.'<br>Сообщение: ' .$email;
-
+$email_form ='EcoZ'
 $headers = 'From:'.$email_form.'\r\n';
 $headers .='Reply-To:'.$email.'\r\n';
 
