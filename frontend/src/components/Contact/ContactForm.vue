@@ -133,8 +133,9 @@
             <!--==========================================================
             ========= !! SELECT
             ============================================================-->
-            <div class="select" :class="{invalid:!selectValidateClass}">
+            <div class="select">
               <Multiselect
+                :class="{invalid:!selectValidateClass}"
                 v-model="form.selectValue"
                 :options="pageContent.options"
                 :max-height="160"
@@ -355,6 +356,7 @@ export default {
             if (request.data.status == "200") {
               vm.popUpError = false;
               vm.showPopup = true;
+              this.$v.$reset();
             }
           })
           .catch(e => {
@@ -428,7 +430,7 @@ export default {
 .select {
   margin-top: 50px;
 }
-.select.invalid {
+.multiselect.invalid {
   border: 1px solid red !important;
 }
 
