@@ -1,0 +1,33 @@
+.preloader {
+    background: #fffaeb;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__img {
+        margin-bottom: calc(var(--gs) * 2);
+
+        @media (--mobile-lg) {
+            width: 210px;
+        }
+    }
+    &__text {
+        margin-top: calc(var(--gs) * 4);
+        font-size: 48px;
+        font-weight: 700;
+        color: #565D8D;
+        margin-bottom: calc(var(--gs) * 3);
+    }
+}

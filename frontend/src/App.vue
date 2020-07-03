@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <preloader v-if="!isLoading" />
     <Navbar :pageTitle="getpageTitle" />
 
     <Background class="backgound-animation" v-model="layout" />
@@ -17,11 +18,17 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Background from "./components/Background/Background";
+import Preloader from "./components/Preloader/Preloader";
 import Icons from "./components/controls/Icons";
 
 import { mapActions } from 'vuex';
 
 export default {
+  data() {
+    return {
+      isLoading: false
+    }
+  },
   computed: {
     getpageTitle() {
       return this.$route.meta.title || "Не знаю";
@@ -33,9 +40,16 @@ export default {
 
   methods: {
     ...mapActions(['fetchPages']),
+    loading() {
+      setTimeout(() => {
+          this.isLoading = true
+      }, 1500)
+    }
   },
 
   created() {
+    // this.loading()
+    document.addEventListener('DOMContentLoaded', () => this.loading());
     this.fetchPages();
   },
   async mounted() {
@@ -47,6 +61,7 @@ export default {
     Footer,
     Background,
     Icons,
+    Preloader
   },
 };
 </script>
