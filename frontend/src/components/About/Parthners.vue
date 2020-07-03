@@ -43,6 +43,7 @@
                     <a
                       class="partners__slide-info-link link"
                       v-if="item.link && item.titleLink"
+                      target="_blank"
                       :href="item.link"
                     >
                       <v-svg name="link" width="11" height="11" />
@@ -64,7 +65,7 @@
 <script>
 import VSlider from "../controls/VSlider.vue";
 import VSvg from "../controls/VSvg.vue";
-import { mapActions, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 import ButtonBack from "../controls/ButtonBack.vue";
 import Breadcrumbs from "../controls/Breadcrumbs.vue";
 import Overlay from "../Background/Overlay";
@@ -107,7 +108,7 @@ export default {
   data() {
     return {
       slideOpen: null,
-      isOpen: false
+      isOpen: false,
     };
   },
 
@@ -118,13 +119,7 @@ export default {
     }
   },
 
-  created() {
-    this.fetchParters();
-  },
-
   methods: {
-    ...mapActions(["fetchParters"]),
-
     setInfo(index) {
       if (this.$refs.swiper.slider.activeIndex === index)
         this.slideOpen = index;

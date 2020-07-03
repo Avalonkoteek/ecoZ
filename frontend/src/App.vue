@@ -39,7 +39,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(['fetchPages']),
+    ...mapActions(['fetchPages','fetchParters', 'fetchServices']),
     loading() {
       setTimeout(() => {
           this.isLoading = true
@@ -51,6 +51,8 @@ export default {
     // this.loading()
     document.addEventListener('DOMContentLoaded', () => this.loading());
     this.fetchPages();
+    this.fetchParters();
+    this.fetchServices();
   },
   async mounted() {
 

@@ -121,8 +121,6 @@ export default {
         images: images || []
       };
 
-      // console.log(template);
-
       return template;
     }
   },
