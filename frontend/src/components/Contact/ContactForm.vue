@@ -16,7 +16,7 @@
         >
           <div class="contactForm__box">
             <!--==========================================================
-            ========= !!CHECKBOX 
+            ========= !!CHECKBOX
             ============================================================-->
             <div
               class="checkbox"
@@ -50,7 +50,7 @@
             </div>
 
             <!--==========================================================
-            ========= !! NAME 
+            ========= !! NAME
             ============================================================-->
             <div class="contactForm__item">
               <label
@@ -76,7 +76,7 @@
             </div>
 
             <!--==========================================================
-            ========= !! E_MAIL 
+            ========= !! E_MAIL
             ============================================================-->
             <div class="contactForm__item">
               <label
@@ -102,7 +102,7 @@
             </div>
 
             <!--==========================================================
-            ========= !! PHONE 
+            ========= !! PHONE
             ============================================================-->
             <div class="contactForm__item">
               <label
@@ -131,7 +131,7 @@
             </div>
 
             <!--==========================================================
-            ========= !! SELECT 
+            ========= !! SELECT
             ============================================================-->
             <div class="select" :class="{invalid:!form.selectValue}">
               <Multiselect
@@ -149,7 +149,7 @@
           </div>
 
           <!--==========================================================
-            ========= !! TEXTAREA 
+            ========= !! TEXTAREA
           ============================================================-->
           <div class="contactForm__box">
             <p
@@ -169,7 +169,7 @@
               }"
             />
             <!--==========================================================
-            ========= !! BUTTON 
+            ========= !! BUTTON
             ============================================================-->
             <button class="contactForm__submit-button" type="submit">
               <span>Отправить</span>
@@ -208,6 +208,9 @@
 import Overlay from "../Background/Overlay";
 import ButtonBack from "../controls/ButtonBack.vue";
 import VPopup from "../controls/VPopup.vue";
+
+import axios from 'axios';
+
 import { mapGetters } from "vuex";
 import {
   email,
@@ -320,17 +323,29 @@ export default {
 
   methods: {
     getOptions() {},
+
     submitHandler() {
       const vm = this;
       vm.$v.form.$touch();
 
-      if (vm.$v.form.$invalid || !this.form.selectValue) return;
-      const emailTo = this.pageContent.mails;
-      const formData = this.form;
+      // if (vm.$v.form.$invalid || !vm.form.selectValue) return;
 
-      console.log(formData, emailTo);
+      const emailTo = vm.pageContent.mails[0];
+      const formData = vm.form;
+      formData.emailTo = emailTo;
+      console.log(formData)
 
-      this.showPopup = true;
+      console.log(emailTo);
+
+      axios.post('/mail.php', formData).then(request => {
+        console.log(request);
+        if (request.data.status == "200") {
+          vm.showPopup = true;
+          // vm.timer = setTimeout(() => {
+          //   vm.closePopup()
+          // }, 3000);
+        }
+      });
     },
 
     check() {
