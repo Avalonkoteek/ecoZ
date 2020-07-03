@@ -133,7 +133,7 @@
             <!--==========================================================
             ========= !! SELECT
             ============================================================-->
-            <div class="select" :class="{invalid:!form.selectValue}">
+            <div class="select" :class="{invalid:!selectValidateClass}">
               <Multiselect
                 v-model="form.selectValue"
                 :options="pageContent.options"
@@ -239,6 +239,7 @@ export default {
   data: () => ({
     isOpen: false,
     popUpError: true,
+    selectValid: true,
     form: {
       selectValue: "",
       email: "",
@@ -274,6 +275,10 @@ export default {
   },
   computed: {
     ...mapGetters(["getAllPages"]),
+    selectValidateClass() {
+      if (this.form.selectValue || this.selectValid) return true;
+      else return false;
+    },
     getPopupMessage() {
       if (!this.popUpError) return this.pageContent.push.pushOk;
       return this.pageContent.push.pushError;
@@ -335,7 +340,8 @@ export default {
     submitHandler() {
       const vm = this;
       vm.$v.form.$touch();
-
+      if (!vm.form.selectValue) vm.selectValid = false;
+      else vm.selectValid = true;
       if (vm.$v.form.$invalid || !vm.form.selectValue) return;
 
       const emailTo = vm.pageContent.mails[0];
