@@ -14,7 +14,10 @@ $email_form ='EcoZ';
 $headers = 'From:'.$email_form;
 $headers .='Reply-To:'.$email;
 
-
-mail($mail_to,$subject,$email_body,$headers);
+if(!mail($mail_to,$subject,$email_body,$headers)) {
+    echo 'Error';
+} else {
+   echo '200';
+}
 
 ?>
