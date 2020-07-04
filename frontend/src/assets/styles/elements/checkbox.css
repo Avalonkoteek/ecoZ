@@ -58,8 +58,5 @@ Check Box label text
     @media (max-width: 1279px) {
       font-size: 18px;
     }
-    @media (max-width: 479px) {
-      font-size: 14px;
-    }
   }
 }

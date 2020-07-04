@@ -45,6 +45,10 @@ export default {
         contacts: "contacts",
       };
 
+      // const specialPages = {
+      //   privacyPolicy: "privacy-policy",
+      // }
+
       for (let page of data) {
         if (!page.parent) {
           // Интерапт для страниц которых быть не должно
@@ -53,14 +57,20 @@ export default {
             state[page.slug].description = page.content.rendered;
 
             continue;
-          } else continue;
+          } else
+          // {
+            // if (specialPages[page.slug]) {
+            //   state[page.slug].description = page.content.rendered;
+            // }
+            continue;
+          // }
         }
 
         const id = page.parent;
         const homePage = data.find((page) => page.id === id);
         const link = {};
         link.name = page.title.rendered;
-        link.to = page.link.replace("https://eco-z.org", "");
+        link.to = page.link.replace("https://a.eco-z.org", "");
 
         state[homePage.slug].links.push(link);
       }
@@ -72,7 +82,7 @@ export default {
     async fetchPages({ commit }) {
       try {
         let data = await axios
-          .get("https://eco-z.org/wp-json/wp/v2/pages/", {
+          .get("https://a.eco-z.org/wp-json/wp/v2/pages/", {
             params: {
               per_page: 100,
             },

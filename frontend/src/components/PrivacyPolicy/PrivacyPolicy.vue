@@ -2,7 +2,7 @@
   <section class="template section">
     <Overlay v-model="isOpen" />
     <div class="container" ref="pageExit">
-      <ButtonBack class="template__button-back" :to="'/about'" />
+      <ButtonBack class="template__button-back" to=/contacts/contact_form/ />
 
       <div class="template__content">
         <div
@@ -64,7 +64,7 @@ export default {
   data() {
     return {
       isOpen: false,
-      template: {}
+    //   template: {}
     };
   },
 
@@ -88,62 +88,15 @@ export default {
       // обработка контента
       const content = page.content.rendered;
 
-      // IMAGES
-      const images = this.getImages(content);
-
       // TEXT
-      let textHTML = content.split('</p>')[0].replace('<p>', '')
-
-      if (textHTML.indexOf('src="') !== -1)
-        textHTML = textHTML.split('<img')[0];
-
-      // LINKS
-      const links = this.getLinks(page.parent);
+      let textHTML = content;
 
       // TEMPLATE
       let template = {
         textHTML: textHTML || "",
-        links: links || [],
-        images: images || []
       };
 
       return template;
-    }
-  },
-  methods: {
-    getLinks(parentId) {
-      let links = [];
-      for (let page of this.getAllPages) {
-        let link = {};
-        if (page.parent === parentId) {
-          link.name = page.title.rendered;
-          link.to = page.link.replace("https://eco-z.org", "");
-          links.push(link);
-        }
-      }
-      return links;
-    },
-    getImages(content) {
-      const srcRegx = /src="(.+?)"/g;
-      const altRegx = /alt=(.+?)"/g;
-
-      let alts, imagesUrls, images
-      if (altRegx.test(content))
-      alts = content.match(altRegx).map(item => {
-        if (item.replace("alt=", "") === '""') return "";
-        return item.replace("alt=", "");
-      });
-
-      if (srcRegx.test(content))
-      imagesUrls = content
-        .match(srcRegx)
-        .map(item => item.replace("src=", "").replace('"', ""));
-
-      if (srcRegx.test(content))
-      images = imagesUrls.map((i, index) => {
-        return { url: i.slice(0, -1), alt: alts[index] };
-      });
-      return images;
     }
   },
 

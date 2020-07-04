@@ -16,7 +16,7 @@ export default {
       let ServiceList = [];
       try {
         let data = await axios
-          .get("https://eco-z.org/wp-json/wp/v2/edu_service")
+          .get("https://a.eco-z.org/wp-json/wp/v2/edu_service")
           .then((response) => response.data);
         ServiceList = data.map((el) => {
           return {

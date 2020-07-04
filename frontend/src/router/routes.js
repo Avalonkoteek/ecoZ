@@ -49,7 +49,6 @@ export const routes = [
     },
     name: "AboutTargets",
   },
-
   {
     path: "/business",
     name: "business",
@@ -89,8 +88,18 @@ export const routes = [
   {
     path: "/contacts/contact_form",
     name: "contact_form",
-    meta: { layout: "empty", title: "Контактная форма"},
+    meta: { layout: "empty", title: "Форма"},
     component: ContactForm,
+  },
+
+  {
+    path: "/privacy-policy",
+    component: () => import('../components/PrivacyPolicy/PrivacyPolicy.vue'),
+    name:'privacy-policy',
+    meta: {
+      layout: "empty",
+      title: "Политика ПД",
+    },
   },
 
   {

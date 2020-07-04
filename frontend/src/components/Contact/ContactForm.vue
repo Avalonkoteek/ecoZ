@@ -42,9 +42,10 @@
                 }"
                 >
                   Я соглашаюсь с
-                  <a
-                    :href="pageContent.privacyPolicyLink"
-                  >политикой обработки персональных данных</a>
+                  <router-link
+                  class="contactForm__po"
+                    to="/privacy-policy"
+                  >политикой обработки персональных данных</router-link>
                 </p>
               </label>
             </div>
