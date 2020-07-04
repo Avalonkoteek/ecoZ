@@ -39,11 +39,11 @@ export default {
   },
 
   methods: {
-    ...mapActions(['fetchPages','fetchParters', 'fetchServices']),
+    ...mapActions(['fetchPages','fetchParters', 'fetchServices', 'fetchEduServices']),
     loading() {
       setTimeout(() => {
           this.isLoading = true
-      }, 1500)
+      }, 2000)
     }
   },
 
@@ -53,6 +53,7 @@ export default {
     this.fetchPages();
     this.fetchParters();
     this.fetchServices();
+    this.fetchEduServices();
   },
   async mounted() {
 

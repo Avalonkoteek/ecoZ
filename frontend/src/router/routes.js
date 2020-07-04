@@ -69,6 +69,12 @@ export const routes = [
     component: () => import("../views/School.vue"),
   },
   {
+    path: "/education/eduservices/",
+    name: "eduServices",
+    meta: {title: "Услуги" },
+    component: () => import("../components/EduServices/EduServices"),
+  },
+  {
     path: "/volunteers",
     name: "volunteers",
     meta: { layout: "volunteers", title: "Волонтерам" },

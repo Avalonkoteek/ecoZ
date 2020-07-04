@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import mainPage from "./modules/mainPage";
 import sevices from "./modules/sevices";
+import eduServices from "./modules/eduServices";
 import template from "./modules/template";
 import partners from "./modules/partners";
 
@@ -13,5 +14,6 @@ export default new Vuex.Store({
     sevices,
     template,
     partners,
+    eduServices
   },
 });
