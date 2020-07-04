@@ -21,9 +21,9 @@
             <div
               class="checkbox"
               :class="{
-                  invalid: $v.form.check.$error,
-                  correct: !$v.form.check.$invalid,
-                }"
+                invalid: $v.form.check.$error,
+                correct: !$v.form.check.$invalid,
+              }"
             >
               <input
                 aria-required="true"
@@ -37,15 +37,14 @@
                 <p
                   class="importand-field"
                   :class="{
-                  invalid: !form.check,
-                  correct: form.check,
-                }"
+                    invalid: !form.check,
+                    correct: form.check,
+                  }"
                 >
                   Я соглашаюсь с
-                  <router-link
-                  class="contactForm__po"
-                    to="/privacy-policy"
-                  >политикой обработки персональных данных</router-link>
+                  <router-link class="contactForm__po" to="/privacy-policy"
+                    >политикой обработки персональных данных</router-link
+                  >
                 </p>
               </label>
             </div>
@@ -61,7 +60,8 @@
                   correct: !$v.form.name.$invalid,
                 }"
                 for="name"
-              >Ваши ФИО или ФИ</label>
+                >Ваши ФИО или ФИ</label
+              >
               <input
                 autofocus
                 class="contactForm__input"
@@ -87,7 +87,8 @@
                   invalid: $v.form.email.$error,
                   correct: !$v.form.email.$invalid,
                 }"
-              >E-mail для связи</label>
+                >E-mail для связи</label
+              >
               <input
                 autofocus
                 class="contactForm__input"
@@ -112,9 +113,9 @@
                 :class="{
                   invalid: $v.form.phone.$error,
                   correct: !$v.form.phone.$invalid,
-
                 }"
-              >Ваш номер телефона</label>
+                >Ваш номер телефона</label
+              >
               <input
                 type="text"
                 name="tel"
@@ -136,7 +137,7 @@
             ============================================================-->
             <div class="select">
               <Multiselect
-                :class="{invalid:!selectValidateClass}"
+                :class="{ invalid: !selectValidateClass }"
                 v-model="form.selectValue"
                 :options="pageContent.options"
                 :max-height="160"
@@ -160,7 +161,9 @@
                 invalid: $v.form.text.$error,
                 correct: !$v.form.text.$invalid,
               }"
-            >Текст сообщения</p>
+            >
+              Текст сообщения
+            </p>
             <textarea
               class="contactForm__textarea"
               placeholder="Ваше сообщение..."
@@ -195,13 +198,18 @@
         </template>
         <template v-slot:footer>
           <button class="contactForm__popup-close" @click="closePopup"></button>
-          <button class="contactForm__popup-btn" :class="{error:popUpError}" @click="closePopup">OK</button>
+          <button
+            class="contactForm__popup-btn"
+            :class="{ error: popUpError }"
+            @click="closePopup"
+          >
+            OK
+          </button>
         </template>
       </v-popup>
     </transition>
   </section>
 </template>
-
 
 <script>
 // ======================================================
@@ -220,7 +228,7 @@ import {
   required,
   minLength,
   maxLength,
-  helpers
+  helpers,
 } from "vuelidate/lib/validators";
 
 const nameRu = /^[ \-а-яё]*$/i;
@@ -231,7 +239,7 @@ export default {
   components: {
     ButtonBack,
     Overlay,
-    VPopup
+    VPopup,
   },
 
   // ==================================================
@@ -248,9 +256,9 @@ export default {
       name: "",
       text: "",
       phone: "",
-      check: false
+      check: false,
     },
-    showPopup: false
+    showPopup: false,
   }),
   // ==================================================
   // ========= validations ============================
@@ -259,21 +267,21 @@ export default {
     form: {
       name: {
         name: helpers.regex("name", nameRu),
-        required
+        required,
       },
       email: {
         email,
-        required
+        required,
       },
       check: {
-        required: value => value === true
+        required: (value) => value === true,
       },
       text: { required },
       phone: {
         minLength: minLength(18),
-        maxLength: maxLength(18)
-      }
-    }
+        maxLength: maxLength(18),
+      },
+    },
   },
   computed: {
     ...mapGetters(["getAllPages"]),
@@ -285,13 +293,11 @@ export default {
     buttonBack() {
       const path = this.$route.path;
       const page = this.getAllPages.find(
-        page => page.link.indexOf(path) !== -1
+        (page) => page.link.indexOf(path) !== -1
       );
       if (!page) return "";
 
-      const parent = this.getAllPages.find(
-        item => item.id === page.parent
-      );
+      const parent = this.getAllPages.find((item) => item.id === page.parent);
 
       return parent.link.replace("https://a.eco-z.org", "");
     },
@@ -304,7 +310,7 @@ export default {
       let data = [];
       if (this.getAllPages.length) {
         data = this.getAllPages
-          .filter(page => page.slug === "contact_form")[0]
+          .filter((page) => page.slug === "contact_form")[0]
           .content.rendered.split("\n");
       }
       const mailRegx = /([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}/g;
@@ -312,7 +318,7 @@ export default {
       let mails = [];
       let push = [];
       let options = [];
-      data.forEach(item => {
+      data.forEach((item) => {
         if (item.match(/https?:/) && !item.match(/<\/?pre>/))
           privacyPolicyLink = item;
         else if (item.match(mailRegx)) mails.push(item);
@@ -321,16 +327,16 @@ export default {
           options.push(item);
       });
 
-      let pushOk = push.map(item =>
+      let pushOk = push.map((item) =>
         item.replace("<pre>", "").replace("</pre>", "")
       )[0];
       push.splice(0, 1);
       let pushError = push
-        .map(item => item.replace("<pre>", "<p>").replace("</pre>", "</p>"))
+        .map((item) => item.replace("<pre>", "<p>").replace("</pre>", "</p>"))
         .join("");
 
       return { privacyPolicyLink, mails, options, push: { pushOk, pushError } };
-    }
+    },
   },
 
   // ==================================================
@@ -367,15 +373,16 @@ export default {
       try {
         axios
           .post("/mail.php", formData)
-          .then(request => {
+          .then((request) => {
             console.log(request);
             if (request.data.status == "200") {
               vm.popUpError = false;
               vm.showPopup = true;
-              this.$v.$reset();
+              setTimeout(() => vm.$v.$reset(), 0);
+              vm.resetForm();
             }
           })
-          .catch(e => {
+          .catch((e) => {
             console.log(e);
             vm.popUpError = true;
             vm.showPopup = true;
@@ -390,7 +397,15 @@ export default {
     check() {
       this.form.check = !this.form.check;
     },
-
+    resetForm() {
+      this.selectValid = true;
+      this.form.selectValue = "";
+      this.form.email = "";
+      this.form.name = "";
+      this.form.text = "";
+      this.form.phone = "";
+      this.form.check = false;
+    },
     mask(event) {
       const keyCode = event.keyCode;
       const mask = "+7 (___) ___ __-__";
@@ -398,7 +413,7 @@ export default {
       const defaultValue = mask.replace(/\D/g, "");
       const number = this.form.phone.replace(/\D/g, "");
 
-      let newNumber = mask.replace(/[_\d]/g, value => {
+      let newNumber = mask.replace(/[_\d]/g, (value) => {
         return length < number.length
           ? number.charAt(length++) || defaultValue.charAt(length)
           : value;
@@ -413,7 +428,7 @@ export default {
 
       let reg = mask
         .substr(0, this.form.phone.length)
-        .replace(/_+/g, string => "\\d{1," + string.length + "}")
+        .replace(/_+/g, (string) => "\\d{1," + string.length + "}")
         .replace(/[+()]/g, "\\$&");
       reg = new RegExp("^" + reg + "$");
 
@@ -437,8 +452,8 @@ export default {
 
     closePopup() {
       this.showPopup = false;
-    }
-  }
+    },
+  },
 };
 </script>
 

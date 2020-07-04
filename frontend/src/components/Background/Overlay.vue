@@ -9,20 +9,6 @@
       class="overlay-mobile"
       preserveAspectRatio="none"
     >
-<<<<<<< HEAD
-      <!-- <g id="Frame 4" clip-path="url(#clip0)"> -->
-      <path
-        id="BG"
-        d="M0 1.99985C0.301676 42.0601 333.5 -18.5 333.5 42.5C333.5 69.0003 340.384 106.469 340.487 144.56C340.621 194.274 332.664 243.549 332.664 243.549L0 243.549L0 1.99985Z"
-        fill="#FFFAEB"
-      />
-      <!-- </g> -->
-      <!-- <defs>
-        <clipPath id="clip0">
-          <rect width="334" height="43" fill="white" />
-        </clipPath>
-      </defs>-->
-=======
       <g id="Frame 4" clip-path="url(#clip0)">
         <path
           id="BG"
@@ -30,7 +16,6 @@
           fill="#FFFAEB"
         />
       </g>
->>>>>>> a011412472ea83d70bdabff46a6adddb32cbfc32
     </svg>
 
     <svg
@@ -66,20 +51,20 @@ export default {
         overlayAnimation.overlayAnimationEnd(overlayPath);
         this.overlayIsActive = false;
       }
-    }
+    },
   },
   data: () => ({
-    isMobile: false
+    isMobile: false,
   }),
   // check mobile width
   methods: {
     updateWidth() {
       this.isMobile = window.innerWidth > 1023;
-    }
+    },
   },
   created() {
     window.addEventListener("resize", this.updateWidth);
     this.updateWidth();
-  }
+  },
 };
 </script>
