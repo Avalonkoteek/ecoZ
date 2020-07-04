@@ -6,7 +6,6 @@
   display: flex;
   align-items: center;
   margin-bottom: calc(var(--gs) * 4);
-  animation: fade-in 0.4s ease;
 
   @media (--tablet) {
     margin-bottom: calc(var(--gs));

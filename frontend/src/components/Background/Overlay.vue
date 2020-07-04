@@ -16,11 +16,6 @@
           fill="#FFFAEB"
         />
       </g>
-      <defs>
-        <clipPath id="clip0">
-          <rect width="334" height="43" fill="white" />
-        </clipPath>
-      </defs>
     </svg>
 
     <svg
