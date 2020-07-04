@@ -2,7 +2,7 @@
   <section class="template section">
     <Overlay v-model="isOpen" />
     <div class="container" ref="pageExit">
-      <ButtonBack class="template__button-back" :to="'/about'" />
+      <ButtonBack class="template__button-back" :to="getTemplateDate.backButton" />
 
       <div class="template__content">
         <div
@@ -85,6 +85,9 @@ export default {
       );
       if (!page) return "";
 
+      const parent = this.getAllPages.find(
+        item => item.id === page.parent
+      );
       // обработка контента
       const content = page.content.rendered;
 
@@ -99,16 +102,18 @@ export default {
 
       // LINKS
       const links = this.getLinks(page.parent);
+      const backButton = parent.link.replace("https://a.eco-z.org", "");
 
       // TEMPLATE
       let template = {
+        backButton :  backButton || '',
         textHTML: textHTML || "",
         links: links || [],
         images: images || []
       };
 
       return template;
-    }
+    },
   },
   methods: {
     getLinks(parentId) {
@@ -117,7 +122,7 @@ export default {
         let link = {};
         if (page.parent === parentId) {
           link.name = page.title.rendered;
-          link.to = page.link.replace("https://eco-z.org", "");
+          link.to = page.link.replace("https://a.eco-z.org", "");
           links.push(link);
         }
       }

@@ -2,7 +2,7 @@
   <section class="section services">
     <Overlay v-model="isOpen" />
     <div class="container container--contact" ref="pageExit">
-      <ButtonBack class="services__btn-back" :to="'/business'" />
+      <ButtonBack class="services__btn-back" :to="buttonBack" />
       <div class="services__cols">
         <div v-if="mainOffer" class="services__col-narrow" :class="{'services__col-narrow--full': !(serviseList && serviseList.length)}">
           <div class="services__item services__item--stock">
@@ -77,7 +77,20 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["serviseList", "mainOffer", "getBusinessLinks"])
+    ...mapGetters(["serviseList", "mainOffer", "getBusinessLinks", "getAllPages"]),
+    buttonBack() {
+      const path = this.$route.path;
+      const page = this.getAllPages.find(
+        page => page.link.indexOf(path) !== -1
+      );
+      if (!page) return "";
+
+      const parent = this.getAllPages.find(
+        item => item.id === page.parent
+      );
+
+      return parent.link.replace("https://a.eco-z.org", "");
+    },
   },
 
   mounted() {

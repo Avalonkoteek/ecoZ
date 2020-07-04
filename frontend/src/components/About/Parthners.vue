@@ -2,7 +2,7 @@
   <section class="section partners">
     <Overlay v-model="isOpen" />
     <div class="container container--contact" ref="pageExit">
-      <ButtonBack class="partners__button-back" :to="'/about'" />
+      <ButtonBack class="partners__button-back" :to="buttonBack" />
       <div class="partners__container-slider">
         <v-slider
           :disabled="!(getPartners.length !== 1)"
@@ -113,10 +113,23 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["getPartners", "getAboutLinks"]),
+    ...mapGetters(["getPartners", "getAllPages", "getAboutLinks"]),
     sliderOptions() {
       return sliderOptions;
-    }
+    },
+    buttonBack() {
+      const path = this.$route.path;
+      const page = this.getAllPages.find(
+        page => page.link.indexOf(path) !== -1
+      );
+      if (!page) return "";
+
+      const parent = this.getAllPages.find(
+        item => item.id === page.parent
+      );
+
+      return parent.link.replace("https://a.eco-z.org", "");
+    },
   },
 
   methods: {

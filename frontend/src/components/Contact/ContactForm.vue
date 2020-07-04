@@ -2,7 +2,7 @@
   <section class="section section--contact">
     <Overlay v-model="isOpen" />
     <div class="container" ref="pageExit">
-      <ButtonBack :to="'/contacts'" />
+      <ButtonBack :to="buttonBack" />
       <div class="contactForm__wrapper">
         <!-- ======================================================== -->
         <!--========================= FORM ========================= -->
@@ -281,6 +281,21 @@ export default {
       if (this.form.selectValue || this.selectValid) return true;
       else return false;
     },
+
+    buttonBack() {
+      const path = this.$route.path;
+      const page = this.getAllPages.find(
+        page => page.link.indexOf(path) !== -1
+      );
+      if (!page) return "";
+
+      const parent = this.getAllPages.find(
+        item => item.id === page.parent
+      );
+
+      return parent.link.replace("https://a.eco-z.org", "");
+    },
+
     getPopupMessage() {
       if (!this.popUpError) return this.pageContent.push.pushOk;
       return this.pageContent.push.pushError;
