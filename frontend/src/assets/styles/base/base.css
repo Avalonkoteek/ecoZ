@@ -33,6 +33,7 @@ body {
 #app {
   height: 100%;
   width: 100%;
+  min-height: 100vh;
 }
 main {
   position: relative;
@@ -61,7 +62,7 @@ h1 {
   color: var(--cl-brown);
 }
 h2 {
-  font-family: 'GOST2_304typeA';
+  font-family: "GOST2_304typeA";
   font-size: var(--fs-h2);
   line-height: 1.1;
   font-weight: normal;
