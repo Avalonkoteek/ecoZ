@@ -1,7 +1,7 @@
 /* Базовые стили */
 @import "./base/fonts.css";
-@import "./base/customProperties.css";
 @import "./base/customMedia.css";
+@import "./base/customProperties.css";
 @import "./base/base.css";
 @import "./base/container.css";
 @import "./base/animation.css";

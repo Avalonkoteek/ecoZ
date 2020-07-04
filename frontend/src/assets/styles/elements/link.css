@@ -2,10 +2,14 @@
   color: var(--cl-grey);
   user-select: none;
   transition: all var(--time) ease;
+  font-size: var(--fs-a);
 
   .icon {
     fill: var(--cl-grey);
     transition: all var(--time) ease;
+  }
+  @media (--tablet) {
+    font-size: 18px !important;
   }
 
   &:hover {
