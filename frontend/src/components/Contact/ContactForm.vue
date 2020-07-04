@@ -375,20 +375,23 @@ export default {
           .post("/mail.php", formData)
           .then((request) => {
             console.log(request);
-            if (request.data.status == "200") {
+            if (request.data == "200") {
               vm.popUpError = false;
               vm.showPopup = true;
               setTimeout(() => vm.$v.$reset(), 0);
               vm.resetForm();
             }
+
+            if (request.data == "error") {
+              vm.popUpError = true;
+              vm.showPopup = true;
+            }
           })
           .catch((e) => {
-            console.log(e);
             vm.popUpError = true;
             vm.showPopup = true;
           });
       } catch (e) {
-        console.log(e);
         vm.popUpError = true;
         vm.showPopup = true;
       }
