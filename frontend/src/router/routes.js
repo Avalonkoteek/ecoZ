@@ -63,9 +63,9 @@ export const routes = [
     component: Services,
   },
   {
-    path: "/school",
-    name: "school",
-    meta: { layout: "school", title: "Школам" },
+    path: "/education",
+    name: "education",
+    meta: { layout: "education", title: "Школам" },
     component: () => import("../views/School.vue"),
   },
   {

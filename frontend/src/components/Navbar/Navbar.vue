@@ -67,7 +67,7 @@ export default {
       { title: "Главная", url: "/home", exact: true },
       { title: "О Проекте", url: "/about" },
       { title: "Бизнесу", url: "/business" },
-      { title: "Школам", url: "/school" },
+      { title: "Школам", url: "/education" },
       { title: "Волонтерам", url: "/volunteers" },
       { title: "Контакты", url: "/contacts" }
     ]

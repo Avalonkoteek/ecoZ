@@ -22,7 +22,7 @@ export const illustrationAnimation = {
       case "business-layout":
         Position = "-23%";
         break;
-      case "school-layout":
+      case "education-layout":
         Position = "-33%";
         break;
       case "volunteers-layout":
