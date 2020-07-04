@@ -374,7 +374,6 @@ export default {
         axios
           .post("/mail.php", formData)
           .then((request) => {
-            console.log(request);
             if (request.data == "200") {
               vm.popUpError = false;
               vm.showPopup = true;
