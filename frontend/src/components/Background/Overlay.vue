@@ -51,20 +51,20 @@ export default {
         overlayAnimation.overlayAnimationEnd(overlayPath);
         this.overlayIsActive = false;
       }
-    }
+    },
   },
   data: () => ({
-    isMobile: false
+    isMobile: false,
   }),
   // check mobile width
   methods: {
     updateWidth() {
       this.isMobile = window.innerWidth > 1023;
-    }
+    },
   },
   created() {
     window.addEventListener("resize", this.updateWidth);
     this.updateWidth();
-  }
+  },
 };
 </script>

@@ -11,11 +11,16 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "school",
+  metaInfo() {
+    return {
+      title: this.$title("Школам"),
+    };
+  },
   components: {
-    Main
+    Main,
   },
   computed: {
-    ...mapGetters(['getEducation'])
-  }
+    ...mapGetters(["getEducation"]),
+  },
 };
 </script>
