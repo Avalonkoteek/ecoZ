@@ -16,8 +16,9 @@
               <p class="services__item-price services__item-price--stock">
                 от
                 <span
+                  v-if="mainOffer.price && mainOffer.price.length"
                   class="services__item-number services__item-number--stock"
-                >{{ mainOffer.price }}</span>
+                >{{ mainOffer.price.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') }}</span>
                 руб.
               </p>
             </div>
@@ -34,18 +35,21 @@
               </div>
               <div class="services__item-wrapper services__item-wrapper--number">
                 <p
-                  v-if="item.oldPrice.length !== '0'"
+                  v-if="item.oldPrice.length != '0'"
                   class="services__item-price services__item-price--old"
                 >
                   от
                   <span
+                  v-if="item.oldPrice && item.oldPrice.length"
                     class="services__item-number services__item-number--old"
-                  >{{ item.oldPrice }}</span>
+                  >{{ item.oldPrice.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') }}</span>
                   руб.
                 </p>
                 <p class="services__item-price">
                   от
-                  <span class="services__item-number">{{ item.price }}</span>
+                  <span
+                  v-if="item.price && item.price.length"
+                  class="services__item-number">{{ item.price.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') }}</span>
                   руб.
                 </p>
               </div>

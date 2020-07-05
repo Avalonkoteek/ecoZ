@@ -16,8 +16,9 @@
               <p class="services__item-price services__item-price--stock">
                 от
                 <span
+                  v-if="eduMainOffer.price && eduMainOffer.price.length"
                   class="services__item-number services__item-number--stock"
-                >{{ eduMainOffer.price }}</span>
+                >{{ eduMainOffer.price.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') }}</span>
                 руб.
               </p>
             </div>
@@ -39,13 +40,16 @@
                 >
                   от
                   <span
+                    v-if="item.oldPrice && item.oldPrice.length"
                     class="services__item-number services__item-number--old"
-                  >{{ item.oldPrice }}</span>
+                  >{{ item.oldPrice.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') }}</span>
                   руб.
                 </p>
                 <p class="services__item-price">
                   от
-                  <span class="services__item-number">{{ item.price }}</span>
+                  <span
+                    v-if="item.price && item.price.length"
+                    class="services__item-number">{{ item.price.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') }}</span>
                   руб.
                 </p>
               </div>

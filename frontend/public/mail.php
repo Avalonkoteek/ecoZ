@@ -15,7 +15,7 @@ $headers = 'From:'.$email_form;
 $headers .='Reply-To:'.$email;
 
 if(!mail($mail_to,$subject,$email_body,$headers)) {
-    echo 'Error';
+    echo 'error';
 } else {
    echo '200';
 }

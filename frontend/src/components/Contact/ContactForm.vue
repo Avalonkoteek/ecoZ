@@ -370,6 +370,7 @@ export default {
       const emailTo = vm.pageContent.mails[0];
       const formData = vm.form;
       formData.emailTo = emailTo;
+      console.log(formData)
       try {
         axios
           .post("/mail.php", formData)
@@ -386,11 +387,11 @@ export default {
               vm.showPopup = true;
             }
           })
-          .catch((e) => {
+          .catch(() => {
             vm.popUpError = true;
             vm.showPopup = true;
           });
-      } catch (e) {
+      } catch {
         vm.popUpError = true;
         vm.showPopup = true;
       }
